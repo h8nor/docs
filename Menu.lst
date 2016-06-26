@@ -1,0 +1,50 @@
+## 1. Download, run the program as an Administrator. Format the USB flash drive.
+## http://flashboot.ru/files/file/317/download/hpusbfw_special_df0/
+## 2. Run the program grubinst_gui.exe, set the Part List switch to "Whole disk (MBR)" and press Install.
+## http://www.hiren.info/download/dos-files/grub4dos.zip
+## 3. Copy the files "grldr" and "menu.lst" from the archive on a USB flash drive. Help:
+## https://github.com/chenall/grub4dos/blob/master/README_GRUB4DOS.txt
+
+## Check version of grub4dos
+#checkrange 20120201:-1 read 0x8278 || pause --wait=3 Please use grub4dos-0.4.5c-2012-02-01 or later! && exit 1
+## Menu AutoNumber
+#write 0x8274 0x2001
+
+write (md)0x220+1 !BAT\necho -n -P:0000 $[0107] MultiBoot USB by bopoh13\t\t\t\t\t\t\t\0 && initscript (md)0x220+1
+color white/blue black/white
+default 2
+## 4. Download and Put images in the 'boot' directory
+
+## http://narod.ru/disk/9693651001/Win7PE_v5.5c_xalex.iso.html
+iftitle [if exist /boot/Win7PE_v5.5c_xalex.iso] Windows 7 PE by Xalex 5.5\n\n Windows 7 PE\n Wait 6 minutes to load into RAM 197 MB
+map --mem /boot/Win7PE_v5.5c_xalex.iso (hd32) && map --hook
+chainloader (hd32)
+
+## http://www.ihdd.ru/download/software/victoria/vcr35cd.zip
+iftitle [if exist /boot/vcr35r.iso] Victoria 3.5\n\n HDD Test
+map --mem /boot/vcr35r.iso (hd32) && map --hook
+chainloader (hd32)
+
+## http://www.
+iftitle [if exist /boot/vcr352.ima] Victoria 3.52\n\n HDD Test
+map --mem /boot/vcr352.ima (fd0) && map --hook
+chainloader (fd0)+1
+rootnoverify (fd0)
+map --floppies=1
+
+## http://www.memtest.org/download/5.01/memtest86+-5.01.iso.zip
+iftitle [if exist /boot/memtest86+-5.01.iso] Memtest86+ 5.01\n\n Memory Test
+map /boot/memtest86+-5.01.iso (hd32) && map --hook
+chainloader (hd32)
+
+## Set a variable named bootmgr where /bootmgr is found
+iftitle [find --set-root --devices=h /bootmgr && call set bootmgr=%@root^%] load BOOTMGR of Windows on %bootmgr%\n\n load Windows VISTA/WIN7/WIN2008
+makeactive
+chainloader %bootmgr%/bootmgr
+
+## https://download.plop.at/files/bootmngr/plpcfgbt-0.11.zip
+iftitle [if exist /boot/plpbt.bin] PLoP Boot Manager 5.0.14 (Hi Speed USB)\n\n Plop Boot Manager 5.0
+kernel /boot/plpbt.bin
+
+title Reboot\n\n Reboot system
+reboot
