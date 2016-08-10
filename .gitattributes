@@ -1,0 +1,27 @@
+# Auto detect text files and perform CRLF normalization
+* text=auto eol=crlf
+
+# Files that will always have CRLF line endings on checkout
+#*.cms  text eol=crlf
+#*.js   text eol=crlf
+#*.lst  text eol=crlf
+#*.txt  text eol=crlf
+#*.xml  text eol=crlf
+#*.XML  text eol=crlf
+
+# Files that are truly binary and should not be modified
+#*.png  binary
+
+# Shell script that ships with msysGit
+# //github.com/msysgit/msysgit/blob/master/bin/astextplain
+# Standard to msysgit
+#*.doc  diff=astextplain
+#*.DOC  diff=astextplain
+#*.docx diff=astextplain
+#*.DOCX diff=astextplain
+#*.dot  diff=astextplain
+#*.DOT  diff=astextplain
+#*.pdf  diff=astextplain
+#*.PDF  diff=astextplain
+#*.rtf  diff=astextplain
+#*.RTF  diff=astextplain

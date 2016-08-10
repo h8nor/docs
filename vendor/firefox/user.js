@@ -1,4 +1,5 @@
-# Mozilla FireFox 47 Secure Settings
+# Mozilla FireFox 48 Secure Settings
+# Settings of the "user.js" file will be loaded when you restart your FireFox 
 # Some settings http://warfx.ru/firefox/config/ have been abolished
 # Drop this file in a folder XXXXXXXX.default at %APPDATA%\Mozilla\Firefox\Profiles\
 
@@ -80,7 +81,7 @@ user_pref("browser.newtab.preload", false);
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-ping
 user_pref("browser.newtabpage.directory.ping", "");
 // https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
-user_pref("browser.newtabpage.directory.source", "");
+user_pref("browser.newtabpage.directory.source", "data:application/json,{}");
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
 user_pref("browser.newtabpage.enabled", false);
 // http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
@@ -133,7 +134,49 @@ user_pref("media.video_stats.enabled", false);
 // Disable face detection by default
 user_pref("camera.control.face_detection.enabled", false);
 
+// http://kb.mozillazine.org/Network.proxy.socks_remote_dns
+user_pref("network.proxy.socks_remote_dns", true);
+// http://kb.mozillazine.org/Browser.backspace_action
+user_pref("browser.backspace_action", 2);
+// https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_auto-update-checking
+user_pref("browser.search.update", false);
+// Disables the list of recommended topics in the Customize -> Themes
+user_pref("lightweightThemes.recommendedThemes", "");
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l649
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/dom/base/nsContentSink.cpp#l1056
+// https://hg.mozilla.org/releases/mozilla-esr38/file/5be76431120a/dom/base/nsContentUtils.cpp#l1709
+// https://hg.mozilla.org/releases/mozilla-esr38/file/dd257f17530c/uriloader/prefetch/nsOfflineCacheUpdateService.cpp#l744
+user_pref("offline-apps.allow_by_default", false);
+// https://wiki.mozilla.org/DevTools/WiFi_Debugging
+user_pref("devtools.remote.wifi.scan", false);
+user_pref("devtools.remote.wifi.visible", false);
+// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/browser/devtools/shared/doorhanger.js#l17
+user_pref("devtools.devedition.promo.enabled", false);
+user_pref("devtools.devedition.promo.shown", true);
+user_pref("devtools.devedition.promo.url", "");
+// https://bugzilla.mozilla.org/show_bug.cgi?id=1173171
+user_pref("network.jar.block-remote-files", true);
+// http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
+# user_pref("network.cookie.thirdparty.sessionOnly", true);
+// http://kb.mozillazine.org/Signon.autofillForms
+user_pref("signon.autofillForms", false);
+// http://habrahabr.ru/company/eset/blog/264619/
+// https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
+// https://news.ycombinator.com/item?id=10021376
+user_pref("pdfjs.disabled", true);
+user_pref("pdfjs.enableWebGL", false);
+// https://developer.mozilla.org/en-US/docs/Web/API/CSSFontLoading_API
+// https://drafts.csswg.org/css-font-loading/
+user_pref("layout.css.font-loading-api.enabled", false);
+
 # DESIRABLE
+// https://geektimes.ru/post/279132/
+# user_pref("browser.tabs.remote.autostart", true);
+# user_pref("browser.tabs.remote.force-enable", true);
+// https://github.com/Ejz/Common/blob/master/ua/full.list
+// http://www.useragentstring.com/
+user_pref("general.useragent.override", "Mozilla/5.0 (PPC; rv:42.0) Gecko/20121221");
+
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken
 // see also CVE-2009-3555
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
@@ -148,7 +191,7 @@ user_pref("browser.sessionhistory.max_entries", 12);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled", false);
 // Webpages will not be able to affect the right-click menu
-//user_pref("dom.event.contextmenu.enabled", false);
+# user_pref("dom.event.contextmenu.enabled", false);
 // http://kb.mozillazine.org/Dom.storage.enabled
 // http://dev.w3.org/html5/webstorage/#dom-localstorage
 // you can also see this with Panopticlick's "DOM localStorage"
