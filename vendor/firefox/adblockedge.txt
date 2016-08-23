@@ -1,0 +1,33 @@
+[Adblock Plus 2.0]
+! Version: 201608231200
+! The contents of this filter list are fetched from the EasyPrivacy repository: https://github.com/bopoh13/docs/tree/master/vendor/firefox
+! Title: AdBlockEdge
+! Last modified: 23 Aug 2016 12:00 UTC
+! Expires: 4 days (update frequency)
+! CSS selectors: http://www.puzzleweb.ru/css/selectors.php
+!
+! Please report any unblocked tracking or problems.
+!
+!--------------------General tracking systems-----------------------------------!
+/advertising.
+/adriver.$~object-subrequest
+.adriver.$~object-subrequest
+||yandex.*/clck/$~ping
+!--------------------Third-party tracking domains-------------------------------!
+||ria.ru^$third-party
+!--------------------Individual tracking systems--------------------------------!
+##div#uptocall-mini
+!--------------------Advertising blocks and scripts-----------------------------!
+! Google
+google.ru##div[id*="ads"],div[id*="adv"]
+! Habrahabr
+geektimes.ru,habrahabr.ru##div[class*="banner"],div[class*="promo"]
+geektimes.ru,habrahabr.ru##.similar-posts,.column-wrapper_bordered
+geektimes.ru##.post__body_full.post__body > .html_format.content > table,a[href="https://dronk.ru/"] ~ br
+geektimes.ru##.post__body_full.post__body > .html_format.content > a[href="https://dronk.ru/"]:last-of-type > img
+! Yandex
+yandex.ru##li[class*="serp-adv-item"]
+yandex.ru##.serp-item > .organic > h2:not([class$="_title"]),h2:not([class$="_title"]) ~ div
+yandex.ru##li[class^="serp-item "]:not([class*="adresa"]):not([class*="forum"]):not([class*="image-stats"]):not([class*="z-maps"]):not([class*="z-market"])
+!--------------------Whitelists to fix broken sites-----------------------------!
+
