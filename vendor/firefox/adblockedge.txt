@@ -1,10 +1,9 @@
 [Adblock Plus 2.0]
-! Version: 201608231200
+! Version: 201608260900
 ! The contents of this filter list are fetched from the EasyPrivacy repository: https://github.com/bopoh13/docs/tree/master/vendor/firefox
 ! Title: AdBlockEdge
-! Last modified: 23 Aug 2016 12:00 UTC
-! Expires: 4 days (update frequency)
-! CSS selectors: http://www.puzzleweb.ru/css/selectors.php
+! Last modified: 26 Aug 2016 09:00 UTC
+! Expires: 8 days (update frequency)
 !
 ! Please report any unblocked tracking or problems.
 !
@@ -13,21 +12,35 @@
 /adriver.$~object-subrequest
 .adriver.$~object-subrequest
 ||yandex.*/clck/$~ping
+||awaps.yandex.
+||kiks.yandex.
 !--------------------Third-party tracking domains-------------------------------!
 ||ria.ru^$third-party
-!--------------------Individual tracking systems--------------------------------!
+!--------------------Individual importunate systems-----------------------------!
 ##div#uptocall-mini
 !--------------------Advertising blocks and scripts-----------------------------!
+##div[id*="ads"],div[id*="adv"],div[id*="banner"]
+##div[class*="adv"],div[class*="banner"],div[class*="promo"]
+auto.ru##table[class~="i-bem"] > tbody:not([class~="i-bem"])
+avito.ru##.context-flyer
+drive2.ru##div.g-column-wide > div:not([class~="c-slideshow"]):not([class*="c-car-"]):not([class*="c-block-"]),div.c-block > div.c-block--alt-bg
+pornhub.com,redtube.com##iframe,div[style^="display:"][style*="block"],div.footerWrapper
+youtube.com##iframe
 ! Google
-google.ru##div[id*="ads"],div[id*="adv"]
+google.ru##div.gb_ga
+google.ru###extrares,.pdp-psy,#pdp-psy
+! Yandex
+##div > yatag
+yandex.ru##div.content__left div[style^="display: block !important"]
+yandex.ru##i.b-counter ~ div[class~="i-bem"]
+yandex.ru##div.content__left > ul[class~="serp-list"] > div:first-child,div[class~="footer-stripe"]
+yandex.ru##div.related,div.scroll-spy,div[id$="teaser"][class~="i-bem"]
+yandex.ru##li[class*="serp-adv-item"]
+yandex.ru##.serp-item > .organic > h2:not([class$="title"]),h2:not([class$="title"]) ~ div
+yandex.ru##li[class^="serp-item "]:not([class*="adresa"]):not([class*="forum"]):not([class*="image-stats"]):not([class*="z-maps"]):not([class*="z-market"])
 ! Habrahabr
-geektimes.ru,habrahabr.ru##div[class*="banner"],div[class*="promo"]
 geektimes.ru,habrahabr.ru##.similar-posts,.column-wrapper_bordered
 geektimes.ru##.post__body_full.post__body > .html_format.content > table,a[href="https://dronk.ru/"] ~ br
 geektimes.ru##.post__body_full.post__body > .html_format.content > a[href="https://dronk.ru/"]:last-of-type > img
-! Yandex
-yandex.ru##li[class*="serp-adv-item"]
-yandex.ru##.serp-item > .organic > h2:not([class$="_title"]),h2:not([class$="_title"]) ~ div
-yandex.ru##li[class^="serp-item "]:not([class*="adresa"]):not([class*="forum"]):not([class*="image-stats"]):not([class*="z-maps"]):not([class*="z-market"])
 !--------------------Whitelists to fix broken sites-----------------------------!
 
