@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Version: 201608260900
-! The contents of this filter list are fetched from the EasyPrivacy repository: https://github.com/bopoh13/docs/tree/master/vendor/firefox
-! Title: AdBlockEdge
-! Last modified: 26 Aug 2016 09:00 UTC
-! Expires: 8 days (update frequency)
+! Version: 201608300900
+! The contents of this filter list are fetched from the repository: https://github.com/bopoh13/docs/tree/adblock/vendor/firefox
+! Title: AeList (Adblock Edge)
+! Last modified: 30 Aug 2016 09:00 UTC
+! Expires: 3 days (update frequency)
 !
 ! Please report any unblocked tracking or problems.
 !
@@ -11,36 +11,60 @@
 /advertising.
 /adriver.$~object-subrequest
 .adriver.$~object-subrequest
-||yandex.*/clck/$~ping
+/googleads.
+/pagead2.
+||an.yandex.
 ||awaps.yandex.
+||bs.yandex.
 ||kiks.yandex.
+||mc.yandex.
+||yabs.yandex.
+||yandex.*/clck/$~ping
 !--------------------Third-party tracking domains-------------------------------!
-||ria.ru^$third-party
+||marketgid.com^$third-party,~popup,popup
+||mxtads.com^$third-party
 !--------------------Individual importunate systems-----------------------------!
 ##div#uptocall-mini
+##div[id^="MarketGid"]
 !--------------------Advertising blocks and scripts-----------------------------!
 ##div[id*="ads"],div[id*="adv"],div[id*="banner"]
 ##div[class*="adv"],div[class*="banner"],div[class*="promo"]
+##span[class*="promo"]
+##div[id$="underline"]
+auto.ru##div[style^="display: block !important"]
 auto.ru##table[class~="i-bem"] > tbody:not([class~="i-bem"])
 avito.ru##.context-flyer
-drive2.ru##div.g-column-wide > div:not([class~="c-slideshow"]):not([class*="c-car-"]):not([class*="c-block-"]),div.c-block > div.c-block--alt-bg
+drive2.ru##div.g-column-wide > div:not([class*="offer"]):not([class~="c-slideshow"]):not([class~="c-post"]):not([class*="c-car-"]):not([class*="c-block-"])
+drive2.ru###side-dv-pinned,div.c-block > div.c-block--alt-bg
 pornhub.com,redtube.com##iframe,div[style^="display:"][style*="block"],div.footerWrapper
 youtube.com##iframe
 ! Google
-google.ru##div.gb_ga
-google.ru###extrares,.pdp-psy,#pdp-psy
+google.com,google.ru##div.gb_ga
+google.com,google.ru###extrares,.pdp-psy,#pdp-psy
+translate.google.com,translate.google.ru##div[class~="gb_xc"]
 ! Yandex
-##div > yatag
-yandex.ru##div.content__left div[style^="display: block !important"]
-yandex.ru##i.b-counter ~ div[class~="i-bem"]
+##div#ya-share,div.ya-share2,div > yatag
+yandex.ru##i.b-counter + div[class~="dist-popup"]
+yandex.ru##div.content__left > div[class~="head-stripe"]
 yandex.ru##div.content__left > ul[class~="serp-list"] > div:first-child,div[class~="footer-stripe"]
 yandex.ru##div.related,div.scroll-spy,div[id$="teaser"][class~="i-bem"]
 yandex.ru##li[class*="serp-adv-item"]
 yandex.ru##.serp-item > .organic > h2:not([class$="title"]),h2:not([class$="title"]) ~ div
 yandex.ru##li[class^="serp-item "]:not([class*="adresa"]):not([class*="forum"]):not([class*="image-stats"]):not([class*="z-maps"]):not([class*="z-market"])
+! Yandex Images
+yandex.ru##.page-layout__column_type_content.page-layout__column > div[class~="dist"]
+yandex.ru##.incut__wrapper_footer_yes.incut__wrapper
+! Yandex Maps
+yandex.ru##div[data-reactid] > div[style^="display:"][style*="block"]
+yandex.ru##div[data-reactid] > div.search-snippet-view > a[target="_blank"]
 ! Habrahabr
 geektimes.ru,habrahabr.ru##.similar-posts,.column-wrapper_bordered
 geektimes.ru##.post__body_full.post__body > .html_format.content > table,a[href="https://dronk.ru/"] ~ br
 geektimes.ru##.post__body_full.post__body > .html_format.content > a[href="https://dronk.ru/"]:last-of-type > img
+!--------------------Cosmetic fixes page layout---------------------------------!
+kinozal.me,kinozal.tv##div.bx2_0:nth-last-child(2)
+! Yandex Maps
+yandex.ru##div[data-reactid] > div.search-snippet-view:first-child,div[data-reactid] > div.search-snippet-view:nth-of-type(2)
 !--------------------Whitelists to fix broken sites-----------------------------!
-
+! Yandex Images
+~yandex.ru##div[class*="adv"]
