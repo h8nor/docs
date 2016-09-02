@@ -32,7 +32,7 @@
 ##div#uptocall-mini
 ##div[id^="MarketGid"]
 !--------------------Advertising blocks and scripts-----------------------------!
-##iframe:not(src*="/www.youtube.com/")
+##iframe:not([src*="/www.youtube.com/"])
 ##div[id*="ads"],div[id*="adv"],div[id*="banner"]
 ##div[class*="adv"]
 ##div[class*="banner"],div[class*="promo"]
