@@ -1,70 +1,107 @@
 [Adblock Plus 2.0]
-! Version: 201608300900
+! Version: 201609020900
 ! The contents of this filter list are fetched from the repository: https://github.com/bopoh13/docs/tree/adblock/vendor/firefox
 ! Title: AeList (Adblock Edge)
-! Last modified: 30 Aug 2016 09:00 UTC
+! Last modified: 02 Sep 2016 09:00 UTC
 ! Expires: 3 days (update frequency)
 !
 ! Please report any unblocked tracking or problems.
 !
 !--------------------General tracking systems-----------------------------------!
-/advertising.
+/advertising.$~object-subrequest
 /adriver.$~object-subrequest
 .adriver.$~object-subrequest
-/googleads.
-/pagead2.
-||an.yandex.
+/googleads.$~object-subrequest
+/pagead2.$~object-subrequest
+||an.yandex.^$~object-subrequest
 ||awaps.yandex.
 ||bs.yandex.
+||googleadservices.
 ||kiks.yandex.
 ||mc.yandex.
 ||yabs.yandex.
+||avito.ru/s/a/*/dfp/px.js
 ||yandex.*/clck/$~ping
 !--------------------Third-party tracking domains-------------------------------!
+||advombat.ru^$third-party
+||digitaltarget.ru^$third-party
+||doubleclick.net^$third-party
 ||marketgid.com^$third-party,~popup,popup
 ||mxtads.com^$third-party
 !--------------------Individual importunate systems-----------------------------!
 ##div#uptocall-mini
 ##div[id^="MarketGid"]
 !--------------------Advertising blocks and scripts-----------------------------!
+##iframe:not(src*="/www.youtube.com/")
 ##div[id*="ads"],div[id*="adv"],div[id*="banner"]
-##div[class*="adv"],div[class*="banner"],div[class*="promo"]
+##div[class*="adv"]
+##div[class*="banner"],div[class*="promo"]
 ##span[class*="promo"]
-##div[id$="underline"]
-auto.ru##div[style^="display: block !important"]
-auto.ru##table[class~="i-bem"] > tbody:not([class~="i-bem"])
-avito.ru##.context-flyer
+##div[id$="underline"],div[class^="adsbygoogle"]
+! Social networks
+##div[class*="share"],ul[class*="post-share"],ul[class*="social-link"]
+geektimes.ru,habrahabr.ru##div#vk_groups,div#facebook_like_box,div.twitter_stream
+livejournal.com##div.lj-like
 drive2.ru##div.g-column-wide > div:not([class*="offer"]):not([class~="c-slideshow"]):not([class~="c-post"]):not([class*="c-car-"]):not([class*="c-block-"])
 drive2.ru###side-dv-pinned,div.c-block > div.c-block--alt-bg
-pornhub.com,redtube.com##iframe,div[style^="display:"][style*="block"],div.footerWrapper
-youtube.com##iframe
+pornhub.com,redtube.com##div[style^="display:"][style*="block"],div.footerWrapper
+! Auto.ru
+auto.ru##div[style^="display: block !important"]
+auto.ru##table[class~="i-bem"] > tbody:not([class~="i-bem"])
 ! Google
 google.com,google.ru##div.gb_ga
 google.com,google.ru###extrares,.pdp-psy,#pdp-psy
-translate.google.com,translate.google.ru##div[class~="gb_xc"]
+translate.google.com,translate.google.ru##div.gb_xc,div.gb_wc
+! Mail.ru News
+news.mail.ru##div.box_collapse
 ! Yandex
 ##div#ya-share,div.ya-share2,div > yatag
 yandex.ru##i.b-counter + div[class~="dist-popup"]
 yandex.ru##div.content__left > div[class~="head-stripe"]
 yandex.ru##div.content__left > ul[class~="serp-list"] > div:first-child,div[class~="footer-stripe"]
 yandex.ru##div.related,div.scroll-spy,div[id$="teaser"][class~="i-bem"]
-yandex.ru##li[class*="serp-adv-item"]
 yandex.ru##.serp-item > .organic > h2:not([class$="title"]),h2:not([class$="title"]) ~ div
 yandex.ru##li[class^="serp-item "]:not([class*="adresa"]):not([class*="forum"]):not([class*="image-stats"]):not([class*="z-maps"]):not([class*="z-market"])
 ! Yandex Images
 yandex.ru##.page-layout__column_type_content.page-layout__column > div[class~="dist"]
-yandex.ru##.incut__wrapper_footer_yes.incut__wrapper
+yandex.ru##.incut__wrapper_footer_yes.incut__wrapper,.popup_type_modal
 ! Yandex Maps
 yandex.ru##div[data-reactid] > div[style^="display:"][style*="block"]
-yandex.ru##div[data-reactid] > div.search-snippet-view > a[target="_blank"]
+yandex.ru##div.search-snippet-view > a[target="_blank"]
+! Yandex News
+news.yandex.ru##div.page-content__left > article:not([class^="story"]),div.page-content__right > article
+news.yandex.ru##div.page-content__left > span,div.page-content__right > span
+news.yandex.ru##div.page-content__left > div:not([class^="rubric"]):not([class^="page-content"]):not([class^="stories"]):not([class^="story"]):not([class^="quote"])
+news.yandex.ru##div.page-content__right > div[class^="page-content"] > article,div.page-content__right > div[class^="page-content"] > span
+news.yandex.ru##div.page-content__right > div[class*="addition"] > div:not([class^="addition"]),div.page-content__right > div[class^="addition"] ~ div
 ! Habrahabr
-geektimes.ru,habrahabr.ru##.similar-posts,.column-wrapper_bordered
+geektimes.ru,habrahabr.ru##.similar-posts,.column-wrapper_bordered,.xyz_wrapper
 geektimes.ru##.post__body_full.post__body > .html_format.content > table,a[href="https://dronk.ru/"] ~ br
 geektimes.ru##.post__body_full.post__body > .html_format.content > a[href="https://dronk.ru/"]:last-of-type > img
 !--------------------Cosmetic fixes page layout---------------------------------!
 kinozal.me,kinozal.tv##div.bx2_0:nth-last-child(2)
-! Yandex Maps
-yandex.ru##div[data-reactid] > div.search-snippet-view:first-child,div[data-reactid] > div.search-snippet-view:nth-of-type(2)
-!--------------------Whitelists to fix broken sites-----------------------------!
+livejournal.com##div[class*="journalpromo"] + div.hr
+! Auto.ru
+auto.ru##div.search-controller__content > div.stat
+auto.ru##div.sidebar__block:not(.specials-sales-wrap)
+! Yandex
+yandex.ru##div.content__left > div.misspell
 ! Yandex Images
-~yandex.ru##div[class*="adv"]
+yandex.ru##div.footer > div.distro
+! Yandex Mail
+mail.yandex.ru##body > div:first-of-type
+!--------------------Whitelists to fix broken sites-----------------------------!
+! Auto.ru (all parameters), Yandex Images
+~auto.ru,~yandex.ru##div[class*="adv"]
+! https://addons.mozilla.org/ru/firefox/addon/542220/
+~avito.ru,~drom.ru##iframe[src*="/autoburn.ru/"]
+! Google Mail
+~mail.google.com##div[id][class~="gb_ga"],div[aria-label][class~="gb_ga"]
+~mail.google.com,~youtube.com##iframe[src*="/webchat/"],iframe[src*="/notifications/"],iframe[class="talk-iframe"]
+! Mail.ru
+~mail.ru##div.js-slider__content
+~deti.mail.ru,~lady.mail.ru##div[class*="promo"],div[class*="promo"][data-module],iframe[id^="instagram"]
+! Yandex
+~yandex.ru##iframe[src*="/mail.yandex.ru/"]
+! Yandex Video
+~yandex.ru##iframe[aria-label="Video"]
