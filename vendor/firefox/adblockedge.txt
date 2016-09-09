@@ -1,11 +1,11 @@
-[Adblock Plus 2.0]
-! Version: 201609090900
-! The contents of this filter list are fetched from the repository: https://github.com/bopoh13/docs/tree/adblock/vendor/firefox
+[Adblock Plus 2.7]
+! Version: 201607
 ! Title: AeList (Adblock Edge)
-! Last modified: 09 Sep 2016 09:00 UTC
+! Last modified: 09 Sep 2016 14:00 UTC
 ! Expires: 3 days (update frequency)
-!
+! Homepage: https://github.com/bopoh13/docs/tree/master/vendor/firefox/
 ! Please report any unblocked tracking or problems.
+! Quick Help: https://adblockplus.org/filter-cheatsheet/
 !
 !--------------------General tracking systems-----------------------------------!
 /advertising.$~object-subrequest
@@ -26,30 +26,38 @@
 ||avito.ru/s/a/*/dfp/px.js
 ||yandex.*/clck/$~ping
 !--------------------Third-party tracking domains-------------------------------!
+||adfox.ru^$third-party
 ||advombat.ru^$third-party
 ||digitaltarget.ru^$third-party
 ||doubleclick.net^$third-party
 ||marketgid.com^$third-party,~popup,popup
 ||mxtads.com^$third-party
 ||tns-counter.ru^$third-party
+!--------------------Individual importunate systems-----------------------------!
+||code.jivosite.com/script/$third-party
+||leadobur.com/widget/$third-party
+||leetero.ru^$third-party
+||cs15.livetex.ru/js/$third-party
+||clients.streamwood.ru^$third-party
+||uptocall.com/widget/$third-party
+||uptolike.com/widgets/$third-party
+pravoved.ru## div.leadAside
 !--------------------Social networking links------------------------------------!
 aliexpress.com##div.ui-fixed-panel-shares
 autoburn.ru##strong.text-muted,strong.text-muted ~ span
-geektimes.ru,habrahabr.ru##div#vk_groups,div#facebook_like_box,div.twitter_stream
+geektimes.ru,habrahabr.ru## div#vk_groups, div#facebook_like_box, div.twitter_stream, ul.post-share
 lenta.ru##div.b-socials__container
 life.ru##div.social-share__counter,div.social-share__icons
 livejournal.com##div.lj-like,li.share
 ria.ru##div.b-social-userbar__expand-button,div.b-social-userbar__soc-container,div.b-social-userbar__expand-block
 tass.ru##div.b-share
 youtube.com##div#share-services-container
-!--------------------Individual importunate systems-----------------------------!
-##div#uptocall-mini
 !--------------------Advertising blocks and scripts-----------------------------!
 ##iframe:not([src*="/www.youtube.com/"])
 ##div[id*="ads"],div[id*="adv"],div[id*="banner"]
 ##div[class*="adv"]
 ##div[class*="banner"],div[class*="promo"]
-##span[class*="promo"]
+## span.b-share, span[class*="promo"]
 ##div[id$="underline"],div[class^="adblock"],div[class^="adsbygoogle"]
 drive2.ru##div.g-column-wide > div:not([class*="offer"]):not([class~="c-slideshow"]):not([class~="c-post"]):not([class*="c-car-"]):not([class*="c-block-"])
 drive2.ru###side-dv-pinned,div.c-block > div.c-block--alt-bg
@@ -101,26 +109,34 @@ auto.ru##div.sidebar__block:not(.specials-sales-wrap)
 yandex.ru##div.content__left > div.misspell
 ! Yandex Images
 yandex.ru##div.footer > div.distro
+!--------------------Restoring (unblock) iframes--------------------------------!
+~2gis.ru## iframe#intercom-frame, iframe.chat__containerIframe
+~codepen.io## iframe[src*="/s.codepen.io/boomerang/"]
+~life.ru## iframe[src*="/embed.life.ru/video/"]
+! https://addons.mozilla.org/ru/firefox/addon/542220/
+~avito.ru,~drom.ru## iframe[src*="/autoburn.ru/"]
+~exist.ru## iframe#tip_f
+! Google Mail
+~mail.google.com,~youtube.com## iframe[src*="/webchat/"], iframe[src*="/notifications/"], iframe[class="talk-iframe"]
+! Google Translate
+~translate.google.com,~translate.google.ru## iframe[src*="/translate.googleusercontent.com/"]
+! Mail.ru
+~deti.mail.ru,~lady.mail.ru## iframe[id^="instagram"]
+! Yandex
+~yandex.ru## iframe[src*="/mail.yandex.ru/"]
+! Yandex Video
+~yandex.ru## iframe[aria-label="Video"]
 !--------------------Whitelists to fix broken sites-----------------------------!
-~2gis.ru##div.mediaPhotoSlider__photos > div._advertiser,div.mediaCard__wrapper > div._type_advertiser,iframe.chat__containerIframe
+~2gis.ru## div.mediaPhotoSlider__photos > div._advertiser, div.mediaCard__wrapper > div._type_advertiser
 ! Auto.ru (all parameters), Yandex Images
 ~auto.ru,~yandex.ru##div[class*="adv"]
-! https://addons.mozilla.org/ru/firefox/addon/542220/
-~avito.ru,~drom.ru##iframe[src*="/autoburn.ru/"]
 ! Google
 ~google.com,~google.ru##div.gb_sc + div.gb_ga
 ! Google Mail
 ~mail.google.com##div[id][class~="gb_ga"],div[aria-label][class~="gb_ga"]
-~mail.google.com,~youtube.com##iframe[src*="/webchat/"],iframe[src*="/notifications/"],iframe[class="talk-iframe"]
-! Google Translate
-~translate.google.com,~translate.google.ru##iframe[name]
 ! Mail.ru
 ~mail.ru##div.js-slider__content
-~deti.mail.ru,~lady.mail.ru##div[class*="promo"],div[class*="promo"][data-module],iframe[id^="instagram"]
-! Yandex
-~yandex.ru##iframe[src*="/mail.yandex.ru/"]
+~deti.mail.ru,~lady.mail.ru## div[class*="promo"], div[class*="promo"][data-module]
 ! Yandex Maps (div.home-panel-content-view__tip)
 @@||yabs.yandex.*/count/*$domain=yandex.ru
 @@||yabs.yandex.*/resource/*$domain=yandex.ru
-! Yandex Video
-~yandex.ru##iframe[aria-label="Video"]
