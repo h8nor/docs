@@ -1,11 +1,11 @@
 [Adblock Plus 2.7]
-! Version: 201607
+! Version: 201608
 ! Title: AeList (Adblock Edge)
-! Last modified: 09 Sep 2016 14:00 UTC
+! Last modified: 13 Sep 2016 13:00 UTC
 ! Expires: 3 days (update frequency)
 ! Homepage: https://github.com/bopoh13/docs/tree/master/vendor/firefox/
 ! Please report any unblocked tracking or problems.
-! Quick Help: https://adblockplus.org/filter-cheatsheet/
+! https://adblockplus.org/filter-cheatsheet/# Quick Help
 !
 !--------------------General tracking systems-----------------------------------!
 /advertising.$~object-subrequest
@@ -13,7 +13,7 @@
 .adriver.$~object-subrequest
 /googleads.$~object-subrequest
 /pagead2.$~object-subrequest
-||an.yandex.^$~object-subrequest
+||an.yandex.
 ||awaps.yandex.
 ||bs.yandex.
 ||googleadservices.
@@ -25,6 +25,7 @@
 ||youtube.com/api/stats/*
 ||avito.ru/s/a/*/dfp/px.js
 ||yandex.*/clck/$~ping
+@@||an.yandex.ru^$image,script,domain=avito.ru
 !--------------------Third-party tracking domains-------------------------------!
 ||adfox.ru^$third-party
 ||advombat.ru^$third-party
@@ -33,6 +34,8 @@
 ||marketgid.com^$third-party,~popup,popup
 ||mxtads.com^$third-party
 ||tns-counter.ru^$third-party
+@@||adfox.ru^$image,script,domain=auto.ru|avito.ru|mts.ru
+|http://*.doublepimp.com/*&curl=$popup,third-party,domain=pornhub.com|redtube.com
 !--------------------Individual importunate systems-----------------------------!
 ||code.jivosite.com/script/$third-party
 ||leadobur.com/widget/$third-party
@@ -43,72 +46,74 @@
 ||uptolike.com/widgets/$third-party
 pravoved.ru## div.leadAside
 !--------------------Social networking links------------------------------------!
-aliexpress.com##div.ui-fixed-panel-shares
-autoburn.ru##strong.text-muted,strong.text-muted ~ span
+aliexpress.com## div.ui-fixed-panel-shares
+autoburn.ru## strong.text-muted, strong.text-muted ~ span
+disk.yandex.ru## div.nb-share
+drive2.ru## span.c-share
 geektimes.ru,habrahabr.ru## div#vk_groups, div#facebook_like_box, div.twitter_stream, ul.post-share
-lenta.ru##div.b-socials__container
-life.ru##div.social-share__counter,div.social-share__icons
-livejournal.com##div.lj-like,li.share
-ria.ru##div.b-social-userbar__expand-button,div.b-social-userbar__soc-container,div.b-social-userbar__expand-block
-tass.ru##div.b-share
-youtube.com##div#share-services-container
+lenta.ru## div.b-socials__container
+life.ru## div.social-share__counter, div.social-share__icons
+livejournal.com## div.lj-like, li.share
+ria.ru## div.b-social-userbar__expand-button, div.b-social-userbar__soc-container, div.b-social-userbar__expand-block
+tass.ru## div.b-share
+youtube.com## div#share-services-container
 !--------------------Advertising blocks and scripts-----------------------------!
-##iframe:not([src*="/www.youtube.com/"])
-##div[id*="ads"],div[id*="adv"],div[id*="banner"]
-##div[class*="adv"]
-##div[class*="banner"],div[class*="promo"]
-## span.b-share, span[class*="promo"]
-##div[id$="underline"],div[class^="adblock"],div[class^="adsbygoogle"]
-drive2.ru##div.g-column-wide > div:not([class*="offer"]):not([class~="c-slideshow"]):not([class~="c-post"]):not([class*="c-car-"]):not([class*="c-block-"])
-drive2.ru###side-dv-pinned,div.c-block > div.c-block--alt-bg
-livejournal.com##div.lj-recommended,div.b-discoverytimes-wrapper
-pornhub.com,redtube.com##div[style^="display:"][style*="block"],div.footerWrapper
+## iframe:not([src*="/www.youtube.com/"]):not([src*="/player.vimeo.com/"]):not(src*="/www.slideshare.net/"])
+## div[id*="ads"], div[id*="adv"], div[id*="banner"]
+## div[class*="adv"]
+## div[class*="banner"], div[class*="promo"]
+## span[class*="promo"]
+## div[id$="underline"], div[class^="adblock"], div[class^="adsbygoogle"]
+drive2.ru## div#side-dv-pinned, div.js-recommendations.c-block
+drive2.ru## div.c-block > div[class^="c-dv"], div.c-block > div[class^="c-dv"] + div, div.c-block > div.c-block__fake-gap
+livejournal.com## div.lj-recommended, div.b-discoverytimes-wrapper
+pornhub.com,redtube.com## div[style^="display:"][style*="block"], div.footerWrapper
 ! Auto.ru
-auto.ru##div[style^="display: block !important"]
-auto.ru##table[class~="i-bem"] > tbody:not([class~="i-bem"])
+auto.ru## div[style^="display: block !important"]
+auto.ru## table.listing-table > tbody[class*="-special-table"], table.listing-table > tbody[class*="-table-tgb"], table.listing-table > tbody[class$="fixed"]
 ! Google
-google.com,google.ru##div.gb_ga
-google.com,google.ru###extrares,.pdp-psy,#pdp-psy
-translate.google.com,translate.google.ru##div.gb_xc,div.gb_wc
+google.com,google.ru## div.gb_ga
+google.com,google.ru## #extrares, .pdp-psy, #pdp-psy
+translate.google.com,translate.google.ru## div.gb_xc, div.gb_wc, div.gb_zc
 ! Mail.ru News
-news.mail.ru##div.box_collapse
+news.mail.ru## div.box_collapse
 ! Yandex
-##div#ya-share,div.ya-share2,div > yatag
-yandex.ru##i.b-counter + div[class~="dist-popup"],i.b-counter + iframe + div[class~="dist-popup"]
-yandex.ru##div.content__left > div[class~="head-stripe"]
-yandex.ru##div.content__left > ul[class~="serp-list"] > div:first-child,div[class~="footer-stripe"]
-yandex.ru##div.related,div.scroll-spy,div[id$="teaser"][class~="i-bem"]
-yandex.ru##.serp-item > .organic > h2:not([class$="title"]),h2:not([class$="title"]) ~ div
-yandex.ru##li[class^="serp-item "]:not([class*="adresa"]):not([class*="forum"]):not([class*="image-stats"]):not([class*="z-maps"]):not([class*="z-market"])
+## div#ya-share, div.ya-share2, div > yatag
+yandex.ru## i.b-counter + div[class~="dist-popup"], i.b-counter + iframe + div[class~="dist-popup"]
+yandex.ru## div.content__left > div[class~="head-stripe"]
+yandex.ru## div.content__left > ul[class~="serp-list"] > div:first-child, div[class~="footer-stripe"]
+yandex.ru## div.related, div.scroll-spy, div[id$="teaser"][class~="i-bem"]
+yandex.ru## .serp-item > div.organic > h2:not([class$="title"]), .serp-item > div.organic > h2:not([class$="title"]) ~ div
+yandex.ru## li[class^="serp-item "]:not([class*="adresa"]):not([class*="forum"]):not([class*="image-stats"]):not([class*="z-maps"]):not([class*="z-market"])
 ! Yandex Images
-yandex.ru##.page-layout__column_type_content.page-layout__column > div[class~="dist"]
-yandex.ru##.incut__wrapper_footer_yes.incut__wrapper,.popup_type_modal
+yandex.ru## div.page-layout__column_type_content.page-layout__column > div[class~="dist"]
+yandex.ru## div.incut__wrapper_footer_yes.incut__wrapper
 ! Yandex Maps
-yandex.ru##div[data-reactid] > div[style^="display:"][style*="block"]
-yandex.ru##div.search-snippet-view > a[target="_blank"]
+yandex.ru## div[data-reactid] > div[style^="display:"][style*="block"]
+yandex.ru## div.search-snippet-view > a[target="_blank"]
 ! Yandex News
-news.yandex.ru##div.page-content__left > article:not([class^="story"]),div.page-content__right > article
-news.yandex.ru##div.page-content__left > span,div.page-content__right > span
-news.yandex.ru##div.page-content__left > div:not([class^="rubric"]):not([class^="page-content"]):not([class^="stories"]):not([class^="story"]):not([class^="quote"])
-news.yandex.ru##div.page-content__right > div[class^="page-content"] > article,div.page-content__right > div[class^="page-content"] > span
-news.yandex.ru##div.page-content__right > div[class*="addition"] > div:not([class^="addition"]),div.page-content__right > div[class^="addition"] ~ div
+news.yandex.ru## h3.title[id^="title"], div.page-content__left > span, div.page-content__right > span
+news.yandex.ru## div.page-content__left > div[-abp-properties="display: block !important;"]
+news.yandex.ru## div.page-content__right > div[-abp-properties="display: block !important;"]
 ! Yandex Video
-yandex.ru##div[id^="dist"]
+yandex.ru## div[id^="dist"]
 ! Habrahabr
-geektimes.ru,habrahabr.ru##.similar-posts,.column-wrapper_bordered,.xyz_wrapper
-geektimes.ru##.post__body_full.post__body > .html_format.content > table,a[href="https://dronk.ru/"] ~ br
-geektimes.ru##.post__body_full.post__body > .html_format.content > a[href="https://dronk.ru/"]:last-of-type > img
+geektimes.ru,habrahabr.ru## div.similar-posts, div.column-wrapper_bordered, div.xyz_wrapper
+geektimes.ru## .post__body_full.post__body > .html_format.content > table, a[href="https://dronk.ru/"] ~ br
+geektimes.ru## .post__body_full.post__body > .html_format.content > a[href="https://dronk.ru/"]:last-of-type > img
 !--------------------Cosmetic fixes page layout---------------------------------!
-2gis.ru##div.noResults__googletag
-kinozal.me,kinozal.tv##div.bx2_0:nth-last-child(2)
-livejournal.com##div[class*="journalpromo"] + div.hr
+2gis.ru## div.noResults__googletag
+drive2.ru## div.g-column-wide > div:not(.offer) > div.c-block:not([class*="c-block-"])
+kinozal.me,kinozal.tv## div.menu > div.bx2_0:nth-last-child(2)
+livejournal.com## div[class*="journalpromo"] + div.hr
+youtube.com## div.video-ads, div#header > div#video-masthead
 ! Auto.ru
-auto.ru##div.search-controller__content > div.stat
-auto.ru##div.sidebar__block:not(.specials-sales-wrap)
+auto.ru## div.search-controller__content > div.stat
+auto.ru## div.sidebar__block:not(.specials-sales-wrap)
 ! Yandex
-yandex.ru##div.content__left > div.misspell
+yandex.ru## div.content__left > div.misspell
 ! Yandex Images
-yandex.ru##div.footer > div.distro
+yandex.ru## div.footer > div.distro
 !--------------------Restoring (unblock) iframes--------------------------------!
 ~2gis.ru## iframe#intercom-frame, iframe.chat__containerIframe
 ~codepen.io## iframe[src*="/s.codepen.io/boomerang/"]
@@ -129,13 +134,13 @@ yandex.ru##div.footer > div.distro
 !--------------------Whitelists to fix broken sites-----------------------------!
 ~2gis.ru## div.mediaPhotoSlider__photos > div._advertiser, div.mediaCard__wrapper > div._type_advertiser
 ! Auto.ru (all parameters), Yandex Images
-~auto.ru,~yandex.ru##div[class*="adv"]
+~auto.ru,~yandex.ru## div[class*="adv"]
 ! Google
-~google.com,~google.ru##div.gb_sc + div.gb_ga
+~google.com,~google.ru## div.gb_sc + div.gb_ga
 ! Google Mail
-~mail.google.com##div[id][class~="gb_ga"],div[aria-label][class~="gb_ga"]
+~mail.google.com## div[id][class~="gb_ga"], div[aria-label][class~="gb_ga"]
 ! Mail.ru
-~mail.ru##div.js-slider__content
+~mail.ru## div.js-slider__content
 ~deti.mail.ru,~lady.mail.ru## div[class*="promo"], div[class*="promo"][data-module]
 ! Yandex Maps (div.home-panel-content-view__tip)
 @@||yabs.yandex.*/count/*$domain=yandex.ru
