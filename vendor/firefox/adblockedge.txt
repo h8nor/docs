@@ -1,11 +1,11 @@
 [Adblock Plus 2.7]
-! Version: 201608
+! Version: 201609
 ! Title: AeList (Adblock Edge)
-! Last modified: 13 Sep 2016 13:00 UTC
+! Last modified: 16 Sep 2016 07:00 UTC
 ! Expires: 3 days (update frequency)
 ! Homepage: https://github.com/bopoh13/docs/tree/master/vendor/firefox/
 ! Please report any unblocked tracking or problems.
-! https://adblockplus.org/filter-cheatsheet/# Quick Help
+! //adblockplus.org/filter-cheatsheet#Quick Help
 !
 !--------------------General tracking systems-----------------------------------!
 /advertising.$~object-subrequest
@@ -17,6 +17,7 @@
 ||awaps.yandex.
 ||bs.yandex.
 ||googleadservices.
+||google-analytics.
 ||kiks.yandex.
 ||mc.yandex.
 ||st.yandexadexchange.
@@ -29,11 +30,16 @@
 !--------------------Third-party tracking domains-------------------------------!
 ||adfox.ru^$third-party
 ||advombat.ru^$third-party
+||contentabc.com^$third-party
 ||digitaltarget.ru^$third-party
 ||doubleclick.net^$third-party
 ||marketgid.com^$third-party,~popup,popup
+||mediatoday.ru^$third-party
 ||mxtads.com^$third-party
+||phncdn.com^$~script,third-party
+||relap.io^$third-party
 ||tns-counter.ru^$third-party
+||trafficjunky.net^$third-party
 @@||adfox.ru^$image,script,domain=auto.ru|avito.ru|mts.ru
 |http://*.doublepimp.com/*&curl=$popup,third-party,domain=pornhub.com|redtube.com
 !--------------------Individual importunate systems-----------------------------!
@@ -58,7 +64,7 @@ ria.ru## div.b-social-userbar__expand-button, div.b-social-userbar__soc-containe
 tass.ru## div.b-share
 youtube.com## div#share-services-container
 !--------------------Advertising blocks and scripts-----------------------------!
-## iframe:not([src*="/www.youtube.com/"]):not([src*="/player.vimeo.com/"]):not(src*="/www.slideshare.net/"])
+## iframe:not([src*="/www.youtube.com/"]):not([src*="/player.vimeo.com/"]):not([src*="/www.google.com/recaptcha/"]):not(src*="/www.slideshare.net/"])
 ## div[id*="ads"], div[id*="adv"], div[id*="banner"]
 ## div[class*="adv"]
 ## div[class*="banner"], div[class*="promo"]
@@ -66,15 +72,16 @@ youtube.com## div#share-services-container
 ## div[id$="underline"], div[class^="adblock"], div[class^="adsbygoogle"]
 drive2.ru## div#side-dv-pinned, div.js-recommendations.c-block
 drive2.ru## div.c-block > div[class^="c-dv"], div.c-block > div[class^="c-dv"] + div, div.c-block > div.c-block__fake-gap
+life.ru## div#vn-player
 livejournal.com## div.lj-recommended, div.b-discoverytimes-wrapper
 pornhub.com,redtube.com## div[style^="display:"][style*="block"], div.footerWrapper
+redtube.com## div.videosTable > h2 ~ h2, div.videosTable > ul.pornStarsThumbs
 ! Auto.ru
 auto.ru## div[style^="display: block !important"]
-auto.ru## table.listing-table > tbody[class*="-special-table"], table.listing-table > tbody[class*="-table-tgb"], table.listing-table > tbody[class$="fixed"]
+auto.ru## table.listing > tbody[class*="-tgb"], table.listing > tbody[class*="-special-table"], div.listing > div:not([data-bem])
 ! Google
-google.com,google.ru## div.gb_ga
 google.com,google.ru## #extrares, .pdp-psy, #pdp-psy
-translate.google.com,translate.google.ru## div.gb_xc, div.gb_wc, div.gb_zc
+translate.google.com,translate.google.ru## div#gb > div.gb_zc
 ! Mail.ru News
 news.mail.ru## div.box_collapse
 ! Yandex
@@ -83,8 +90,8 @@ yandex.ru## i.b-counter + div[class~="dist-popup"], i.b-counter + iframe + div[c
 yandex.ru## div.content__left > div[class~="head-stripe"]
 yandex.ru## div.content__left > ul[class~="serp-list"] > div:first-child, div[class~="footer-stripe"]
 yandex.ru## div.related, div.scroll-spy, div[id$="teaser"][class~="i-bem"]
-yandex.ru## .serp-item > div.organic > h2:not([class$="title"]), .serp-item > div.organic > h2:not([class$="title"]) ~ div
-yandex.ru## li[class^="serp-item "]:not([class*="adresa"]):not([class*="forum"]):not([class*="image-stats"]):not([class*="z-maps"]):not([class*="z-market"])
+yandex.ru## .serp-item > div.organic > h2.organic__title-wrapper_multiline_yes, .serp-item > div.organic > h2.organic__title-wrapper_multiline_yes ~ div
+yandex.ru## li[class^="serp-item "]:not([class$="adresa"]):not([class*="forum"]):not([class~="z-images"]):not([class~="z-maps"]):not([class~="z-market"]):not([class*="mime-view"])
 ! Yandex Images
 yandex.ru## div.page-layout__column_type_content.page-layout__column > div[class~="dist"]
 yandex.ru## div.incut__wrapper_footer_yes.incut__wrapper
@@ -95,6 +102,8 @@ yandex.ru## div.search-snippet-view > a[target="_blank"]
 news.yandex.ru## h3.title[id^="title"], div.page-content__left > span, div.page-content__right > span
 news.yandex.ru## div.page-content__left > div[-abp-properties="display: block !important;"]
 news.yandex.ru## div.page-content__right > div[-abp-properties="display: block !important;"]
+! Yandex Market
+market.yandex.ru## div.headline__footer
 ! Yandex Video
 yandex.ru## div[id^="dist"]
 ! Habrahabr
@@ -106,6 +115,7 @@ geektimes.ru## .post__body_full.post__body > .html_format.content > a[href="http
 drive2.ru## div.g-column-wide > div:not(.offer) > div.c-block:not([class*="c-block-"])
 kinozal.me,kinozal.tv## div.menu > div.bx2_0:nth-last-child(2)
 livejournal.com## div[class*="journalpromo"] + div.hr
+redtube.com## div.video-page-right-col > .tja, div#slidePanelContainerAB
 youtube.com## div.video-ads, div#header > div#video-masthead
 ! Auto.ru
 auto.ru## div.search-controller__content > div.stat
@@ -114,16 +124,18 @@ auto.ru## div.sidebar__block:not(.specials-sales-wrap)
 yandex.ru## div.content__left > div.misspell
 ! Yandex Images
 yandex.ru## div.footer > div.distro
+! Yandex Market
+market.yandex.ru## div.n-entrypoint-carousel
 !--------------------Restoring (unblock) iframes--------------------------------!
 ~2gis.ru## iframe#intercom-frame, iframe.chat__containerIframe
 ~codepen.io## iframe[src*="/s.codepen.io/boomerang/"]
-~life.ru## iframe[src*="/embed.life.ru/video/"]
+~life.ru## iframe.comments-iframe, iframe[src*="/embed.life.ru/video/"]
 ! https://addons.mozilla.org/ru/firefox/addon/542220/
 ~avito.ru,~drom.ru## iframe[src*="/autoburn.ru/"]
 ~exist.ru## iframe#tip_f
-! Google Mail
+! Google
+~google.com,~translate.google.com,~google.ru,~translate.google.ru## iframe.gb_Nb
 ~mail.google.com,~youtube.com## iframe[src*="/webchat/"], iframe[src*="/notifications/"], iframe[class="talk-iframe"]
-! Google Translate
 ~translate.google.com,~translate.google.ru## iframe[src*="/translate.googleusercontent.com/"]
 ! Mail.ru
 ~deti.mail.ru,~lady.mail.ru## iframe[id^="instagram"]
@@ -135,10 +147,6 @@ yandex.ru## div.footer > div.distro
 ~2gis.ru## div.mediaPhotoSlider__photos > div._advertiser, div.mediaCard__wrapper > div._type_advertiser
 ! Auto.ru (all parameters), Yandex Images
 ~auto.ru,~yandex.ru## div[class*="adv"]
-! Google
-~google.com,~google.ru## div.gb_sc + div.gb_ga
-! Google Mail
-~mail.google.com## div[id][class~="gb_ga"], div[aria-label][class~="gb_ga"]
 ! Mail.ru
 ~mail.ru## div.js-slider__content
 ~deti.mail.ru,~lady.mail.ru## div[class*="promo"], div[class*="promo"][data-module]
