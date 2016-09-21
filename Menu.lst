@@ -16,7 +16,7 @@ default 2
 ## 4. Download and Put images in the 'boot' directory
 
 ## http://narod.ru/disk/9693651001/Win7PE_v5.5c_xalex.iso.html
-iftitle [if exist /boot/Win7PE_v5.5c_xalex.iso] Windows 7 PE by Xalex 5.5\n\n Windows 7 PE\n Wait 6 minutes to load into RAM 197 MB
+iftitle [if exist /boot/Win7PE_v5.5c_xalex.iso] Windows 7 PE by Xalex 5.5\n\n Windows 7 PE\n Wait 6 minutes to load into RAM 197 MB, then press any key
 map --mem /boot/Win7PE_v5.5c_xalex.iso (hd32) && map --hook
 chainloader (hd32)
 

@@ -1,4 +1,4 @@
-# Mozilla FireFox 48 Secure Settings
+# Mozilla FireFox 49 Secure Settings
 # Settings of the "user.js" file will be loaded when you restart your FireFox 
 # Some settings http://warfx.ru/firefox/config/ have been abolished
 # Drop this file in a folder XXXXXXXX.default at %APPDATA%\Mozilla\Firefox\Profiles\
@@ -39,6 +39,7 @@ user_pref("browser.search.geoip.url", "");
 // the default in Firefox for Linux is to use system proxy settings.
 // We change it to direct connection
 user_pref("network.proxy.type", 0);
+user_pref("network.proxy.autoconfig_url", "http://antizapret.prostovpn.org/proxy.pac");
 // Don't reveal your internal IP
 // Check the settings with: http://net.ipcalf.com/
 // https://wiki.mozilla.org/Media/WebRTC/Privacy
@@ -170,15 +171,15 @@ user_pref("pdfjs.enableWebGL", false);
 user_pref("layout.css.font-loading-api.enabled", false);
 
 # DESIRABLE
-// https://geektimes.ru/post/279132/
-# user_pref("browser.tabs.remote.autostart", true);
-# user_pref("browser.tabs.remote.force-enable", true);
-// https://github.com/Ejz/Common/blob/master/ua/full.list
-// http://www.useragentstring.com/
-user_pref("general.useragent.override", "Mozilla/5.0 (PPC; rv:42.0) Gecko/20121221");
-
+user_pref("browser.startup.homepage", "//yandex.ru");
+// Affects the operation of some not E10S (Electrolysis) addons
+// https://github.com/The-OP/Fox/blob/master/header.md
+user_pref("browser.tabs.remote.force-enable", false);
+// Stop GIF animation
+# user_pref("image.animation_mode", "once");
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken
 // see also CVE-2009-3555
+user_pref("browser.cache.disk_cache_ssl", false);
 user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
 user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
 user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
@@ -231,6 +232,7 @@ user_pref("devtools.webide.autoinstallFxdtAdapters", false);
 user_pref("devtools.webide.enabled", false);
 // Do not add downloaded files to the list of "Recent Documents" (Windows)
 user_pref("browser.download.manager.addToRecentDocs", false);
+user_pref("browser.download.hide_plugins_without_extensions", false);
 // Open results in a new tab, rather than the current
 user_pref("browser.search.openintab", true);
 // Remove the line "visit/search" in the drop-down menu when typing in the URL bar
@@ -244,7 +246,7 @@ user_pref("extensions.adblockplus.notificationurl", "");
 user_pref("extensions.adblockplus.report_submiturl", "");
 user_pref("extensions.adblockplus.savestats", false);
 user_pref("extensions.adblockplus.subscriptions_antiadblockurl", "");
-user_pref("extensions.adblockplus.subscriptions_exceptionsurl", "");
+user_pref("extensions.adblockplus.subscriptions_exceptionsurl", "about:support");
 user_pref("extensions.adblockplus.subscriptions_fallbackurl", "");
 user_pref("extensions.adblockplus.subscriptions_listurl", "");
 user_pref("extensions.adblockplus.suppress_first_run_page", true);
