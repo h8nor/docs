@@ -1,21 +1,44 @@
 // Author: bopoh13@ya
-// Version: 1.1 (18.08.2016)
+// Version: 1.2 (23.09.2016)
+// The script for WinXP. Tested with a Resolution of 1152x870
 // Before starting the set up the scanner and open MS Paint
 
-#name "Scan through MS Paint - resolution 1152x870"
+#name "Scan through MS Paint"
 
 // Declare variables
-DEFINE ($w, 				160)     	// MIN Wait after click
-DEFINE ($pict_crop, 0) 				// 1 = True; Crop Image
-DEFINE ($name_dir, "NewScan") // Folder Name (new) for scans
-DEFINE ($begin_num, 0000)  		// Name the previous (last) file
-DEFINE ($pict_gray, 1)     		// 1 = True; Grayscale
+DEFINE ($w,					140)		// MIN Wait after click
+DEFINE ($pict_crop,	0) 					// 1 = True; Crop Image
+DEFINE ($name_dir,	"new2can")	// Folder Name (new) for scans
+DEFINE ($begin_num,	0000)				// Name the previous (last) file
+DEFINE ($pict_gray,	1)					// 1 = True; Grayscale
 
 // Data Waiting time is proportional to the DPI
-// Xerox 3100MFP (gray, 150 dpi) -> scan time 120 sheets per hour
+// Xerox 3100MFP (gray, 150 dpi) -> scan time 100 sheets per hour
 // Xerox 3100MFP (gray): 300 dpi = 64000, 150 dpi = 28000, 100 dpi = 20000
 DEFINE ($scan_wait, 28000) // Waiting during scanning
-DEFINE ($scan_dpi, "150")  // DPI = Text variable type
+DEFINE ($scan_dpi, "150") // DPI = Text variable type
+
+SUB (MOVEWINDOW, $keydown_count, $xmouse)
+	KEYDOWN (#ALT) // Alt+Space
+	WAITMS ($w * 1.5)
+	KEYDOWN (#SPACE)
+	WAITMS ($w * 1.5)
+	KEYUP (#SPACE)
+	KEYUP (#ALT)
+	WAITMS ($w * 1.5)
+	$var_a = 0
+	WHILE ($keydown_count > $var_a) // Press Down #
+		KEYPRESS (#DOWN)
+		WAITMS ($w * 1.5)
+		$var_a = $var_a + 1
+	END_CYC	
+	KEYPRESS (#ENTER)
+	WAITMS ($w * 1.5)
+	LDOWN ($_xmouse, $_ymouse) // Press LMB
+	WAITMS ($w * 1.5)
+	LUP ($xmouse, 70)
+	WAITMS ($w * 1.5)
+END_SUB
 
 SUB (SCAN)
 	IF ($begin_num = 0) // Create "New canvas"
@@ -37,40 +60,41 @@ SUB (SCAN)
 	WAITMS ($w)
 	LCLICK (16, 128) // From Scanner or Camera...
 	WAITMS (1200)
-	LCLICK (374, 456) // Special options
+	MOVEWINDOW (1, 340) // SUB
+	LCLICK (138, 290) // Special options
 	WAITMS ($w)
 	IF ($begin_num = 0) // Set scan settings
-    PRINT ("Set the scan settings")
-	  LCLICK (374, 522)
-	  WAITMS ($w * 2)
+		PRINT ("Set the scan settings")
+		LCLICK (138, 360)
+		WAITMS ($w * 2)
 		IF ($pict_gray = 1)
-			LCLICK (670, 470)
-	  	WAITMS ($w)	
-	  	LCLICK (670, 504)
-	  	WAITMS ($w)	
-	  	$pict_gray = "yes"
-  	ELSE
-  		$pict_gray = "no"
+			LCLICK (430, 305)
+			WAITMS ($w)
+			LCLICK (430, 335)
+			WAITMS ($w)
+			$pict_gray = "yes"
+		ELSE
+			$pict_gray = "no"
 		END_IF
-		DBLCLICK (400, 470)
-	  WAITMS ($w)	
+		DBLCLICK (180, 305)
+		WAITMS ($w)
 		KEYSTRING ($scan_dpi) // Scan Resolution
-	  WAITMS ($w)
+		WAITMS ($w)
 		PRINT ("Resolution (DPI): ", $scan_dpi, "  Grayscale: ", $pict_gray)
 		$var_a = 0
 		WHILE ($var_a < 55) // Brightness and Contrast settings = 0
-			DBLCLICK (650, 356 + $var_a)
-	  	WAITMS ($w)	
+			DBLCLICK (420, 188 + $var_a)
+			WAITMS ($w)
 			KEYSTRING ("0")
-	  	WAITMS ($w)
-	  	$var_a = $var_a + 54
+			WAITMS ($w)
+			$var_a = $var_a + 54
 		END_CYC
-		LCLICK (570, 566) // Press "OK"
-	  WAITMS ($w * 2)
-	  PRINT ("Set Brightness and Contrast = 0")
+		LCLICK (360, 400) // Press "OK"
+		WAITMS ($w * 2)
+		PRINT ("Set Brightness and Contrast = 0")
 	END_IF
-	LCLICK (700, 590) // Press "Scan"
-	WAITMS ($scan_wait)	
+	LCLICK (490, 420) // Press "Scan"
+	WAITMS ($scan_wait)
 	IF (($_xmouse > $_xmax * 0.9) | ($_ymouse > $_ymax))
 		PRINT ("Scanned and saved files: ", $begin_num)
 		LOGSHOW (1)
@@ -80,9 +104,12 @@ SUB (SCAN)
 	WAITMS ($w)
 END_SUB
 
+$hwnd = wndfind("- Paint") // Get HWND
+SETKBLAYOUT ($hwnd, 1033) // EN
+		
 // Conditions stop script = cursor to the clock (to the right)
 WHILE (($_xmouse < $_xmax * 0.9) & ($_ymouse < $_ymax))
-	SCAN() // SUB
+	SCAN () // SUB
 	IF ($pict_crop = 1)
 		KEYDOWN (#CTRL) // Ctrl+E
 		WAITMS ($w * 1.5)
@@ -91,25 +118,25 @@ WHILE (($_xmouse < $_xmax * 0.9) & ($_ymouse < $_ymax))
 		KEYUP (#E)
 		KEYUP (#CTRL)
 		WAITMS ($w * 1.5)
-		KEYSTRING ("1210") // Crop W
-	  WAITMS ($w)
+		KEYSTRING ("1200") // Crop W  #EDIT IF ($pict_crop = 1)
+		WAITMS ($w)
 		KEYPRESS (#TAB)
 		WAITMS ($w)
-		KEYSTRING ("1520") // Crop H
-	  WAITMS ($w)
+		KEYSTRING ("1700") // Crop H  #EDIT IF ($pict_crop = 1)
+		WAITMS ($w)
 		KEYPRESS (#ENTER)
-		WAITMS ($w * 1.5)	
+		WAITMS ($w * 1.5)
 		KEYDOWN (#CTRL) // Ctrl+R
 		WAITMS ($w * 1.5)
 		KEYDOWN (#R)
 		WAITMS ($w * 1.5)
 		KEYUP (#R)
 		KEYUP (#CTRL)
-		WAITMS ($w * 1.5)	
+		WAITMS ($w * 1.5)
 		KEYPRESS (#DOWN)
-		WAITMS ($w * 1.5)	
+		WAITMS ($w * 1.5)
 		KEYPRESS (#DOWN)
-		WAITMS ($w * 1.5)	
+		WAITMS ($w * 1.5)
 		KEYPRESS (#ENTER)
 		WAITMS ($w * 1.5)
 	END_IF
@@ -119,30 +146,18 @@ WHILE (($_xmouse < $_xmax * 0.9) & ($_ymouse < $_ymax))
 	WAITMS ($w * 1.5)
 	IF ($begin_num = 0)
 		PRINT ("Create a folder for scans") // WinXP
-		KEYDOWN (#ALT) // Alt+Space
+		MOVEWINDOW (0, 340) // SUB
+		LCLICK (110, 210) // Click the icon "Desktop"
+		WAITMS ($w)
+		RCLICK (608, 122) // Press RMB
+		WAITMS ($w)
+		KEYPRESS (#UP)
 		WAITMS ($w * 1.5)
-		KEYDOWN (#SPACE)
-		WAITMS ($w * 1.5)
-		KEYUP (#SPACE)
-		KEYUP (#ALT)
+		KEYPRESS (#RIGHT)
 		WAITMS ($w * 1.5)
 		KEYPRESS (#ENTER)
-		LDOWN ($_xmouse, $_ymouse) // Press LMB
 		WAITMS ($w * 1.5)
-		LUP (280, 15)
-		WAITMS ($w * 1.5)
-		LCLICK (50, 160) // Click the icon "Desktop"
-		WAITMS ($w)
-		RCLICK (520, 100) // Press RMB
-		WAITMS ($w)
-		LCLICK (560, 255)
-		WAITMS ($w) 
-		LCLICK (740, 255)
-		WAITMS ($w) 
-		//$hwnd = $_hwnd
-		//SETKBLAYOUT ($hwnd, 1033) // EN
-		WAITMS ($w) 
-		KEYSTRING ($name_dir) // Create a new folder	
+		KEYSTRING ($name_dir) // Create a new folder
 		WAITMS ($w * 2)
 		KEYPRESS (#ENTER)
 		WAITMS ($w * 1.5)
@@ -151,9 +166,9 @@ WHILE (($_xmouse < $_xmax * 0.9) & ($_ymouse < $_ymax))
 		KEYPRESS (#TAB)
 		WAITMS ($w)
 	ELSE
-		LCLICK (50, 160) // Click the icon "Desktop"
+		LCLICK (110, 210) // Click the icon "Desktop"
 		WAITMS ($w)
-		LCLICK (116, 94) // Select the area with the files
+		LCLICK (190, 130) // Select the area with the files
 		WAITMS ($w)
 		KEYSTRING ($name_dir) // We are looking for a new folder
 		WAITMS ($w * 2)
@@ -169,7 +184,7 @@ WHILE (($_xmouse < $_xmax * 0.9) & ($_ymouse < $_ymax))
 		KEYSTRING (STRCONCAT("000", $begin_num))
 	CASE (2)
 		KEYSTRING (STRCONCAT("00", $begin_num))
-	CASE (3)      
+	CASE (3)
 		KEYSTRING (STRCONCAT("0", $begin_num))
 	CASE (4)
 		KEYSTRING ($begin_num)
@@ -178,11 +193,11 @@ WHILE (($_xmouse < $_xmax * 0.9) & ($_ymouse < $_ymax))
 	END_SWITCH
 	WAITMS ($w)
 	IF ($begin_num = 1)
-		LCLICK (435, 395) // File type
-		WAITMS ($w)	
-		LCLICK (435, 504) // PNG
+		LCLICK (490, 450) // File type
 		WAITMS ($w)
-	END_IF	
+		LCLICK (490, 560) // PNG
+		WAITMS ($w)
+	END_IF
 	KEYPRESS (#ENTER)
 	WAITMS ($w * 1.5)
 END_CYC
