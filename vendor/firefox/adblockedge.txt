@@ -1,7 +1,7 @@
 [Adblock Plus 2.7]
-! Version: 201609
+! Version: 201610
 ! Title: AeList (Adblock Edge)
-! Last modified: 16 Sep 2016 07:00 UTC
+! Last modified: 30 Sep 2016 07:00 UTC
 ! Expires: 3 days (update frequency)
 ! Homepage: https://github.com/bopoh13/docs/tree/master/vendor/firefox/
 ! Please report any unblocked tracking or problems.
@@ -10,38 +10,58 @@
 !--------------------General tracking systems-----------------------------------!
 /advertising.$~object-subrequest
 /adriver.$~object-subrequest
-.adriver.$~object-subrequest
 /googleads.$~object-subrequest
 /pagead2.$~object-subrequest
 ||an.yandex.
 ||awaps.yandex.
 ||bs.yandex.
-||googleadservices.
-||google-analytics.
 ||kiks.yandex.
 ||mc.yandex.
 ||st.yandexadexchange.
 ||yabs.yandex.
 ||yastatic.*/daas/
-||youtube.com/api/stats/*
+||youtube.com/api/stats/
 ||avito.ru/s/a/*/dfp/px.js
+||addthis*.com^$third-party
+||adriver.$third-party
+||google-analytics.com^$third-party
+||google*manager.com^$third-party
+||google*services.com^$third-party
 ||yandex.*/clck/$~ping
 @@||an.yandex.ru^$image,script,domain=avito.ru
 !--------------------Third-party tracking domains-------------------------------!
 ||adfox.ru^$third-party
+||adhigh.net^$third-party
 ||advombat.ru^$third-party
+||audsp.com^$third-party
+||botscanner.com^$third-party
 ||contentabc.com^$third-party
 ||digitaltarget.ru^$third-party
+||directadvert.ru^$third-party
 ||doubleclick.net^$third-party
+||lentainform.com^$third-party
 ||marketgid.com^$third-party,~popup,popup
+||mediametrics.ru^$third-party
 ||mediatoday.ru^$third-party
+||mirtesen.ru^$third-party
+||mradx.net^$third-party
 ||mxtads.com^$third-party
+||onthe.io^$third-party
 ||phncdn.com^$~script,third-party
+||pinterest.com^$third-party
 ||relap.io^$third-party
+||scorecardresearch.com^$third-party
+||seedr.$third-party
+||smi2.$third-party
 ||tns-counter.ru^$third-party
+||top100.ru^$third-party
 ||trafficjunky.net^$third-party
+||yadro.ru^$third-party
 @@||adfox.ru^$image,script,domain=auto.ru|avito.ru|mts.ru
+|http://*.bid^$third-party
 |http://*.doublepimp.com/*&curl=$popup,third-party,domain=pornhub.com|redtube.com
+|https://*click.com^$third-party
+|https://*.pw^$third-party
 !--------------------Individual importunate systems-----------------------------!
 ||code.jivosite.com/script/$third-party
 ||leadobur.com/widget/$third-party
@@ -53,15 +73,23 @@
 pravoved.ru## div.leadAside
 !--------------------Social networking links------------------------------------!
 aliexpress.com## div.ui-fixed-panel-shares
+artlebedev.ru## div#social_buttons, div[style^="position:relative;top:2px;"], div[style^="margin: 0px 22px"]
 autoburn.ru## strong.text-muted, strong.text-muted ~ span
 disk.yandex.ru## div.nb-share
 drive2.ru## span.c-share
+greasyfork.org## div#share
 geektimes.ru,habrahabr.ru## div#vk_groups, div#facebook_like_box, div.twitter_stream, ul.post-share
+m.habrahabr.ru## div.bottom_buttons_panel
+interfax.ru## div.socialFull
 lenta.ru## div.b-socials__container
 life.ru## div.social-share__counter, div.social-share__icons
 livejournal.com## div.lj-like, li.share
+ntv.ru## li[class$="li"], div.likeasking
+proza.ru## span.b-share
+ren.tv## div.social-likes
 ria.ru## div.b-social-userbar__expand-button, div.b-social-userbar__soc-container, div.b-social-userbar__expand-block
-tass.ru## div.b-share
+tass.ru## div.b-share, div.b-social-buttons
+vedomosti.ru## ul#social-counters
 youtube.com## div#share-services-container
 !--------------------Advertising blocks and scripts-----------------------------!
 ## iframe:not([src*="/www.youtube.com/"]):not([src*="/player.vimeo.com/"]):not([src*="/www.google.com/recaptcha/"]):not(src*="/www.slideshare.net/"])
@@ -72,10 +100,14 @@ youtube.com## div#share-services-container
 ## div[id$="underline"], div[class^="adblock"], div[class^="adsbygoogle"]
 drive2.ru## div#side-dv-pinned, div.js-recommendations.c-block
 drive2.ru## div.c-block > div[class^="c-dv"], div.c-block > div[class^="c-dv"] + div, div.c-block > div.c-block__fake-gap
+greasyfork.org## div#script-show-info-ad
+interfax.ru## div[id^="pl"][id*="ban"]
 life.ru## div#vn-player
 livejournal.com## div.lj-recommended, div.b-discoverytimes-wrapper
 pornhub.com,redtube.com## div[style^="display:"][style*="block"], div.footerWrapper
 redtube.com## div.videosTable > h2 ~ h2, div.videosTable > ul.pornStarsThumbs
+ren.tv## div[id^="block-block"] > div.content > div:not(#comments)
+ria.ru## div.antiblock
 ! Auto.ru
 auto.ru## div[style^="display: block !important"]
 auto.ru## table.listing > tbody[class*="-tgb"], table.listing > tbody[class*="-special-table"], div.listing > div:not([data-bem])
@@ -88,7 +120,7 @@ news.mail.ru## div.box_collapse
 ## div#ya-share, div.ya-share2, div > yatag
 yandex.ru## i.b-counter + div[class~="dist-popup"], i.b-counter + iframe + div[class~="dist-popup"]
 yandex.ru## div.content__left > div[class~="head-stripe"]
-yandex.ru## div.content__left > ul[class~="serp-list"] > div:first-child, div[class~="footer-stripe"]
+yandex.ru## div.content__left > ul[class~="serp-list"] > div:first-child:not([class~="z-sport"]), div[class~="footer-stripe"]
 yandex.ru## div.related, div.scroll-spy, div[id$="teaser"][class~="i-bem"]
 yandex.ru## .serp-item > div.organic > h2.organic__title-wrapper_multiline_yes, .serp-item > div.organic > h2.organic__title-wrapper_multiline_yes ~ div
 yandex.ru## li[class^="serp-item "]:not([class$="adresa"]):not([class*="forum"]):not([class~="z-images"]):not([class~="z-maps"]):not([class~="z-market"]):not([class*="mime-view"])
@@ -96,8 +128,9 @@ yandex.ru## li[class^="serp-item "]:not([class$="adresa"]):not([class*="forum"])
 yandex.ru## div.page-layout__column_type_content.page-layout__column > div[class~="dist"]
 yandex.ru## div.incut__wrapper_footer_yes.incut__wrapper
 ! Yandex Maps
-yandex.ru## div[data-reactid] > div[style^="display:"][style*="block"]
-yandex.ru## div.search-snippet-view > a[target="_blank"]
+yandex.ru## div.home-panel-content-view__body > div:not([class])
+yandex.ru## div.route-panel-content-view > div:last-child
+yandex.ru## div.search-snippet-view:nth-of-type(-n+2) > a[target="_blank"], div.search-snippet-view:nth-of-type(-n+2) > div[style^="display:"][style*="block"]
 ! Yandex News
 news.yandex.ru## h3.title[id^="title"], div.page-content__left > span, div.page-content__right > span
 news.yandex.ru## div.page-content__left > div[-abp-properties="display: block !important;"]
@@ -110,11 +143,13 @@ yandex.ru## div[id^="dist"]
 geektimes.ru,habrahabr.ru## div.similar-posts, div.column-wrapper_bordered, div.xyz_wrapper
 geektimes.ru## .post__body_full.post__body > .html_format.content > table, a[href="https://dronk.ru/"] ~ br
 geektimes.ru## .post__body_full.post__body > .html_format.content > a[href="https://dronk.ru/"]:last-of-type > img
+m.habrahabr.ru## div.similar_posts, div.popular_posts, div.geektimes_posts, div.footer__section:first-of-type
 !--------------------Cosmetic fixes page layout---------------------------------!
 2gis.ru## div.noResults__googletag
 drive2.ru## div.g-column-wide > div:not(.offer) > div.c-block:not([class*="c-block-"])
 kinozal.me,kinozal.tv## div.menu > div.bx2_0:nth-last-child(2)
 livejournal.com## div[class*="journalpromo"] + div.hr
+cars.mail.ru## div[class~="springs__item_active"]
 redtube.com## div.video-page-right-col > .tja, div#slidePanelContainerAB
 youtube.com## div.video-ads, div#header > div#video-masthead
 ! Auto.ru
@@ -134,7 +169,7 @@ market.yandex.ru## div.n-entrypoint-carousel
 ~avito.ru,~drom.ru## iframe[src*="/autoburn.ru/"]
 ~exist.ru## iframe#tip_f
 ! Google
-~google.com,~translate.google.com,~google.ru,~translate.google.ru## iframe.gb_Nb
+~google.com,~translate.google.com,~google.ru,~translate.google.ru## iframe[class^="gb_Nb"]
 ~mail.google.com,~youtube.com## iframe[src*="/webchat/"], iframe[src*="/notifications/"], iframe[class="talk-iframe"]
 ~translate.google.com,~translate.google.ru## iframe[src*="/translate.googleusercontent.com/"]
 ! Mail.ru
@@ -150,6 +185,7 @@ market.yandex.ru## div.n-entrypoint-carousel
 ! Mail.ru
 ~mail.ru## div.js-slider__content
 ~deti.mail.ru,~lady.mail.ru## div[class*="promo"], div[class*="promo"][data-module]
+@@||issues.adblockplus.org^$document
 ! Yandex Maps (div.home-panel-content-view__tip)
-@@||yabs.yandex.*/count/*$domain=yandex.ru
-@@||yabs.yandex.*/resource/*$domain=yandex.ru
+@@||yabs.yandex.*/count/$domain=yandex.ru
+@@||yabs.yandex.*/resource/$domain=yandex.ru
