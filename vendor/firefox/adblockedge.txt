@@ -1,7 +1,7 @@
 [Adblock Plus 2.7]
-! Version: 201611
+! Version: 201612
 ! Title: AeList (Adblock Edge)
-! Last modified: 04 Oct 2016 08:30 UTC
+! Last modified: 07 Oct 2016 08:00 UTC
 ! Expires: 3 days (update frequency)
 ! License CC-BY-SA-4.0: https://creativecommons.org/licenses/by-sa/4.0/deed.en_US
 ! Homepage: https://github.com/bopoh13/docs/tree/master/vendor/firefox/
@@ -39,7 +39,7 @@
 ||sberlabs.io^$third-party
 ||smi2.$third-party
 ||top100.ru^$third-party
-||yandex.st^$~image,third-party
+||yandex.st^$~image,third-party,domain=~rasp.yandex.ru
 ||yandex.*/clck/$~ping
 ||yastatic.net/browser*$third-party
 @@||adfox.ru/*Code*?$script,domain=avito.ru|mts.ru
@@ -98,7 +98,8 @@
 ||rutrk.org^$third-party
 ||yadro.ru^$third-party
 ||yandexadexchange.net^$third-party
-@@||gstatic.com/recaptcha/$third-part
+@@||gstatic.com/recaptcha/$third-party
+@@||maps.gstatic.com^$image
 !--------------------Individual importunate systems-----------------------------!
 ||code.jivosite.com/script/$third-party
 ||leadobur.com/widget/$third-party
@@ -166,6 +167,7 @@ yandex.ru## div.content__left > ul[class~="serp-list"] > div:first-child:not([cl
 yandex.ru## div.related, div.scroll-spy, div[id*="teaser"]
 yandex.ru## .serp-item > div.organic > h2.organic__title-wrapper_multiline_yes, .serp-item > div.organic > h2.organic__title-wrapper_multiline_yes ~ div
 yandex.ru## li[class^="serp-item "]:not([class$="adresa"]):not([class*="forum"]):not([class~="z-images"]):not([class~="z-maps"]):not([class~="z-market"]):not([class*="mime-view"])
+rasp.yandex.ru##ul.SearchSegments > div:not([class^="Search"]):not(.FilterGone)
 ! Yandex Images
 yandex.ru## div.page-layout__column_type_content.page-layout__column > div[class~="dist"]
 yandex.ru## div.incut__wrapper_footer_yes.incut__wrapper
