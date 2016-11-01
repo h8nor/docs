@@ -1,3 +1,4 @@
+## License CC-BY-NC-SA-4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
 ## 1. Download, run the program as an Administrator. Format the USB flash drive.
 ## http://flashboot.ru/files/file/317/download/hpusbfw_special_df0/
 ## 2. Run the program grubinst_gui.exe, set the Part List switch to "Whole disk (MBR)" and press Install.
@@ -35,6 +36,11 @@ chainloader (hd32)
 ## http://www.memtest.org/download/5.01/memtest86+-5.01.iso.zip
 iftitle [if exist /boot/memtest86+-5.01.iso] Memtest86+ 5.01\n\n Memory Test
 map /boot/memtest86+-5.01.iso (hd32) && map --hook
+chainloader (hd32)
+
+## http://mikelab.kiev.ua/PROGRAMS/vmt.zip
+iftitle [if exist /boot/vmtce.iso] Video Memory stress Test CE 1.21\n\n GPU Test
+map /boot/vmtce.iso (hd32) && map --hook
 chainloader (hd32)
 
 ## Set a variable named bootmgr where /bootmgr is found
