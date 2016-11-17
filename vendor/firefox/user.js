@@ -1,9 +1,10 @@
-# Mozilla FireFox 49 Secure Settings
-# Settings of the "user.js" file will be loaded when you restart your FireFox 
-# Some settings http://warfx.ru/firefox/config/ have been abolished
-# Drop this file in a folder XXXXXXXX.default at %APPDATA%\Mozilla\Firefox\Profiles\
+## Mozilla FireFox 50 Secure Settings
+// License: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
+## Settings of the "user.js" file will be loaded when you restart your FireFox
+// Some settings http://warfx.ru/firefox/config/ have been abolished
+## Drop this file in a folder XXXXXXXX.default at %APPDATA%\Mozilla\Firefox\Profiles\
 
-# CRITICAL
+// // // CRITICAL
 // Disable heartbeat
 // https://wiki.mozilla.org/Advocacy/heartbeat
 user_pref("browser.selfsupport.url", "");
@@ -39,6 +40,8 @@ user_pref("browser.search.geoip.url", "");
 // the default in Firefox for Linux is to use system proxy settings.
 // We change it to direct connection
 user_pref("network.proxy.type", 0);
+user_pref("network.proxy.http", "proxy.antizapret.prostovpn.org");
+user_pref("network.proxy.http_port", 3128);
 user_pref("network.proxy.autoconfig_url", "http://antizapret.prostovpn.org/proxy.pac");
 // Don't reveal your internal IP
 // Check the settings with: http://net.ipcalf.com/
@@ -52,6 +55,7 @@ user_pref("media.peerconnection.identity.timeout", 1);
 user_pref("dom.webnotifications.enabled", false);
 user_pref("dom.webnotifications.serviceworker.enabled", false);
 user_pref("dom.serviceWorkers.enabled", false);
+user_pref("dom.workers.enabled", false);
 user_pref("dom.push.serverURL", "");
 user_pref("dom.push.enabled", false);
 user_pref("dom.push.connection.enabled", false);
@@ -158,9 +162,17 @@ user_pref("devtools.devedition.promo.url", "");
 // https://bugzilla.mozilla.org/show_bug.cgi?id=1173171
 user_pref("network.jar.block-remote-files", true);
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
-# user_pref("network.cookie.thirdparty.sessionOnly", true);
+user_pref("network.cookie.thirdparty.sessionOnly", true);
+// http://kb.mozillazine.org/Network.cookie.cookieBehavior
+// conflicts with frame plus.google.com, api.vk.com and other
+user_pref("network.cookie.cookieBehavior", 1);
+// http://kb.mozillazine.org/Network.cookie.lifetimePolicy
+# user_pref("network.cookie.lifetimePolicy", 2);
 // http://kb.mozillazine.org/Signon.autofillForms
 user_pref("signon.autofillForms", false);
+// https://support.mozilla.org/en-US/questions/889884
+user_pref("signon.rememberSignons", false);
+user_pref("signon.storeWhenAutocompleteOff", false);
 // http://habrahabr.ru/company/eset/blog/264619/
 // https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
 // https://news.ycombinator.com/item?id=10021376
@@ -170,7 +182,7 @@ user_pref("pdfjs.enableWebGL", false);
 // https://drafts.csswg.org/css-font-loading/
 user_pref("layout.css.font-loading-api.enabled", false);
 
-# DESIRABLE
+// // // DESIRABLE
 user_pref("browser.startup.homepage", "//yandex.ru");
 // Affects the operation of some not E10S (Electrolysis) addons
 // https://github.com/The-OP/Fox/blob/master/header.md
@@ -189,21 +201,26 @@ user_pref("security.ssl3.rsa_rc4_128_md5", false);
 user_pref("security.ssl3.rsa_rc4_128_sha", false);
 // The number stored in the memory of page to go back (reduce memory consumption)
 user_pref("browser.sessionhistory.max_entries", 12);
+// http://kb.mozillazine.org/Browser.sessionstore.interval
+user_pref("browser.sessionstore.interval", 1500000);
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled", false);
 // Webpages will not be able to affect the right-click menu
 # user_pref("dom.event.contextmenu.enabled", false);
 // http://kb.mozillazine.org/Dom.storage.enabled
-// http://dev.w3.org/html5/webstorage/#dom-localstorage
+// conflicts with sites market.yandex.ru, online.sberbank.ru, pgu.mos.ru, jsfiddle.net and other
+// https://html.spec.whatwg.org/multipage/webstorage.html#dom-localstorage
 // you can also see this with Panopticlick's "DOM localStorage"
-user_pref("dom.storage.enabled", false);
+# user_pref("dom.storage.enabled", false);
+// http://kb.mozillazine.org/Network.http.sendRefererHeader
+# user_pref("network.http.sendRefererHeader", 0);
 // Disable webGL
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disable-extensions", true);
 user_pref("webgl.disabled", true);
 user_pref("webgl.min_capability_mode", true);
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
-user_pref("dom.enable_performance", false);
+# user_pref("dom.enable_performance", false);
 user_pref("dom.enable_resource_timing", false);
 user_pref("dom.enable_user_timing", false);
 user_pref("dom.idle-observers-api.enabled", false);
@@ -240,7 +257,7 @@ user_pref("browser.urlbar.unifiedcomplete", false);
 // Check the spelling in all text fields (and not only in the Textarea)
 user_pref("layout.spellcheckDefault", 2);
 
-# Settings for Adblock Plus
+// // // Settings for Adblock Plus
 user_pref("extensions.adblockplus.hideContributeButton", true);
 user_pref("extensions.adblockplus.notificationurl", "");
 user_pref("extensions.adblockplus.report_submiturl", "");
