@@ -1,7 +1,7 @@
-[Adblock Plus 2.7]
-! Version: 201613
+[Adblock Plus 2.8]
+! Version: 201614
 ! Title: AeList (Adblock Edge)
-! Last modified: 25 Oct 2016 07:30 UTC
+! Last modified: 01 Dec 2016 08:30 UTC
 ! Expires: 3 days (update frequency)
 ! License CC-BY-SA-4.0: https://creativecommons.org/licenses/by-sa/4.0/deed.en_US
 ! Homepage: https://github.com/bopoh13/docs/tree/master/vendor/firefox/
@@ -24,6 +24,7 @@
 ||avito.ru/s/a/*/px.js
 ||addthis*.com^$third-party
 ||adfox.ru^$third-party
+||admitad.com^$third-party
 ||adriver.$third-party
 ||advertur.ru^$third-party
 ||autoi.ru^$third-party
@@ -36,6 +37,7 @@
 ||google*services.com^$third-party
 ||lentainform.com^$third-party
 ||newrelic.com^$third-party
+||recreativ.ru^$third-party
 ||relap.io^$third-party
 ||rutarget.ru^$third-party
 ||sberlabs.io^$third-party
@@ -44,6 +46,7 @@
 ||yandex.st^$~image,third-party,domain=~rasp.yandex.ru
 ||yandex.*/clck/$~ping
 ||yastatic.net/browser*$third-party
+||yastatic.net/sovetnik$third-party
 @@||adfox.ru/*Code*?$script,domain=avito.ru|mts.ru
 @@||an.yandex.ru^$image,script,domain=avito.ru
 !--------------------Third-party tracking domains-------------------------------!
@@ -51,6 +54,7 @@
 ||advertserve.com^$third-party
 ||advombat.ru^$third-party
 ||audsp.com^$third-party
+||betweendigital.com^$third-party
 ||bootstrapcdn.com^$third-party
 ||botscanner.com^$third-party
 ||criteo.$third-party
@@ -59,6 +63,7 @@
 ||exponential.com^$third-party
 ||fancybar.net^$third-party
 ||hotjar.com^$third-party
+||magnet.kiev.ua^$third-party
 ||luxadv.com^$third-party
 ||luxup.ru^$third-party
 ||marketgid.com^$third-party,~popup,popup
@@ -73,15 +78,20 @@
 ||phncdn.com^$~script,third-party
 ||pinterest.com^$third-party
 ||playbuzz.com^$third-party
+||pluso.ru^$third-party
 ||scorecardresearch.com^$third-party
 ||seedr.$third-party
 ||segment.com^$third-party
+||socialmart.ru^$third-party
 ||sportbets.su^$third-party
 ||tns-counter.ru^$third-party
+||topadvert.ru^$third-party
 ||trafficjunky.net^$third-party
 ||twimg.com^$third-party
+||videopotok.pro^$third-party
 ||vihub.ru^$third-party
 ||weborama.fr^$third-party
+||zemanta.com^$third-party
 |http://*.bid^$third-party
 |http://*.doublepimp.com/*&curl=$popup,third-party,domain=pornhub.com|redtube.com
 |https://*click.com^$third-party
@@ -91,6 +101,8 @@
 !--------------------Hidden third-party tracking domains------------------------!
 ||adfront.org^$third-party
 ||adhigh.net^$third-party
+||adrelayer.com^$third-party
+||ads-twitter.com^$third-party
 ||cdn7.rocks^$third-party
 ||contentabc.com^$third-party
 ||cshi.ru^$third-party
@@ -98,10 +110,11 @@
 ||digitaltarget.ru^$third-party
 ||electosake.com^$third-party
 ||etahub.com^$third-party
-||gstatic.com^$third-party,domain=~google.com|~google.ru
+||gstatic.com^$~font,third-party,domain=~google.com|~google.ru
 ||hsstatic.net^$third-party
 ||hs-analytics.net^$third-party
 ||lc2ads.ru^$third-party
+||letysheeps.ru^$third-party
 ||mradx.net^$third-party
 ||revsci.net^$third-party
 ||rutrk.org^$third-party
@@ -120,6 +133,7 @@
 ||leadobur.com/widget/$third-party
 ||lediacloud.com^$third-party
 ||leetero.ru^$third-party
+||cloud.lexprofit.ru^$third-party
 ||cs15.livetex.ru/js/$third-party
 ||clients.streamwood.ru^$third-party
 ||uptocall.com/widget/$third-party
@@ -129,6 +143,7 @@ pravoved.ru## div.leadAside
 aliexpress.com## div.ui-fixed-panel-shares
 artlebedev.ru## div#social_buttons, div[style^="position:relative;top:2px;"], div[style^="margin: 0px 22px"]
 autoburn.ru## strong.text-muted, strong.text-muted ~ span
+cyberforum.ru## div.yashare-auto-init
 disk.yandex.ru## div.nb-share
 drive2.ru## span.c-share
 fb.ru## div#share_img, div.share_block, div.fsb_box
@@ -151,10 +166,11 @@ youtube.com## div#share-services-container
 !--------------------Advertising blocks and scripts-----------------------------!
 ## iframe:not([src*="/www.youtube.com/"]):not([src*="/player.vimeo.com/"]):not([src*="/www.google.com/recaptcha/"]):not(src*="/www.slideshare.net/"])
 ## div[id*="ads"], div[id*="adv"], div[id*="banner"]
-## div[class*="adv"]
+## div[class*="adv"]:not([class*="advanced-search"]):not(role="banner")
 ## div[class*="banner"], div[class*="promo"]
 ## span[class*="promo"]
 ## div[id$="underline"], div[class^="adblock"], div[class^="adsbygoogle"]
+cyberforum.ru## div.page > div > div[id] > div
 drive2.ru## div#side-dv-pinned, div.js-recommendations.c-block
 drive2.ru## div.c-block > div[class^="c-dv"], div.c-block > div[class^="c-dv"] + div, div.c-block > div.c-block__fake-gap
 fb.ru## div.text-ad-block
@@ -162,6 +178,8 @@ greasyfork.org## div#script-show-info-ad
 interfax.ru## div[id^="pl"][id*="ban"]
 life.ru## div#vn-player
 livejournal.com## div.lj-recommended, div.b-discoverytimes-wrapper
+overclockers.ru## table.decoblock > tbody, div.decoblock-content, div#uhi, div#topbanners > div > a
+forums.overclockers.ru## table.needblock
 pornhub.com,redtube.com## div[style^="display:"][style*="block"], div.footerWrapper
 redtube.com## div.videosTable > h2 ~ h2, div.videosTable > ul.pornStarsThumbs
 redtube.com## div.video-page-right-col > .tja, div.videosTable > .tja
@@ -170,6 +188,7 @@ ren.tv## div[id^="block-block"] > div.content > div:not(#comments)
 rgho.st## div.alert.alert-warning:not([role])
 ria.ru## div.antiblock
 rutracker.org## table#topic_main > tbody:not([id]):not(:first-of-type)
+sourceforge.net## div.top3-widget, div#newsletter-floating, div#taboola-below-article-thumbnails
 ! Auto.ru
 auto.ru## div[style^="display: block !important"]
 auto.ru## table.listing > tbody[class*="-tgb"], table.listing > tbody[class*="-special-table"], div.listing > div:not([data-bem])
@@ -187,7 +206,7 @@ yandex.ru## div.content__left > div[class~="head-stripe"]
 yandex.ru## div.content__left > ul[class~="serp-list"] > div:first-child:not([class~="z-sport"]), div[class~="footer-stripe"]
 yandex.ru## div.related, div.scroll-spy, div[id*="teaser"]
 yandex.ru## .serp-item > div.organic > h2.organic__title-wrapper_multiline_yes, .serp-item > div.organic > h2.organic__title-wrapper_multiline_yes ~ div
-yandex.ru## li[class^="serp-item "]:not([class$="adresa"]):not([class*="forum"]):not([class~="z-images"]):not([class~="z-maps"]):not([class~="z-market"]):not([class*="mime-view"])
+yandex.ru## li[class^="serp-item "]:not([class$="adresa"]):not([class*="forum"]):not([class~="z-images"]):not([class~="z-maps"]):not([class~="z-market"]):not([class~="z-taxi"]):not([class*="mime-view"])
 rasp.yandex.ru## ul.SearchSegments > div:not([class^="Search"]):not(.FilterGone)
 ! Yandex Images
 yandex.ru## div.page-layout__column_type_content.page-layout__column > div[class~="dist"]
@@ -213,7 +232,7 @@ m.habrahabr.ru## div.similar_posts, div.popular_posts, div.geektimes_posts, div.
 !--------------------Cosmetic fixes page layout---------------------------------!
 2gis.ru## div.noResults__googletag
 drive2.ru## div.g-column-wide > div:not(.offer) > div.c-block:not([class*="c-block-"])
-fb.ru## ins.adsbygoogle
+fb.ru,overclockers.ru## ins.adsbygoogle
 kinozal.me,kinozal.tv## div.menu > div.bx2_0:nth-last-child(2)
 livejournal.com## div[class*="journalpromo"] + div.hr
 cars.mail.ru## div[class~="springs__item_active"]
