@@ -1,18 +1,19 @@
 ## License CC-BY-NC-SA-4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
 ## 1. Download, run the program as an Administrator. Format the USB flash drive.
 ## http://flashboot.ru/files/file/317/download/hpusbfw_special_df0/
-## 2. Run the program grubinst_gui.exe, set the Part List switch to "Whole disk (MBR)" and press Install.
+## 2. Run the program grubinst_gui.exe as an Administrator, set the Part List switch to "Whole disk (MBR)" and press Install.
+##    A damaged flash drive can be tried to format several times before the successful outcome.
 ## http://download.gna.org/grubutil/grubinst-1.1-bin-w32-2008-01-01.zip
-## 3. Copy the files "grldr" and this "menu.lst" from the archive on a USB flash drive.
+## 3. Copy the files "grldr" and this file "menu.lst" from the archive on a USB flash drive.
 ## http://grub4dos.chenall.net/categories/0-4-5c/
 
 ## Check version of grub4dos
-checkrange 20120201:-1 read 0x8278 || pause --wait=5 Please use grub4dos-0.4.5c-2012-02-01 or later! && exit 1
+checkrange 20120117:-1 read 0x8278 || pause --wait=5 Please use grub4dos-0.4.5c-2012-01-17 or later! && exit 1
 ## Menu AutoNumber
 write 0x8274 0x2001
 
 write (md)0x220+1 !BAT\necho -n -P:0000 $[0107] MultiBoot USB by bopoh13\t\t\t\t\t\t\t\0 && initscript (md)0x220+1
-color white/blue black/white
+color white/blue black/white white/blue white/black
 default 2
 ## 4. Download and Put images in the 'boot' directory
 
@@ -47,6 +48,11 @@ chainloader (hd32)
 iftitle [find --set-root --devices=h /bootmgr && call set bootmgr=%@root^%] load BOOTMGR of Windows on %bootmgr%\n\n load Windows VISTA/WIN7/WIN2008
 makeactive
 chainloader %bootmgr%/bootmgr
+
+## http://pogostick.net/~pnh/ntpasswd/cd110511.zip
+iftitle [if exist /boot/cd110511.iso] Change Password by RID\n\n Windows NT/2k/XP/Vista\n After cleaning press "!" And "q" to save the changes
+map /boot/cd110511.iso (hd32) && map --hook
+chainloader (hd32)
 
 ## https://download.plop.at/files/bootmngr/plpcfgbt-0.11.zip
 iftitle [if exist /boot/plpbt.bin] PLoP Boot Manager 5.0.14 (Hi Speed USB)\n\n Plop Boot Manager 5.0
