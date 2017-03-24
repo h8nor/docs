@@ -2,6 +2,7 @@
 * text=auto eol=crlf
 
 # Files that are truly binary and should not be modified
+*.bat  filter=win1251
 *.cms  filter=win1251
 *.hns  -diff filter=win1251
 *.vbs  filter=win1251
