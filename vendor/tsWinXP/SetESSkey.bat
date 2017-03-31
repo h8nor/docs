@@ -1,4 +1,4 @@
-:: License CC-BY-NC-SA-4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
+:: License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
 @Echo off
 :: Обновление NOD32 v4 путём запуска программы от имени ...
 SET Admin="Ђ¤¬Ё­Ёбва в®а"

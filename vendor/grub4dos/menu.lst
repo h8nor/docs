@@ -1,4 +1,4 @@
-## License CC-BY-NC-SA-4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
+## License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
 ## 1. Download, run the program as an Administrator. Format the USB flash drive.
 ## http://flashboot.ru/files/file/317/download/hpusbfw_special_df0/
 ## 2. Run the program grubinst_gui.exe as an Administrator, set the Part List switch to "Whole disk (MBR)" and press Install.

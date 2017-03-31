@@ -1,7 +1,9 @@
 Option Explicit
 
+' License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
+
 ' Copy this file to a folder with HTML documents before run
-' Removing the advertising line
+' Removing the advertising line for files created by version 4.x
 Const VERSION = "0.01.000"
 
 Sub CurrentDir(folder)

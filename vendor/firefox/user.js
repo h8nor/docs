@@ -1,5 +1,5 @@
 ## Mozilla FireFox 50 Secure Settings
-// License: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
+// License CC-BY-NC-SA-4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
 ## Settings of the "user.js" file will be loaded when you restart your FireFox
 // Some settings http://warfx.ru/firefox/config/ have been abolished
 ## Drop this file in a folder XXXXXXXX.default at %APPDATA%\Mozilla\Firefox\Profiles\
