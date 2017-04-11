@@ -32,7 +32,7 @@ git checkout -- README.md
 # Список всех измененных
 git status
 # Самая важная команда (commit)
-git commit -m 'comment'
+git commit -m"comment"
 ```
 Картинки в комментариях можно посмотреть [здесь](//www.emoji-cheat-sheet.com).
 
@@ -54,11 +54,11 @@ git checkout master
 git pull origin master
 # Вливаем изменения в активную ветку master из ветки dev
 # с сохранением истории изменений
-git merge --no-ff -m 'comment' dev
+git merge --no-ff -m"comment" dev
 
 # ! или применить указанный коммит к ветке master
 # Список файлов можно перечислять через пробел
-git cherry-pick 5a0eb0
+git cherry-pick "5a0eb0"
 
 # Обновляем ветку master (обязательно)
 git push origin master
@@ -77,7 +77,7 @@ git push origin dev
 # Ветка dev создаётся из текущей
 git branch dev
 # Создать ветку на определенном коммите
-git branch new_branch 5a0eb0
+git branch new_branch "5a0eb0"
 ```
 
 #### Получение (pull) обновленной версии из репозитория:
@@ -101,5 +101,21 @@ git merge --abort
 ``` nix
 # Очень опасная команда, подумайте прежде чем пользоваться ею
 # чтобы файлы не загружались из локального репозитория - ключ --soft
-git reset --hard
+git reset --hard HEAD~
+```
+
+#### Как исправить "Your branch and 'origin/master' have diverged" удалить файлы --hard
+``` nix
+git fetch origin
+git reset --hard origin/dev
+# Копируем исправленные файлы
+git add --all && git commit -m"fix commit"
+# Пушим. Ветка должна быть не заблокирована? http://tonyganch.com/git/rebase/
+# git rebase -i HEAD~2 (не вышло)
+# s - вводим вместо "pick" для самого нижнего
+
+# Коммиты должны быть запушины?
+git reset --soft "5a0eb0"
+git push --force
+# http://marklodato.github.io/visual-git-guide/index-ru.html
 ```
