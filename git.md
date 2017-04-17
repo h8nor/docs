@@ -11,7 +11,7 @@ git config user.email "user@example.com"
 ``` nix
 # В репозитории файлы хранятся в кодировке utf-8
 # Фильтры применяются для типов файлов: *.bas	filter=win1251  eol=crlf
-git config --global filter.win1251.clear "iconv -f windows-1251 -t utf-8"
+git config --global filter.win1251.clean "iconv -f windows-1251 -t utf-8"
 git config --global filter.win1251.smudge "iconv -f utf-8 -t windows-1251"
 git config --global filter.win1251.required true
 ```
@@ -34,7 +34,7 @@ git status
 # Самая важная команда (commit)
 git commit -m"comment"
 ```
-Картинки в комментариях можно посмотреть [здесь](//www.emoji-cheat-sheet.com).
+Картинки в комментариях можно посмотреть [здесь](//www.webpagefx.com/tools/emoji-cheat-sheet/).
 
 #### Удаление файла из списка индексируемых до записи состояния (commit):
 ``` nix

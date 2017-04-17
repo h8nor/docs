@@ -67,6 +67,6 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 Подписку можно подключить в настройках расширения "*<kbd>Ctrl+Shift+E</kbd> -> Добавить подписку...*" указав 
 путь к файлу в ветке репозитория **adblock**, или через ссылку в html-коде:
 
-`<a href="abp:subscribe?title=AeList%20(Adblock%20Edge)&location=https%3A%2F%2Fraw.githubusercontent.com%2Fbopoh13%2Fdocs%2Fadblock%2Fvendor%2Ffirefox%2Fadblockedge.txt">AeList (Adblock Edge)</a>`
+`<a href="abp:subscribe?title=AeList%20(Adblock%20Edge)&location=https%3A%2F%2Fgithub.com%2Fbopoh13%2Fdocs%2Fraw%2Fadblock%2Fvendor%2Ffirefox%2Fadblockedge.txt">AeList (Adblock Edge)</a>`
 
 # 

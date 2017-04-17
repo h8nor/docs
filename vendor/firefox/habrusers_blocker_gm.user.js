@@ -27,11 +27,13 @@ var fablers = [
   'lozga',
   'marks',
   'ragequit',
+  'semen_grinshtein',
   'Shapelez',
   'SLY_G',
   'vconst',
   
   'alconost',
+  'dronk',
   'esetnod32',
   'estet',
   'holymay',
@@ -46,12 +48,14 @@ var fablers = [
   'YuliaSinyanskaya',
 ]
 var pr = [
+  'hosting-cafe',
   'icanchoose',
   'JetBrains',
   'plarium',
   'superjob',
 ];
 var sellers = [
+  'arttel',
   'dadget',
   'kingston_technology',
   'madrobots',
