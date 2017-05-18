@@ -1,12 +1,13 @@
 ﻿// ==UserScript==
 // @name	Habr Users Blocker
+// @namespace	https://wiki.greasespot.net/Metadata_Block
 // @description	Hides sellers, highlights yellow press and hides comments
 // @author	bopoh13
 // @license	GPL version 3 or any later version; https://www.gnu.org/copyleft/gpl.html
+// @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
-// @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_sm.user.js
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	r100
+// @version	1.0.2
 // @icon	https://geektimes.ru/images/favicons/favicon-32x32.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
@@ -51,22 +52,26 @@ var pr = [
   'hosting-cafe',
   'icanchoose',
   'JetBrains',
+  'miip',
   'plarium',
   'superjob',
 ];
 var sellers = [
   'arttel',
   'dadget',
+  'gearbest',
   'kingston_technology',
   'madrobots',
   'medgadgets',
   'mvideo',
   'piter',
   'pocketbook',
+  'redmond',
 ];
 var wampus = [
   'AlexPu',
   'lakegull',
+  'VenomBlood',
 ];
 $('.post-author__link').filter(function() {
     return this.href.match(new RegExp('/' + fablers.join('|') + '/'));

@@ -1,4 +1,4 @@
-## Mozilla FireFox 50 Secure Settings
+## Mozilla FireFox 53 Secure Settings
 // License CC-BY-NC-SA-4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
 ## Settings of the "user.js" file will be loaded when you restart your FireFox
 // Some settings http://warfx.ru/firefox/config/ have been abolished
@@ -40,6 +40,7 @@ user_pref("browser.search.geoip.url", "");
 // the default in Firefox for Linux is to use system proxy settings.
 // We change it to direct connection
 user_pref("network.proxy.type", 0);
+// Alternative option
 user_pref("network.proxy.http", "proxy.antizapret.prostovpn.org");
 user_pref("network.proxy.http_port", 3128);
 user_pref("network.proxy.autoconfig_url", "http://antizapret.prostovpn.org/proxy.pac");
@@ -120,6 +121,7 @@ user_pref("keyword.enabled", false);
 // Don't try to guess where i'm trying to go!!! e.g.: "http://foo" -> "http://(prefix)foo(suffix)"
 // http://www-archive.mozilla.org/docs/end-user/domain-guessing.html
 user_pref("browser.fixup.alternate.enabled", false);
+#user_pref("network.automatic-ntlm-auth.trusted-uris", "vks,consultant.ru");
 // Disabling plug-in Adobe Primetime Content Decryption Module (DRM), 
 // which allows to keep track of your browser
 user_pref("browser.eme.ui.enabled", false);
@@ -183,7 +185,7 @@ user_pref("pdfjs.enableWebGL", false);
 user_pref("layout.css.font-loading-api.enabled", false);
 
 // // // DESIRABLE
-user_pref("browser.startup.homepage", "//yandex.ru");
+user_pref("browser.startup.homepage", "//clck.ru/0f");
 // Affects the operation of some not E10S (Electrolysis) addons
 // https://github.com/The-OP/Fox/blob/master/header.md
 user_pref("browser.tabs.remote.force-enable", false);
@@ -203,6 +205,7 @@ user_pref("security.ssl3.rsa_rc4_128_sha", false);
 user_pref("browser.sessionhistory.max_entries", 12);
 // http://kb.mozillazine.org/Browser.sessionstore.interval
 user_pref("browser.sessionstore.interval", 1500000);
+// conflicts with sites github.com, gist.github.com
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled", false);
 // Webpages will not be able to affect the right-click menu
@@ -256,6 +259,12 @@ user_pref("browser.search.openintab", true);
 user_pref("browser.urlbar.unifiedcomplete", false);
 // Check the spelling in all text fields (and not only in the Textarea)
 user_pref("layout.spellcheckDefault", 2);
+
+// // // Print View & Reader settings
+user_pref("narrate.enabled", true);
+user_pref("reader.content_width", 5);
+user_pref("reader.font_size", 2);
+user_pref("reader.line_height", 3);
 
 // // // Settings for Adblock Plus
 user_pref("extensions.adblockplus.hideContributeButton", true);
