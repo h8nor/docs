@@ -23,7 +23,7 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 
 - ***[habrusers_blocker_gm].user.js*** - блокировка пользователей на Хабре (*user script*)
 - ***user.js*** - рекомендуемый файл безопасных настроек
-- ***update_set_ff.vbs*** - автоматическое обновление файла *user.js*
+- ***update_set_ff.vbs*** - скрипт автоматического обновления файла *user.js*
 - ***ReadMe.md*** - описание и рекомендации по работе с браузером
 
 [habrusers_blocker_gm]://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
@@ -74,11 +74,12 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 
 Справа в адресной строке появляется значок-книга "Перейти в Вид для чтения". В данном режиме просмотра 
 удобно отправлять страницу на печать без оформления, можно воспроизводить текст [голосом] (для Windows 7 
-требуется установить сервер [Speech Platform]) если дополнительно установить TTS SAPI5.  
+требуется установить сервер [Speech Platform]) если дополнительно установить [TTS] (размер от 0,1 Гб).  
 MS Word имеет функцию воспроизведения текста (в "*Настройках ленты*" в списке "*Команды не на ленте*" 
 команда "*Проговорить*").
 
 [голосом]://support.mozilla.org/ru/kb/otvet-na-forume-ustanovka-golosov-dlya-windows-10
 [Speech Platform]://www.microsoft.com/en-us/download/details.aspx?id=16789
+[TTS]:http://mytts.forum2x2.ru/f10-forum "Text-To-Speech движок"
 
 # 

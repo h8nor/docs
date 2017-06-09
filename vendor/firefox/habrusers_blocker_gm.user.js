@@ -7,7 +7,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.0.2
+// @version	1.0.3
 // @icon	https://geektimes.ru/images/favicons/favicon-32x32.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
@@ -38,6 +38,7 @@ var fablers = [
   'esetnod32',
   'estet',
   'holymay',
+  'itinvest',
   'latimeria',
   'LKulakova',
   'Mary_Golubeva',
@@ -54,9 +55,11 @@ var pr = [
   'JetBrains',
   'miip',
   'plarium',
+  'regionsoft',
   'superjob',
 ];
 var sellers = [
+  '3dtool',
   'arttel',
   'dadget',
   'gearbest',
@@ -67,6 +70,7 @@ var sellers = [
   'piter',
   'pocketbook',
   'redmond',
+  'top3dshop',
 ];
 var wampus = [
   'AlexPu',
