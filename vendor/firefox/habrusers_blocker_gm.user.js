@@ -7,7 +7,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.0.3
+// @version	1.0.4
 // @icon	https://geektimes.ru/images/favicons/favicon-32x32.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
@@ -21,6 +21,7 @@ var fablers = [
   'alizar',
   'andorro',
   'atomlib',
+  'Boomburum',
   'ilya42',
   'ivansychev',
   'jeston',
@@ -34,6 +35,7 @@ var fablers = [
   'vconst',
   
   'alconost',
+  'Alexandra_Varonis',
   'dronk',
   'esetnod32',
   'estet',
@@ -46,17 +48,20 @@ var fablers = [
   'ptsecurity',
   'shulyndina',
   'SmirkinDA',
-  'Alexandra_Varonis',
+  'tm',
   'YuliaSinyanskaya',
 ]
 var pr = [
+  'alex_kudrin',
   'hosting-cafe',
   'icanchoose',
   'JetBrains',
+  'Masha_Kramkova',
   'miip',
   'plarium',
   'regionsoft',
   'superjob',
+  'tmn4jq',
 ];
 var sellers = [
   '3dtool',
@@ -74,6 +79,7 @@ var sellers = [
 ];
 var wampus = [
   'AlexPu',
+  'Idot',
   'lakegull',
   'VenomBlood',
 ];

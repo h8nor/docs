@@ -87,9 +87,20 @@
 /ip service
 set telnet disabled=yes
 set www-ssl disabled=yes
+set ssh disabled=yes
 set ftp disabled=yes
 set api disabled=yes
 set api-ssl disabled=yes
 set winbox disabled=no
 set www disabled=no
+```
+
+#### Вывод глобальных переменных в терминал (очищаются при перезагрузке):
+``` ls
+/environment print 
+```
+
+#### Очистка кеша DNS-записей:
+``` ls
+/ip dns cache flush
 ```
