@@ -7,14 +7,15 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.0.4
+// @version	1.0.5
 // @icon	https://geektimes.ru/images/favicons/favicon-32x32.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
 // @exclude	https://habrahabr.ru/company/*
+// @grant	none
 // ==/UserScript==
 /**
- * По статье "Делаем пространство чище" https://geektimes.ru/post/272164/#comment_9074942
+ * По статье "Делаем пространство чище" //geektimes.ru/post/272164/#comment_9074942
  */
 
 var fablers = [
@@ -51,17 +52,16 @@ var fablers = [
   'tm',
   'YuliaSinyanskaya',
 ]
+// Only for companies. Science fiction is hiding separately
 var pr = [
-  'alex_kudrin',
   'hosting-cafe',
   'icanchoose',
   'JetBrains',
-  'Masha_Kramkova',
   'miip',
   'plarium',
   'regionsoft',
   'superjob',
-  'tmn4jq',
+  'tuturu',
 ];
 var sellers = [
   '3dtool',
@@ -77,6 +77,7 @@ var sellers = [
   'redmond',
   'top3dshop',
 ];
+// Bug! Does not hide comments //habrahabr.ru/post/314980/
 var wampus = [
   'AlexPu',
   'Idot',
@@ -86,6 +87,9 @@ var wampus = [
 $('.post-author__link').filter(function() {
     return this.href.match(new RegExp('/' + fablers.join('|') + '/'));
 }).parents('.postinfo-panel').css("background", "#ffe").parents('.post').css("background", "#ffe");
+$('.hub ').filter(function() {
+    return this.href.match(new RegExp('/sci-fi/')); // Научная фантастика
+}).parents('.post').hide();
 $('.post__title_link').filter(function() {
     return this.href.match(new RegExp('/company/' + pr.join('|') + '/'));
 }).parents('.post').hide();
