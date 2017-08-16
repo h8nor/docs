@@ -3,7 +3,7 @@
 ## http://flashboot.ru/files/file/317/download/hpusbfw_special_df0/
 ## 2. Run the program grubinst_gui.exe as an Administrator, set the Part List switch to "Whole disk (MBR)" and press Install.
 ##    A damaged flash drive can be tried to format several times before the successful outcome.
-## http://download.gna.org/grubutil/grubinst-1.1-bin-w32-2008-01-01.zip
+## http://grub4dos.sourceforge.net/grub4dos/grubinst-1.1-bin-w32-2008-06-29.zip
 ## 3. Copy the files "grldr" and this file "menu.lst" from the archive on a USB flash drive.
 ## http://grub4dos.chenall.net/categories/0-4-5c/
 

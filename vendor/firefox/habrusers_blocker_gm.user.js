@@ -3,11 +3,12 @@
 // @namespace	https://wiki.greasespot.net/Metadata_Block
 // @description	Hides sellers, highlights yellow press and hides comments
 // @author	bopoh13
-// @license	GPL version 3 or any later version; https://www.gnu.org/copyleft/gpl.html
+// @license	GPL version 3 or any later version
+// @resource	license https://gnu.org/licenses/gpl-3.0.txt
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.0.5
+// @version	1.0.6
 // @icon	https://geektimes.ru/images/favicons/favicon-32x32.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
@@ -77,17 +78,17 @@ var sellers = [
   'redmond',
   'top3dshop',
 ];
-// Bug! Does not hide comments //habrahabr.ru/post/314980/
 var wampus = [
   'AlexPu',
+  'dipsy',
   'Idot',
   'lakegull',
   'VenomBlood',
 ];
-$('.post-author__link').filter(function() {
+$('.post__user-info').filter(function() {
     return this.href.match(new RegExp('/' + fablers.join('|') + '/'));
-}).parents('.postinfo-panel').css("background", "#ffe").parents('.post').css("background", "#ffe");
-$('.hub ').filter(function() {
+}).parents('.post').css("background", "#ffe");
+$('.hub-link').filter(function() {
     return this.href.match(new RegExp('/sci-fi/')); // Научная фантастика
 }).parents('.post').hide();
 $('.post__title_link').filter(function() {
@@ -95,7 +96,7 @@ $('.post__title_link').filter(function() {
 }).parents('.post').hide();
 $('.post__title_link').filter(function() {
     return this.href.match(new RegExp('/company/' + sellers.join('|') + '/'));
-}).parents('.post').css("background", "#def").find('.postinfo-panel').css("background", "#def");
-$('.comment-item__username').filter(function() {
+}).parents('.post').css("background", "#def");
+$('.user-info_inline.user-info').filter(function() {
     return this.href.match(new RegExp('/' + wampus.join('|') + '/'));
-}).parents('.comment_body').html('<div class="author_banned">РЕДИСКА опубликовала эту надпись здесь</div>');
+}).parents('.comment').html('<div class="author_banned">РЕДИСКА опубликовала эту надпись здесь</div>');

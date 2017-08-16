@@ -16,8 +16,61 @@ git config --global filter.win1251.smudge "iconv -f utf-8 -t windows-1251"
 git config --global filter.win1251.required true
 ```
 
+#### Генерация и просмотр GPG ключей:
+``` nix
+# //gnupg.org/download/integrity_check.html
+# //habrahabr.ru/post/73642/
+# //debianzilla.com/gnupg-pgp/ (not "PGP keys")
+gpg --gen-key
+# //linux.org.ru/forum/security/10904313
+# RSA and RSA (4096) 6мес //k806.ru/help/gpg_create
+> 1
+> 4096
+> 6m
+> Y
+> FirstName LastName
+> user@example.com
+> comment
+> O
+# Пароль закрытого ключа (кодовая фраза)
+> passphrase
+# Показать список открытых ключей
+gpg --list-keys
+# Показать список закрытых ключей (хеш совпадает)
+gpg --list-secret-keys --keyid-format LONG | grep -C 1 '^sec' | GREP_COLOR='01;36' egrep -i --color '([0-9A-F]{8,}|-\W+)'
+# Добавить зашифрованный открытый ключ GPG в учётную запись GutHub
+gpg --armor --export <KEY>
+# Удалить ключ //eax.me/gpg/
+gpg --delete-secret-keys <KEY>
+gpg --delete-sigs <KEY>
+gpg --delete-keys <KEY>
+
+# //help.github.com/articles/generating-a-new-gpg-key/
+# Обязательная подпись всех коммитов
+git config --global commit.gpgsign true
+git config --global tag.gpgsign true
+# Установка ключа для подписи по умолчанию
+# //stackoverflow.com/questions/10161198/
+git config --global user.signingkey <KEY>
+# //lists.gnupg.org/pipermail/gnupg-users/2003-May/018492.html
+# GitHub Desktop не поддерживает подпись, тогда
+# //stackoverflow.com/questions/36941533
+git config --global gpg.program $(which gpg)
+
+# Создание зашифрованного архива по паролю (gpg умеет BZIP2 из коробки)
+# Необходимо передать открытый ключ человеку, который будет шифровать файлы
+tar -cjv ./<DIR> | gpg -e -r <KEY> -o backup.tbz2.gpg
+# Просмотр содержания архива
+tar -tj -f backup.tbz2
+# Расшифровка архива по закрытому ключу
+gpg -d backup.tbz2.gpg | tar -xj
+gpg -o backup.tbz2 -d backup.tbz2.gpg
+```
+
 #### Загрузить существующий репозиторий с локальной машины:
 ``` nix
+# //github.com/Imangazaliev/git-tips
+# //help.github.com/articles/creating-releases/
 git remote add origin https://github.com/bopoh13/docs.git
 git push -u origin master
 ```
@@ -58,7 +111,7 @@ git merge --no-ff -m"comment" dev
 
 # ! или применить указанный коммит к ветке master
 # Список файлов можно перечислять через пробел
-git cherry-pick "5a0eb0"
+git cherry-pick <KEY>
 
 # Обновляем ветку master (обязательно)
 git push origin master
@@ -77,7 +130,7 @@ git push origin dev
 # Ветка dev создаётся из текущей
 git branch dev
 # Создать ветку на определенном коммите
-git branch new_branch "5a0eb0"
+git branch new_branch <KEY>
 ```
 
 #### Получение (pull) обновленной версии из репозитория:
@@ -110,12 +163,12 @@ git fetch origin
 git reset --hard origin/dev
 # Копируем исправленные файлы
 git add --all && git commit -m"fix commit"
-# Пушим. Ветка должна быть не заблокирована? http://tonyganch.com/git/rebase/
+# Пушим. Ветка должна быть не заблокирована? //tonyganch.com/git/rebase/
 # git rebase -i HEAD~2 (не вышло)
 # s - вводим вместо "pick" для самого нижнего
 
 # Коммиты должны быть запушины?
-git reset --soft "5a0eb0"
+git reset --soft <KEY>
 git push --force
-# http://marklodato.github.io/visual-git-guide/index-ru.html
+# //marklodato.github.io/visual-git-guide/index-ru.html
 ```
