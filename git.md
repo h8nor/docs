@@ -29,7 +29,7 @@ gpg --gen-key
 > 6m
 > Y
 > FirstName LastName
-> user@example.com
+> Email
 > comment
 > O
 # Пароль закрытого ключа (кодовая фраза)
@@ -37,7 +37,7 @@ gpg --gen-key
 # Показать список открытых ключей
 gpg --list-keys
 # Показать список закрытых ключей (хеш совпадает)
-gpg --list-secret-keys --keyid-format LONG | grep -C 1 '^sec' | GREP_COLOR='01;36' egrep -i --color '([0-9A-F]{8,}|-\W+)'
+gpg -K --keyid-format LONG | grep -C 1 "^sec" | GREP_COLOR="01;36" egrep -i --color "([0-9A-F]{8,}|-\W+)"
 # Добавить зашифрованный открытый ключ GPG в учётную запись GutHub
 gpg --armor --export <KEY>
 # Удалить ключ //eax.me/gpg/
@@ -49,19 +49,29 @@ gpg --delete-keys <KEY>
 # Обязательная подпись всех коммитов
 git config --global commit.gpgsign true
 git config --global tag.gpgsign true
+
 # Установка ключа для подписи по умолчанию
 # //stackoverflow.com/questions/10161198/
 git config --global user.signingkey <KEY>
-# //lists.gnupg.org/pipermail/gnupg-users/2003-May/018492.html
-# GitHub Desktop не поддерживает подпись, тогда
+```
+``` nix
+# GitHub Desktop не поддерживает подпись, т.к. нужно передавать passphrase
+# //github.com/desktop/desktop/issues/78
 # //stackoverflow.com/questions/36941533
-git config --global gpg.program $(which gpg)
+# поэтому, надо удалить всё, что было избыточно введено в консоли (создать хук к $ git commit -S)
+git config --global --unset commit.gpgsign
+git config --global --unset gpg.program
+# и в файле конфигурации gpg.conf; путь к "~" echo ${HOME}
+# //lists.gnupg.org/pipermail/gnupg-users/2003-May/018492.html
+sed -i "/^no-tty/d" ~/.gnupg/gpg.conf
+# //ant0.ru/comment/52
 
-# Создание зашифрованного архива по паролю (gpg умеет BZIP2 из коробки)
-# Необходимо передать открытый ключ человеку, который будет шифровать файлы
-tar -cjv ./<DIR> | gpg -e -r <KEY> -o backup.tbz2.gpg
+# ? Создание зашифрованного архива по паролю (gpg умеет BZIP2 из коробки)
 # Просмотр содержания архива
 tar -tj -f backup.tbz2
+
+# Необходимо передать открытый ключ человеку, который будет шифровать файлы
+tar -cjv ./<DIR> | gpg -e -r <KEY> -o backup.tbz2.gpg
 # Расшифровка архива по закрытому ключу
 gpg -d backup.tbz2.gpg | tar -xj
 gpg -o backup.tbz2 -d backup.tbz2.gpg
@@ -170,5 +180,6 @@ git add --all && git commit -m"fix commit"
 # Коммиты должны быть запушины?
 git reset --soft <KEY>
 git push --force
+# //tonyganch.com/git/reset/
 # //marklodato.github.io/visual-git-guide/index-ru.html
 ```

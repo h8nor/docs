@@ -8,7 +8,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.0.6
+// @version	1.0.7
 // @icon	https://geektimes.ru/images/favicons/favicon-32x32.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
@@ -68,10 +68,12 @@ var sellers = [
   '3dtool',
   'arttel',
   'dadget',
+  'epson',
   'gearbest',
   'kingston_technology',
   'madrobots',
   'medgadgets',
+  'mishiko',
   'mvideo',
   'piter',
   'pocketbook',
@@ -83,6 +85,7 @@ var wampus = [
   'dipsy',
   'Idot',
   'lakegull',
+  'Sormovich',
   'VenomBlood',
 ];
 $('.post__user-info').filter(function() {
@@ -99,4 +102,4 @@ $('.post__title_link').filter(function() {
 }).parents('.post').css("background", "#def");
 $('.user-info_inline.user-info').filter(function() {
     return this.href.match(new RegExp('/' + wampus.join('|') + '/'));
-}).parents('.comment').html('<div class="author_banned">РЕДИСКА опубликовала эту надпись здесь</div>');
+}).parents('.comment').html('<div class="comment__message comment__message_banned">РЕДИСКА опубликовала эту надпись здесь</div>');
