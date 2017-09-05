@@ -47,7 +47,7 @@ gpg --delete-keys <KEY>
 
 # //help.github.com/articles/generating-a-new-gpg-key/
 # Обязательная подпись всех коммитов
-git config --global commit.gpgsign true
+git config --global commit.gpgsign false
 git config --global tag.gpgsign true
 
 # Установка ключа для подписи по умолчанию
@@ -58,7 +58,7 @@ git config --global user.signingkey <KEY>
 # GitHub Desktop не поддерживает подпись, т.к. нужно передавать passphrase
 # //github.com/desktop/desktop/issues/78
 # //stackoverflow.com/questions/36941533
-# поэтому, надо удалить всё, что было избыточно введено в консоли (создать хук к $ git commit -S)
+# поэтому, надо удалить всё, что было избыточно введено в консоли (создать хук к $ git commit -a -S)
 git config --global --unset commit.gpgsign
 git config --global --unset gpg.program
 # и в файле конфигурации gpg.conf; путь к "~" echo ${HOME}
@@ -95,7 +95,7 @@ git checkout -- README.md
 # Список всех измененных
 git status
 # Самая важная команда (commit)
-git commit -m"comment"
+git commit -m"comment1" -m"comment2"
 ```
 Картинки в комментариях можно посмотреть [здесь](//www.webpagefx.com/tools/emoji-cheat-sheet/).
 
