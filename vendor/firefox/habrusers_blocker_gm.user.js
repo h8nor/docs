@@ -8,8 +8,8 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.0.8
-// @icon	https://geektimes.ru/images/favicons/favicon-32x32.png
+// @version	1.0.9
+// @icon	https://geektimes.ru/images/favicons/apple-touch-icon-57x57.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
 // @exclude	https://habrahabr.ru/company/*
@@ -59,6 +59,7 @@ var pr = [
   'icanchoose',
   'JetBrains',
   'miip',
+  'odnoklassniki',
   'plarium',
   'regionsoft',
   'superjob',
@@ -83,11 +84,15 @@ var sellers = [
 ];
 var wampus = [
   'AlexPu',
+  'askv',
   'dipsy',
+  'Gnuava',
   'Idot',
   'ilyasok',
   'Ilyasyakubov',
   'lakegull',
+  'mistik_max',
+  'Samoglas',
   'Sormovich',
   'VenomBlood',
 ];
