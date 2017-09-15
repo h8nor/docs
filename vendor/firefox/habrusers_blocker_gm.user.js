@@ -8,7 +8,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.0.9
+// @version	1.0.10
 // @icon	https://geektimes.ru/images/favicons/apple-touch-icon-57x57.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
@@ -55,6 +55,7 @@ var fablers = [
 ]
 // Only for companies. Science fiction is hiding separately
 var pr = [
+  'haysrussia',
   'hosting-cafe',
   'icanchoose',
   'JetBrains',
@@ -69,6 +70,7 @@ var pr = [
 var sellers = [
   '3dtool',
   'arttel',
+  'coptertime',
   'dadget',
   'epson',
   'gearbest',
@@ -92,6 +94,7 @@ var wampus = [
   'Ilyasyakubov',
   'lakegull',
   'mistik_max',
+  'Olga_Voronova',
   'Samoglas',
   'Sormovich',
   'VenomBlood',
