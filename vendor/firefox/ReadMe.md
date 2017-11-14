@@ -2,11 +2,11 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|56.0.0|2017-09-27|all
-Firefox <sup>[esr]</sup>|ESR|52.4.0|2017-09-22|all
+Firefox <sup>[www]</sup>|Release|57.0.0|2017-11-12|all
+Firefox <sup>[esr]</sup>|ESR|52.5.0|2017-11-07|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/52.4.0esr/win32/ "Extended support"
+[esr]://ftp.mozilla.org/pub/firefox/releases/52.5.0esr/win32/ "Extended support"
 
 ### Краткое описание
 
@@ -48,6 +48,11 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 		- **ВАЖНО:** Обязательно читайте стили перед установкой в *Stylish*. Запрещенное 
 			на Userstyles.org свойство **-moz-binding** может выполнить JS-код на компьютере 
 			пользователя.
+1. [CanvasBlocker] `[e10s]`  
+	JavaScript может рисовать картинку в теге <canvas> и без ведома пользователя отправлять ее на сервер. 
+	Картинка на каждом компе будет разная, так как ее рисование зависит от системных особенностей железа и 
+	браузера. Блокирует [Canvas] Fingerprinting, позволяющий сайтам идентифицировать пользователей по цифровым 
+	отпечаткам браузера. Возможность отключения механизма в настройках должно появится в версии Firefox 58.
 2. ~~[Google Translator]~~  
 	С помощью этого расширения можно перевести любой текст на ваш родной язык одним щелчком мыши 
 	или с помощью комбинации клавиш. Можно перевести либо выделенный текст, либо всю страницу.
@@ -61,6 +66,8 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 
 [Adblock Plus]://addons.mozilla.org/ru/firefox/addon/1865/
 [AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist "Ctrl+Shift+F -> Добавить подписку..."
+[Canvas]://geektimes.ru/post/284604/#comment_9815366 "SHA-256"
+[CanvasBlocker]://addons.mozilla.org/ru/firefox/addon/534930/
 [Google Translator]://addons.mozilla.org/ru/firefox/addon/46308/
 [Greasemonkey]://addons.mozilla.org/ru/firefox/addon/748/ "[e10s] Движок для запуска UserJS"
 [Octotree]://addons.mozilla.org/ru/firefox/addon/512640/

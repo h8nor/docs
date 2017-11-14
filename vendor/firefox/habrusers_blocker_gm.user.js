@@ -8,7 +8,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.1.0
+// @version	1.1.1
 // @icon	https://geektimes.ru/images/favicons/apple-touch-icon-57x57.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
@@ -57,9 +57,9 @@ var fablers = [
 ];
 var slob = [
   'display_adv',
-  'sci-fi',
+  'sci-fi'
 ];
-// Only for companies. Science fiction is hiding separately
+// Only for companies
 var pr = [
   'alconost',
   'blog_potok',
@@ -74,8 +74,9 @@ var pr = [
   'regionsoft',
   'superjob',
   'tuturu',
-  'varonis',
+  'varonis'
 ];
+// Only for companies
 var sellers = [
   '3dtool',
   'arttel',
@@ -91,9 +92,10 @@ var sellers = [
   'piter',
   'pocketbook',
   'redmond',
-  'top3dshop',
+  'top3dshop'
 ];
 var wampus = [
+  '1MK-Ultra',
   'AlexPu',
   'askv',
   'dipsy',
@@ -107,21 +109,23 @@ var wampus = [
   'Olga_Voronova',
   'Sormovich',
   'VenomBlood',
+  'yarric'
 ];
 $('.post__user-info').filter(function() {
     return this.href.match(new RegExp('/' + fablers.join('|') + '/$'));
 }).parents('.post').css("background", "#ffe");
 $('.hub-link').filter(function() {
     return this.href.match(new RegExp('/' + slob.join('|') + '/$'));
-}).parents('.post').hide();
+}).parents('.post_preview.post').hide();
 $('.post__title_link').filter(function() {
     return this.href.match(new RegExp('/company/' + pr.join('|') + '/$'));
-}).parents('.post').hide();
+}).parents('.post_preview.post').hide();
 $('.post__title_link').filter(function() {
     return this.href.match(new RegExp('/company/' + sellers.join('|') + '/$'));
 }).parents('.post').css("background", "#def");
 $('.user-info_inline.user-info').filter(function() {
     return this.href.match(new RegExp('/' + wampus.join('|') + '/$'));
 }).parents('.comment').html('<div class="comment__message comment__message_banned">РЕДИСКА опубликовала эту надпись здесь</div>');
-console.log($('.is_blocked.for_users_only_msg').text().replace(new RegExp('[^\\s\\w,А-яЁё]'), '$& Впрочем, можно <a href="https://geektimes.ru/info/help/registration/#invite">откупиться</a>.'));
-$('.is_blocked.for_users_only_msg').html().replace(new RegExp('[^\\s\\w,А-яЁё]'), '$& Впрочем, можно <a href="https://geektimes.ru/info/help/registration/#invite">откупиться</a>.');
+$('.is_blocked.for_users_only_msg').html(function() {
+    return $(this).text().replace(new RegExp('[^\\s\\w,А-яЁё]'), '$& Впрочем, можно <a href="https://geektimes.ru/info/help/registration/#invite">откупиться</a>.');
+});
