@@ -8,7 +8,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.1.1
+// @version	1.1.2
 // @icon	https://geektimes.ru/images/favicons/apple-touch-icon-57x57.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
@@ -71,6 +71,7 @@ var pr = [
   'miip',
   'odnoklassniki',
   'plarium',
+  'redmond',
   'regionsoft',
   'superjob',
   'tuturu',
@@ -81,8 +82,10 @@ var sellers = [
   '3dtool',
   'arttel',
   'coptertime',
+  'cvetmir3d',
   'dadget',
   'epson',
+  'gadgetfreaks',
   'gearbest',
   'kingston_technology',
   'madrobots',
@@ -91,13 +94,13 @@ var sellers = [
   'mvideo',
   'piter',
   'pocketbook',
-  'redmond',
   'top3dshop'
 ];
 var wampus = [
   '1MK-Ultra',
   'AlexPu',
   'askv',
+  'deNULL',
   'dipsy',
   'Gnuava',
   'Idot',
@@ -112,20 +115,20 @@ var wampus = [
   'yarric'
 ];
 $('.post__user-info').filter(function() {
-    return this.href.match(new RegExp('/' + fablers.join('|') + '/$'));
+    return this.href.match(new RegExp('/users/(' + fablers.join('|') + ')/$'));
 }).parents('.post').css("background", "#ffe");
 $('.hub-link').filter(function() {
-    return this.href.match(new RegExp('/' + slob.join('|') + '/$'));
+    return this.href.match(new RegExp('/hub/(' + slob.join('|') + ')/$'));
 }).parents('.post_preview.post').hide();
 $('.post__title_link').filter(function() {
-    return this.href.match(new RegExp('/company/' + pr.join('|') + '/$'));
+    return this.href.match(new RegExp('/company/(' + pr.join('|') + ')/\\w+/\\d+/$'));
 }).parents('.post_preview.post').hide();
 $('.post__title_link').filter(function() {
-    return this.href.match(new RegExp('/company/' + sellers.join('|') + '/$'));
+    return this.href.match(new RegExp('/company/(' + sellers.join('|') + ')/\\w+/\\d+/$'));
 }).parents('.post').css("background", "#def");
 $('.user-info_inline.user-info').filter(function() {
-    return this.href.match(new RegExp('/' + wampus.join('|') + '/$'));
+    return this.href.match(new RegExp('/users/(' + wampus.join('|') + ')/$'));
 }).parents('.comment').html('<div class="comment__message comment__message_banned">РЕДИСКА опубликовала эту надпись здесь</div>');
 $('.is_blocked.for_users_only_msg').html(function() {
-    return $(this).text().replace(new RegExp('[^\\s\\w,А-яЁё]'), '$& Впрочем, можно <a href="https://geektimes.ru/info/help/registration/#invite">откупиться</a>.');
+    return $(this).text().replace(new RegExp('[^\\s\\w,А-яЁё]'), `$& Впрочем, можно <a href="https://${location.hostname}/info/help/registration/#invite">откупиться</a>.`);
 });

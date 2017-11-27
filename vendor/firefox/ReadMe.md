@@ -38,7 +38,7 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 
 ### Список некоторых расширений
 
-1. [Adblock Plus] `[e10s]`  
+1. [Adblock Plus]  
 	Расширение позволяет вернуть себе контроль над содержанием страниц и видеть лишь то, что хочется.
 	- Основная проблема утечки памяти состоит в подписке EasyList, содержащей 69k фильтров, большая часть 
 		которых бесполезна для рунета.  
@@ -48,33 +48,29 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 		- **ВАЖНО:** Обязательно читайте стили перед установкой в *Stylish*. Запрещенное 
 			на Userstyles.org свойство **-moz-binding** может выполнить JS-код на компьютере 
 			пользователя.
-1. [CanvasBlocker] `[e10s]`  
+1. [CanvasBlocker]  
 	JavaScript может рисовать картинку в теге <canvas> и без ведома пользователя отправлять ее на сервер. 
 	Картинка на каждом компе будет разная, так как ее рисование зависит от системных особенностей железа и 
 	браузера. Блокирует [Canvas] Fingerprinting, позволяющий сайтам идентифицировать пользователей по цифровым 
 	отпечаткам браузера. Возможность отключения механизма в настройках должно появится в версии Firefox 58.
-2. ~~[Google Translator]~~  
+2. [Google Translator]  
 	С помощью этого расширения можно перевести любой текст на ваш родной язык одним щелчком мыши 
 	или с помощью комбинации клавиш. Можно перевести либо выделенный текст, либо всю страницу.
-3. [Octotree] `[WebExt]`  
+3. [Octotree]  
 	Отображает репозиторий GitHub в виде дерева.
-4. [Video DownloadHelper] `[e10s]`  
+4. [Video DownloadHelper]  
 	Самый простой способ скачать и конвертировать видео из сотен сайтов как YouTube.
-5. ~~[Перекупы Авто]~~  
-	Расширение позволит Вам определить перекупа на сайтах *drom.ru* (на странице 
-	с объявлением появится дополнительный блок с информацией о продавце).
 
 [Adblock Plus]://addons.mozilla.org/ru/firefox/addon/1865/
-[AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist "Ctrl+Shift+F -> Добавить подписку..."
+[AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist
 [Canvas]://geektimes.ru/post/284604/#comment_9815366 "SHA-256"
 [CanvasBlocker]://addons.mozilla.org/ru/firefox/addon/534930/
-[Google Translator]://addons.mozilla.org/ru/firefox/addon/46308/
-[Greasemonkey]://addons.mozilla.org/ru/firefox/addon/748/ "[e10s] Движок для запуска UserJS"
+[Google Translator]://addons.mozilla.org/ru/firefox/addon/46308/ "Половина сайтов не работает"
+[Greasemonkey]://addons.mozilla.org/ru/firefox/addon/748/ "Движок для запуска UserJS"
 [Octotree]://addons.mozilla.org/ru/firefox/addon/512640/
 [Stylish]://github.com/The-OP/Fox/commit/370229fefefb8b724f978ae9641597ca0ad40280 "Меняет внешний вид сайтов согласно UserCSS"
 [Video DownloadHelper]://addons.mozilla.org/ru/firefox/addon/3006/
 [µBlock Origin]://addons.mozilla.org/ru/firefox/addon/607454/
-[Перекупы Авто]://addons.mozilla.org/ru/firefox/addon/542220/
 
 ### Ссылка на подписку ABP EdgeList
 
