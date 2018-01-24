@@ -3,10 +3,10 @@
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
 Firefox <sup>[www]</sup>|Release|57.0.0|2017-11-12|all
-Firefox <sup>[esr]</sup>|ESR|52.5.0|2017-11-07|all
+Firefox <sup>[esr]</sup>|ESR|52.6.0|2018-01-19|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/52.5.0esr/win32/ "Extended support"
+[esr]://ftp.mozilla.org/pub/firefox/releases/52.6.0esr/win32/ "Extended support"
 
 ### Краткое описание
 
@@ -43,7 +43,7 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 	- Основная проблема утечки памяти состоит в подписке EasyList, содержащей 69k фильтров, большая часть 
 		которых бесполезна для рунета.  
 		Рекомендую альтернативную подписку [AdBlock EdgeList]. Предложения по улучшению привествуются.
-	- Можете дополнительно установить *[Greasemonkey]* или ~~*[Stylish]*~~ для подключения сторонних *user 
+	- Можете дополнительно установить *[Greasemonkey]*<sup>[issue]</sup> или ~~*[Stylish]*~~ для подключения сторонних *user 
 		script*, либо сразу перейти на аналог [µBlock Origin].  
 		- **ВАЖНО:** Обязательно читайте стили перед установкой в *Stylish*. Запрещенное 
 			на Userstyles.org свойство **-moz-binding** может выполнить JS-код на компьютере 
@@ -56,26 +56,30 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 2. [Google Translator]  
 	С помощью этого расширения можно перевести любой текст на ваш родной язык одним щелчком мыши 
 	или с помощью комбинации клавиш. Можно перевести либо выделенный текст, либо всю страницу.
+2. [FireShot]  
+	Создаёт полные скриншоты веб-страниц с вожможность сохранения в Сохраняйте снимки в PNG или PDF.
 3. [Octotree]  
 	Отображает репозиторий GitHub в виде дерева.
 4. [Video DownloadHelper]  
 	Самый простой способ скачать и конвертировать видео из сотен сайтов как YouTube.
 
 [Adblock Plus]://addons.mozilla.org/ru/firefox/addon/1865/
-[AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist
+[AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist "Ctrl+Shift+I"
 [Canvas]://geektimes.ru/post/284604/#comment_9815366 "SHA-256"
 [CanvasBlocker]://addons.mozilla.org/ru/firefox/addon/534930/
+[FireShot]://addons.mozilla.org/ru/firefox/addon/5648/ "Замена скриншотам Firefox"
 [Google Translator]://addons.mozilla.org/ru/firefox/addon/46308/ "Половина сайтов не работает"
 [Greasemonkey]://addons.mozilla.org/ru/firefox/addon/748/ "Движок для запуска UserJS"
 [Octotree]://addons.mozilla.org/ru/firefox/addon/512640/
 [Stylish]://github.com/The-OP/Fox/commit/370229fefefb8b724f978ae9641597ca0ad40280 "Меняет внешний вид сайтов согласно UserCSS"
 [Video DownloadHelper]://addons.mozilla.org/ru/firefox/addon/3006/
 [µBlock Origin]://addons.mozilla.org/ru/firefox/addon/607454/
+[issue]://github.com/greasemonkey/greasemonkey/issues/2631 "//en.wikipedia.org/wiki/Content_Security_Policy"
 
 ### Ссылка на подписку ABP EdgeList
 
-Подписку можно подключить в настройках расширения "*<kbd>Ctrl+Shift+F</kbd> -> Добавить подписку...*" указав 
-путь к файлу в ветке репозитория **adblock**, или через ссылку в html-коде:
+Подписку можно подключить в настройках расширения "*<kbd>ЛКМ</kbd> по значку -> Настройки -> Расширенные -> 
+Добавить новый список фильтров*" указав путь к файлу в ветке репозитория **adblock**, или через ссылку в html-коде:
 
 `<a href="abp:subscribe?title=AdBlock%20EdgeList&location=https%3A%2F%2Fgithub.com%2Fbopoh13%2Fdocs%2Fraw%2Fadblock%2Fvendor%2Ffirefox%2Fadblockedge.txt">AdBlock EdgeList</a>`
 

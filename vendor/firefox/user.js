@@ -61,7 +61,7 @@ user_pref("media.peerconnection.identity.timeout", 1);
 user_pref("dom.webnotifications.enabled", false);
 user_pref("dom.webnotifications.serviceworker.enabled", false);
 user_pref("dom.serviceWorkers.enabled", false);
-// conflicts with site avito.ru (msg)
+// conflicts with sites avito.ru (msg), regex101.com
 user_pref("dom.workers.enabled", false);
 user_pref("dom.push.serverURL", "");
 user_pref("dom.push.enabled", false);
@@ -128,6 +128,9 @@ user_pref("browser.eme.ui.enabled", false);
 user_pref("media.eme.enabled", false);
 // https://gist.github.com/Guest007/e3a09aa97a827916b0b91b726a8c2c66
 #57 user_pref("privacy.trackingprotection.enabled", false);
+// https://en.wikipedia.org/wiki/Content_Security_Policy
+// https://github.com/greasemonkey/greasemonkey/issues/2631
+user_pref("security.csp.enable", true);
 // getUserMedia
 // https://wiki.mozilla.org/Media/getUserMedia
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
@@ -165,7 +168,7 @@ user_pref("devtools.devedition.promo.url", "");
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior
-// conflicts with frame plus.google.com, api.vk.com and other
+// conflicts with frame in sites plus.google.com, api.vk.com and other
 user_pref("network.cookie.cookieBehavior", 1);
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy
 # user_pref("network.cookie.lifetimePolicy", 2);

@@ -8,7 +8,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.1.2
+// @version	1.1.3
 // @icon	https://geektimes.ru/images/favicons/apple-touch-icon-57x57.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
@@ -44,7 +44,6 @@ var fablers = [
   'esetnod32',
   'estet',
   'holymay',
-  'itinvest',
   'latimeria',
   'LKulakova',
   'Mary_Golubeva',
@@ -77,6 +76,10 @@ var pr = [
   'tuturu',
   'varonis'
 ];
+/*
+  '380365',
+  'maghamed',
+*/
 // Only for companies
 var sellers = [
   '3dtool',
@@ -87,6 +90,7 @@ var sellers = [
   'epson',
   'gadgetfreaks',
   'gearbest',
+  'itinvest',
   'kingston_technology',
   'madrobots',
   'medgadgets',

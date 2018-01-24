@@ -66,6 +66,22 @@ git config --global --unset gpg.program
 sed -i "/^no-tty/d" ~/.gnupg/gpg.conf
 # //ant0.ru/comment/52
 
+# Установка истечения срока ключа (закрытого и открытого)
+gpg --edit-key <KEY>
+> key 0
+> expire
+>> Changing expiration time for the primary key.
+> 1y
+> Y
+>> Changing expiration time for a subkey.
+> key 1
+> expire
+> 22w
+> Y
+> save
+# Удалить открытый ключ GPG из учётной записи GutHub и вставить новый
+# Тогда все предыдушие подписи к коммитам станут валидными
+
 # ? Создание зашифрованного архива по паролю (gpg умеет BZIP2 из коробки)
 # Просмотр содержания архива
 tar -tj -f backup.tbz2
@@ -183,3 +199,14 @@ git push --force
 # //tonyganch.com/git/reset/
 # //marklodato.github.io/visual-git-guide/index-ru.html
 ```
+
+#### Найти файлы с BOM
+```nix
+find ./ -type f \( -name '*.md' -o -name '*.html' \) -print0 | xargs -0r awk '/^\xEF\xBB\xBF/ {print FILENAME}{nextfile}'
+```
+#### Удалить BOM из UTF-8
+```nix
+find . -type f \( -name '*.md' -o -name '*.html' \) -print0 | xargs -0 grep -l `printf '^\xef\xbb\xbf'` | xargs sed -i '1 s/^\xef\xbb\xbf//'
+```
+
+#
