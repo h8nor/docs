@@ -128,6 +128,10 @@ user_pref("browser.eme.ui.enabled", false);
 user_pref("media.eme.enabled", false);
 // https://gist.github.com/Guest007/e3a09aa97a827916b0b91b726a8c2c66
 #57 user_pref("privacy.trackingprotection.enabled", false);
+// Perhaps the screenshots will not work if the HTML5 is disabled with on the site and option enabled
+// https://www.linux.org.ru/news/mozilla/13978522/
+user_pref("privacy.resistFingerprinting", true);
+user_pref("privacy.firstparty.isolate", true);
 // https://en.wikipedia.org/wiki/Content_Security_Policy
 // https://github.com/greasemonkey/greasemonkey/issues/2631
 user_pref("security.csp.enable", true);

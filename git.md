@@ -37,7 +37,8 @@ gpg --gen-key
 # Показать список открытых ключей
 gpg --list-keys
 # Показать список закрытых ключей (хеш совпадает)
-gpg -K --keyid-format LONG | grep -C 1 "^sec" | GREP_COLOR="01;36" egrep -i --color "([0-9A-F]{8,}|-\W+)"
+gpg -K --keyid-format LONG | grep -C 1 "^sec"\
+ | GREP_COLOR="01;36" egrep -i --color "([0-9A-F]{8,}|-\W+)"
 # Добавить зашифрованный открытый ключ GPG в учётную запись GutHub
 gpg --armor --export <KEY>
 # Удалить ключ //eax.me/gpg/
@@ -86,8 +87,8 @@ gpg --edit-key <KEY>
 # Просмотр содержания архива
 tar -tj -f backup.tbz2
 
-# Необходимо передать открытый ключ человеку, который будет шифровать файлы
-tar -cjv ./<DIR> | gpg -e -r <KEY> -o backup.tbz2.gpg
+# Необходимо передать открытый ключ человеку, который будет шифровать файлы текущей директории
+tar -cjv ../${PWD##*/} | gpg -e -r <KEY> -o ../backup.tbz2.gpg
 # Расшифровка архива по закрытому ключу
 gpg -d backup.tbz2.gpg | tar -xj
 gpg -o backup.tbz2 -d backup.tbz2.gpg
@@ -201,12 +202,15 @@ git push --force
 ```
 
 #### Найти файлы с BOM
-```nix
-find ./ -type f \( -name '*.md' -o -name '*.html' \) -print0 | xargs -0r awk '/^\xEF\xBB\xBF/ {print FILENAME}{nextfile}'
+```shell
+find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
+ | xargs -0r awk "/^\xEF\xBB\xBF/ {print FILENAME}{nextfile}"
 ```
 #### Удалить BOM из UTF-8
-```nix
-find . -type f \( -name '*.md' -o -name '*.html' \) -print0 | xargs -0 grep -l `printf '^\xef\xbb\xbf'` | xargs sed -i '1 s/^\xef\xbb\xbf//'
+```shell
+find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
+ | xargs -0 grep -l `printf "^\xEF\xBB\xBF"`\
+ | xargs sed -i "1 s/^\xEF\xBB\xBF//"
 ```
 
 #

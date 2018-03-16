@@ -2,7 +2,7 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|57.0.0|2017-11-12|all
+Firefox <sup>[www]</sup>|Release|58.0.0|2018-01-19|all
 Firefox <sup>[esr]</sup>|ESR|52.6.0|2018-01-19|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
