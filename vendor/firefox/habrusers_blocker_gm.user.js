@@ -8,14 +8,16 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.1.3
+// @version	1.2
 // @icon	https://geektimes.ru/images/favicons/apple-touch-icon-57x57.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
-// @exclude	https://habrahabr.ru/company/*
-// @exclude	https://geektimes.ru/users/*
-// @exclude	https://habrahabr.ru/users/*
+// @exclude	https://*habrahabr.ru/company/*
+// @exclude	https://*geektimes.ru/users/*
+// @exclude	https://*habrahabr.ru/users/*
+// @require	https://dr.habracdn.net/gt/javascripts/1521637170/libs/jquery-1.8.3.min.js
 // @grant	none
+// @run-at	document-end
 // ==/UserScript==
 /**
  * По статье "Делаем пространство чище" //geektimes.ru/post/272164/#comment_9074942

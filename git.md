@@ -59,7 +59,7 @@ git config --global user.signingkey <KEY>
 # GitHub Desktop не поддерживает подпись, т.к. нужно передавать passphrase
 # //github.com/desktop/desktop/issues/78
 # //stackoverflow.com/questions/36941533
-# поэтому, надо удалить всё, что было избыточно введено в консоли (создать хук к $ git commit -a -S)
+# поэтому, надо удалить всё, что было избыточно введено в консоли (создать хук к $ git commit -S)
 git config --global --unset commit.gpgsign
 git config --global --unset gpg.program
 # и в файле конфигурации gpg.conf; путь к "~" echo ${HOME}
@@ -112,7 +112,7 @@ git checkout -- README.md
 # Список всех измененных
 git status
 # Самая важная команда (commit)
-git commit -m"comment1" -m"comment2"
+git commit -m"comment1" -m"comment2" (ключ -a аналогичен команде git add .)
 ```
 Картинки в комментариях можно посмотреть [здесь](//www.webpagefx.com/tools/emoji-cheat-sheet/).
 
