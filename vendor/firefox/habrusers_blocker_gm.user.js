@@ -8,11 +8,13 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2
+// @version	1.2.1
 // @icon	https://geektimes.ru/images/favicons/apple-touch-icon-57x57.png
 // @include	https://geektimes.ru/*
 // @include	https://habrahabr.ru/*
 // @exclude	https://*habrahabr.ru/company/*
+// @exclude	https://*geektimes.ru/search/*
+// @exclude	https://*habrahabr.ru/search/*
 // @exclude	https://*geektimes.ru/users/*
 // @exclude	https://*habrahabr.ru/users/*
 // @require	https://dr.habracdn.net/gt/javascripts/1521637170/libs/jquery-1.8.3.min.js
@@ -54,10 +56,11 @@ var fablers = [
   'shulyndina',
   'SmirkinDA',
   'tm',
-  'YuliaSinyanskaya',
+  'YuliaSinyanskaya'
 ];
 var slob = [
   'display_adv',
+  'ios_dev',
   'sci-fi'
 ];
 // Only for companies
@@ -81,6 +84,7 @@ var pr = [
 /*
   '380365',
   'maghamed',
+  'nmivan,'
 */
 // Only for companies
 var sellers = [
@@ -108,6 +112,7 @@ var wampus = [
   'askv',
   'deNULL',
   'dipsy',
+  'DrZlodberg',
   'Gnuava',
   'Idot',
   'ilyasok',
