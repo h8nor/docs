@@ -8,10 +8,11 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2.2
+// @version	1.2.3
 // @icon	https://geektimes.com/images/favicons/apple-touch-icon-57x57.png
 // @include	https://geektimes.com/*
 // @include	https://habr.com/*
+// @exclude	https://habr.com/sandbox/*
 // @exclude	https://*habr.com/company/*
 // @exclude	https://*geektimes.com/search/*
 // @exclude	https://*habr.com/search/*
@@ -22,7 +23,7 @@
 // @run-at	document-end
 // ==/UserScript==
 /**
- * По статье "Делаем пространство чище" //geektimes.ru/post/272164/#comment_9074942
+ * По статье "Делаем пространство чище" //geektimes.com/post/272164/#comment_9074942
  */
 
 var fablers = [
@@ -37,25 +38,23 @@ var fablers = [
   'lozga',
   'marks',
   'ragequit',
-  'semen_grinshtein',
-  'Shapelez',
   'SLY_G',
   'vconst',
   
   'alconost',
   'Alexandra_Varonis',
-  'dronk',
   'esetnod32',
   'estet',
+  'habrahabr',
   'holymay',
-  'latimeria',
   'LKulakova',
   'Mary_Golubeva',
   'PayOnline',
   'ptsecurity',
+  'semen_grinshtein',
+  'Shapelez',
   'shulyndina',
   'SmirkinDA',
-  'tm',
   'YuliaSinyanskaya'
 ];
 var slob = [
@@ -69,10 +68,12 @@ var pr = [
   'blog_potok',
   'haysrussia',
   'hosting-cafe',
+  'hygger',
   'icanchoose',
   'infobip',
   'JetBrains',
   'miip',
+  'mobio',
   'odnoklassniki',
   'plarium',
   'redmond',
@@ -82,9 +83,10 @@ var pr = [
   'varonis'
 ];
 /*
-  '380365',
-  'maghamed',
-  'nmivan,'
+  '380365'
+  'latimeria'
+  'maghamed'
+  'nmivan'
 */
 // Only for companies
 var sellers = [

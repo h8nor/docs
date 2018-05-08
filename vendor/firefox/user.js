@@ -181,7 +181,7 @@ user_pref("signon.autofillForms", false);
 // https://support.mozilla.org/en-US/questions/889884
 user_pref("signon.rememberSignons", false);
 user_pref("signon.storeWhenAutocompleteOff", false);
-// http://habrahabr.ru/company/eset/blog/264619/
+// https://habr.com/company/eset/blog/264619/
 // https://blog.mozilla.org/security/2015/08/06/firefox-exploit-found-in-the-wild/
 // https://news.ycombinator.com/item?id=10021376
 user_pref("pdfjs.disabled", true);
@@ -269,5 +269,4 @@ user_pref("extensions.adblockplus.report_submiturl", "");
 user_pref("extensions.adblockplus.subscriptions_antiadblockurl", "");
 user_pref("extensions.adblockplus.subscriptions_exceptionsurl", "about:support");
 user_pref("extensions.adblockplus.subscriptions_fallbackurl", "");
-user_pref("extensions.adblockplus.subscriptions_listurl", "https://github.com/bopoh13/docs/raw/adblock/vendor/firefox/subscriptions2.xml");
 user_pref("extensions.adblockplus.suppress_first_run_page", true);

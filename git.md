@@ -19,7 +19,7 @@ git config --global filter.win1251.required true
 #### Генерация и просмотр GPG ключей:
 ``` nix
 # //gnupg.org/download/integrity_check.html
-# //habrahabr.ru/post/73642/
+# //habr.com/post/73642/
 # //debianzilla.com/gnupg-pgp/ (not "PGP keys")
 gpg --gen-key
 # //linux.org.ru/forum/security/10904313

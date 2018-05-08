@@ -104,3 +104,11 @@ set www disabled=no
 ``` ls
 /ip dns cache flush
 ```
+
+#### (?) Блокировка входящего трафика на мост по маске маков:
+``` ls
+/interface bridge filter
+add action=drop chain=input comment="DE:AD:BE:AF:xx:xx" in-bridge=\
+	bridge-local log=yes log-prefix=DEAD src-mac-address=\
+	DE:AD:00:00:00:00/FF:FF:00:00:00:00
+```

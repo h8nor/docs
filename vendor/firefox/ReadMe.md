@@ -18,9 +18,9 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 Существует альтернативная версия [Waterfox] или [PaleMoon] для 64-битных ОС. В июне 2018 г. прекратится выпуск 
 обновлений безопасности на канале ESR для версии Firefox под Windows XP<sup>[***]</sup>. 
 
-[*]://habrahabr.ru/post/313820/ "Rust > Servo > Quantum"
-[**]://geektimes.ru/post/286718/ "wasm - низкоуровневый ЯП, выполняющийся в браузере"
-[***]://geektimes.ru/post/293773/
+[*]://habr.com/post/313820/ "Rust > Servo > Quantum"
+[**]://geektimes.com/post/286718/ "wasm - низкоуровневый ЯП, выполняющийся в браузере"
+[***]://geektimes.com/post/293773/
 [Waterfox]://www.waterfoxproject.org/ "браузер с поддержкой XUL-расширений"
 [PaleMoon]://www.palemoon.org/ "браузер с поддержкой XUL-расширений"
 
@@ -49,21 +49,22 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 		- **ВАЖНО:** Обязательно читайте стили перед установкой в *Stylish*. Запрещенное 
 			на Userstyles.org свойство **-moz-binding** может выполнить JS-код на компьютере 
 			пользователя.
-2. [Google Translator]  
+2. [Browsec VPN]  
+	Позиционирует себя как продвинутый аналог ZenMate. Есть бесплатные сервера (NL и UK до 30 Мбит/сек). 
+	Опция "Smart Settings" позволяет выбрать proxy для отдельных доменов без включения защиты.
+3. [Google Translator]  
 	С помощью этого расширения можно перевести любой текст на ваш родной язык одним щелчком мыши 
 	или с помощью комбинации клавиш. Можно перевести либо выделенный текст, либо всю страницу.
-2. [FireShot]  
-	Создаёт полные скриншоты веб-страниц с вожможность сохранения в Сохраняйте снимки в PNG или PDF.
-3. [Octotree]  
+4. [Octotree]  
 	Отображает репозиторий GitHub в виде дерева.
-4. [Video DownloadHelper]  
+5. [Video DownloadHelper]  
 	Самый простой способ скачать и конвертировать видео из сотен сайтов как YouTube.
 
 [Adblock Plus]://addons.mozilla.org/ru/firefox/addon/1865/
 [AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist "Ctrl+Shift+I"
-[Canvas]://geektimes.ru/post/284604/#comment_9815366 "SHA-256"
+[Browsec VPN]://addons.mozilla.org/firefox/addon/603434/
+[Canvas]://geektimes.com/post/284604/#comment_9815366 "SHA-256"
 [CanvasBlocker]://addons.mozilla.org/ru/firefox/addon/534930/
-[FireShot]://addons.mozilla.org/ru/firefox/addon/5648/ "Замена скриншотам Firefox"
 [Google Translator]://addons.mozilla.org/ru/firefox/addon/46308/ "Половина сайтов не работает"
 [Greasemonkey]://addons.mozilla.org/ru/firefox/addon/748/ "Движок для запуска UserJS"
 [Octotree]://addons.mozilla.org/ru/firefox/addon/512640/
