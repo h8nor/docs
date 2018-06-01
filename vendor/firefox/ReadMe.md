@@ -2,11 +2,11 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|59.0.0|2018-03-10|all
-Firefox <sup>[esr]</sup>|ESR|52.7.0|2018-03-08|all
+Firefox <sup>[www]</sup>|Release|60.0.0|2018-05-03|all
+Firefox <sup>[esr]</sup>|ESR|52.8.0|2018-05-01|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/52.7.0esr/win32/ "Extended support"
+[esr]://ftp.mozilla.org/pub/firefox/releases/52.8.0esr/win32/ "Extended support"
 
 ### Краткое описание
 
@@ -28,6 +28,7 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 
 # Содержание репозитория
 
+- ***download_last_ff.vbs*** - скрипт для скачивания Firefox под разрядность ОС на Рабочий стол
 - ***[habrusers_blocker_gm].user.js*** - блокировка пользователей на Хабре (*user script*)
 - ***user.js*** - рекомендуемый файл безопасных настроек
 - ***update_set_ff.vbs*** - скрипт автоматического обновления файла *user.js*

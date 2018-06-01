@@ -3,22 +3,20 @@
 // @namespace	https://wiki.greasespot.net/Metadata_Block
 // @description	Hides sellers, highlights yellow press and hides comments
 // @author	bopoh13
-// @license	GPL version 3 or any later version
-// @resource	license https://gnu.org/licenses/gpl-3.0.txt
+// @license	GPL-3.0+; http://gnu.org/licenses/gpl-3.0.txt
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2.3
-// @icon	https://geektimes.com/images/favicons/apple-touch-icon-57x57.png
-// @include	https://geektimes.com/*
-// @include	https://habr.com/*
-// @exclude	https://habr.com/sandbox/*
-// @exclude	https://*habr.com/company/*
-// @exclude	https://*geektimes.com/search/*
-// @exclude	https://*habr.com/search/*
-// @exclude	https://*geektimes.com/users/*
-// @exclude	https://*habr.com/users/*
+// @version	1.2.4
+// @icon	https://habr.com/images/favicon-32x32.png
 // @require	https://dr.habracdn.net/gt/javascripts/1521637170/libs/jquery-1.8.3.min.js
+// @include	https://habr.com/*
+// @include	https://geektimes.com/*
+// @exclude	https://habr.com/company/*
+// @exclude	https://habr.com/search/*
+// @exclude	https://geektimes.com/search/*
+// @exclude	https://habr.com/users/*
+// @exclude	https://geektimes.com/users/*
 // @grant	none
 // @run-at	document-end
 // ==/UserScript==
@@ -50,7 +48,6 @@ var fablers = [
   'LKulakova',
   'Mary_Golubeva',
   'PayOnline',
-  'ptsecurity',
   'semen_grinshtein',
   'Shapelez',
   'shulyndina',
@@ -76,6 +73,7 @@ var pr = [
   'mobio',
   'odnoklassniki',
   'plarium',
+  'ptsecurity',
   'redmond',
   'regionsoft',
   'superjob',
@@ -116,12 +114,12 @@ var wampus = [
   'dipsy',
   'DrZlodberg',
   'Gnuava',
-  'Idot',
   'ilyasok',
   'Ilyasyakubov',
   'izhanov',
   'lakegull',
   'mistik_max',
+  'odissey_nemo',
   'Olga_Voronova',
   'Sormovich',
   'VenomBlood',

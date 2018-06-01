@@ -1,4 +1,4 @@
-## Mozilla FireFox 55 Secure Settings
+## Mozilla FireFox 60 Secure Settings
 // License CC-BY-NC-SA-4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
 ## Settings of the "user.js" file will be loaded when you restart your FireFox
 // Some settings http://warfx.ru/firefox/config/ have been abolished
@@ -31,7 +31,7 @@ user_pref("security.ssl.errorReporting.enabled", false);
 user_pref("experiments.enabled", false);
 user_pref("experiments.manifest.uri", "");
 user_pref("experiments.supported", false);
-user_pref("experiments.activeExperiment", false);
+#60 user_pref("experiments.activeExperiment", false);
 user_pref("network.allow-experiments", false);
 // Disable Location-Aware Browsing
 // conflicts with frame in site api-maps.yandex.ru
@@ -61,8 +61,6 @@ user_pref("media.peerconnection.identity.timeout", 1);
 user_pref("dom.webnotifications.enabled", false);
 user_pref("dom.webnotifications.serviceworker.enabled", false);
 user_pref("dom.serviceWorkers.enabled", false);
-// conflicts with sites avito.ru (msg), regex101.com
-user_pref("dom.workers.enabled", false);
 user_pref("dom.push.serverURL", "");
 user_pref("dom.push.enabled", false);
 user_pref("dom.push.connection.enabled", false);
@@ -85,22 +83,10 @@ user_pref("extensions.pocket.site", "");
 user_pref("browser.urlbar.trimURLs", false);
 // Disable new tab tile ads & preload
 user_pref("browser.newtab.preload", false);
-// https://gecko.readthedocs.org/en/latest/browser/browser/DirectoryLinksProvider.html#browser-newtabpage-directory-source
-user_pref("browser.newtabpage.directory.source", "");
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
 user_pref("browser.newtabpage.enabled", false);
-// http://www.thewindowsclub.com/disable-remove-ad-tiles-from-firefox
-// http://forums.mozillazine.org/viewtopic.php?p=13876331#p13876331
-user_pref("browser.newtabpage.enhanced", false);
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_mozilla-content
 user_pref("browser.aboutHomeSnippets.updateUrl", "");
-// Disabling the social services that are integrated into the browser
-user_pref("social.toast-notifications.enabled", false);
-user_pref("social.whitelist", "");
-user_pref("social.directories", "");
-user_pref("social.remote-install.enabled", false);
-user_pref("social.share.activationPanelEnabled", false);
-user_pref("social.shareDirectory", "");
 // Disable link prefetching
 // https://wiki.mozilla.org/Privacy/Reviews/Necko
 user_pref("network.predictor.enabled", false);
@@ -128,6 +114,8 @@ user_pref("browser.eme.ui.enabled", false);
 user_pref("media.eme.enabled", false);
 // https://gist.github.com/Guest007/e3a09aa97a827916b0b91b726a8c2c66
 #57 user_pref("privacy.trackingprotection.enabled", false);
+// conflicts with site gosuslugi.ru (map & date); need to delete the parameter
+user_pref("privacy.trackingprotection.pbmode.enabled", false);
 // Perhaps the screenshots will not work if the HTML5 is disabled with on the site and option enabled
 // https://www.linux.org.ru/news/mozilla/13978522/
 user_pref("privacy.resistFingerprinting", true);
@@ -142,12 +130,9 @@ user_pref("media.navigator.enabled", false);
 user_pref("media.navigator.video.enabled", false);
 // Disable getUserMedia screen sharing
 // https://mozilla.github.io/webrtc-landing/gum_test.html
-user_pref("media.getusermedia.screensharing.allowed_domains", "");
 user_pref("media.getusermedia.screensharing.enabled", false);
 // https://bugzil.la/654550
 user_pref("media.video_stats.enabled", false);
-// Disable face detection by default
-user_pref("camera.control.face_detection.enabled", false);
 
 // http://kb.mozillazine.org/Network.proxy.socks_remote_dns
 user_pref("network.proxy.socks_remote_dns", true);
@@ -164,7 +149,6 @@ user_pref("lightweightThemes.recommendedThemes", "");
 user_pref("offline-apps.allow_by_default", false);
 // https://wiki.mozilla.org/DevTools/WiFi_Debugging
 user_pref("devtools.remote.wifi.scan", false);
-user_pref("devtools.remote.wifi.visible", false);
 // https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/browser/devtools/shared/doorhanger.js#l17
 #57 user_pref("devtools.devedition.promo.enabled", false);
 user_pref("devtools.devedition.promo.shown", true);
@@ -223,7 +207,6 @@ user_pref("webgl.min_capability_mode", true);
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 # user_pref("dom.enable_performance", false);
 user_pref("dom.enable_resource_timing", false);
-user_pref("dom.idle-observers-api.enabled", false);
 // http://asmjs.org/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-50/
@@ -243,7 +226,6 @@ user_pref("device.sensors.enabled", false);
 // WebIDE
 // https://trac.torproject.org/projects/tor/ticket/16222
 user_pref("devtools.webide.autoinstallADBHelper", false);
-user_pref("devtools.webide.autoinstallFxdtAdapters", false);
 user_pref("devtools.webide.enabled", false);
 // Do not add downloaded files to the list of "Recent Documents" (Windows)
 user_pref("browser.download.manager.addToRecentDocs", false);
@@ -252,7 +234,7 @@ user_pref("browser.download.hide_plugins_without_extensions", false);
 user_pref("browser.search.openintab", true);
 // Remove the line "search" in the drop-down menu when typing in the URL bar
 user_pref("browser.urlbar.suggest.searches", false);
-#57 user_pref("browser.urlbar.decodeURLsOnCopy", true);
+user_pref("browser.urlbar.decodeURLsOnCopy", true);
 // Check the spelling in all text fields (and not only in the Textarea)
 user_pref("layout.spellcheckDefault", 2);
 
