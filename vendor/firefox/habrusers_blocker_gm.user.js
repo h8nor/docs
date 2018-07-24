@@ -7,7 +7,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2.4
+// @version	1.2.5
 // @icon	https://habr.com/images/favicon-32x32.png
 // @require	https://dr.habracdn.net/gt/javascripts/1521637170/libs/jquery-1.8.3.min.js
 // @include	https://habr.com/*
@@ -78,7 +78,8 @@ var pr = [
   'regionsoft',
   'superjob',
   'tuturu',
-  'varonis'
+  'varonis',
+  'yamoney'
 ];
 /*
   '380365'
@@ -90,6 +91,7 @@ var pr = [
 var sellers = [
   '3dtool',
   'arttel',
+  'advocam',
   'coptertime',
   'cvetmir3d',
   'dadget',
@@ -98,6 +100,7 @@ var sellers = [
   'gearbest',
   'itinvest',
   'kingston_technology',
+  'maccentre',
   'madrobots',
   'medgadgets',
   'mishiko',
@@ -111,6 +114,7 @@ var wampus = [
   'AlexPu',
   'askv',
   'deNULL',
+  'devop-su',
   'dipsy',
   'DrZlodberg',
   'Gnuava',
@@ -123,6 +127,8 @@ var wampus = [
   'Olga_Voronova',
   'Sormovich',
   'VenomBlood',
+  'Welran',
+  'Y1975',
   'yarric'
 ];
 $('.post__user-info').filter(function() {

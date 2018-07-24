@@ -82,6 +82,7 @@ gpg --edit-key <KEY>
 > save
 # Удалить открытый ключ GPG из учётной записи GutHub и вставить новый
 # Тогда все предыдушие подписи к коммитам станут валидными
+# (при key 0 и key 1 с одинаковой датой - подпись оставалась валидной)
 
 # ? Создание зашифрованного архива по паролю (gpg умеет BZIP2 из коробки)
 # Просмотр содержания архива
@@ -104,22 +105,20 @@ git push -u origin master
 
 #### Индексирование (add) файлов и проверка, записываем состояние (commit):
 ``` nix
-# Очень опасная команда, подумайте прежде чем пользоваться ею
+# Индексация новых файлов и всех изменений. Очень опасная команда, подумайте прежде чем пользоваться ею
 git add .
-# Отмена изменений файла до внесения файла в записанное состояние (commit)
-git checkout -- README.md
 
 # Список всех измененных
 git status
 # Самая важная команда (commit)
-git commit -m"comment1" -m"comment2" (ключ -a аналогичен команде git add .)
+git commit -m"comment1" -m"comment2" (ключ -a индексирует только модифицированные файлы)
 ```
 Картинки в комментариях можно посмотреть [здесь](//www.webpagefx.com/tools/emoji-cheat-sheet/).
 
 #### Удаление файла из списка индексируемых до записи состояния (commit):
 ``` nix
 # Список файлов можно перечислять через пробел
-git rm README.md
+git rm --cached folder/ReadMe.md
 ```
 
 #### Извлечь случайно удалённый файл из репозитория:
@@ -197,17 +196,18 @@ git add --all && git commit -m"fix commit"
 # Коммиты должны быть запушины?
 git reset --soft <KEY>
 git push --force
+# Перед этим должен быть снят "Branch protection"
 # //tonyganch.com/git/reset/
 # //marklodato.github.io/visual-git-guide/index-ru.html
 ```
 
 #### Найти файлы с BOM
-```shell
+``` shell
 find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
  | xargs -0r awk "/^\xEF\xBB\xBF/ {print FILENAME}{nextfile}"
 ```
 #### Удалить BOM из UTF-8
-```shell
+``` shell
 find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
  | xargs -0 grep -l `printf "^\xEF\xBB\xBF"`\
  | xargs sed -i "1 s/^\xEF\xBB\xBF//"

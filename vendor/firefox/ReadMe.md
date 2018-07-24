@@ -2,11 +2,11 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|60.0.0|2018-05-03|all
-Firefox <sup>[esr]</sup>|ESR|52.8.0|2018-05-01|all
+Firefox <sup>[www]</sup>|Release|61.0.0|2018-06-21|all
+Firefox <sup>[esr]</sup>|ESR|52.9.0|2018-06-21|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/52.8.0esr/win32/ "Extended support"
+[esr]://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/win32/ "Extended support"
 
 ### Краткое описание
 
@@ -38,14 +38,14 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 
 # Рекомендуемые настройки
 
-### Список некоторых расширений
+### &#x1F518; Список некоторых расширений
 
 1. [Adblock Plus]  
 	Расширение позволяет вернуть себе контроль над содержанием страниц и видеть лишь то, что хочется.
 	- Основная проблема утечки памяти состоит в подписке EasyList, содержащей 69k фильтров, большая часть 
 		которых бесполезна для рунета.  
 		Рекомендую альтернативную подписку [AdBlock EdgeList]. Предложения по улучшению привествуются.
-	- Можете дополнительно установить *[Greasemonkey]* или ~~*[Stylish]*~~ для подключения сторонних *user 
+	- Можете дополнительно установить *[Greasemonkey]*<sup>[:(]</sup> или ~~*[Stylish]*~~ для подключения сторонних *user 
 		script*, либо сразу перейти на аналог [µBlock Origin].  
 		- **ВАЖНО:** Обязательно читайте стили перед установкой в *Stylish*. Запрещенное 
 			на Userstyles.org свойство **-moz-binding** может выполнить JS-код на компьютере 
@@ -61,6 +61,7 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 5. [Video DownloadHelper]  
 	Самый простой способ скачать и конвертировать видео из сотен сайтов как YouTube.
 
+[:(]://github.com/greasemonkey/greasemonkey/issues/2733/
 [Adblock Plus]://addons.mozilla.org/ru/firefox/addon/1865/
 [AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist "Ctrl+Shift+I"
 [Browsec VPN]://addons.mozilla.org/firefox/addon/603434/
@@ -73,14 +74,14 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерф
 [Video DownloadHelper]://addons.mozilla.org/ru/firefox/addon/3006/
 [µBlock Origin]://addons.mozilla.org/ru/firefox/addon/607454/
 
-### Ссылка на подписку ABP EdgeList
+### &#x1F518; Ссылка на подписку ABP EdgeList
 
 Подписку можно подключить в настройках расширения "*<kbd>ЛКМ</kbd> по значку -> Настройки -> Расширенные -> 
 Добавить новый список фильтров*" указав путь к файлу в ветке репозитория **adblock**, или через ссылку в html-коде:
 
 `<a href="abp:subscribe?title=AdBlock%20EdgeList&location=https%3A%2F%2Fgithub.com%2Fbopoh13%2Fdocs%2Fraw%2Fadblock%2Fvendor%2Ffirefox%2Fadblockedge.txt">AdBlock EdgeList</a>`
 
-### Дополнительные возможности
+### &#x1F518; Дополнительные возможности
 
 Справа в адресной строке появляется значок-книга "Перейти в Вид для чтения". В данном режиме просмотра 
 удобно отправлять страницу на печать без оформления, можно воспроизводить текст [голосом] (для Windows 7 
