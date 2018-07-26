@@ -95,6 +95,21 @@ gpg -d backup.tbz2.gpg | tar -xj
 gpg -o backup.tbz2 -d backup.tbz2.gpg
 ```
 
+#### Создание нового репозитория (после инициализация в GitHub Desktop)
+Коммит создаётся от имени, указаного в настройках GitHub Desktop. Заменяем его.
+Создаём файлы .gitattributes и .gitignore. Затем нужно удалить коммит `<234567KEY>`
+``` nix
+git log --pretty=oneline
+<234567KEY>
+<123456KEY>
+git reset --soft <234567KEY>
+```
+Лучше сразу использовать (см. ниже --amend)
+``` nix
+git add .
+git commit --amend -S
+```
+
 #### Загрузить существующий репозиторий с локальной машины:
 ``` nix
 # //github.com/Imangazaliev/git-tips
@@ -113,7 +128,7 @@ git status
 # Самая важная команда (commit)
 git commit -m"comment1" -m"comment2" (ключ -a индексирует только модифицированные файлы)
 ```
-Картинки в комментариях можно посмотреть [здесь](//www.webpagefx.com/tools/emoji-cheat-sheet/).
+:space_invader: Картинки в комментариях можно посмотреть [здесь](//gist.github.com/rxaviers/7360908).
 
 #### Удаление файла из списка индексируемых до записи состояния (commit):
 ``` nix
@@ -206,11 +221,21 @@ git push --force
 find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
  | xargs -0r awk "/^\xEF\xBB\xBF/ {print FILENAME}{nextfile}"
 ```
+#### Добавить символ CR перед LF (в файлах UTF-8 может добавится BOM)
+``` shell
+# имена файлов не должны содержать символ пробела
+git pull && \
+find . -type f \( -name "*.md" -o -name "*.html" -o -name "*.liquid" \) -print0\
+ | xargs -0 grep -m1 -Ulv `printf "\x0D$"`\
+ | xargs sed -i "s/\$/\x0D/"
+```
 #### Удалить BOM из UTF-8
 ``` shell
-find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
+find . -type f \( -name "*.md" -o -name "*.html" -o -name "*.liquid" \) -print0\
  | xargs -0 grep -l `printf "^\xEF\xBB\xBF"`\
- | xargs sed -i "1 s/^\xEF\xBB\xBF//"
+ | xargs sed -i "1 s/^\xEF\xBB\xBF//" && \
+git add --all
+# https://toster.ru/q/377947 (1 s - обрабатывется первая строка)
 ```
 
 #
