@@ -1,4 +1,4 @@
-﻿## Описание команд в Git для объекта с именем origin
+## Описание команд в Git для объекта с именем origin
 
 #### Настройка имени пользователя и почтового адреса:
 ``` nix
@@ -221,20 +221,12 @@ git push --force
 find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
  | xargs -0r awk "/^\xEF\xBB\xBF/ {print FILENAME}{nextfile}"
 ```
-#### Добавить символ CR перед LF (в файлах UTF-8 может добавится BOM)
+#### Удалить BOM из UTF-8 и добавить в строках символы CR перед LF
 ``` shell
-# имена файлов не должны содержать символ пробела
-git pull && \
-find . -type f \( -name "*.md" -o -name "*.html" -o -name "*.liquid" \) -print0\
- | xargs -0 grep -m1 -Ulv `printf "\x0D$"`\
- | xargs sed -i "s/\$/\x0D/"
-```
-#### Удалить BOM из UTF-8
-``` shell
-find . -type f \( -name "*.md" -o -name "*.html" -o -name "*.liquid" \) -print0\
- | xargs -0 grep -l `printf "^\xEF\xBB\xBF"`\
- | xargs sed -i "1 s/^\xEF\xBB\xBF//" && \
-git add --all
+find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.liquid"\
+ -o -name "*.md" -o -name "*.xml" \) -print0\
+ | xargs -0 grep -m1 -l `printf "^\xEF\xBB\xBF"`\
+ | xargs sed -i "1 s/^\xEF\xBB\xBF//; s/\$/\x0D/"
 # https://toster.ru/q/377947 (1 s - обрабатывется первая строка)
 ```
 

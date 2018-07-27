@@ -1,4 +1,4 @@
-﻿// ==UserScript==
+// ==UserScript==
 // @name	Habr Users Blocker
 // @namespace	https://wiki.greasespot.net/Metadata_Block
 // @description	Hides sellers, highlights yellow press and hides comments
@@ -7,21 +7,18 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2.5
+// @version	1.2.6
 // @icon	https://habr.com/images/favicon-32x32.png
 // @require	https://dr.habracdn.net/gt/javascripts/1521637170/libs/jquery-1.8.3.min.js
 // @include	https://habr.com/*
-// @include	https://geektimes.com/*
 // @exclude	https://habr.com/company/*
 // @exclude	https://habr.com/search/*
-// @exclude	https://geektimes.com/search/*
 // @exclude	https://habr.com/users/*
-// @exclude	https://geektimes.com/users/*
 // @grant	none
 // @run-at	document-end
 // ==/UserScript==
 /**
- * По статье "Делаем пространство чище" //geektimes.com/post/272164/#comment_9074942
+ * По статье "Делаем пространство чище" //habr.com/post/391233/#comment_17336589
  */
 
 var fablers = [
