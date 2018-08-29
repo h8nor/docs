@@ -186,7 +186,7 @@ user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
 user_pref("browser.cache.offline.enable", false);
 // The number stored in the memory of page to go back (reduce memory consumption)
 user_pref("browser.sessionhistory.max_entries", 12);
-// conflicts with sites github.com, gist.github.com
+// conflicts with sites github.com, gist.github.com, code.sololearn.com
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled", false);
 // Webpages will not be able to affect the right-click menu

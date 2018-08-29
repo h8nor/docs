@@ -107,7 +107,7 @@ git reset --soft <234567KEY>
 Лучше сразу использовать (см. ниже --amend)
 ``` nix
 git add .
-git commit --amend -S
+git commit --amend -S (-v при редактировании описания коммита показывает все сделанные изменения)
 ```
 
 #### Загрузить существующий репозиторий с локальной машины:
@@ -123,10 +123,11 @@ git push -u origin master
 # Индексация новых файлов и всех изменений. Очень опасная команда, подумайте прежде чем пользоваться ею
 git add .
 
-# Список всех измененных
-git status
+# Краткий список всех изменений
+# //habr.com/post/420529/
+git status -sb
 # Самая важная команда (commit)
-git commit -m"comment1" -m"comment2" (ключ -a индексирует только модифицированные файлы)
+git commit -m"comment1" -m"comment2" (ключ -a коммитит только файлы из индекса)
 ```
 :space_invader: Картинки в комментариях можно посмотреть [здесь](//gist.github.com/rxaviers/7360908).
 
@@ -139,6 +140,8 @@ git rm --cached folder/ReadMe.md
 #### Извлечь случайно удалённый файл из репозитория:
 ``` nix
 git checkout README.md
+# Отмена изменений всех файлов после модификации
+git checkout -- .
 ```
 
 #### Объединение (merge) ветки dev с веткой master:
@@ -223,10 +226,12 @@ find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
 ```
 #### Удалить BOM из UTF-8 и добавить в строках символы CR перед LF
 ``` shell
-find . -type f \( -name "*.html" -o -name "*.js" -o -name "*.liquid"\
- -o -name "*.md" -o -name "*.xml" \) -print0\
+find . -type f \( -name "*.css" -o -name "*.scss"\
+ -o -name "*.html" -o -name "*.js" -o -name "*.liquid"\
+ -o -name "*.md" -o -name "*.svg" -o -name "*.xml" \) -print0\
  | xargs -0 grep -m1 -l `printf "^\xEF\xBB\xBF"`\
- | xargs sed -i "1 s/^\xEF\xBB\xBF//; s/\$/\x0D/"
+ | xargs sed -i "1 s/^\xEF\xBB\xBF//; s/\$/\x0D/"\
+ && git ls-files -mo --eol
 # https://toster.ru/q/377947 (1 s - обрабатывется первая строка)
 ```
 
