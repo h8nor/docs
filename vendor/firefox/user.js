@@ -133,6 +133,8 @@ user_pref("media.navigator.video.enabled", false);
 user_pref("media.getusermedia.screensharing.enabled", false);
 // https://bugzil.la/654550
 user_pref("media.video_stats.enabled", false);
+user_pref("media.autoplay.enabled", false);
+user_pref("media.block-autoplay-until-in-foreground", false);
 
 // http://kb.mozillazine.org/Network.proxy.socks_remote_dns
 user_pref("network.proxy.socks_remote_dns", true);
@@ -175,6 +177,7 @@ user_pref("layout.css.font-loading-api.enabled", false);
 
 // // // DESIRABLE
 user_pref("browser.startup.homepage", "//clck.ru/0f");
+user_pref("browser.tabs.insertRelatedAfterCurrent", false);
 // Stop GIF animation
 # user_pref("image.animation_mode", "once");
 // https://wiki.mozilla.org/Security:Renegotiation#security.ssl.treat_unsafe_negotiation_as_broken

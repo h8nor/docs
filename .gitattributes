@@ -5,6 +5,7 @@
 *.bat	filter=win1251	eol=crlf
 *.cms	filter=win1251	eol=crlf
 *.hns	filter=win1251	-diff	eol=crlf
+*.js	eol=crlf
 *.vbs	text	working-tree-encoding=CP1251	eol=CRLF
 #*.png	binary
 

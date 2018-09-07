@@ -7,13 +7,15 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2.7
+// @version	1.2.8
 // @icon	https://habr.com/images/favicon-32x32.png
 // @require	https://dr.habracdn.net/gt/javascripts/1521637170/libs/jquery-1.8.3.min.js
 // @include	https://habr.com/*
 // @exclude	https://habr.com/company/*
 // @exclude	https://habr.com/search/*
 // @exclude	https://habr.com/users/*
+// @exclude	https://habr.com/hub/ios_dev/*
+// @exclude	https://habr.com/hub/sci-fi/*
 // @grant	none
 // @run-at	document-end
 // ==/UserScript==
@@ -32,6 +34,7 @@ var fablers = [
   'krasandm',
   'lozga',
   'marks',
+  'PatientZero',
   'ragequit',
   'SLY_G',
   'vconst',
@@ -53,6 +56,7 @@ var fablers = [
 ];
 var slob = [
   'display_adv',
+  'hr_management',
   'ios_dev',
   'sci-fi'
 ];
@@ -74,6 +78,7 @@ var pr = [
   'ptsecurity',
   'redmond',
   'regionsoft',
+  'skillbox',
   'superjob',
   'tuturu',
   'varonis',
@@ -83,7 +88,7 @@ var pr = [
   '380365'
   'latimeria'
   'maghamed'
-  'nmivan'
+  'nmivan'(2)
 */
 // Only for companies
 var sellers = [
@@ -127,6 +132,7 @@ var wampus = [
   'odissey_nemo',
   'Olga_Voronova',
   'Sormovich',
+  'Sword_Dancer',
   'VenomBlood',
   'Welran',
   'Y1975',
