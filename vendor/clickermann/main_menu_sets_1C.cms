@@ -1,0 +1,295 @@
+// Author: bopoh13@ya
+// License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
+// Version: 1.0
+// Main menu settings DOAM for 1C-8.3.12.1529
+
+#name "Set Main menu DOAM"
+
+// Declare variables
+DEFINE ($_delay,	140)	// MIN Wait after click
+DEFINE ($_xpoint,	540)	// The first disclosure button, along the X
+DEFINE ($_ypoint,	353)	// The first disclosure button, along the Y
+
+// Без скрипта настройки должны переноситься, если установлена галка:
+//	+ Запрашивать подтверждение при закрытии программы
+// Наименование								= Содержит
+// Отвественный								= Равно
+// Не в Черном списке					=> Заполнено
+// Ссылка.Создание карточки		= Больше или равно
+// Дата последняя							= Больше или равно
+// Вид контрагента						= Равно
+// Ссылка.Создание карточки		= Меньше или равно
+// Дата последняя							= Меньше или равно
+// Ссылка.Место работы				= Содержит
+// Отвественный.Подразделение	= Равно
+//
+// Clicking on the "plus" list
+SUB (CLICK_LIST, $xstep, $ystep, $menuitem)
+PRINT ($menuitem)
+	$offsetx = $_xpoint + $xstep * 23
+	$offsety = $_ypoint + $ystep * 33
+	
+	IF ($menuitem > 0) // Selecting the context menu # item
+		RClick ($offsetx, $offsety)
+		WaitMS ($_delay * 2)
+		PRINT ("RClick on list: ", $offsetx, " ", $offsety)
+		$offsetx = $offsetx + 23
+		$offsety = $offsety - 16 + $menuitem * 33
+		LClick ($offsetx, $offsety)
+		PRINT ("LClick on menu: ", $offsetx, " ", $offsety)
+	ELSE
+		LClick ($offsetx, $offsety)
+		PRINT ("LClick on list: ", $offsetx, " ", $offsety)
+	END_IF
+	WaitMS ($_delay)  
+END_SUB
+
+SUB (SET_GROUP, $title, $vertical_group)
+	DBLClick (1153, 356)
+	WaitMS ($_delay)
+	// Title
+	KeyString ($title) 
+	WaitMS ($_delay * 2)
+	LClick (1152, 405)
+	WaitMS ($_delay)
+	// Display
+	LClick (1392, 504) 
+	WaitMS ($_delay * 2)
+	LClick (1391, 528)
+	WaitMS ($_delay)
+	// Grouping
+	LClick (1391, 528)
+	WaitMS ($_delay * 2) 
+	IF ($vertical_group = 1)
+		LClick (1391, 556)  // Vertical
+	ELSE
+		LClick (1391, 625)  
+	END_IF
+	WaitMS ($_delay)
+	PRINT ("Add group: ", $title)        
+END_SUB
+
+SUB (SET_ELEMENT, $title)
+	DBLClick (1188, 356)
+	WaitMS ($_delay)
+	
+	KeyDown (#CTRL) // Ctrl+A
+	WaitMS ($_delay * 1.5)
+	KeyDown (65)
+	WaitMS ($_delay * 1.5)
+	KeyUp (65)
+	KeyUp (#CTRL)
+	WaitMS ($_delay * 1.5)
+	
+	KeyString ($title) // Title
+	WaitMS ($_delay * 2)
+	PRINT ("Add element: ", $title)        
+END_SUB
+
+// Open window "Change form"
+SUB (OPEN_FORM_SETS, $step)
+	// Position of the button "More"
+	$offsety = 343 //==> 390
+	
+	LClick (1240, $offsety) // Highlight an HTML block
+	WaitMS ($_delay * 4)
+	
+	LClick (1200, $offsety) // Btn "More"
+	WaitMS ($_delay * 2)
+	LClick (1200, $offsety + 570) // Btn "Change form"
+	WaitMS ($_delay * 2)
+	
+	IF ($step == 1)
+		SETKBLAYOUT ($hwnd, 1033) // EN
+		
+		KeyDown (#ALT) // Alt+Shift+R
+		WaitMS ($_delay * 1.5)
+		KeyDown (#SHIFT)
+		WaitMS ($_delay * 1.5)
+		KeyDown (82)
+		WaitMS ($_delay * 1.5)
+		KeyUp (82)
+		KeyUp (#SHIFT)
+		KeyUp (#ALT)
+		WaitMS ($_delay * 1.5)
+		
+		SETKBLAYOUT ($hwnd, 1049) // RU
+		WaitMS ($_delay * 2)
+		
+		LClick (1390, 280) // Btn "More"
+		WaitMS ($_delay * 6)
+		LClick (1390, 580)
+		WaitMS ($_delay * 2)
+	END_IF
+END_SUB
+
+
+LClick (680, 880) // Click on window 1C
+KeyDown (#WIN) // Win+Up
+WaitMS ($_delay * 1.5)
+KeyDown (38)
+WaitMS ($_delay * 1.5)
+KeyUp (38)
+KeyUp (#WIN)
+WaitMS ($_delay * 1.5)
+
+$var_i = 1
+WHILE (9 > $var_i) // Press Arrow Down
+	LClick (1905, 975)
+	WaitMS ($_delay)
+	$var_i = $var_i + 1
+END_CYC
+$hwnd = wndfind("ДОАМ") // Get HWND
+OPEN_FORM_SETS (1)
+
+
+// ### START SCRIPT ###
+//
+// Form Setup window
+CLICK_LIST (0, 1, 0) // LClick "+"
+CLICK_LIST (1, 3, 1) // RClick "++$"
+SET_GROUP ("Rjkjyrf 0", 1) // SUB
+
+$var_i = 5
+$var_y = 620
+WHILE ($var_i > 0)
+	LDown (640, 388) // Move
+	WaitMS ($_delay * 4)
+	LUp (640, $var_y)
+	WaitMS ($_delay)
+	$var_y = $var_y - 33
+	$var_i = $var_i - 1
+END_CYC
+CLICK_LIST (2, 3, 0) // LClick "++-"
+CLICK_LIST (1, 3, 1) // RClick "++$"
+SET_GROUP ("Rjkjyrf 1", 1) // SUB
+CLICK_LIST (1, 2, 0) // LClick "++"
+CLICK_LIST (2, 4, 0) // LClick "+++"
+
+$var_i = 1
+WHILE (6 > $var_i) // Press Arrow Down
+	LClick (926, 740)
+	WaitMS ($_delay)
+	$var_i = $var_i + 1
+END_CYC	
+
+LDown (662, 488) // Move "Place of work"
+WaitMS ($_delay * 4)
+LUp (640, 724)
+WaitMS ($_delay)
+
+CLICK_LIST (3, 6, 0) // LClick "++++"
+CLICK_LIST (6, 8, 0) // Select title "Place of work"
+SET_ELEMENT ("Vtcnj hf,jns (lkz abp/kbw)") // SUB
+CLICK_LIST (3, 6, 0) // LClick "+++-"
+
+$var_i = 2
+$var_y = 520
+WHILE ($var_i > 0)
+	LDown (640, 420) // Move
+	WaitMS ($_delay * 4)
+	LUp (640, $var_y)
+	WaitMS ($_delay)
+	$var_y = $var_y - 33
+	$var_i = $var_i - 1
+END_CYC
+
+LDown (660, 355) // Move "Subdivision"
+WaitMS ($_delay * 4)
+LUp (640, 454)
+WaitMS ($_delay)
+
+CLICK_LIST (3, 7, 0) // LClick "++++"
+CLICK_LIST (6, 8, 0) // Select title "Subdivision"
+SET_ELEMENT ("Gjlhfpltktybt LJFV") // SUB
+CLICK_LIST (3, 7, 0) // LClick "+++-
+
+$var_i = 1
+WHILE (6 > $var_i) // Press Arrow Up
+	LClick (926, 350)
+	WaitMS ($_delay)
+	$var_i = $var_i + 1
+END_CYC
+CLICK_LIST (2, 1, 0) // LClick "++-"
+CLICK_LIST (2, 0, 0) // LClick "+++"
+
+LDown (660, 422) // Move "Responsible"
+WaitMS ($_delay * 4)
+LUp (640, 690)
+WaitMS ($_delay)
+
+$var_i = 1
+WHILE (8 > $var_i) // Press Arrow Up
+	LClick (926, 350)
+	WaitMS ($_delay)
+	$var_i = $var_i + 1
+END_CYC
+
+LDown (660, 422) // Move "Black List"
+WaitMS ($_delay * 4)
+LUp (640, 655)
+WaitMS ($_delay)
+
+CLICK_LIST (2, 0, 1) // RClick "++$"
+SET_GROUP ("<kjr 1-0", 0) // SUB
+
+$var_i = 2
+WHILE ($var_i > 0)
+	LClick (906, 282)
+	WaitMS ($_delay)
+	$var_i = $var_i - 1
+END_CYC
+
+$var_i = 2
+$var_y = 656
+WHILE ($var_i > 0)
+	LDown (664, $var_y) // Move
+	WaitMS ($_delay * 4)
+	LUp (664, 624)
+	WaitMS ($_delay)
+	$var_y = $var_y + 33
+	$var_i = $var_i - 1
+END_CYC
+
+LClick (1130, 795) // Press "OK"
+WaitMS ($_delay * 10)
+OPEN_FORM_SETS (2)
+
+
+CLICK_LIST (0, 1, 0) // LClick "+"
+CLICK_LIST (1, 2, 0) // LClick "++"
+CLICK_LIST (2, 3, 0) // LClick "+++"
+
+CLICK_LIST (3, 5, 0) // LClick "++++"
+CLICK_LIST (6, 7, 0) // Select title "Create Date 1"
+SET_ELEMENT ("Lfnf cjplfybz rfhnjxrb c") // SUB
+CLICK_LIST (5, 9, 0) // Uncheck field
+CLICK_LIST (3, 5, 0) // LClick "+++-"
+WaitMS ($_delay * 4)
+
+$var_y = 5 //==>
+CLICK_LIST (3, $var_y, 0) // LClick "++++"
+CLICK_LIST (6, $var_y + 1, 0) // Select title "Interaction date 1"
+SET_ELEMENT ("Gjcktlyzz lfnf d bcnjhbb c") // SUB
+CLICK_LIST (5, $var_y + 2, 0) // Uncheck field
+CLICK_LIST (3, $var_y, 0) // LClick "+++-"
+CLICK_LIST (2, $var_y - 4, 0) // LClick "++-"
+
+CLICK_LIST (2, 4, 0) // LClick "+++"
+CLICK_LIST (3, 6, 0) // LClick "++++"
+CLICK_LIST (6, 8, 0) // Select title "Create Date 2"
+SET_ELEMENT ("Lfnf cjplfybz rfhnjxrb lj") // SUB
+CLICK_LIST (5, 10, 0) // Uncheck field
+CLICK_LIST (3, 6, 0) // LClick "+++-"
+WaitMS ($_delay * 4)
+
+CLICK_LIST (3, $var_y + 1, 0) // LClick "++++"
+CLICK_LIST (6, $var_y + 2, 0) // Select title "Interaction date 2"
+SET_ELEMENT ("Gjcktlyzz lfnf d bcnjhbb lj") // SUB
+CLICK_LIST (5, $var_y + 3, 0) // Uncheck field
+CLICK_LIST (3, $var_y + 1, 0) // LClick "+++-"
+
+LClick (1130, 795) // Press "OK"
+
+LOGSHOW (1)
+HALT // Stop
