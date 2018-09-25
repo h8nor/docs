@@ -15,6 +15,8 @@ user_pref("extensions.getAddons.cache.enabled", false);
 user_pref("network.http.spdy.allow-push", false);
 user_pref("network.http.spdy.enabled", false);
 user_pref("network.http.spdy.enabled.http2", false);
+// https://github.com/mozilla/one-off-system-add-ons/pull/131/
+user_pref("toolkit.telemetry.coverage.opt-out", true);
 // https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
 user_pref("toolkit.telemetry.unified", false);

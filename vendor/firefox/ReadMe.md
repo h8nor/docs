@@ -2,11 +2,11 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|61.0.0|2018-06-21|all
-Firefox <sup>[esr]</sup>|ESR|52.9.0|2018-06-21|all
+Firefox <sup>[www]</sup>|Release|62.0.0|2018-08-30|all
+Firefox <sup>[esr]</sup>|ESR|60.2.0|2018-09-03|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/52.9.0esr/win32/ "Extended support"
+[esr]://ftp.mozilla.org/pub/firefox/releases/60.2.0esr/win32/ "Extended support"
 
 ### Краткое описание
 
