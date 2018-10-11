@@ -7,7 +7,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2.8
+// @version	1.2.9
 // @icon	https://habr.com/images/favicon-32x32.png
 // @require	https://dr.habracdn.net/gt/javascripts/1521637170/libs/jquery-1.8.3.min.js
 // @include	https://habr.com/*
@@ -40,6 +40,7 @@ var fablers = [
   'vconst',
   
   'alconost',
+  'aleksandrit',
   'Alexandra_Varonis',
   'esetnod32',
   'estet',
@@ -89,6 +90,8 @@ var pr = [
   'latimeria'
   'maghamed'
   'nmivan'(2)
+  'rvnikita'(2)
+  'shuvaevgl'
 */
 // Only for companies
 var sellers = [
@@ -98,6 +101,7 @@ var sellers = [
   'coptertime',
   'cvetmir3d',
   'dadget',
+  'englishdom',
   'epson',
   'gadgetfreaks',
   'gearbest',
@@ -129,6 +133,7 @@ var wampus = [
   'lair',
   'lakegull',
   'mistik_max',
+  'Neikist',
   'odissey_nemo',
   'Olga_Voronova',
   'Sormovich',
