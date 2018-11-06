@@ -115,13 +115,20 @@ user_pref("browser.fixup.alternate.enabled", false);
 user_pref("browser.eme.ui.enabled", false);
 user_pref("media.eme.enabled", false);
 // https://gist.github.com/Guest007/e3a09aa97a827916b0b91b726a8c2c66
-#57 user_pref("privacy.trackingprotection.enabled", false);
+user_pref("privacy.trackingprotection.enabled", true);
+// This setting is triggered after setting up other extensions (detailed by the F12)
+// https://support.mozilla.org/en-US/kb/tracking-protection
+#63 user_pref("urlclassifier.trackingTable", "test-track-simple,base-track-digest256,content-track-digest256");
 // conflicts with site gosuslugi.ru (map & date); need to delete the parameter
 user_pref("privacy.trackingprotection.pbmode.enabled", false);
 // Perhaps the screenshots will not work if the HTML5 is disabled with on the site and option enabled
 // https://www.linux.org.ru/news/mozilla/13978522/
 user_pref("privacy.resistFingerprinting", true);
 user_pref("privacy.firstparty.isolate", true);
+// https://support.mozilla.org/en-US/kb/containers
+user_pref("privacy.userContext.enabled", true);
+user_pref("privacy.userContext.longPressBehavior", 2);
+user_pref("privacy.userContext.ui.enabled", true);
 // https://en.wikipedia.org/wiki/Content_Security_Policy
 // https://github.com/greasemonkey/greasemonkey/issues/2631
 user_pref("security.csp.enable", true);

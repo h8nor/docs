@@ -2,25 +2,26 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|62.0.0|2018-08-30|all
-Firefox <sup>[esr]</sup>|ESR|60.2.0|2018-09-03|all
+Firefox <sup>[www]</sup>|Release|63.0.0|2018-10-19|all
+Firefox <sup>[esr]</sup>|ESR|60.3.0|2018-10-18|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/60.2.0esr/win32/ "Extended support"
+[esr]://ftp.mozilla.org/pub/firefox/releases/60.3.0esr/win32/ "Extended support"
 
 ### Краткое описание
 
 В браузере Firefox используется свободный портируемый движок Gecko<sup>[*]</sup>, созданный с учётом поддержки 
-WebAssembly<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерфейс со многими вкладками, 
+[WebAssembly]<sup>[**]</sup> и открытых стандартов. В браузере присутствует интерфейс со многими вкладками, 
 проверка орфографии, поиск по мере набора с подсветкой текста на странице, менеджер закачек, поле для 
 обращения к поисковым системам.  
 Новые функции можно добавлять при помощи *расширений*.  
-Существует альтернативная версия [Waterfox] или [PaleMoon] для 64-битных ОС. В июне 2018 г. прекратится выпуск 
+Существует альтернативная версия [Waterfox] или [PaleMoon] для 64-битных ОС. В июне 2018 г. прекратился выпуск 
 обновлений безопасности на канале ESR для версии Firefox под Windows XP<sup>[***]</sup>. 
 
 [*]://habr.com/post/313820/ "Rust > Servo > Quantum"
 [**]://habr.com/post/402173/ "wasm - низкоуровневый ЯП, выполняющийся в браузере"
 [***]://habr.com/post/407239/
+[WebAssembly]://habr.com/post/428347/ "RU, 2018-10-31"
 [Waterfox]://www.waterfoxproject.org/ "браузер с поддержкой XUL-расширений"
 [PaleMoon]://www.palemoon.org/ "браузер с поддержкой XUL-расширений"
 
@@ -62,17 +63,17 @@ WebAssembly<sup>[**]</sup> и открытых стандартов. В брау
 	Самый простой способ скачать и конвертировать видео из сотен сайтов как YouTube.
 
 [:(]://github.com/greasemonkey/greasemonkey/issues/2733/
-[Adblock Plus]://addons.mozilla.org/ru/firefox/addon/1865/
-[AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist "Ctrl+Shift+I"
+[Adblock Plus]://addons.mozilla.org/firefox/addon/1865/
+[AdBlock EdgeList]:#cyclone-ссылка-на-подписку-abp-edgelist "Ctrl+Shift+I"
 [Browsec VPN]://addons.mozilla.org/firefox/addon/603434/
 [Canvas]://geektimes.com/post/284604/#comment_9815366 "SHA-256"
-[CanvasBlocker]://addons.mozilla.org/ru/firefox/addon/534930/
-[Google Translator]://addons.mozilla.org/ru/firefox/addon/46308/ "Половина сайтов не работает"
-[Greasemonkey]://addons.mozilla.org/ru/firefox/addon/748/ "Движок для запуска UserJS"
-[Octotree]://addons.mozilla.org/ru/firefox/addon/512640/
+[CanvasBlocker]://addons.mozilla.org/firefox/addon/534930/
+[Google Translator]://addons.mozilla.org/firefox/addon/46308/ "Половина сайтов не работает"
+[Greasemonkey]://addons.mozilla.org/firefox/addon/748/ "Движок для запуска UserJS"
+[Octotree]://addons.mozilla.org/firefox/addon/512640/
 [Stylish]://github.com/The-OP/Fox/commit/370229fefefb8b724f978ae9641597ca0ad40280 "Меняет внешний вид сайтов согласно UserCSS"
-[Video DownloadHelper]://addons.mozilla.org/ru/firefox/addon/3006/
-[µBlock Origin]://addons.mozilla.org/ru/firefox/addon/607454/
+[Video DownloadHelper]://addons.mozilla.org/firefox/addon/3006/
+[µBlock Origin]://addons.mozilla.org/firefox/addon/607454/
 
 ### :cyclone: Ссылка на подписку ABP EdgeList
 

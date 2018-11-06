@@ -7,7 +7,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2.9
+// @version	1.2.10
 // @icon	https://habr.com/images/favicon-32x32.png
 // @require	https://dr.habracdn.net/gt/javascripts/1521637170/libs/jquery-1.8.3.min.js
 // @include	https://habr.com/*
@@ -92,6 +92,7 @@ var pr = [
   'nmivan'(2)
   'rvnikita'(2)
   'shuvaevgl'
+  'x-foby'
 */
 // Only for companies
 var sellers = [
@@ -101,6 +102,7 @@ var sellers = [
   'coptertime',
   'cvetmir3d',
   'dadget',
+  'dell',
   'englishdom',
   'epson',
   'gadgetfreaks',
@@ -115,12 +117,14 @@ var sellers = [
   'mvideo',
   'piter',
   'pocketbook',
-  'top3dshop'
+  'top3dshop',
+  'tp_link_russia'
 ];
 var wampus = [
   '1MK-Ultra',
   'AlexPu',
   'askv',
+  'Cast_iron',
   'deNULL',
   'devop-su',
   'dipsy',
@@ -161,3 +165,6 @@ $('.user-info_inline.user-info').filter(function() {
 $('.is_blocked.for_users_only_msg').html(function() {
     return $(this).text().replace(new RegExp('[^\\s\\w,А-яЁё]'), `$& Впрочем, можно <a href="https://${location.hostname}/info/help/registration/#invite">откупиться</a>.`);
 });
+
+// Часть кода ниже скопирована с //greasyfork.org/ru/scripts/368828
+
