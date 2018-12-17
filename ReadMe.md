@@ -12,6 +12,6 @@
 должны распространятся под аналогичной лицензией. 
 
 [GNU GPL 3.0]:http://rusgpl.ru/
-[CC BY-NC-SA 4.0]://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru "//github.com/creativecommons/creativecommons.org/commits/cc4-ru-legalcode"
+[CC BY-NC-SA 4.0]://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ru
 
 # 

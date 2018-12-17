@@ -2,6 +2,7 @@
 
 #### Настройка имени пользователя и почтового адреса:
 ``` nix
+# https://habr.com/post/306166/
 # Между прочим, это хороший тон
 git config user.name "FirstName LastName"
 git config user.email "user@example.com"

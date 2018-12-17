@@ -2,11 +2,11 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|63.0.0|2018-10-19|all
-Firefox <sup>[esr]</sup>|ESR|60.3.0|2018-10-18|all
+Firefox <sup>[www]</sup>|Release|64.0.0|2018-12-07|all
+Firefox <sup>[esr]</sup>|ESR|60.4.0|2018-12-04|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/60.3.0esr/win32/ "Extended support"
+[esr]://ftp.mozilla.org/pub/firefox/releases/60.4.0esr/win32/ "Extended support"
 
 ### Краткое описание
 
@@ -39,7 +39,7 @@ Firefox <sup>[esr]</sup>|ESR|60.3.0|2018-10-18|all
 
 # Рекомендуемые настройки
 
-### :cyclone: Список некоторых расширений
+### Список некоторых расширений
 
 1. [Adblock Plus]  
 	Расширение позволяет вернуть себе контроль над содержанием страниц и видеть лишь то, что хочется.
@@ -64,25 +64,27 @@ Firefox <sup>[esr]</sup>|ESR|60.3.0|2018-10-18|all
 
 [:(]://github.com/greasemonkey/greasemonkey/issues/2733/
 [Adblock Plus]://addons.mozilla.org/firefox/addon/1865/
-[AdBlock EdgeList]:#cyclone-ссылка-на-подписку-abp-edgelist "Ctrl+Shift+I"
+[AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist "Ctrl+Shift+I"
 [Browsec VPN]://addons.mozilla.org/firefox/addon/603434/
 [Canvas]://geektimes.com/post/284604/#comment_9815366 "SHA-256"
 [CanvasBlocker]://addons.mozilla.org/firefox/addon/534930/
-[Google Translator]://addons.mozilla.org/firefox/addon/46308/ "Половина сайтов не работает"
+[Google Translator]://addons.mozilla.org/firefox/addon/46308/ "2018-11-29 Гугл изменил интерфейс"
 [Greasemonkey]://addons.mozilla.org/firefox/addon/748/ "Движок для запуска UserJS"
 [Octotree]://addons.mozilla.org/firefox/addon/512640/
 [Stylish]://github.com/The-OP/Fox/commit/370229fefefb8b724f978ae9641597ca0ad40280 "Меняет внешний вид сайтов согласно UserCSS"
 [Video DownloadHelper]://addons.mozilla.org/firefox/addon/3006/
 [µBlock Origin]://addons.mozilla.org/firefox/addon/607454/
 
-### :cyclone: Ссылка на подписку ABP EdgeList
+### Ссылка на подписку ABP EdgeList
 
 Подписку можно подключить в настройках расширения "*<kbd>ЛКМ</kbd> по значку -> Настройки -> Расширенные -> 
 Добавить новый список фильтров*" указав путь к файлу в ветке репозитория **adblock**, или через ссылку в html-коде:
 
 `<a href="abp:subscribe?title=AdBlock%20EdgeList&location=https%3A%2F%2Fgithub.com%2Fbopoh13%2Fdocs%2Fraw%2Fadblock%2Fvendor%2Ffirefox%2Fadblockedge.txt">AdBlock EdgeList</a>`
 
-### :cyclone: Дополнительные возможности
+### Дополнительные возможности
+
+- Проверка [FingerPrint]
 
 Справа в адресной строке появляется значок-книга "Перейти в Вид для чтения". В данном режиме просмотра 
 удобно отправлять страницу на печать без оформления, можно воспроизводить текст [голосом] (для Windows 7 
@@ -90,6 +92,7 @@ Firefox <sup>[esr]</sup>|ESR|60.3.0|2018-10-18|all
 MS Word имеет функцию воспроизведения текста (в "*Настройках ленты*" в списке "*Команды не на ленте*" 
 команда "*Проговорить*").
 
+[FingerPrint]://amiunique.org "2018-12-07 https://habr.com/post/432296/#comment_19469322"
 [голосом]://support.mozilla.org/ru/kb/otvet-na-forume-ustanovka-golosov-dlya-windows-10
 [Speech Platform]://www.microsoft.com/en-us/download/details.aspx?id=16789
 [TTS]:http://mytts.forum2x2.ru/f10-forum "Text-To-Speech движок"
