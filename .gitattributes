@@ -3,9 +3,8 @@
 
 # Files that are truly binary and should not be modified
 *.bat	filter=win1251	eol=crlf
-*.cms	eol=crlf
+*.cms	filter=win1251	eol=crlf
 *.hns	filter=win1251	-diff	eol=crlf
-*.js	eol=crlf
 *.vbs	text	working-tree-encoding=CP1251	eol=CRLF
 #*.png	binary
 

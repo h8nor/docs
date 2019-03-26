@@ -2,8 +2,8 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|64.0.0|2018-12-07|all
-Firefox <sup>[esr]</sup>|ESR|60.4.0|2018-12-04|all
+Firefox <sup>[www]</sup>|Release|65.0.0|2019-01-24|all
+Firefox <sup>[esr]</sup>|ESR|60.5.0|2019-01-24|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
 [esr]://ftp.mozilla.org/pub/firefox/releases/60.4.0esr/win32/ "Extended support"

@@ -7,15 +7,15 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2.11
+// @version	1.2.12
 // @icon	https://habr.com/images/favicon-32x32.png
-// @require	https://dr.habracdn.net/gt/javascripts/1521637170/libs/jquery-1.8.3.min.js
+// @require	https://dr.habracdn.net/habrcom/javascripts/1547577650/libs/jquery-1.8.3.min.js
 // @include	https://habr.com/*
-// @exclude	https://habr.com/company/*
-// @exclude	https://habr.com/search/*
-// @exclude	https://habr.com/users/*
-// @exclude	https://habr.com/hub/ios_dev/*
-// @exclude	https://habr.com/hub/sci-fi/*
+// @exclude	https://habr.com/*/company/*
+// @exclude	https://habr.com/*/search/*
+// @exclude	https://habr.com/*/users/*
+// @exclude	https://habr.com/*/hub/ios_dev/*
+// @exclude	https://habr.com/*/hub/sci-fi/*
 // @grant	none
 // @run-at	document-end
 // ==/UserScript==
@@ -93,6 +93,7 @@ var pr = [
   'nmivan'(2)
   'rvnikita'(2)
   'shuvaevgl'
+  'Skybladev2'
   'x-foby'
 */
 // Only for companies
@@ -109,6 +110,7 @@ var sellers = [
   'epson',
   'gadgetfreaks',
   'gearbest',
+  'iqb_technologies',
   'itinvest',
   'kingston_technology',
   'maccentre',
@@ -143,6 +145,7 @@ var wampus = [
   'Neikist',
   'odissey_nemo',
   'Olga_Voronova',
+  'samhuawey',
   'Sormovich',
   'Sword_Dancer',
   'VenomBlood',

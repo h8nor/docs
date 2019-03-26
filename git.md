@@ -113,6 +113,8 @@ git commit --amend -S (-v при редактировании описания �
 
 #### Загрузить существующий репозиторий с локальной машины:
 ``` nix
+# Создать пустой репозиторий (origin) на GitHub, и проверить путь:
+git remote -v
 # //github.com/Imangazaliev/git-tips
 # //help.github.com/articles/creating-releases/
 git remote add origin https://github.com/bopoh13/docs.git
