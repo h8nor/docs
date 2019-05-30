@@ -114,10 +114,12 @@ git commit --amend -S (-v при редактировании описания �
 #### Загрузить существующий репозиторий с локальной машины:
 ``` nix
 # Создать пустой репозиторий (origin) на GitHub, и проверить путь:
+cd .. && \
+ git init <docs> && cd "$_" && git remote add origin https://github.com/bopoh13/"$_".git
 git remote -v
 # //github.com/Imangazaliev/git-tips
 # //help.github.com/articles/creating-releases/
-git remote add origin https://github.com/bopoh13/docs.git
+git remote add origin https://github.com/bopoh13/<docs>.git
 git push -u origin master
 ```
 
@@ -178,6 +180,8 @@ git push origin dev
 git branch dev
 # Создать ветку на определенном коммите
 git branch new_branch <KEY>
+# Создать чистую новую ветку
+git checkout --orphan new_branch
 ```
 
 #### Получение (pull) обновленной версии из репозитория:

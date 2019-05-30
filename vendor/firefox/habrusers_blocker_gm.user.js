@@ -7,7 +7,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	1.2.12
+// @version	1.2.13
 // @icon	https://habr.com/images/favicon-32x32.png
 // @require	https://dr.habracdn.net/habrcom/javascripts/1547577650/libs/jquery-1.8.3.min.js
 // @include	https://habr.com/*
@@ -64,6 +64,7 @@ var slob = [
 // Only for companies
 var pr = [
   'alconost',
+  'audiomania',
   'blog_potok',
   'haysrussia',
   'hosting-cafe',
@@ -76,6 +77,7 @@ var pr = [
   'mobio',
   'netologyru',
   'odnoklassniki',
+  'oleg-bunin',
   'plarium',
   'ptsecurity',
   'redmond',
@@ -91,6 +93,7 @@ var pr = [
   'latimeria'
   'maghamed'
   'nmivan'(2)
+  'RockMachine'
   'rvnikita'(2)
   'shuvaevgl'
   'Skybladev2'
@@ -128,6 +131,7 @@ var sellers = [
 var wampus = [
   '1MK-Ultra',
   'AlexPu',
+  'aliev',
   'askv',
   'Cast_iron',
   'deNULL',
