@@ -9,7 +9,7 @@
 *.cms	filter=win1251	eol=crlf
 *.csv	text	working-tree-encoding=CP1251	eol=CRLF
 *.hns	filter=win1251	-diff	eol=crlf
-*.js	text	eol=lf
+#*.js	text	eol=lf
 *.lst	text	working-tree-encoding=CP1251	eol=CRLF
 *.vbs	text	working-tree-encoding=CP1251	eol=CRLF
 #*.png	binary

@@ -2,11 +2,11 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|66.0.0|2019-03-22|all
-Firefox <sup>[esr]</sup>|ESR|60.6.0|2019-03-14|all
+Firefox <sup>[www]</sup>|Release|67.0.0|2019-05-17|all
+Firefox <sup>[esr]</sup>|ESR|60.7.0|2019-05-14|all
 
 [www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/60.6.0esr/win32/ "Extended support"
+[esr]://ftp.mozilla.org/pub/firefox/releases/60.7.0esr/win32/ "Extended support"
 
 ### Краткое описание
 
@@ -26,7 +26,6 @@ Firefox <sup>[esr]</sup>|ESR|60.6.0|2019-03-14|all
 [PaleMoon]://www.palemoon.org/ "браузер с поддержкой XUL-расширений"
 
 ---
-
 # Содержание репозитория
 
 - ***download_last_ff.vbs*** - скрипт для скачивания Firefox под разрядность ОС на Рабочий стол
@@ -39,7 +38,7 @@ Firefox <sup>[esr]</sup>|ESR|60.6.0|2019-03-14|all
 
 # Рекомендуемые настройки
 
-### Список некоторых расширений
+### :cyclone: Список некоторых расширений
 
 1. [Adblock Plus]  
 	Расширение позволяет вернуть себе контроль над содержанием страниц и видеть лишь то, что хочется.
@@ -57,9 +56,11 @@ Firefox <sup>[esr]</sup>|ESR|60.6.0|2019-03-14|all
 3. [Google Translator]  
 	С помощью этого расширения можно перевести любой текст на ваш родной язык одним щелчком мыши 
 	или с помощью комбинации клавиш. Можно перевести либо выделенный текст, либо всю страницу.
-4. [Octotree]  
+4. [FireShot]  
+	Создаёт полные скриншоты веб-страниц с вожможность сохранения в Сохраняйте снимки в PNG или PDF.
+5. [Octotree]  
 	Отображает репозиторий GitHub в виде дерева.
-5. [Video DownloadHelper]  
+6. [Easy Youtube Video Downloader Express]  
 	Самый простой способ скачать и конвертировать видео из сотен сайтов как YouTube.
 
 [:(]://github.com/greasemonkey/greasemonkey/issues/2733/
@@ -68,21 +69,26 @@ Firefox <sup>[esr]</sup>|ESR|60.6.0|2019-03-14|all
 [Browsec VPN]://addons.mozilla.org/firefox/addon/603434/
 [Canvas]://geektimes.com/post/284604/#comment_9815366 "SHA-256"
 [CanvasBlocker]://addons.mozilla.org/firefox/addon/534930/
+[Easy Youtube Video Downloader Express]://addons.mozilla.org/firefox/addon/463677/
+[FireShot]://addons.mozilla.org/ru/firefox/addon/5648/ "Замена скриншотам Firefox"
 [Google Translator]://addons.mozilla.org/firefox/addon/46308/ "2018-11-29 Гугл изменил интерфейс"
 [Greasemonkey]://addons.mozilla.org/firefox/addon/748/ "Движок для запуска UserJS"
 [Octotree]://addons.mozilla.org/firefox/addon/512640/
 [Stylish]://github.com/The-OP/Fox/commit/370229fefefb8b724f978ae9641597ca0ad40280 "Меняет внешний вид сайтов согласно UserCSS"
-[Video DownloadHelper]://addons.mozilla.org/firefox/addon/3006/
 [µBlock Origin]://addons.mozilla.org/firefox/addon/607454/
 
-### Ссылка на подписку ABP EdgeList
+### :cyclone: Формула выбора названий свойств настроек из файла user.js в Excel
+
+`=ЕСЛИОШИБКА(ПСТР(A1;НАЙТИ("user_pref";A1)+11;НАЙТИ(""", ";A1)-2-НАЙТИ("(""";A1));"")`
+
+### :cyclone: Ссылка на подписку ABP EdgeList
 
 Подписку можно подключить в настройках расширения "*<kbd>ЛКМ</kbd> по значку -> Настройки -> Расширенные -> 
 Добавить новый список фильтров*" указав путь к файлу в ветке репозитория **adblock**, или через ссылку в html-коде:
 
 `<a href="abp:subscribe?title=AdBlock%20EdgeList&location=https%3A%2F%2Fgithub.com%2Fbopoh13%2Fdocs%2Fraw%2Fadblock%2Fvendor%2Ffirefox%2Fadblockedge.txt">AdBlock EdgeList</a>`
 
-### Дополнительные возможности
+### :cyclone: Дополнительные возможности
 
 - Проверка [FingerPrint]
 

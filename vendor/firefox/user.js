@@ -1,10 +1,13 @@
-## Mozilla FireFox 60 Secure Settings
+## Mozilla FireFox 67 Secure Settings
 // License CC-BY-NC-SA-4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
 ## Settings of the "user.js" file will be loaded when you restart your FireFox
-// Some settings http://warfx.ru/firefox/config/ have been abolished
+// Some settings https://warfx.ru/firefox/config/ have been abolished
+// and https://habr.com/post/435876/
 ## Drop this file in a folder XXXXXXXX.default at %APPDATA%\Mozilla\Firefox\Profiles\
 
 // // // CRITICAL
+// Turn on if you use the Internet through a mobile operator
+# user_pref("accessibility.blockautorefresh", true);
 // Disable sending of the health report
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 user_pref("datareporting.healthreport.uploadEnabled", false);
@@ -15,31 +18,40 @@ user_pref("extensions.getAddons.cache.enabled", false);
 user_pref("network.http.spdy.allow-push", false);
 user_pref("network.http.spdy.enabled", false);
 user_pref("network.http.spdy.enabled.http2", false);
-// https://github.com/mozilla/one-off-system-add-ons/pull/131/
-user_pref("toolkit.telemetry.coverage.opt-out", true);
+user_pref("devtools.aboutdebugging.showSystemAddons", true);
+user_pref("devtools.onboarding.telemetry.logged", false);
 // https://gecko.readthedocs.org/en/latest/toolkit/components/telemetry/telemetry/preferences.html
 user_pref("datareporting.policy.dataSubmissionEnabled", false);
+user_pref("datareporting.policy.firstRunURL", "");
 user_pref("toolkit.telemetry.unified", false);
 user_pref("toolkit.telemetry.server", "");
-user_pref("toolkit.telemetry.cachedClientID", "");
+user_pref("toolkit.telemetry.cachedClientID", ""); // [Useless.But]
 user_pref("toolkit.telemetry.archive.enabled", false);
+user_pref("toolkit.telemetry.bhrPing.enabled", false);
+user_pref("toolkit.telemetry.firstShutdownPing.enabled", false);
+user_pref("toolkit.telemetry.shutdownPingSender.enabled", false);
+user_pref("toolkit.telemetry.hybridContent.enabled", false);
+user_pref("toolkit.telemetry.newProfilePing.enabled", false);
+user_pref("toolkit.telemetry.reportingpolicy.firstRun", false);
+user_pref("toolkit.telemetry.updatePing.enabled", false);
+user_pref("browser.ping-centre.telemetry", false);
 user_pref("browser.safebrowsing.downloads.enabled", false);
 user_pref("browser.safebrowsing.malware.enabled", false);
 user_pref("dom.ipc.plugins.flash.subprocess.crashreporter.enabled", false);
 user_pref("dom.ipc.plugins.reportCrashURL", false);
 user_pref("browser.tabs.crashReporting.sendReport", false);
-user_pref("security.ssl.errorReporting.enabled", false);
-// https://wiki.mozilla.org/Telemetry/Experiments
-user_pref("experiments.enabled", false);
-user_pref("experiments.manifest.uri", "");
-user_pref("experiments.supported", false);
-#60 user_pref("experiments.activeExperiment", false);
-user_pref("network.allow-experiments", false);
+user_pref("security.ssl.errorReporting.enabled", true);
+user_pref("permissions.default.desktop-notification", 2);
+user_pref("permissions.default.geo", 2);
 // Disable Location-Aware Browsing
 // conflicts with frame in site api-maps.yandex.ru
 // http://www.mozilla.org/en-US/firefox/geolocation/
-user_pref("geo.enabled", false);
+user_pref("geo.enabled", false); [Conflicts.Detected]
 user_pref("geo.wifi.uri", "");
+user_pref("browser.search.geoSpecificDefaults", false);
+user_pref("browser.search.geoSpecificDefaults.url", "");
+user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter");
+user_pref("intl.accept_languages", "en-US, en");
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
 user_pref("browser.search.geoip.url", "");
 // http://kb.mozillazine.org/Network.proxy.type
@@ -116,15 +128,19 @@ user_pref("browser.eme.ui.enabled", false);
 user_pref("media.eme.enabled", false);
 // https://gist.github.com/Guest007/e3a09aa97a827916b0b91b726a8c2c66
 user_pref("privacy.trackingprotection.enabled", true);
+user_pref("privacy.trackingprotection.cryptomining.enabled", true);
+user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
 // This setting is triggered after setting up other extensions (detailed by the F12)
 // https://support.mozilla.org/en-US/kb/tracking-protection
 #63 user_pref("urlclassifier.trackingTable", "test-track-simple,base-track-digest256,content-track-digest256");
 // conflicts with site gosuslugi.ru (map & date); need to delete the parameter
-user_pref("privacy.trackingprotection.pbmode.enabled", false);
+user_pref("privacy.trackingprotection.pbmode.enabled", false); [Conflicts.Detected]
 // Perhaps the screenshots will not work if the HTML5 is disabled with on the site and option enabled
 // https://www.linux.org.ru/news/mozilla/13978522/
-user_pref("privacy.resistFingerprinting", true);
-user_pref("privacy.firstparty.isolate", true);
+user_pref("privacy.resistFingerprinting", true); // [Conflicts?] Doesn't save a zoom in pages
+user_pref("privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts", false);
+user_pref("privacy.donottrackheader.enabled", true); // [Useless.But]
+user_pref("privacy.firstparty.isolate", true); // [Conflicts?]
 // https://support.mozilla.org/en-US/kb/containers
 user_pref("privacy.userContext.enabled", true);
 user_pref("privacy.userContext.longPressBehavior", 2);
@@ -142,6 +158,7 @@ user_pref("media.navigator.video.enabled", false);
 user_pref("media.getusermedia.screensharing.enabled", false);
 // https://bugzil.la/654550
 user_pref("media.video_stats.enabled", false);
+#67 user_pref("media.autoplay.default", 1);
 user_pref("media.autoplay.enabled", false);
 user_pref("media.block-autoplay-until-in-foreground", false);
 
@@ -160,17 +177,13 @@ user_pref("lightweightThemes.recommendedThemes", "");
 user_pref("offline-apps.allow_by_default", false);
 // https://wiki.mozilla.org/DevTools/WiFi_Debugging
 user_pref("devtools.remote.wifi.scan", false);
-// https://hg.mozilla.org/releases/mozilla-esr38/file/0f8338121472/browser/devtools/shared/doorhanger.js#l17
-#57 user_pref("devtools.devedition.promo.enabled", false);
-user_pref("devtools.devedition.promo.shown", true);
-user_pref("devtools.devedition.promo.url", "");
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior
 // conflicts with frame in sites plus.google.com, api.vk.com and other
-user_pref("network.cookie.cookieBehavior", 1);
+user_pref("network.cookie.cookieBehavior", 1); [Conflicts.Detected]
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy
-# user_pref("network.cookie.lifetimePolicy", 2);
+# user_pref("network.cookie.lifetimePolicy", 2); // Delete cookies when the browser closes
 // http://kb.mozillazine.org/Signon.autofillForms
 user_pref("signon.autofillForms", false);
 // https://support.mozilla.org/en-US/questions/889884
@@ -183,6 +196,9 @@ user_pref("pdfjs.disabled", true);
 // https://developer.mozilla.org/en-US/docs/Web/API/CSSFontLoading_API
 // https://drafts.csswg.org/css-font-loading/
 user_pref("layout.css.font-loading-api.enabled", false);
+// Adjusting the initial scale of the page
+user_pref("layout.css.devPixelsPerPx", "1.25");
+user_pref("layout.css.osx-font-smoothing.enabled", true);
 
 // // // DESIRABLE
 user_pref("browser.startup.homepage", "//clck.ru/0f");
@@ -200,15 +216,14 @@ user_pref("browser.cache.offline.enable", false);
 user_pref("browser.sessionhistory.max_entries", 12);
 // conflicts with sites github.com, gist.github.com, code.sololearn.com
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
-user_pref("dom.event.clipboardevents.enabled", false);
+user_pref("dom.event.clipboardevents.enabled", false); [Conflicts.Detected]
 // Webpages will not be able to affect the right-click menu
 # user_pref("dom.event.contextmenu.enabled", false);
 // http://kb.mozillazine.org/Dom.storage.enabled
 // https://html.spec.whatwg.org/multipage/webstorage.html#dom-localstorage
-// conflicts with sites market.yandex.ru, online.sberbank.ru, pgu.mos.ru, jsfiddle.net and other
-// https://html.spec.whatwg.org/multipage/webstorage.html#dom-localstorage
+// conflicts with sites -market.yandex.ru, online.sberbank.ru, pgu.mos.ru, jsfiddle.net and other
 // you can also see this with Panopticlick's "DOM localStorage"
-# user_pref("dom.storage.enabled", false);
+# user_pref("dom.storage.enabled", false); [Conflicts.Detected]
 // http://kb.mozillazine.org/Network.http.sendRefererHeader
 # user_pref("network.http.sendRefererHeader", 0);
 // Disable webGL
@@ -219,6 +234,7 @@ user_pref("webgl.min_capability_mode", true);
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 # user_pref("dom.enable_performance", false);
 user_pref("dom.enable_resource_timing", false);
+# user_pref("javascript.enabled", false); [JavaScript.Off]
 // http://asmjs.org/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-50/
@@ -235,9 +251,6 @@ user_pref("dom.vibrator.enabled", false);
 // Disable sensor API
 // https://wiki.mozilla.org/Sensor_API
 user_pref("device.sensors.enabled", false);
-// WebIDE
-// https://trac.torproject.org/projects/tor/ticket/16222
-user_pref("devtools.webide.autoinstallADBHelper", false);
 user_pref("devtools.webide.enabled", false);
 // Do not add downloaded files to the list of "Recent Documents" (Windows)
 user_pref("browser.download.manager.addToRecentDocs", false);
@@ -255,12 +268,3 @@ user_pref("narrate.enabled", true);
 user_pref("reader.content_width", 5);
 user_pref("reader.font_size", 2);
 user_pref("reader.line_height", 3);
-
-// // // Settings for Adblock Plus
-user_pref("extensions.adblockplus.hideContributeButton", true);
-user_pref("extensions.adblockplus.notificationurl", "");
-user_pref("extensions.adblockplus.report_submiturl", "");
-user_pref("extensions.adblockplus.subscriptions_antiadblockurl", "");
-user_pref("extensions.adblockplus.subscriptions_exceptionsurl", "about:support");
-user_pref("extensions.adblockplus.subscriptions_fallbackurl", "");
-user_pref("extensions.adblockplus.suppress_first_run_page", true);
