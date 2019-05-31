@@ -16,7 +16,7 @@ Set WshSysEnv = CreateObject("WScript.Shell").Environment("Process")
 ProfilePath = WshSysEnv.Item("AppData") & "\Mozilla\Firefox\Profiles\"
 If fso.FolderExists(ProfilePath) And fso.FileExists(FILE_TO_COPY) Then
 	For Each ProfileFolder In fso.GetFolder(ProfilePath).Subfolders
-		If Right(ProfileFolder, 8) = ".default" Then
+		If Right(ProfileFolder, 16) = ".default-release" Then
 			fso.GetFile(FILE_TO_COPY).Copy ProfileFolder & "\" & FILE_TO_COPY, True
 			On Error Resume Next
 				fso.OpenTextFile ProfileFolder & "\" & FILE_HSTS, 2, True
@@ -24,6 +24,8 @@ If fso.FolderExists(ProfilePath) And fso.FileExists(FILE_TO_COPY) Then
 			'	SetAttr ProfileFolder & "\" & FILE_HSTS, 1 ' Another how
 		End If
 	Next
+Else
+	MsgBox "Profile directory not exits ", vbCritical
 End If
 
 Set WshSysEnv = Nothing

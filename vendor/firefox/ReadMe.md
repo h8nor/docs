@@ -70,7 +70,7 @@ Firefox <sup>[esr]</sup>|ESR|60.7.0|2019-05-14|all
 [Canvas]://geektimes.com/post/284604/#comment_9815366 "SHA-256"
 [CanvasBlocker]://addons.mozilla.org/firefox/addon/534930/
 [Easy Youtube Video Downloader Express]://addons.mozilla.org/firefox/addon/463677/
-[FireShot]://addons.mozilla.org/ru/firefox/addon/5648/ "Замена скриншотам Firefox"
+[FireShot]://addons.mozilla.org/firefox/addon/5648/ "Замена скриншотам Firefox"
 [Google Translator]://addons.mozilla.org/firefox/addon/46308/ "2018-11-29 Гугл изменил интерфейс"
 [Greasemonkey]://addons.mozilla.org/firefox/addon/748/ "Движок для запуска UserJS"
 [Octotree]://addons.mozilla.org/firefox/addon/512640/

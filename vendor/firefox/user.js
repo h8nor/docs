@@ -50,7 +50,8 @@ user_pref("geo.enabled", false); [Conflicts.Detected]
 user_pref("geo.wifi.uri", "");
 user_pref("browser.search.geoSpecificDefaults", false);
 user_pref("browser.search.geoSpecificDefaults.url", "");
-user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter");
+user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter,Price.ru,Поиск Mail.Ru");
+user_pref("browser.search.widget.inNavBar", true);
 user_pref("intl.accept_languages", "en-US, en");
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
 user_pref("browser.search.geoip.url", "");
