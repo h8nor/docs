@@ -218,7 +218,7 @@ user_pref("browser.sessionhistory.max_entries", 12);
 // conflicts with sites github.com, gist.github.com, code.sololearn.com
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
 user_pref("dom.event.clipboardevents.enabled", false); [Conflicts.Detected]
-// Webpages will not be able to affect the right-click menu
+// Webpages will not be able to affect the right-click menu (Shift+RBM)
 # user_pref("dom.event.contextmenu.enabled", false);
 // http://kb.mozillazine.org/Dom.storage.enabled
 // https://html.spec.whatwg.org/multipage/webstorage.html#dom-localstorage
@@ -264,7 +264,7 @@ user_pref("browser.urlbar.decodeURLsOnCopy", true);
 // Check the spelling in all text fields (and not only in the Textarea)
 user_pref("layout.spellcheckDefault", 2);
 
-// // // Print View & Reader settings
+// // // Print View & Reader settings (F9)
 user_pref("narrate.enabled", true);
 user_pref("reader.content_width", 5);
 user_pref("reader.font_size", 2);
