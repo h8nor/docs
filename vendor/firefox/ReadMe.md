@@ -2,11 +2,11 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|67.0.0|2019-05-17|all
-Firefox <sup>[esr]</sup>|ESR|60.7.0|2019-05-14|all
+Firefox <sup>[www]</sup>|Release|68.0.0|2019-07-09|all
+Firefox <sup>[esr]</sup>|ESR|60.8.0|2019-07-03|all
 
-[www]://www.mozilla.org/ru-ru/firefox/all/#ru "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/60.7.0esr/win32/ "Extended support"
+[www]://mozilla.org/ru/firefox/all/ "Site"
+[esr]://ftp.mozilla.org/pub/firefox/releases/60.8.0esr/win32/ "Extended support"
 
 ### Краткое описание
 
@@ -38,7 +38,7 @@ Firefox <sup>[esr]</sup>|ESR|60.7.0|2019-05-14|all
 
 # Рекомендуемые настройки
 
-### :cyclone: Список некоторых расширений
+### Список некоторых расширений
 
 1. [Adblock Plus]  
 	Расширение позволяет вернуть себе контроль над содержанием страниц и видеть лишь то, что хочется.
@@ -77,18 +77,23 @@ Firefox <sup>[esr]</sup>|ESR|60.7.0|2019-05-14|all
 [Stylish]://github.com/The-OP/Fox/commit/370229fefefb8b724f978ae9641597ca0ad40280 "Меняет внешний вид сайтов согласно UserCSS"
 [µBlock Origin]://addons.mozilla.org/firefox/addon/607454/
 
-### :cyclone: Формула выбора названий свойств настроек из файла user.js в Excel
+### Формула выбора названий свойств настроек из файла user.js в Excel
 
 `=ЕСЛИОШИБКА(ПСТР(A1;НАЙТИ("user_pref";A1)+11;НАЙТИ(""", ";A1)-2-НАЙТИ("(""";A1));"")`
 
-### :cyclone: Ссылка на подписку ABP EdgeList
+<details>
+<summary>:cyclone: Ссылка на подписку ABP EdgeList</summary><br />
 
 Подписку можно подключить в настройках расширения "*<kbd>ЛКМ</kbd> по значку -> Настройки -> Расширенные -> 
 Добавить новый список фильтров*" указав путь к файлу в ветке репозитория **adblock**, или через ссылку в html-коде:
 
 `<a href="abp:subscribe?title=AdBlock%20EdgeList&location=https%3A%2F%2Fgithub.com%2Fbopoh13%2Fdocs%2Fraw%2Fadblock%2Fvendor%2Ffirefox%2Fadblockedge.txt">AdBlock EdgeList</a>`
+#
 
-### :cyclone: Дополнительные возможности
+</details>
+
+<details>
+<summary>:cyclone: Дополнительные возможности</summary><br />
 
 - Проверка [FingerPrint]
 
@@ -97,6 +102,8 @@ Firefox <sup>[esr]</sup>|ESR|60.7.0|2019-05-14|all
 требуется установить сервер [Speech Platform]) если дополнительно установить [TTS] (размер от 0,1 Гб).  
 MS Word имеет функцию воспроизведения текста (в "*Настройках ленты*" в списке "*Команды не на ленте*" 
 команда "*Проговорить*").
+
+</details>
 
 [FingerPrint]://amiunique.org "2018-12-07 https://habr.com/post/432296/#comment_19469322"
 [голосом]://support.mozilla.org/ru/kb/otvet-na-forume-ustanovka-golosov-dlya-windows-10

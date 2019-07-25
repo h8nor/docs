@@ -7,7 +7,7 @@
 // @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 // @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
 // @supportURL	https://github.com/bopoh13/docs/issues
-// @version	2.0.0
+// @version	2.1.0
 // @icon	https://habr.com/images/favicon-32x32.png
 // @include	https://habr.com/*
 // @exclude	https://habr.com/company/*
@@ -30,6 +30,7 @@ const fablers = [
 	'Boomburum',
 	'ilya42',
 	'ivansychev',
+	'germn',
 	'jeston',
 	'krasandm',
 	'lozga',
@@ -55,6 +56,9 @@ const fablers = [
 	'SmirkinDA',
 	'YuliaSinyanskaya'
 ];
+/*
+  'ruvds'
+*/
 const slob = [
 	'display_adv',
 	'hr_management',
@@ -161,8 +165,8 @@ const wampus = [
 
 function ready(fn) {
 	const { readyState } = document;
-		if (readyState === 'loading') {
-			document.addEventListener('DOMContentLoaded', () => {
+	if (readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', () => {
 			fn();
 		});
 	} else {
@@ -174,10 +178,10 @@ ready(() => {
 	if (document.getElementById('habrafixmarker')) return;
 	
 	fablers.forEach(function(r) {
-		$('a.post__user-info').filter('[href*="/users/' + r + '/"]').parents('article.post').css("background", "#ffe");
+		$('a.post__user-info').filter('[href$="/users/' + r + '/"]').parents('article.post').css("background", "#ffe");
 	});
 	slob.forEach(function(r) {
-		$('a.hub-link').filter('[href*="/hub/' + r + '/"]').parents('article.post_preview.post').hide();
+		$('a.hub-link').filter('[href$="/hub/' + r + '/"]').parents('article.post_preview.post').hide();
 	});
 	pr.forEach(function(r) {
 		$('a.post__title_link').filter('[href*="/company/' + r + '/"]').parents('article.post_preview.post').hide();
@@ -186,16 +190,22 @@ ready(() => {
 		$('a.post__title_link').filter('[href*="/company/' + r + '/"]').parents('article.post').css("background", "#def");
 	});
 	wampus.forEach(function(r) {
-		let v = $('a.user-info.user-info_inline').filter('[href*="/users/' + r + '/"]').parents('.comment')
-		v.parent('li.js-comment').html('<div class="comment__message comment__message_banned">РЕДИСКА опубликовала эту надпись здесь</div>');
+		let v = $('a.user-info.user-info_inline').filter('[href$="/users/' + r + '/"]').parents('.comment')
+		v.parent('li.js-comment').html('<div class="comment__message comment__message_banned">РЕДИСКА пустила корни в этой ветке</div>');
 	});
+	// https://habr.com/post/456338/ - 4. Слияние объектов
+	//в блоке <div class="jGrowl-notification"></div>
+	//<div class="jGrowl-notification highlight ui-corner-all notice" style="display: block;"><div class="jGrowl-close">×</div><div class="jGrowl-header"></div><div class="jGrowl-message">РЕДИСКИ в комментариях</div></div>
+	//обытие на закрытие не работает (?атрибут data-action="?remove")
 	//$('.is_blocked.for_users_only_msg').html(function() {
 	//	return $(this).text().replace(new RegExp('[^\\s\\w,А-яЁё]'), `$& Впрочем, можно <a href="${location.origin}/info/help/registration/#invite">откупиться</a>.`);
 	//});
-	var v = $('h2.promo-block__header')
+	//комментарий с закладкой
+	//$('a.icon_comment-bookmark.icon_comment-bookmark_add').parents('.comment').css("background", "#e7f3ff"); //"#e7f3ff"-голубой "#f5fbe5"-салатовый
+	var v = $('h2.promo-block__header');
 	v.parents('div.promo-block').parents('li').remove();
 	v.parents('div.default-block_content').remove();
-	var v = $('a.default-block__header-link').filter('[href="https://tmtm.ru/megapost"]')
+	var v = $('a.default-block__header-link').filter('[href="https://tmtm.ru/megapost"]');
 	v.parents('div.default-block').parents('li').remove();
 	v.parents('div.sidebar_right').remove();
 	console.log('=== loaded ===');

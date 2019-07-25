@@ -44,6 +44,12 @@ iftitle [if exist /boot/vmtce.iso] Video Memory stress Test CE 1.21\n\n GPU Test
 map /boot/vmtce.iso (hd32) && map --hook
 chainloader (hd32)
 
+## https://sourceforge.net/projects/reactos/files/ReactOS/0.4.11/ReactOS-0.4.11-live.zip/download
+iftitle [if exist /boot/ReactOS-0.4.11-Live.iso] 1 ReactOS 0.4 (boot error on swenum.sys)\n\n ReactOS-0.4.11\n Wait 6 minutes to load into RAM 241 MB, then press any key
+map --mem /boot/ReactOS-0.4.11-Live.iso (hd32) && map --hook
+#map --status
+chainloader (hd32)
+
 ## Set a variable named bootmgr where /bootmgr is found
 iftitle [find --set-root --devices=h /bootmgr && call set bootmgr=%@root^%] load BOOTMGR of Windows on %bootmgr%\n\n load Windows VISTA/WIN7/WIN2008
 makeactive
