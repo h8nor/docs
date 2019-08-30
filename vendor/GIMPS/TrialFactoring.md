@@ -17,7 +17,9 @@ Factor={EXPONENT},{BIT_LAST},{BIT_OVER}
 [Пробная факторизация]://mersenne.org/report_top_500_tf/
 [GIMPS]://mersenne.org/download/#download
 
-### :cyclone: Список найденных факторов
+---
+<details>
+<summary>:cyclone: Список найденных факторов</summary><br />
 
 |Имя процессора|Экспонента|Полученно (передано)|Простой множитель
 |:--- | ---:|:---:| ---:
@@ -117,5 +119,9 @@ Factor={EXPONENT},{BIT_LAST},{BIT_OVER}
 |GPU_R7_370|M<sub>261269299</sub>|2018-10-12|[1073413700906293057567](https://mersenne.org/M261269299 "69,9 бит")
 |GPU_R7_370|M<sub>263778547</sub>|2018-11-28|[3062029206426273457783](https://mersenne.org/M263778547 "71,4 бит")
 |CPU_i3-4130T|M<sub>264703739</sub>|2018-06-28|[429121778529850100161](https://mersenne.org/M264703739 "68,5 бит")
+|CPU_i3-3220|M<sub>274476737</sub>|2019-06-28|[1054826800384516337401](https://mersenne.org/M274476737 "69,8 бит")
+|CPU_i3-3220|M<sub>275321003</sub>|2019-07-04|[616987507857927772361](https://mersenne.org/M275321003 "69,1 бит")
+
+</details>
 
 # 

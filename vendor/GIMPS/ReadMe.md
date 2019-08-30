@@ -2,7 +2,7 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Prime95 <sup>[www]</sup>|Release|29.4|2018-02-09|en
+Prime95 <sup>[www]</sup>|Release|29.8|2019-04-23|en
 
 [www]://mersenne.org/download/ "Download"
 
@@ -17,7 +17,9 @@ Prime95 <sup>[www]</sup>|Release|29.4|2018-02-09|en
 Поиск сомножителей методами [P-1] (алгоритм Полларда) и [ECM]<sup>[*]</sup> (метод случайных эллиптических 
 кривых) требует свободной памяти, потому в случае недостатка памяти вычисления остановятся, а в графе `Stage` 
 назначенных заданиях появятся *метки* без указания процентов. Зато эти методы находят простые сомножители 
-на несколько порядков длиннее.  
+на несколько порядков длиннее. Повторное использование коэффициентов B1 и B2 в алгоритме [P-1] приведут 
+к аналогичному результату, при этом их можно использовать повторно для алгоритма [ECM], но нужно проверить 
+по [таблицам] вероятностное количество ненайденных кривых.  
 
 Проверка [PRP] (вероятное простое) с большой вероятностью укажет, если простые сомножители (все или с одним 
 недостающим) будут найдены; или число Мерсенна не имеет сомножителей и является простым (данный метод заменил 
@@ -28,7 +30,7 @@ PRP=1,2,{EXPONENT},-1,"{FACTOR_N1},{FACTOR_N2}"
 PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 ```
 
-На 2019-05-30 найдены 116 сомножителя. Любой метод добавляет очков в проекте GIMPS.
+На 2019-08-30 найден 131 сомножитель. Любой метод добавляет очков в проекте GIMPS.
 
 [простых чисел Мерсенна]://www.mersenne.ca/prime.php
 [методы]://www.mersenne.org/various/math.php
@@ -36,6 +38,7 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 [P-1]://www.mersenne.ca/p1missed.php?min=1&max=999999999
 [ECM]://www.mersenneforum.org/showthread.php?t=194
 [*]://www.mersenneforum.org/showpost.php?p=1406&postcount=19
+[таблицам]://www.mersenne.org/report_ecm/ "Значение 'Done' вероятно не лжёт"
 [PRP]://www.mersenne.ca/prp.php?show=2&min_exponent=1213&max_exponent=4871
 
 ---
@@ -48,23 +51,26 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 
 # Дополнительная информация
 
-### :cyclone: Приложения для поиска простых сомножителей на GPU
+### Приложения для поиска простых сомножителей на GPU
 
 1. [gpuOwL] a tiny OpenCL 
-2. [mfaktc] a CUDA 
-3. [mfakto] an OpenCL 
+2. [mfaktc] a CUDA<sup>[**]</sup> 
+3. [mfakto] an OpenCL<sup>[**]</sup> 
 4. [yafu] 
 
 [gpuOwL]:http://www.mersenneforum.org/showthread.php?t=22204
 [mfaktc]:http://www.mersenneforum.org/showthread.php?t=12827
 [mfakto]:http://www.mersenneforum.org/showthread.php?t=15646
 [yafu]:http://www.mersenneforum.org/showthread.php?p=488202
+[**]://www.mersenne.ca/tf1G.php
 
-### :cyclone: Формула пополнения таблицы в Excel
+### Формула пополнения таблицы в Excel
 
 `=СЦЕПИТЬ("|";ЕСЛИ(ИЛИ(ЛЕВСИМВ(A1;1)="Q";ЛЕВСИМВ(A1;1)="i");"C";"G");"PU_";A1;"|M<sub>";B1;"</sub>|";ТЕКСТ(D1;"ГГГГ-ММ-ДД");"|[";ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");"](https://mersenne.org/M";B1;" """;ТЕКСТ(LOG(ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");2);"0,0_ бит");""")")`
 
-### :cyclone: Ссылки на пояснения и приложения
+---
+<details>
+<summary>:cyclone: Ссылки на пояснения и приложения</summary><br />
 
 1. [Простые числа Мерсенна и Тест Люка-Лемера](//habr.com/post/327342/ "RU, 2017-04-25")
 2. [Mersenne Prime](//download.mersenne.ca/ "EN")
@@ -73,11 +79,14 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 5. [Mersenne Numbers with no Known Factors](//www.mersenne.org/report_factoring_effort/?exp_lo=2&exp_hi=7650&bits_lo=64&bits_hi=70&exassigned=1 "EN")
 6. [Найдено самое большое обобщённое число Ферма](//habr.com/post/406485/ "RU, 2017-09-05")
 
-### :cyclone: Ссылки на статьи о числах и RSA
+</details>
+
+<details>
+<summary>:cyclone: Ссылки на статьи о числах и RSA</summary><br />
 
 1. [Почему единицу не относят к простым числам](//habr.com/post/450838/ "RU, 2019-05-07")
 2. [Математики доказали, что неприводимые многочлены не имеют простых множителей](//habr.com/post/436110/ "RU, 2019-01-16")
-3. [Математик уменьшил расход памяти для решета Эратосфена](//habr.com/ru/post/369713/ "RU, 2016-09-27")
+3. [Математик уменьшил расход памяти для решета Эратосфена](//habr.com/post/369713/ "RU, 2016-09-27")
 4. [База данных простых чисел](//habr.com/post/246789/ "RU, 2014-12-25")
 5. [Математик совершил прорыв в теории простых чисел-близнецов](//habr.com/post/180259/ "RU, 2013-05-20")
 6. [Решето Эратосфена и Аткина](//habr.com/post/133037/ "RU, 2011-11-21")
@@ -85,15 +94,20 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 8. [Красота чисел. Как быстро вычислять в уме](//habr.com/post/398589/ "RU, 2016-10-23")
 9. [5 способов вычисления чисел Фибоначчи](//habr.com/post/261159/ "RU, 2015-06-25")
 10. [Алгоритмы быстрого вычисления факториала](//habr.com/post/255761/ "RU, 2015-04-14")
+11. [Эффективные алгоритмы факторизации](http://www.e-maxx-ru.1gb.ru/algo/factorization "RU, 2008-06-10")
+
+</details>
 
 
 # Сообщения приложения Prime95
 
 |Communication thread|Поток сообщений
 |:--- |:--- 
+|Composite factor Z = X * Y|Составной множитель Z = X * Y
 |Days to go|Осталось дней
 |Exchanging program options with server|Обмен параметрами программы с сервером
 |Getting assignment from server|Получение задания с сервера
+|ra: exponent M violates assignment rules.|треб: экспонента M нарушает правила назначения.
 |Sending result to server:|Отправка результата на сервер:
 |Updating computer information on the server|Обновление информации о компьютере на сервере
 
