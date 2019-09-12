@@ -111,7 +111,7 @@ git add .
 git commit --amend -S (-v при редактировании описания коммита показывает все сделанные изменения)
 ```
 
-#### Загрузить существующий репозиторий с локальной машины:
+#### Загрузить существующий репозиторий с локальной машины (требует создания на github; не работает):
 ``` nix
 # Создать пустой репозиторий (origin) на GitHub, и проверить путь:
 cd .. && \
@@ -232,14 +232,11 @@ find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
  | xargs -0r awk "/^\xEF\xBB\xBF/ {print FILENAME}{nextfile}"
 ```
 #### Удалить BOM из UTF-8 и добавить в строках символы CR перед LF
+
+https://gist.github.com/bf17ec26fccdce5c9ca50770ae7c773d
+
 ``` shell
-find . -type f \( -name "*.css" -o -name "*.scss"\
- -o -name "*.html" -o -name "*.js" -o -name "*.liquid"\
- -o -name "*.md" -o -name "*.svg" -o -name "*.xml" \) -print0\
- | xargs -0 grep -m1 -l `printf "^\xEF\xBB\xBF"`\
- | xargs sed -i "1 s/^\xEF\xBB\xBF//; s/\$/\x0D/"\
- && git ls-files -mo --eol
-# https://toster.ru/q/377947 (1 s - обрабатывется первая строка)
+bash pre-commit.sh
 ```
 
 #

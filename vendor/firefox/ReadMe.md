@@ -2,11 +2,11 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|68.0.0|2019-07-09|all
-Firefox <sup>[esr]</sup>|ESR|60.8.0|2019-07-03|all
+Firefox <sup>[www]</sup>|Release|69.0.0|2019-08-27|all
+Firefox <sup>[esr]</sup>|ESR|60.9.0|2019-09-01|all
 
-[www]://mozilla.org/ru/firefox/all/ "Site"
-[esr]://ftp.mozilla.org/pub/firefox/releases/60.8.0esr/win32/ "Extended support"
+[www]://mozilla.org/ru/firefox/all/#product-desktop-release "Site"
+[esr]://mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
 
 ### Краткое описание
 
@@ -35,6 +35,7 @@ Firefox <sup>[esr]</sup>|ESR|60.8.0|2019-07-03|all
 - ***ReadMe.md*** - описание и рекомендации по работе с браузером
 
 [habrusers_blocker_gm]://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
+
 
 # Рекомендуемые настройки
 
@@ -81,7 +82,8 @@ Firefox <sup>[esr]</sup>|ESR|60.8.0|2019-07-03|all
 
 `=ЕСЛИОШИБКА(ПСТР(A1;НАЙТИ("user_pref";A1)+11;НАЙТИ(""", ";A1)-2-НАЙТИ("(""";A1));"")`
 
-<details>
+---
+<!-- <details>
 <summary>:cyclone: Ссылка на подписку ABP EdgeList</summary><br />
 
 Подписку можно подключить в настройках расширения "*<kbd>ЛКМ</kbd> по значку -> Настройки -> Расширенные -> 
@@ -90,7 +92,7 @@ Firefox <sup>[esr]</sup>|ESR|60.8.0|2019-07-03|all
 `<a href="abp:subscribe?title=AdBlock%20EdgeList&location=https%3A%2F%2Fgithub.com%2Fbopoh13%2Fdocs%2Fraw%2Fadblock%2Fvendor%2Ffirefox%2Fadblockedge.txt">AdBlock EdgeList</a>`
 #
 
-</details>
+</details> -->
 
 <details>
 <summary>:cyclone: Дополнительные возможности</summary><br />
@@ -103,11 +105,11 @@ Firefox <sup>[esr]</sup>|ESR|60.8.0|2019-07-03|all
 MS Word имеет функцию воспроизведения текста (в "*Настройках ленты*" в списке "*Команды не на ленте*" 
 команда "*Проговорить*").
 
-</details>
-
 [FingerPrint]://amiunique.org "2018-12-07 https://habr.com/post/432296/#comment_19469322"
 [голосом]://support.mozilla.org/ru/kb/otvet-na-forume-ustanovka-golosov-dlya-windows-10
 [Speech Platform]://www.microsoft.com/en-us/download/details.aspx?id=16789
 [TTS]:http://mytts.forum2x2.ru/f10-forum "Text-To-Speech движок"
+
+</details>
 
 # 
