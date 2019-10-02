@@ -233,7 +233,7 @@ find . -type f \( -name "*.md" -o -name "*.html" \) -print0\
 ```
 #### Удалить BOM из UTF-8 и добавить в строках символы CR перед LF
 
-https://gist.github.com/bf17ec26fccdce5c9ca50770ae7c773d
+https://gist.github.com/c55f1538454755fdff71fba0d686e371
 
 ``` shell
 bash pre-commit.sh
