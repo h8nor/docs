@@ -1,0 +1,12 @@
+[AutoRun.Amd64]
+Icon=autorun.ico,0
+Label=Half-Life-64
+
+[Autorun]
+Icon=autorun.ico,0
+Label=Half-Life-32
+
+[Content]
+MusicFiles=false
+PictureFiles=false
+VideoFiles=false

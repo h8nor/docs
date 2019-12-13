@@ -1,4 +1,4 @@
-## Mozilla FireFox 67 Secure Settings
+## Mozilla FireFox 70 Secure Settings
 // License CC-BY-NC-SA-4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US
 ## Settings of the "user.js" file will be loaded when you restart your FireFox
 // Some settings https://warfx.ru/firefox/config/ have been abolished
@@ -141,7 +141,8 @@ user_pref("privacy.trackingprotection.pbmode.enabled", false); [Conflicts.Detect
 user_pref("privacy.resistFingerprinting", true); // [Conflicts?] Doesn't save a zoom in pages
 user_pref("privacy.resistFingerprinting.autoDeclineNoUserInputCanvasPrompts", false);
 user_pref("privacy.donottrackheader.enabled", true); // [Useless.But]
-user_pref("privacy.firstparty.isolate", true); // [Conflicts?]
+// conflicts with frame in site apis.google.com
+user_pref("privacy.firstparty.isolate", true);
 // https://support.mozilla.org/en-US/kb/containers
 user_pref("privacy.userContext.enabled", true);
 user_pref("privacy.userContext.longPressBehavior", 2);
@@ -149,6 +150,7 @@ user_pref("privacy.userContext.ui.enabled", true);
 // https://en.wikipedia.org/wiki/Content_Security_Policy
 // https://github.com/greasemonkey/greasemonkey/issues/2631
 user_pref("security.csp.enable", true);
+user_pref("security.secure_connection_icon_color_gray", false);
 // getUserMedia
 // https://wiki.mozilla.org/Media/getUserMedia
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigator
@@ -181,7 +183,7 @@ user_pref("devtools.remote.wifi.scan", false);
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior
-// conflicts with frame in sites plus.google.com, api.vk.com and other
+// conflicts with frame in sites discordapp.com, plus.google.com, api.vk.com and other
 user_pref("network.cookie.cookieBehavior", 1); [Conflicts.Detected]
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy
 # user_pref("network.cookie.lifetimePolicy", 2); // Delete cookies when the browser closes
@@ -243,6 +245,12 @@ user_pref("dom.enable_resource_timing", false);
 user_pref("javascript.options.asmjs", false);
 // https://developer.mozilla.org/en-US/docs/Web/API/BatteryManager
 user_pref("dom.battery.enabled", false);
+// Disallows double tap to zoom (if no touch screen) https://habr.com/ru/post/459880/
+user_pref("apz.allow_double_tap_zooming", false);
+user_pref("apz.drag.touch.enabled", false);
+user_pref("apz.one_touch_pinch.enabled", false);
+// Disable the function for Android, does not work in Windows
+user_pref("dom.keyboardevent.dispatch_during_composition", false);
 // Disable gamepad input
 // http://www.w3.org/TR/gamepad/
 user_pref("dom.gamepad.enabled", false);
@@ -253,6 +261,8 @@ user_pref("dom.vibrator.enabled", false);
 // https://wiki.mozilla.org/Sensor_API
 user_pref("device.sensors.enabled", false);
 user_pref("devtools.webide.enabled", false);
+// JSON Validator https://jsonlint.com/ (just paste link)
+# user_pref("devtools.jsonview.enabled", false); [JSONView.Off]
 // Do not add downloaded files to the list of "Recent Documents" (Windows)
 user_pref("browser.download.manager.addToRecentDocs", false);
 user_pref("browser.download.hide_plugins_without_extensions", false);

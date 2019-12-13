@@ -2,8 +2,8 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|69.0.0|2019-08-27|all
-Firefox <sup>[esr]</sup>|ESR|60.9.0|2019-09-01|all
+Firefox <sup>[www]</sup>|Release|71.0.0|2019-12-03|all
+Firefox <sup>[esr]</sup>|ESR|68.3.0|2019-12-03|all
 
 [www]://mozilla.org/ru/firefox/all/#product-desktop-release "Site"
 [esr]://mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
@@ -93,6 +93,8 @@ Firefox <sup>[esr]</sup>|ESR|60.9.0|2019-09-01|all
 #
 
 </details> -->
+
+1. [Mozilla усилила защиту пользователей Firefox от вредоносного кода](//habr.com/post/471602/ "RU, 2019-10-15")
 
 <details>
 <summary>:cyclone: Дополнительные возможности</summary><br />
