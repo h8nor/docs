@@ -2,8 +2,8 @@
 
 Приложение|Редакция|Версия|Дата|Язык
 ---|---|---|---|---
-Firefox <sup>[www]</sup>|Release|71.0.0|2019-12-03|all
-Firefox <sup>[esr]</sup>|ESR|68.3.0|2019-12-03|all
+Firefox <sup>[www]</sup>|Release|72.0.0|2020-01-18|all
+Firefox <sup>[esr]</sup>|ESR|68.4.2|2020-01-17|all
 
 [www]://mozilla.org/ru/firefox/all/#product-desktop-release "Site"
 [esr]://mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"

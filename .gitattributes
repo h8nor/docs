@@ -11,6 +11,7 @@
 *.hns	filter=win1251	-diff	eol=crlf
 #*.js	text	eol=lf
 *.lst	text	working-tree-encoding=CP1251	eol=CRLF
+*.rsc	text	eol=crlf
 *.vbs	text	working-tree-encoding=CP1251	eol=CRLF
 #*.png	binary
 
