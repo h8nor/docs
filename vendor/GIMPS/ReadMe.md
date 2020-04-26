@@ -1,10 +1,10 @@
-[License]://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 Приложение|Редакция|Версия|Дата|Язык
----|---|---|---|---
+|:--- |:--- |:--- |:---:|:--- 
 Prime95 <sup>[www]</sup>|Release|29.8|2019-04-23|en
 
-[www]://mersenne.org/download/ "Download"
+[www]: //mersenne.org/download/ "Download"
 
 ### Краткое описание
 
@@ -32,14 +32,14 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 
 На 2020-02-13 найден 149 сомножителей. Любой метод добавляет очков в проекте GIMPS.
 
-[простых чисел Мерсенна]://www.mersenne.ca/prime.php
-[методы]://www.mersenne.org/various/math.php
-[мало сомножителей]://www.mersenne.ca/manyfactors.php
-[P-1]://www.mersenne.ca/p1missed.php?min=1&max=999999999
-[ECM]://www.mersenneforum.org/showthread.php?t=194
-[*]://www.mersenneforum.org/showpost.php?p=1406&postcount=19
-[таблицам]://www.mersenne.org/report_ecm/ "Значение 'Done' вероятно не лжёт"
-[PRP]://www.mersenne.ca/prp.php?show=2&min_exponent=1213&max_exponent=4871
+[простых чисел Мерсенна]: //www.mersenne.ca/prime.php
+[методы]: //www.mersenne.org/various/math.php
+[мало сомножителей]: //www.mersenne.ca/manyfactors.php
+[P-1]: //www.mersenne.ca/p1missed.php?min=1&max=999999999
+[ECM]: //www.mersenneforum.org/showthread.php?t=194
+[*]: //www.mersenneforum.org/showpost.php?p=1406&postcount=19
+[таблицам]: //www.mersenne.org/report_ecm/ "Значение 'Done' вероятно не лжёт"
+[PRP]: //www.mersenne.ca/prp.php?show=2&min_exponent=1213&max_exponent=4871
 
 ---
 # Содержание репозитория
@@ -58,15 +58,15 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 3. [mfakto] an OpenCL<sup>[**]</sup> 
 4. [yafu] 
 
-[gpuOwL]:http://www.mersenneforum.org/showthread.php?t=22204
-[mfaktc]:http://www.mersenneforum.org/showthread.php?t=12827
-[mfakto]:http://www.mersenneforum.org/showthread.php?t=15646
-[yafu]:http://www.mersenneforum.org/showthread.php?p=488202
-[**]://www.mersenne.ca/tf1G.php
+[gpuOwL]: http://www.mersenneforum.org/showthread.php?t=22204
+[mfaktc]: http://www.mersenneforum.org/showthread.php?t=12827
+[mfakto]: http://www.mersenneforum.org/showthread.php?t=15646
+[yafu]: http://www.mersenneforum.org/showthread.php?p=488202
+[**]: //www.mersenne.ca/tf1G.php
 
 ### Формула пополнения таблицы в Excel
 
-`=СЦЕПИТЬ("|";ЕСЛИ(ИЛИ(ЛЕВСИМВ(A1;1)="Q";ЛЕВСИМВ(A1;1)="i");"C";"G");"PU_";A1;"|M<sub>";B1;"</sub>|";ТЕКСТ(D1;"ГГГГ-ММ-ДД");"|[";ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");"](https://mersenne.org/M";B1;" """;ТЕКСТ(LOG(ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");2);"0,0_ бит");""")")`
+`=СЦЕПИТЬ("|";ЕСЛИ(ИЛИ(ЛЕВСИМВ(A1;1)="Q";ЛЕВСИМВ(A1;1)="i");"C";"G");"PU_";A1;"|M<sub>";B1;"</sub>|";ТЕКСТ(D1;"ГГГГ-ММ-ДД");"|[";ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");"](//mersenne.org/M";B1;" """;ТЕКСТ(LOG(ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");2);"0,0_ бит");""")")`
 
 ---
 <details>

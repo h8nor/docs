@@ -1,12 +1,12 @@
-[License]://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 Приложение|Редакция|Версия|Дата|Язык
----|---|---|---|---
-Firefox <sup>[www]</sup>|Release|72.0.0|2020-01-18|all
-Firefox <sup>[esr]</sup>|ESR|68.4.2|2020-01-17|all
+|:--- |:--- |:--- |:---:|:--- 
+Firefox <sup>[www]</sup>|Release|75.0.0|2020-04-03|all
+Firefox <sup>[esr]</sup>|ESR|68.7.0|2020-04-04|all
 
-[www]://mozilla.org/ru/firefox/all/#product-desktop-release "Site"
-[esr]://mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
+[www]: //mozilla.org/ru/firefox/all/#product-desktop-release "Site"
+[esr]: //mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
 
 ### Краткое описание
 
@@ -17,13 +17,15 @@ Firefox <sup>[esr]</sup>|ESR|68.4.2|2020-01-17|all
 Новые функции можно добавлять при помощи *расширений*.  
 Существует альтернативная версия [Waterfox] или [PaleMoon] для 64-битных ОС. В июне 2018 г. прекратился выпуск 
 обновлений безопасности на канале ESR для версии Firefox под Windows XP<sup>[***]</sup>. 
+В [FF75 под Win10] появилась телеметрия.  
 
-[*]://habr.com/post/313820/ "Rust > Servo > Quantum"
-[**]://habr.com/post/402173/ "wasm - низкоуровневый ЯП, выполняющийся в браузере"
-[***]://habr.com/post/407239/
-[WebAssembly]://habr.com/post/428347/ "RU, 2018-10-31"
-[Waterfox]://www.waterfoxproject.org/ "браузер с поддержкой XUL-расширений"
-[PaleMoon]://www.palemoon.org/ "браузер с поддержкой XUL-расширений"
+[*]: //habr.com/post/313820/ "Rust > Servo > Quantum"
+[**]: //habr.com/post/402173/ "wasm - низкоуровневый ЯП, выполняющийся в браузере"
+[***]: //habr.com/post/407239/
+[FF75 под Win10]: //habr.com/post/496618/
+[WebAssembly]: //habr.com/post/428347/ "RU, 2018-10-31"
+[Waterfox]: //www.waterfoxproject.org/ "браузер с поддержкой XUL-расширений"
+[PaleMoon]: //www.palemoon.org/ "браузер с поддержкой XUL-расширений"
 
 ---
 # Содержание репозитория
@@ -34,7 +36,7 @@ Firefox <sup>[esr]</sup>|ESR|68.4.2|2020-01-17|all
 - ***update_set_ff.vbs*** - скрипт автоматического обновления файла *user.js*
 - ***ReadMe.md*** - описание и рекомендации по работе с браузером
 
-[habrusers_blocker_gm]://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
+[habrusers_blocker_gm]: //github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 
 
 # Рекомендуемые настройки
@@ -54,7 +56,7 @@ Firefox <sup>[esr]</sup>|ESR|68.4.2|2020-01-17|all
 2. [Browsec VPN]  
 	Позиционирует себя как продвинутый аналог ZenMate. Есть бесплатные сервера (NL и UK до 30 Мбит/сек). 
 	Опция "Smart Settings" позволяет выбрать proxy для отдельных доменов без включения защиты.
-3. [Google Translator]  
+3. ~~[Google Translator]~~  
 	С помощью этого расширения можно перевести любой текст на ваш родной язык одним щелчком мыши 
 	или с помощью комбинации клавиш. Можно перевести либо выделенный текст, либо всю страницу.
 4. [FireShot]  
@@ -62,21 +64,21 @@ Firefox <sup>[esr]</sup>|ESR|68.4.2|2020-01-17|all
 5. [Octotree]  
 	Отображает репозиторий GitHub в виде дерева.
 6. [Easy Youtube Video Downloader Express]  
-	Самый простой способ скачать и конвертировать видео из сотен сайтов как YouTube.
+	Самый простой способ скачать и конвертировать 720p видео из сотен сайтов как YouTube.
 
-[:(]://github.com/greasemonkey/greasemonkey/issues/2733/
-[Adblock Plus]://addons.mozilla.org/firefox/addon/1865/
-[AdBlock EdgeList]:#Ссылка-на-подписку-abp-edgelist "Ctrl+Shift+I"
-[Browsec VPN]://addons.mozilla.org/firefox/addon/603434/
-[Canvas]://geektimes.com/post/284604/#comment_9815366 "SHA-256"
-[CanvasBlocker]://addons.mozilla.org/firefox/addon/534930/
-[Easy Youtube Video Downloader Express]://addons.mozilla.org/firefox/addon/463677/
-[FireShot]://addons.mozilla.org/firefox/addon/5648/ "Замена скриншотам Firefox"
-[Google Translator]://addons.mozilla.org/firefox/addon/46308/ "2018-11-29 Гугл изменил интерфейс"
-[Greasemonkey]://addons.mozilla.org/firefox/addon/748/ "Движок для запуска UserJS"
-[Octotree]://addons.mozilla.org/firefox/addon/512640/
-[Stylish]://github.com/The-OP/Fox/commit/370229fefefb8b724f978ae9641597ca0ad40280 "Меняет внешний вид сайтов согласно UserCSS"
-[µBlock Origin]://addons.mozilla.org/firefox/addon/607454/
+[:(]: //github.com/greasemonkey/greasemonkey/issues/2733/
+[Adblock Plus]: //addons.mozilla.org/firefox/addon/1865/
+[AdBlock EdgeList]: #Ссылка-на-подписку-abp-edgelist "Ctrl+Shift+I"
+[Browsec VPN]: //addons.mozilla.org/firefox/addon/603434/
+[Canvas]: //habr.com/post/357238/#comment_11221142 "SHA-256"
+[CanvasBlocker]: //addons.mozilla.org/firefox/addon/534930/
+[Easy Youtube Video Downloader Express]: //addons.mozilla.org/firefox/addon/463677/
+[FireShot]: //addons.mozilla.org/firefox/addon/5648/ "Замена скриншотам Firefox"
+[Google Translator]: //addons.mozilla.org/firefox/addon/46308/ "2018-11-29: Гугл изменил интерфейс"
+[Greasemonkey]: //addons.mozilla.org/firefox/addon/748/ "Движок для запуска UserJS"
+[Octotree]: //addons.mozilla.org/firefox/addon/512640/
+[Stylish]: //github.com/The-OP/Fox/commit/370229fe "Меняет внешний вид сайтов согласно UserCSS"
+[µBlock Origin]: //addons.mozilla.org/firefox/addon/607454/
 
 ### Формула выбора названий свойств настроек из файла user.js в Excel
 
@@ -107,10 +109,10 @@ Firefox <sup>[esr]</sup>|ESR|68.4.2|2020-01-17|all
 MS Word имеет функцию воспроизведения текста (в "*Настройках ленты*" в списке "*Команды не на ленте*" 
 команда "*Проговорить*").
 
-[FingerPrint]://amiunique.org "2018-12-07 https://habr.com/post/432296/#comment_19469322"
-[голосом]://support.mozilla.org/ru/kb/otvet-na-forume-ustanovka-golosov-dlya-windows-10
-[Speech Platform]://www.microsoft.com/en-us/download/details.aspx?id=16789
-[TTS]:http://mytts.forum2x2.ru/f10-forum "Text-To-Speech движок"
+[FingerPrint]: //amiunique.org "2018-12-07: https://habr.com/post/432296/#comment_19469322"
+[голосом]: //support.mozilla.org/ru/kb/otvet-na-forume-ustanovka-golosov-dlya-windows-10
+[Speech Platform]: //www.microsoft.com/en-us/download/details.aspx?id=16789
+[TTS]: http://mytts.forum2x2.ru/f10-forum "Text-To-Speech движок"
 
 </details>
 

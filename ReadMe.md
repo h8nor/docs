@@ -1,4 +1,4 @@
-[License]://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 ## :mortar_board: Лицензия
 
@@ -11,7 +11,7 @@
 путём. При этом от вас требуется указать ссылку на лицензию и на этот репозиторий. Производные работы 
 должны распространятся под аналогичной лицензией. 
 
-[GNU GPL 3.0]:http://rusgpl.ru/
-[CC BY-NC-SA 4.0]://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ru
+[GNU GPL 3.0]: http://rusgpl.ru/
+[CC BY-NC-SA 4.0]: //creativecommons.org/licenses/by-nc-sa/4.0/legalcode.ru
 
 # 

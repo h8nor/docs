@@ -5,7 +5,7 @@
 ##    A damaged flash drive can be tried to format several times before the successful outcome.
 ## http://grub4dos.sourceforge.net/grub4dos/grubinst-1.1-bin-w32-2008-06-29.zip
 ## 3. Copy the files "grldr" and this file "menu.lst" from the archive on a USB flash drive.
-## http://grub4dos.chenall.net/categories/0-4-5c/
+## https://grub4dos.chenall.net/categories/0-4-6a/#year_2020
 
 ## Check version of grub4dos
 checkrange 20120117:-1 read 0x8278 || pause --wait=5 Please use grub4dos-0.4.5c-2012-01-17 or later! && exit 1
@@ -14,19 +14,22 @@ write 0x8274 0x2001
 
 write (md)0x220+1 !BAT\necho -n -P:0000 $[0107] MultiBoot USB by bopoh13\t\t\t\t\t\t\t\0 && initscript (md)0x220+1
 color white/blue black/white white/blue white/black
-default 2
+default 1
 ## 4. Download and Put images in the 'boot' directory
 
+title Shutdown\n\n Shutdown system
+halt
+
 ## http://narod.ru/disk/9693651001/Win7PE_v5.5c_xalex.iso.html
-iftitle [if exist /boot/Win7PE_v5.5c_xalex.iso] Windows 7 PE by Xalex 5.5\n\n Windows 7 PE\n Wait 6 minutes to load into RAM 197 MB, then press any key
+iftitle [if exist /boot/Win7PE_v5.5c_xalex.iso] Windows 7 PE by Xalex 5.5\n\n Windows 7 PE\n Wait a few minutes to load into RAM 197 MB, then press any key
 map --mem /boot/Win7PE_v5.5c_xalex.iso (hd32) && map --hook
 chainloader (hd32)
 
 ## https://drive.google.com/uc?export=download&id=0B_rTW29O5EMNTUxEOFNKT29ySkk
-iftitle [if exist /boot/Victoria-v.3.52.3.ima] Victoria 3.52.3\n\n HDD Test
+iftitle [if exist /boot/Victoria-v.3.52.3.ima] Victoria 3.52.3\n\n HDD Test (not guaranteed)
 map --mem /boot/Victoria-v.3.52.3.ima (fd0) && map --hook
+root (fd0)
 chainloader (fd0)+1
-rootnoverify (fd0)
 map --floppies=1
 
 ## http://www.ihdd.ru/download/software/victoria/vcr35cd.zip
@@ -35,23 +38,24 @@ map --mem /boot/vcr35r.iso (hd32) && map --hook
 chainloader (hd32)
 
 ## http://www.memtest.org/download/5.01/memtest86+-5.01.iso.zip
-iftitle [if exist /boot/memtest86+-5.01.iso] Memtest86+ 5.01\n\n Memory Test
+iftitle [if exist /boot/memtest86+-5.01.iso] Memtest86+ 5.01\n\n Memory Test by Samuel Demeulemeester\n (First Pass 3 times shorter)
 map /boot/memtest86+-5.01.iso (hd32) && map --hook
 chainloader (hd32)
 
+## https://www.memtest86.com/downloads/memtest86-4.3.7-usb.img.zip
+iftitle [if exist /boot/memtest86-usb.img] Memtest86 4.3.7\n\n Memory Test by PassMark(R) Software Pty Ltd.\n (First Pass 3 times shorter)
+map /boot/memtest86-usb.img (fd0) && map --hook
+root (fd0)
+chainloader (fd0)+1
+map --floppies=1
+
 ## http://mikelab.kiev.ua/PROGRAMS/vmt.zip
-iftitle [if exist /boot/vmtce.iso] Video Memory stress Test CE 1.21\n\n GPU Test
+iftitle [if exist /boot/vmtce.iso] Video Memory stress Test CE 1.21\n\n GPU Test (not guaranteed)
 map /boot/vmtce.iso (hd32) && map --hook
 chainloader (hd32)
 
-## https://sourceforge.net/projects/reactos/files/ReactOS/0.4.11/ReactOS-0.4.11-live.zip/download
-iftitle [if exist /boot/ReactOS-0.4.11-Live.iso] 1 ReactOS 0.4 (boot error on swenum.sys)\n\n ReactOS-0.4.11\n Wait 6 minutes to load into RAM 241 MB, then press any key
-map --mem /boot/ReactOS-0.4.11-Live.iso (hd32) && map --hook
-#map --status
-chainloader (hd32)
-
 ## Set a variable named bootmgr where /bootmgr is found
-iftitle [find --set-root --devices=h /bootmgr && call set bootmgr=%@root^%] load BOOTMGR of Windows on %bootmgr%\n\n load Windows VISTA/WIN7/WIN2008
+iftitle [find --set-root --devices=h /boot/bootstat.dat && call set bootmgr=%@root^%] Load BOOTMGR of Windows on %bootmgr%\n\n Load Windows WIN10/WIN2008/WIN7/VISTA (but not Recovery partition)
 makeactive
 chainloader %bootmgr%/bootmgr
 
