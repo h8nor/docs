@@ -2,25 +2,22 @@ Option Explicit
 
 ' License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
 
-' Downloading the latest version of Firefox to your Desktop
-Const VERSION = "1.02.000"
+' Downloading the ghacks-user.js on Firefox to your Desktop
+Const VERSION = "1.01.000"
 
 Set objScriptShell = CreateObject("WScript.Shell")
 ' The component Msxml2.XMLHTTP.6.0 doesn't support redirect on Win10
 Set objXmlServ = CreateObject("Msxml2.ServerXMLHTTP")
 
 Dim objScriptShell, objXmlServ, strPath
-Const JSON_ATTR = Null
-Const FILE_NAME = "\Setup Firefox"
-Const LANG = "ru" ' "en-US"
+Const JSON_ATTR = "zipball_url"
+Const FILE_NAME = "\ghacks-user-js"
+Const REPO_NAME = "ghacksuserjs/ghacks-user.js"
 
 'Private Sub Auto_Load()
-	Dim ProcessorArch, WindowsBit
-	ProcessorArch = objScriptShell.Environment("System").Item("PROCESSOR_ARCHITECTURE")
-	If ProcessorArch = "x86" Then WindowsBit = "win" Else WindowsBit = "win64"
-	
-	Call GetRequest("https://download.mozilla.org/?product=firefox-latest&os=" _
-		& WindowsBit & "&lang=" & LANG, Replace(ProcessorArch, "AMD", " x") & ".exe")
+	strPath = GetRequest("https://api.github.com/repos/" & REPO_NAME _
+		& "/releases/latest", "application/json")
+	If len(strPath) > 10 Then Call GetRequest(strPath, ".zip")
 	
 	Set objXmlServ = Nothing
 	Set objScriptShell = Nothing

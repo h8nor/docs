@@ -2,6 +2,7 @@
 
 #### Полный сброс настроек маршрутизатора (отменить начальную конфигурацию):
 ``` ls
+# https://wiki.mikrotik.com/wiki/Manual:Scripting
 # Нажмите Y для подтверждения
 /system reset-configuration
 ```
@@ -44,13 +45,15 @@
 /delay 500ms
 ```
 
-#### Сохранения конфигурации в текстовом виде:
+#### Сохранения конфигурации для RouterOS 6 в текстовом виде:
 ``` ls
 /export compact
 ```
 
 #### Резервное сохранение настроек (по умолчанию пароль от пользователя):
 ``` ls
+# charset=UTF-8; endline=CRLF
+# https://wiki.mikrotik.com/wiki/Manual:System/Backup
 /system backup save name=tik9 dont-encrypt=yes
 ```
 
@@ -84,15 +87,17 @@
 
 #### Отключить неиспользуемые службы для повышения безопасности:
 ``` ls
+# https://wiki.mikrotik.com/wiki/Manual:Securing_Your_Router
 /ip service
 set telnet disabled=yes
-set www-ssl disabled=yes
-set ssh disabled=yes
+set ssh address=192.168.1.0/28
 set ftp disabled=yes
 set api disabled=yes
 set api-ssl disabled=yes
-set winbox disabled=no
-set www disabled=no
+set www address=192.168.1.0/28
+set www-ssl disabled=yes
+set winbox address=192.168.1.0/28
+
 ```
 
 #### Вывод глобальных переменных в терминал (очищаются при перезагрузке):
@@ -105,10 +110,38 @@ set www disabled=no
 /ip dns cache flush
 ```
 
-#### (?) Блокировка входящего трафика на мост по маске маков:
+### Others (создание списка для firewall)
+``` ls
+# https://wiki.rtzra.ru/software/mikrotik/mikrotik-rfc6890
+# https://forum.nag.ru/index.php?/topic/151593-blokirovka-po-domenu-regexp/
+/system logging
+action add name=logfile target=disk disk-file-name=port.knocking \
+  disk-lines-per-file=2000 disk-stop-on-full=no
+add action=logfile topics=firewall prefix=knock
+
+/ip firewall filter
+add chain=input protocol=icmp in-interface=[/interface find name~".*-wan\$"] \
+  action=add-src-to-address-list address-list=winbox_remote place-before=0 \
+  address-list-timeout=none-static log=yes \
+  comment="#1 icmp port knocking; \r\n\
+  #  packet-size=783 or 144; \r\n\
+    local_machine=52; windows_7_or_10=60; "
+```
+
+#### Сбор данных json или скачивание файла
+``` ls
+# Импортировать certs-chain.pem (цепочка с конечным и исключениями)
+/tool fetch http-header-field="content-type: application/json" \
+  dst-path="fetch/geocoder.json" mode=https check-certificate=yes \
+  url="https://nominatim.osm.org/status\?format=json"
+```
+
+#### Блокировка трафика по маске маков внутри брудкаст домена (коммутатора):
 ``` ls
 /interface bridge filter
 add action=drop chain=input comment="DE:AD:BE:AF:xx:xx" in-bridge=\
 	bridge-local log=yes log-prefix=DEAD src-mac-address=\
 	DE:AD:00:00:00:00/FF:FF:00:00:00:00
 ```
+
+# 

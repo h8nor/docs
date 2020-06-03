@@ -3,11 +3,18 @@
 ## Settings of the "user.js" file will be loaded when you restart your FireFox
 // Some settings https://warfx.ru/firefox/config/ have been abolished
 // and https://habr.com/post/435876/
+// Template for configuring and hardening Firefox privacy, security and anti-fingerprinting
+// https://github.com/ghacksuserjs/ghacks-user.js/releases/latest
 ## Drop this file in a folder XXXXXXXX.default at %APPDATA%\Mozilla\Firefox\Profiles\
+## chrome://global/content/config.xhtml
 
 // // // CRITICAL
 // Turn on if you use the Internet through a mobile operator
-# user_pref("accessibility.blockautorefresh", true);
+## user_pref("accessibility.blockautorefresh", true);
+user_pref("browser.meta_refresh_when_inactive.disabled", true);
+// Unset window.navigator.userAgent
+// https://gist.github.com/e3a09aa97a827916b0b91b726a8c2c66
+user_pref("general.useragent.override", "");
 // Disable sending of the health report
 // https://support.mozilla.org/en-US/kb/firefox-health-report-understand-your-browser-perf
 user_pref("datareporting.healthreport.uploadEnabled", false);
@@ -46,11 +53,11 @@ user_pref("permissions.default.geo", 2);
 // Disable Location-Aware Browsing
 // conflicts with frame in site api-maps.yandex.ru
 // http://www.mozilla.org/en-US/firefox/geolocation/
-user_pref("geo.enabled", false); [Conflicts.Detected]
+user_pref("geo.enabled", false); // [Conflicts.Detected]
 user_pref("geo.wifi.uri", "");
 user_pref("browser.search.geoSpecificDefaults", false);
 user_pref("browser.search.geoSpecificDefaults.url", "");
-user_pref("browser.search.hiddenOneOffs", "Yahoo,Bing,Amazon.com,eBay,Twitter,Price.ru,Поиск Mail.Ru");
+user_pref("browser.search.hiddenOneOffs", "Поиск Mail.Ru,OZON.ru,Price.ru");
 user_pref("browser.search.widget.inNavBar", true);
 user_pref("intl.accept_languages", "en-US, en");
 // https://support.mozilla.org/en-US/kb/how-stop-firefox-making-automatic-connections#w_geolocation-for-default-search-engine
@@ -96,6 +103,7 @@ user_pref("extensions.pocket.oAuthConsumerKey", "");
 user_pref("extensions.pocket.site", "");
 // Show "http(s)://" in the URL bar
 user_pref("browser.urlbar.trimURLs", false);
+user_pref("browser.urlbar.update1", false);
 // Disable new tab tile ads & preload
 user_pref("browser.newtab.preload", false);
 // https://wiki.mozilla.org/Privacy/Reviews/New_Tab
@@ -135,7 +143,7 @@ user_pref("privacy.trackingprotection.fingerprinting.enabled", true);
 // https://support.mozilla.org/en-US/kb/tracking-protection
 #63 user_pref("urlclassifier.trackingTable", "test-track-simple,base-track-digest256,content-track-digest256");
 // conflicts with site gosuslugi.ru (map & date); need to delete the parameter
-user_pref("privacy.trackingprotection.pbmode.enabled", false); [Conflicts.Detected]
+user_pref("privacy.trackingprotection.pbmode.enabled", false); // [Conflicts.Detected]
 // Perhaps the screenshots will not work if the HTML5 is disabled with on the site and option enabled
 // https://www.linux.org.ru/news/mozilla/13978522/
 user_pref("privacy.resistFingerprinting", true); // [Conflicts?] Doesn't save a zoom in pages
@@ -147,6 +155,8 @@ user_pref("privacy.firstparty.isolate", true);
 user_pref("privacy.userContext.enabled", true);
 user_pref("privacy.userContext.longPressBehavior", 2);
 user_pref("privacy.userContext.ui.enabled", true);
+// https://wiki.mozilla.org/Security/Sandbox
+# user_pref("security.sandbox.content.level", 6);
 // https://en.wikipedia.org/wiki/Content_Security_Policy
 // https://github.com/greasemonkey/greasemonkey/issues/2631
 user_pref("security.csp.enable", true);
@@ -163,7 +173,6 @@ user_pref("media.getusermedia.screensharing.enabled", false);
 user_pref("media.video_stats.enabled", false);
 #67 user_pref("media.autoplay.default", 1);
 user_pref("media.autoplay.enabled", false);
-user_pref("media.block-autoplay-until-in-foreground", false);
 
 // http://kb.mozillazine.org/Network.proxy.socks_remote_dns
 user_pref("network.proxy.socks_remote_dns", true);
@@ -180,11 +189,12 @@ user_pref("lightweightThemes.recommendedThemes", "");
 user_pref("offline-apps.allow_by_default", false);
 // https://wiki.mozilla.org/DevTools/WiFi_Debugging
 user_pref("devtools.remote.wifi.scan", false);
+user_pref("network.notify.changed", false);
 // http://kb.mozillazine.org/Network.cookie.thirdparty.sessionOnly
 user_pref("network.cookie.thirdparty.sessionOnly", true);
 // http://kb.mozillazine.org/Network.cookie.cookieBehavior
 // conflicts with frame in sites discordapp.com, plus.google.com, api.vk.com and other
-user_pref("network.cookie.cookieBehavior", 1); [Conflicts.Detected]
+user_pref("network.cookie.cookieBehavior", 1); // [Conflicts.Detected]
 // http://kb.mozillazine.org/Network.cookie.lifetimePolicy
 # user_pref("network.cookie.lifetimePolicy", 2); // Delete cookies when the browser closes
 // http://kb.mozillazine.org/Signon.autofillForms
@@ -200,8 +210,8 @@ user_pref("pdfjs.disabled", true);
 // https://drafts.csswg.org/css-font-loading/
 user_pref("layout.css.font-loading-api.enabled", false);
 // Adjusting the initial scale of the page
-user_pref("layout.css.devPixelsPerPx", "1.25");
-user_pref("layout.css.osx-font-smoothing.enabled", true);
+#user_pref("layout.css.devPixelsPerPx", "1.25");
+user_pref("layout.css.osx-font-smoothing.enabled", false);
 
 // // // DESIRABLE
 user_pref("browser.startup.homepage", "//clck.ru/0f");
@@ -215,29 +225,31 @@ user_pref("security.ssl.treat_unsafe_negotiation_as_broken", true);
 user_pref("security.ssl3.dhe_rsa_aes_128_sha", false);
 user_pref("security.ssl3.dhe_rsa_aes_256_sha", false);
 user_pref("browser.cache.offline.enable", false);
+user_pref("browser.sessionstore.interval", 90000);
 // The number stored in the memory of page to go back (reduce memory consumption)
 user_pref("browser.sessionhistory.max_entries", 12);
 // conflicts with sites github.com, gist.github.com, code.sololearn.com
 // https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/Preference_reference/dom.event.clipboardevents.enabled
-user_pref("dom.event.clipboardevents.enabled", false); [Conflicts.Detected]
+#user_pref("dom.event.clipboardevents.enabled", false); // [Conflicts.Detected]
 // Webpages will not be able to affect the right-click menu (Shift+RBM)
 # user_pref("dom.event.contextmenu.enabled", false);
 // http://kb.mozillazine.org/Dom.storage.enabled
 // https://html.spec.whatwg.org/multipage/webstorage.html#dom-localstorage
 // conflicts with sites -market.yandex.ru, online.sberbank.ru, pgu.mos.ru, jsfiddle.net and other
 // you can also see this with Panopticlick's "DOM localStorage"
-# user_pref("dom.storage.enabled", false); [Conflicts.Detected]
+# user_pref("dom.storage.enabled", false); // [Conflicts.Detected]
 // http://kb.mozillazine.org/Network.http.sendRefererHeader
 # user_pref("network.http.sendRefererHeader", 0);
 // Disable webGL
 // http://www.contextis.com/resources/blog/webgl-new-dimension-browser-exploitation/
 user_pref("webgl.disable-extensions", true);
-user_pref("webgl.disabled", true);
-user_pref("webgl.min_capability_mode", true);
+// Test https://get.webgl.org/
+## user_pref("webgl.disabled", true);
+## user_pref("webgl.min_capability_mode", true);
 // https://wiki.mozilla.org/Security/Reviews/Firefox/NavigationTimingAPI
 # user_pref("dom.enable_performance", false);
 user_pref("dom.enable_resource_timing", false);
-# user_pref("javascript.enabled", false); [JavaScript.Off]
+# user_pref("javascript.enabled", false); // [JavaScript.Off]
 // http://asmjs.org/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-29/
 // https://www.mozilla.org/en-US/security/advisories/mfsa2015-50/
@@ -262,17 +274,23 @@ user_pref("dom.vibrator.enabled", false);
 user_pref("device.sensors.enabled", false);
 user_pref("devtools.webide.enabled", false);
 // JSON Validator https://jsonlint.com/ (just paste link)
-# user_pref("devtools.jsonview.enabled", false); [JSONView.Off]
+# user_pref("devtools.jsonview.enabled", false); // [JSONView.Off]
 // Do not add downloaded files to the list of "Recent Documents" (Windows)
 user_pref("browser.download.manager.addToRecentDocs", false);
 user_pref("browser.download.hide_plugins_without_extensions", false);
 // Open results in a new tab, rather than the current
 user_pref("browser.search.openintab", true);
+user_pref("browser.search.widget.inNavBar", true);
 // Remove the line "search" in the drop-down menu when typing in the URL bar
 user_pref("browser.urlbar.suggest.searches", false);
 user_pref("browser.urlbar.decodeURLsOnCopy", true);
+user_pref("browser.urlbar.placeholderName.private", "Google");
 // Check the spelling in all text fields (and not only in the Textarea)
 user_pref("layout.spellcheckDefault", 2);
+// Text-to-Speech
+# user_pref("media.webspeech.recognition.enable", false);
+// Asynchronous Speech Recognition
+# user_pref("media.webspeech.synth.enabled", false);
 
 // // // Print View & Reader settings (F9)
 user_pref("narrate.enabled", true);

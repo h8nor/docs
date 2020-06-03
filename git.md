@@ -137,7 +137,7 @@ git status -sb
 # Самая важная команда (commit)
 git commit -m"comment1" -m"comment2" (ключ -a коммитит только файлы из индекса)
 ```
-:space_invader: Картинки в комментариях можно посмотреть [здесь](//gist.github.com/rxaviers/7360908).
+:factory_worker: Картинки в комментариях можно посмотреть [здесь](//github.com/jzeferino/AllGithubEmojis).
 
 #### Отмена индексирования файла до записи состояния (commit):
 ``` nix
