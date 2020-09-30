@@ -1,8 +1,8 @@
-[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+﻿[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
-Приложение|Редакция|Версия|Дата|Язык
+|Приложение|Редакция|Версия|Дата|Язык
 |:--- |:--- |:--- |:---:|:--- 
-Prime95 <sup>[www]</sup>|Release|29.8|2019-04-23|en
+|Prime95 <sup>[www]</sup>|Release|29.8|2019-04-23|en
 
 [www]: //mersenne.org/download/ "Download"
 
@@ -30,7 +30,7 @@ PRP=1,2,{EXPONENT},-1,"{FACTOR_N1},{FACTOR_N2}"
 PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 ```
 
-На 2020-02-13 найден 149 сомножителей. Любой метод добавляет очков в проекте GIMPS.
+На 2020-09-30 найдено 207 сомножителей. Любой метод добавляет очков в проекте GIMPS.
 
 [простых чисел Мерсенна]: //www.mersenne.ca/prime.php
 [методы]: //www.mersenne.org/various/math.php
@@ -64,13 +64,13 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 [yafu]: http://www.mersenneforum.org/showthread.php?p=488202
 [**]: //www.mersenne.ca/tf1G.php
 
-### Формула пополнения таблицы в Excel
+### :chocolate_bar: Формула пополнения таблицы в Excel
 
 `=СЦЕПИТЬ("|";ЕСЛИ(ИЛИ(ЛЕВСИМВ(A1;1)="Q";ЛЕВСИМВ(A1;1)="i");"C";"G");"PU_";A1;"|M<sub>";B1;"</sub>|";ТЕКСТ(D1;"ГГГГ-ММ-ДД");"|[";ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");"](//mersenne.org/M";B1;" """;ТЕКСТ(LOG(ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");2);"0,0_ бит");""")")`
 
 ---
 <details>
-<summary>:cyclone: Ссылки на пояснения и приложения</summary><br />
+<summary>:coconut: Ссылки на пояснения и приложения</summary><br />
 
 1. [Простые числа Мерсенна и Тест Люка-Лемера](//habr.com/post/327342/ "RU, 2017-04-25")
 2. [Mersenne Prime](//download.mersenne.ca/ "EN")
@@ -82,7 +82,7 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 </details>
 
 <details>
-<summary>:cyclone: Ссылки на статьи о числах и RSA</summary><br />
+<summary>:coconut: Ссылки на статьи о числах и RSA</summary><br />
 
 1. [Решето Эратосфена и Аткина](//habr.com/post/133037/ "RU, 2011-11-21")
 2. [Математик совершил прорыв в теории простых чисел-близнецов](//habr.com/post/180259/ "RU, 2013-05-20")
@@ -110,6 +110,7 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 |Estimated completio date is more than one yer away. The assignment may be reassigned to another user after one year.|Предполагаемая дата завершения составляет более одного года. Назначение может быть назначено другому пользователю через один год.
 |Getting assignment from server|Получение задания с сервера
 |ra: exponent M violates assignment rules.|треб: экспонента M нарушает правила назначения.
+|No work to do at the present time. Waiting.|В настоящее время нет задания. Ждите.
 |Sending result to server:|Отправка результата на сервер:
 |Updating computer information on the server|Обновление информации о компьютере на сервере
 
