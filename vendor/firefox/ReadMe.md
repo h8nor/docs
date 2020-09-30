@@ -1,9 +1,9 @@
-[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+﻿[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 |Приложение|Редакция|Версия|Дата|Язык
 |:--- |:--- |:--- |:---:|:--- 
-|Firefox <sup>[www]</sup>|Release|76.0.0|2020-04-30|all
-|Firefox <sup>[esr]</sup>|ESR|68.8.0|2020-04-30|all
+|Firefox <sup>[www]</sup>|Release|81.0.0|2020-09-17|all
+|Firefox <sup>[esr]</sup>|ESR|78.3.0|2020-09-15|all
 
 [www]: //mozilla.org/ru/firefox/all/#product-desktop-release "Site"
 [esr]: //mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
@@ -30,7 +30,7 @@
 ---
 # Содержание репозитория
 
-- ***download_last_ff.vbs*** - скрипт для скачивания ghacks-user.js для Firefox на Рабочий стол
+- ***download_ghacks_ff.vbs*** - скрипт для скачивания ghacks-user.js для Firefox на Рабочий стол
 - ***download_last_ff.vbs*** - скрипт для скачивания Firefox под разрядность ОС на Рабочий стол
 - ***[habrusers_blocker_gm].user.js*** - блокировка пользователей на Хабре (*user script*)
 - ***user.js*** - рекомендуемый файл безопасных настроек
@@ -98,6 +98,7 @@
 </details> -->
 
 1. [Mozilla усилила защиту пользователей Firefox от вредоносного кода](//habr.com/post/471602/ "RU, 2019-10-15")
+2. [Mozilla: рекламщикам достаточно истории 150 посещённых доменов для определения пользователя](//habr.com/ru/news/t/517384/ "RU, 2020-09-01")
 
 <details>
 <summary>:coconut: Дополнительные возможности</summary><br />
@@ -123,5 +124,26 @@ MS Word имеет функцию воспроизведения текста (�
 
 Необходимо после каждого обновления `Отключить / Удалить` задание `Firefox Default Browser Agent`
 до того, как оно выполнится.
+
+<details>
+<summary>:coconut: На блокировку в hosts реагирует MS Defender</summary><br />
+
+- www.microsoft.com
+- microsoft.com
+- telemetry.microsoft.com
+- wns.notify.windows.com.akadns.net
+- v10-win.vortex.data.microsoft.com.akadns.net
+- us.vortex-win.data.microsoft.com
+- us-v10.events.data.microsoft.com
+- urs.microsoft.com.nsatc.net
+- watson.telemetry.microsoft.com
+- watson.ppe.telemetry.microsoft.com
+- vsgallery.com
+- watson.live.com
+- watson.microsoft.com
+- telemetry.remoteapp.windowsazure.com
+- telemetry.urs.microsoft.com
+
+</details>
 
 #

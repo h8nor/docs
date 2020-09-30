@@ -3,7 +3,7 @@ Option Explicit
 ' License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
 
 ' Downloading the latest version of Firefox to your Desktop
-Const VERSION = "1.02.000"
+Const VERSION = "1.02.003"
 
 Set objScriptShell = CreateObject("WScript.Shell")
 ' The component Msxml2.XMLHTTP.6.0 doesn't support redirect on Win10
@@ -43,6 +43,8 @@ Private Function GetRequest(ByRef request, ByRef contentType)
 			objStream.SaveToFile objScriptShell.SpecialFolders("Desktop") _
 				& FILE_NAME & contentType, 2
 			Set objStream = Nothing
+			If Err.Number = 0 Then objScriptShell.Popup FILE_NAME _
+				& contentType & " downloaded ", 9, "VBScript", 64
 		Else
 			objStream = objXmlServ.responseText
 			For Each data In Split(objStream, """,""")
@@ -55,7 +57,7 @@ Private Function GetRequest(ByRef request, ByRef contentType)
 			Next
 		End If
 	ElseIf Err.Number = -&H7ff8fffb Then
-		MsgBox "msxml6.dll https: Access is denied", 16
+		objScriptShell.Popup "msxml6.dll https: Access is denied", 15, "VBScript", 16
 	Else
 		MsgBox Join(Array("Error connect ", objXmlServ.Status, objXmlServ.statusText)), 16
 	End If
