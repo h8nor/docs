@@ -4,7 +4,7 @@
 ---|---|---|---|---
 HelpNDoc <sup>[www]</sup>|Personal Edition|4.9.2.132|2016-01-20|de, en, fr
 
-[www]:http://helpndoc.com/download "Site"
+[www]: //helpndoc.com/download "Site"
 
 ### Краткое описание
 

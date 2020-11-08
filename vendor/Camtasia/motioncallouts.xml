@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionCallouts name="Sketch Motion" groupIndex="2">
+   <Callout type="sketch">
+      <name>Sketch Motion Oval</name>
+      <sourceFile>anim_drawnoval.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+   <Callout type="sketch">
+      <name>Sketch Motion Rectangle</name>
+      <sourceFile>anim_drawnsquare.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+   <Callout type="sketch">
+      <name>Sketch Motion Arrow</name>
+      <sourceFile>anim_arrow.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+   <Callout type="sketch">
+      <name>Sketch Motion Checkmark</name>
+      <sourceFile>anim_checkmark.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+   <Callout type="sketch">
+      <name>Sketch Motion Straight Line</name>
+      <sourceFile>anim_straightline.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+   <Callout type="sketch">
+      <name>Sketch Motion Perfect Oval</name>
+      <sourceFile>anim_drawnperfectoval.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+   <Callout type="sketch">
+      <name>Sketch Motion Perfect Rectangle</name>
+      <sourceFile>anim_drawnperfectrectangle.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+   <Callout type="sketch">
+      <name>Sketch Motion X</name>
+      <sourceFile>anim_x.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+   <Callout type="sketch">
+      <name>Sketch Motion Star</name>
+      <sourceFile>anim_star.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+   <Callout type="sketch">
+      <name>Sketch Motion Outline Arrow</name>
+      <sourceFile>anim_outlinearrow.svg</sourceFile>
+      <fadeInSeconds>2.00</fadeInSeconds>
+      <speedChangeMultiplier>200</speedChangeMultiplier>
+      <totalPauseFraction>.2</totalPauseFraction>
+   </Callout>
+
+</MotionCallouts>
