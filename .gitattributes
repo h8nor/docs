@@ -14,17 +14,3 @@
 *.rsc	text	eol=crlf
 *.vbs	text	working-tree-encoding=CP1251	eol=CRLF
 #*.png	binary
-
-# Shell script that ships with msysGit
-# //github.com/msysgit/msysgit/blob/master/bin/astextplain
-# Standard to msysgit
-#*.doc  diff=astextplain
-#*.DOC  diff=astextplain
-#*.docx diff=astextplain
-#*.DOCX diff=astextplain
-#*.dot  diff=astextplain
-#*.DOT  diff=astextplain
-#*.pdf  diff=astextplain
-#*.PDF  diff=astextplain
-#*.rtf  diff=astextplain
-#*.RTF  diff=astextplain
