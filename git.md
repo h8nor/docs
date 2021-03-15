@@ -17,12 +17,23 @@ git config --global filter.win1251.smudge "iconv -f utf-8 -t windows-1251"
 git config --global filter.win1251.required true
 ```
 
+#### Генерация SSH ключей:
+``` nix
+ssh-keygen -t rsa -b 4096 -C "Email"
+# Нажать Enter (запомнить путь публичного ключа)
+# Пароль закрытого ключа (кодовая фраза)
+> passphrase
+> passphrase again
+# Проверка подключения
+ssh -T git@github.com
+```
+
 #### Генерация и просмотр GPG ключей:
 ``` nix
 # //gnupg.org/download/integrity_check.html
 # //habr.com/post/73642/
 # //debianzilla.com/gnupg-pgp/ (not "PGP keys")
-gpg --gen-key
+gpg --full-generate-key
 # //linux.org.ru/forum/security/10904313
 # RSA and RSA (4096) 6мес //k806.ru/help/gpg_create
 > 1
@@ -33,7 +44,7 @@ gpg --gen-key
 > Email
 > comment
 > O
-# Пароль закрытого ключа (кодовая фраза)
+# Пароль закрытого ключа (кодовая фраза) для версии GnuPG 2.20 и ниже
 > passphrase
 # Показать список открытых ключей
 gpg --list-keys
@@ -150,6 +161,8 @@ git reset folder/ReadMe.md
 git checkout README.md
 # Отмена изменений всех файлов после модификации
 git checkout -- .
+# Переименовать изменив только регистр
+git mv -f Readme.md README.md
 ```
 
 #### Объединение (merge) ветки dev с веткой master:
@@ -189,6 +202,8 @@ git checkout --orphan new_branch
 
 #### Получение (pull) обновленной версии из репозитория:
 ``` nix
+# Рисовать дерево репозитория
+git log --oneline --graph --decorate --all
 # Команда забирает изменения и проводит слияние ветки master (с активной веткой)
 git pull origin master
 ```

@@ -1,9 +1,16 @@
 [License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
+|Приложение|Редакция|Версия|Дата|Язык
+|:--- |:--- |:--- |:---:|:--- 
+|RouterOS <sup>[www]</sup>|Long-term|6.46.8|2020-11-02|en
+
+[www]: //mikrotik.com/download "Site"
+
+---
 # Содержание репозитория
 
 - ***check-logs-60m.rsc*** - скрипт для отправки оповещений из Log в Discord (fetch не всегда срабатывает)  
-  ![discord-logs-send](images/mikrotik_check.png)
+  ![discord-logs-send](images/mikrotik_check.png?raw=true)
 - ***refresh-external-IP.rsc*** - скрипт сохраняет внешний IP в глобальную переменную `publicIP` (`/ip cloud`)
 - ***send-mail-7d.rsc*** - скрипт отправляет на email уведомление о новых пакетах RouterOS (если они есть)
 - ***ReadMe.md*** - описание и рекомендации по работе с браузером

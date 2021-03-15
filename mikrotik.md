@@ -27,9 +27,16 @@
 /interface wireless enable 0
 ```
 
-#### Вернуть родной MAC-адрес порта WAN:
+#### Вернуть родной MAC-адрес порта WAN (только через терминал):
 ``` ls
 /interface ethernet reset-mac ether1
+# поменять
+/interface ethernet set ether1-wan mac-address="00:00:00:00:00:00"
+```
+
+#### ! Отключение порта (X - flag):
+``` ls
+/interface disable 0-NUMBER
 ```
 
 #### Выключение оверлокинга (для RG951):
@@ -108,6 +115,13 @@ set winbox address=192.168.1.0/28
 #### Очистка кеша DNS-записей:
 ``` ls
 /ip dns cache flush
+```
+
+### ! Настройка маскарадинга, чтобы чтобы внутренняя сеть не была видна с WAN порта:
+### ? Нужен ли локальный диапазон адресов `src-address=`
+``` ls
+ip firewall nat add chain=srcnat action=masquerade \
+  out-interface=[/interface find name~".*-wan\$"]
 ```
 
 ### Others (создание списка для firewall)

@@ -1,9 +1,9 @@
-﻿[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 |Приложение|Редакция|Версия|Дата|Язык
 |:--- |:--- |:--- |:---:|:--- 
-|Firefox <sup>[www]</sup>|Release|81.0.0|2020-09-17|all
-|Firefox <sup>[esr]</sup>|ESR|78.3.0|2020-09-15|all
+|Firefox <sup>[www]</sup>|Release|84.0.0|2020-12-12|all
+|Firefox <sup>[esr]</sup>|ESR|78.6.0|2020-12-08|all
 
 [www]: //mozilla.org/ru/firefox/all/#product-desktop-release "Site"
 [esr]: //mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
@@ -81,7 +81,7 @@
 [Stylish]: //github.com/The-OP/Fox/commit/370229fe "Меняет внешний вид сайтов согласно UserCSS"
 [µBlock Origin]: //addons.mozilla.org/firefox/addon/607454/
 
-### :chocolate_bar: Формула выбора названий свойств настроек из файла user.js в Excel
+### :ice_cube: Формула выбора названий свойств настроек из файла user.js в Excel
 
 `=ЕСЛИОШИБКА(ПСТР(A1;НАЙТИ("user_pref";A1)+11;НАЙТИ(""", ";A1)-2-НАЙТИ("(""";A1));"")`
 

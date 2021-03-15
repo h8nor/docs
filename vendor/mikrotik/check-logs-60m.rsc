@@ -13,9 +13,9 @@
 
 /system logging action set memory memory-lines=1100;
 
-:local urlHook "https://discord.com/api/webhooks/$(url_discord_token_webhook)";
-:local username ( "(" . [/system identity get name] . ") Mikrotik ZZXXX" );
-:local group_or_user "$(admins_group_ID)";
+:local URLWEBHOOK "https://discord.com/api/webhooks/$Discord.Url_Webhook$";
+:local DEVICE ( "(" . [/system identity get name] . ") Mikrotik $Model.ZZXXX$" );
+:local IDROLEUSER "$Discord.ID_@&Role_or_ID_@User$";
 
 #############################################################
 
@@ -27,7 +27,7 @@
 :local column2Msg;
 :local column3Msg;
 
-:foreach lineLog in=[/log find message~" failure" || message~"loop"|| message~"sent" || message~" down" || message~"fcs" || message~"excessive"] do={
+:foreach lineLog in=[/log find message~" down" || message~" failure" || message~"loop" || message~"sent" || message~"fcs" || message~"excessive"] do={
   :set timeLog [/log get $lineLog time];
   # Date Record Unification
   :if ( [:len $timeLog] = 15 ) do={
@@ -42,8 +42,6 @@
     }
   }
   :set dateLog ( [:pick $dateLog 7 11] . "-" . ( $mouths -> [:pick $dateLog 0 3] ) . "-" . [:pick $dateLog 4 6] );
-  #/log warning message=( $dateLog . " " . $timeLog . " " \
-  #  . [/system identity get name] . " START " . [/log get $lineLog message] . " END" );
   
   # HotFix! Condition is required for debugging
   :if ( [:len [/log get $lineLog message] ] < 70 ) do={
@@ -53,19 +51,19 @@
   }
 }
 
-:local body "{\"content\": \"<@&$group_or_user> Attention!\", \
-\"username\": \"$username\", \
+:local body "{\"content\": \"<$IDROLEUSER> Attention!\", \
+\"username\": \"$DEVICE\", \
 \"embeds\": [ {\"color\": 11746099, \"title\": \"\", \"fields\": [ \
   {\"inline\": true, \"name\": \"Date\", \"value\": \"$column1Msg\"}, \
   {\"inline\": true, \"name\": \"Time\", \"value\": \"$column2Msg\"}, \
   {\"inline\": true, \"name\": \"Message\", \"value\": \"$column3Msg\"} \
-  ], \"footer\": { \"text\": \"Checked\" }, \
-  \"timestamp\": \"$dateNow\54$( [/system clock get time] - [/system clock get gmt-offset] ).000Z\" \
+  ], \"footer\": { \"text\": \"\D0\BE\D1\82\D0\BC\D0\B5\D1\82\D0\BA\D0\B0\" }, \
+  \"timestamp\": \"$dateLog\54$( [/system clock get time] - [/system clock get gmt-offset] ).000Z\" \
 } ] \
 }"
 
 :if ( [:len $column3Msg] > 0 ) do={
-  /tool fetch url=$urlHook http-method=post duration="3m" \
+  /tool fetch url=$URLWEBHOOK http-method=post duration="3m" \
     http-header-field="Content-Type: application/json; charset=UTF-8" http-data=$body;
 } else={
   /log info message="No entries found in the log";
