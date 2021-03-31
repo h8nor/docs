@@ -1,8 +1,8 @@
-﻿[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 |Приложение|Редакция|Версия|Дата|Язык
 |:--- |:--- |:--- |:---:|:--- 
-|Prime95 <sup>[www]</sup>|Release|29.8|2019-04-23|en
+|Prime95 <sup>[www]</sup>|Release|30.3|2020-09-11|en
 
 [www]: //mersenne.org/download/ "Download"
 
@@ -21,6 +21,8 @@
 к аналогичному результату, при этом их можно использовать повторно для алгоритма [ECM], но нужно проверить 
 по [таблицам] вероятностное количество ненайденных кривых.  
 
+В разделе `Assignment` могут отображаться интервалы выше заданых, если они прошли по [таблицам].  
+
 Проверка [PRP] (вероятное простое) с большой вероятностью укажет, если простые сомножители (все или с одним 
 недостающим) будут найдены; или число Мерсенна не имеет сомножителей и является простым (данный метод заменил 
 тест LL). Чем длиннее уже найденные простые сомножители, тем больше шансов успешно пройти проверку PRP.
@@ -30,7 +32,7 @@ PRP=1,2,{EXPONENT},-1,"{FACTOR_N1},{FACTOR_N2}"
 PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 ```
 
-На 2020-09-30 найдено 207 сомножителей. Любой метод добавляет очков в проекте GIMPS.
+На 2020-03-31 найдено 285 сомножителей. Любой метод добавляет очков в проекте GIMPS.
 
 [простых чисел Мерсенна]: //www.mersenne.ca/prime.php
 [методы]: //www.mersenne.org/various/math.php
@@ -58,19 +60,19 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 3. [mfakto] an OpenCL<sup>[**]</sup> 
 4. [yafu] 
 
-[gpuOwL]: http://www.mersenneforum.org/showthread.php?t=22204
-[mfaktc]: http://www.mersenneforum.org/showthread.php?t=12827
-[mfakto]: http://www.mersenneforum.org/showthread.php?t=15646
-[yafu]: http://www.mersenneforum.org/showthread.php?p=488202
+[gpuOwL]: //www.mersenneforum.org/forumdisplay.php?f=171
+[mfaktc]: //www.mersenneforum.org/showthread.php?t=12827
+[mfakto]: //www.mersenneforum.org/showthread.php?t=15646
+[yafu]: //www.mersenneforum.org/showthread.php?p=488202
 [**]: //www.mersenne.ca/tf1G.php
 
-### :chocolate_bar: Формула пополнения таблицы в Excel
+### :yellow_square: Формула пополнения таблицы в Excel
 
 `=СЦЕПИТЬ("|";ЕСЛИ(ИЛИ(ЛЕВСИМВ(A1;1)="Q";ЛЕВСИМВ(A1;1)="i");"C";"G");"PU_";A1;"|M<sub>";B1;"</sub>|";ТЕКСТ(D1;"ГГГГ-ММ-ДД");"|[";ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");"](//mersenne.org/M";B1;" """;ТЕКСТ(LOG(ПОДСТАВИТЬ(ЛЕВСИМВ(F1;ПОИСК(" / ";F1)-1);"Factor: ";"");2);"0,0_ бит");""")")`
 
 ---
 <details>
-<summary>:coconut: Ссылки на пояснения и приложения</summary><br />
+<summary>:purple_square: Ссылки на пояснения и приложения</summary><br />
 
 1. [Простые числа Мерсенна и Тест Люка-Лемера](//habr.com/post/327342/ "RU, 2017-04-25")
 2. [Mersenne Prime](//download.mersenne.ca/ "EN")
@@ -82,7 +84,7 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 </details>
 
 <details>
-<summary>:coconut: Ссылки на статьи о числах и RSA</summary><br />
+<summary>:purple_square: Ссылки на статьи о числах и RSA</summary><br />
 
 1. [Решето Эратосфена и Аткина](//habr.com/post/133037/ "RU, 2011-11-21")
 2. [Математик совершил прорыв в теории простых чисел-близнецов](//habr.com/post/180259/ "RU, 2013-05-20")
@@ -96,6 +98,7 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 10. [Математики доказали, что неприводимые многочлены не имеют простых множителей](//habr.com/post/436110/ "RU, 2019-01-16")
 11. [Почему единицу не относят к простым числам](//habr.com/post/450838/ "RU, 2019-05-07")
 12. [Тесты Ферма и Миллера-Рабина на простоту](//habr.com/post/486116/ "RU, 2020-01-29")
+13. [Таинственная математика совершенства](//habr.com/post/547602/ "RU, 2021-03-18")
 
 </details>
 
@@ -108,6 +111,7 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 |Days to go|Осталось дней
 |Exchanging program options with server|Обмен параметрами программы с сервером
 |Estimated completio date is more than one yer away. The assignment may be reassigned to another user after one year.|Предполагаемая дата завершения составляет более одного года. Назначение может быть назначено другому пользователю через один год.
+|Estimated hours per day this program will run:|Приблизительное количество часов в день, в течение которого программа будет работать:
 |Getting assignment from server|Получение задания с сервера
 |ra: exponent M violates assignment rules.|треб: экспонента M нарушает правила назначения.
 |No work to do at the present time. Waiting.|В настоящее время нет задания. Ждите.

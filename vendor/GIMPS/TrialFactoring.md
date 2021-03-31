@@ -1,4 +1,4 @@
-﻿[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 # Метод: Пробная факторизация
 
@@ -19,7 +19,7 @@ Factor={EXPONENT},{BIT_LAST},{BIT_OVER}
 
 ---
 <details>
-<summary>:coconut: Список найденных факторов</summary><br />
+<summary>:red_square: Список найденных факторов</summary><br />
 
 |Имя процессора|Экспонента|Полученно (передано)|Простой множитель
 |:--- | ---:|:---:| ---:
