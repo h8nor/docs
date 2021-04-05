@@ -28,6 +28,6 @@
     body=( "Для пакетов доступна новая версия - $LASTVER.\nСписок изменений в " \
     . "WinBox можно просмотреть по кнопке:\nSystem \96\BB Packages \96\BB " \
     . "Check For Updates\85\n\nили по ссылке https://mikrotik.com/download/" \
-    . "changelogs\n\n" . [/system resource get version] . " " \
-    . [/system resource get build-time] );
+    . "changelogs/long-term-release-tree\n\n" . [/system resource get version] \
+    . " " . [/system resource get build-time] );
 }
