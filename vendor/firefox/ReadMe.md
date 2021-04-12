@@ -2,8 +2,8 @@
 
 |Приложение|Редакция|Версия|Дата|Язык
 |:--- |:--- |:--- |:---:|:--- 
-|Firefox <sup>[www]</sup>|Release|86.0.0|2021-02-22|all
-|Firefox <sup>[esr]</sup>|ESR|78.8.0|2021-02-17|all
+|Firefox <sup>[www]</sup>|Release|87.0.0|2021-03-18|all
+|Firefox <sup>[esr]</sup>|ESR|78.9.0|2021-03-15|all
 
 [www]: //mozilla.org/ru/firefox/all/#product-desktop-release "Site"
 [esr]: //mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
@@ -101,7 +101,8 @@
 2. [Firefox 75 будет автоматически удалять отслеживающие файлы cookie](//habr.com/news/t/491152/ "RU, 2020-03-05")
 3. [Firefox 75 ввели телеметрию и новую адресную строку](//habr.com/news/t/496618/ "RU, 2020-04-10")
 4. [Mozilla: рекламщикам достаточно истории 150 посещённых доменов для определения пользователя](//habr.com/news/t/517384/ "RU, 2020-09-01")
-5. [DevTools браузера: возможности инструмента разработчика (авт.)](//habr.com/post/548898/ "RU, 2021-04-05")
+5. [IETF официально прекратил поддержку протоколов TLS 1.0 и 1.1](//habr.com/post/548832/ "RU, 2021-03-24")
+6. [DevTools браузера: возможности инструмента разработчика (авт.)](//habr.com/post/548898/ "RU, 2021-04-05")
 
 <details>
 <summary>:coconut: Дополнительные возможности</summary><br />

@@ -2,8 +2,8 @@ Option Explicit
 
 ' License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
 
-' Downloading the latest version of Firefox to your Desktop
-Const VERSION = "1.02.003"
+' Downloading the latest ESR version of Firefox to your Desktop
+Const VERSION = "1.02.004"
 
 Set objScriptShell = CreateObject("WScript.Shell")
 ' The component Msxml2.XMLHTTP.6.0 doesn't support redirect on Win10
@@ -19,7 +19,7 @@ Const LANG = "ru" ' "en-US"
 	ProcessorArch = objScriptShell.Environment("System").Item("PROCESSOR_ARCHITECTURE")
 	If ProcessorArch = "x86" Then WindowsBit = "win" Else WindowsBit = "win64"
 	
-	Call GetRequest("https://download.mozilla.org/?product=firefox-latest&os=" _
+	Call GetRequest("https://download.mozilla.org/?product=firefox-esr-latest-ssl&os=" _
 		& WindowsBit & "&lang=" & LANG, Replace(ProcessorArch, "AMD", " x") & ".exe")
 	
 	Set objXmlServ = Nothing
@@ -41,7 +41,7 @@ Private Function GetRequest(ByRef request, ByRef contentType)
 			objStream.Open
 			objStream.Write objXmlServ.responseBody
 			objStream.SaveToFile objScriptShell.SpecialFolders("Desktop") _
-				& FILE_NAME & contentType, 2
+				& FILE_NAME & " ESR" & contentType, 2
 			Set objStream = Nothing
 			If Err.Number = 0 Then objScriptShell.Popup FILE_NAME _
 				& contentType & " downloaded ", 9, "VBScript", 64

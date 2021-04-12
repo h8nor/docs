@@ -1,16 +1,20 @@
 # Use the attribute in Git 2.18+ only if you cannot store a file in UTF-8 encoding
-#* text	working-tree-encoding=CP1251	eol=CRLF
+# *.*	text	working-tree-encoding=CP1251	eol=CRLF
 
 # Auto detect text files and perform LF normalization
 * text=auto
 
-# Files that are truly binary and should not be modified
-*.bat	filter=win1251	eol=crlf
-*.cms	filter=win1251	eol=crlf
+# The client hook must be placed on a local computer in the <REPO\.git\hooks> without extension <.sh>
+# https://gist.github.com/c55f1538454755fdff71fba0d686e371 will be automatically executed before a commit
+*.bat	text
+*.cms	text	linguist-language=j
 *.csv	text	working-tree-encoding=CP1251	eol=CRLF
-*.hns	filter=win1251	-diff	eol=crlf
-#*.js	text	eol=lf
+*.js	text
 *.lst	text	working-tree-encoding=CP1251	eol=CRLF
-*.rsc	text	eol=crlf
+*.md	text	diff=markdown	eol=CRLF
+*.rsc	text	eol=CRLF
 *.vbs	text	working-tree-encoding=CP1251	eol=CRLF
-#*.png	binary
+
+# Files that are truly binary and should not be modified
+*.hns	linguist-generated	linguist-language=ini
+*.png	binary
