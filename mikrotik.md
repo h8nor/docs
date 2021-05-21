@@ -52,6 +52,11 @@
 /delay 500ms
 ```
 
+#### Настройки устройства по умолчанию [:axe:](https://youtu.be/fWfEJREoq3g?t=58m23s)
+``` ls
+/system default-configuration print
+```
+
 #### Сохранения конфигурации для RouterOS 6 в текстовом виде:
 ``` ls
 /export compact

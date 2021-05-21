@@ -2,15 +2,26 @@
 
 |Приложение|Редакция|Версия|Дата|Язык
 |:--- |:--- |:--- |:---:|:--- 
-|RouterOS <sup>[www]</sup>|Long-term|6.46.8|2020-11-02|en
+|RouterOS <sup>[www]</sup>|Long-term|6.47.9|2021-02-05|en
 
 [www]: //mikrotik.com/download "Site"
+
+### Особенности написания скриптов
+
+В регулярных выражениях Mikrotik применяется модифицированная [POSIX ERE].
+
+[POSIX ERE]: //github.com/remram44/regex-cheatsheet/issues/21
 
 ---
 # Содержание репозитория
 
 - ***check-logs-60m.rsc*** - скрипт для отправки оповещений из Log в Discord (fetch не всегда срабатывает)  
-  ![discord-logs-send](images/mikrotik_check.png?raw=true)
+	<details>
+	<summary>:yellow_square: Раскрыть изображение</summary><br />
+	
+	![discord-logs-send](images/mikrotik_check.png?raw=true)
+	
+	</details>
 - ***refresh-external-IP.rsc*** - скрипт сохраняет внешний IP в глобальную переменную `publicIP` (`/ip cloud`)
 - ***send-mail-7d.rsc*** - скрипт отправляет на email уведомление о новых пакетах RouterOS (если они есть)
 - ***ReadMe.md*** - описание и рекомендации по работе с браузером
@@ -18,12 +29,12 @@
 
 # WinBox menu
 
-[` `] Quick Set  
+[` `] Quick Set [:wrench:](https://youtu.be/fWfEJREoq3g?t=53m49s)  
 [`w`] CAPsMAN  
 [` `] Interfaces [` `- system]  
 [`w`] Wireless [`w`- wireless]  
-[` `] Bridge  
-[`p`] PPP (PPTP, SSTP, L2TP, OVPN, PPPoE) [`p`- ppp]  
+[` `] Bridge [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=1h07m24s)  
+[`p`] PPP (PPTP, SSTP, L2TP, OVPN, PPPoE) [`p`- ppp] [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=1h04m49s)  
 [` `] Switch  
 [` `] Mesh  
 [` `] IP  
@@ -33,7 +44,7 @@
 ~	[` `] Cloud  
 ~	[`d`] DHCP Client [`d`- dhcp]  
 ~	[`d`] DHCP Relay  
-~	[`d`] DHCP Server  
+~	[`d`] DHCP Server [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=1h12m53s)  
 ~	[` `] DNS  
 ~	[` `] Firewall  
 ~	[`h`] Hotspot [`h`- hotspot]  
@@ -61,7 +72,7 @@
 ~	[`d`] DHCP Client [`d`- dhcp]  
 ~	[`d`] DHCP Relay  
 ~	[`d`] DHCP Server  
-~	[`i`] Firewall  
+~	[`i`] Firewall (NAT) [:axe:](https://youtu.be/fWfEJREoq3g?t=59m58s)[:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=1h13m45s)  
 ~	[`i`] ND  
 ~	[`i`] Neighbors  
 ~	[`i`] Pool  
@@ -89,13 +100,13 @@
 ~	[` `] License  
 ~	[` `] Logging  
 ~	[` `] Note  
-~	[` `] Packeges  
+~	[` `] Packeges [:hammer:](https://youtu.be/fWfEJREoq3g?t=44m38s)  
 ~	[` `] Password  
 ~	[` `] Ports  
 ~	[` `] Reboot  
-~	[` `] Reset Configuration  
+~	[` `] Reset Configuration [:wrench:](https://youtu.be/fWfEJREoq3g?t=1h39m56s)  
 ~	[` `] Resources  
-~	[` `] Routerboard  
+~	[` `] Routerboard [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=49m51s)  
 ~	[` `] SNTP Client  
 ~	[` `] Scheduler  
 ~	[` `] Scripts  
@@ -103,7 +114,7 @@
 ~	[` `] Special Login  
 ~	[` `] Users  
 ~	[` `] Watchdog  
-[` `] Queues  
+[` `] Queues [:wrench:](https://youtu.be/fWfEJREoq3g?t=1h32m46s)  
 [` `] Files  
 [` `] Log  
 [` `] RADIUS  
@@ -133,7 +144,7 @@
 [` `] MetaROUTER  
 [` `] Partition  
 [` `] Make Supout.rif  
-[` `] Manual ([Online](//wiki.mikrotik.com/wiki/Manual:TOC))  
+[` `] Manual ([Online](//help.mikrotik.com/docs/))  
 [` `] New WinBox  
 [` `] Exit  
 
