@@ -1,73 +1,49 @@
 [Adblock Plus 2.8]
-! Version: 201614
+! Version: 202115
 ! Title: AeList (Adblock Edge)
-! Last modified: 01 Dec 2016 08:30 UTC
+! Last modified: 15 Sep 2021 01:00 UTC
 ! Expires: 3 days (update frequency)
 ! License CC-BY-SA-4.0: https://creativecommons.org/licenses/by-sa/4.0/deed.en_US
 ! Homepage: https://github.com/bopoh13/docs/tree/master/vendor/firefox/
 ! Please report any unblocked tracking or problems.
-! //adblockplus.org/filter-cheatsheet#Quick Help
+! //github.com/gorhill/uBlock/wiki/Static-filter-syntax#cosmetic-filters
+! //kb.adguard.com/ru/general/how-to-create-your-own-ad-filters#cosmetic-rules
 !
 !--------------------General tracking systems-----------------------------------!
+! Hint: //github.com/disconnectme/disconnect-tracking-protection/blob/master/services.json
 /advertising.$~object-subrequest
 /adriver.$~object-subrequest
 /googleads.$~object-subrequest
 /pagead2.$~object-subrequest
-||an.yandex.
-||awaps.yandex.
 ||bs.yandex.
 ||kiks.yandex.
-||mc.yandex.
 ||yabs.yandex.
 ||yastatic.*/daas/
 ||youtube.com/api/stats/
 ||avito.ru/s/a/*/px.js
-||addthis*.com^$third-party
-||adfox.ru^$third-party
 ||admitad.com^$third-party
-||adriver.$third-party
 ||advertur.ru^$third-party
 ||autoi.ru^$third-party
-||buysellads.com^$third-party
-||chartbeat.com^$third-party
-||cloudflare.com^$third-party
-||doubleclick.net^$third-party
-||google-analytics.com^$third-party
 ||google*manager.com^$third-party
 ||google*services.com^$third-party
 ||lentainform.com^$third-party
-||newrelic.com^$third-party
+||metrika.mos.ru^$3p
 ||recreativ.ru^$third-party
 ||relap.io^$third-party
-||rutarget.ru^$third-party
 ||sberlabs.io^$third-party
 ||smi2.$third-party
 ||top100.ru^$third-party
-||yandex.st^$~image,third-party,domain=~rasp.yandex.ru
-||yandex.*/clck/$~ping
 ||yastatic.net/browser*$third-party
 ||yastatic.net/sovetnik$third-party
-@@||adfox.ru/*Code*?$script,domain=avito.ru|mts.ru
-@@||an.yandex.ru^$image,script,domain=avito.ru
 !--------------------Third-party tracking domains-------------------------------!
 ||advertoly.com^$third-party
-||advertserve.com^$third-party
-||advombat.ru^$third-party
 ||audsp.com^$third-party
-||betweendigital.com^$third-party
 ||bootstrapcdn.com^$third-party
 ||botscanner.com^$third-party
-||criteo.$third-party
-||directadvert.ru^$third-party
-||doublepimp.com^$third-party,domain=~pornhub.com|~redtube.com
-||exponential.com^$third-party
 ||fancybar.net^$third-party
-||hotjar.com^$third-party
 ||magnet.kiev.ua^$third-party
 ||luxadv.com^$third-party
 ||luxup.ru^$third-party
-||marketgid.com^$third-party,~popup,popup
-||mathtag.com^$third-party
 ||mediametrics.ru^$third-party
 ||mediatoday.ru^$third-party
 ||mirtesen.ru^$third-party
@@ -76,50 +52,36 @@
 ||okmeter.ru^$third-party
 ||onthe.io^$third-party
 ||phncdn.com^$~script,third-party
-||pinterest.com^$third-party
 ||playbuzz.com^$third-party
 ||pluso.ru^$third-party
-||scorecardresearch.com^$third-party
 ||seedr.$third-party
 ||segment.com^$third-party
 ||socialmart.ru^$third-party
 ||sportbets.su^$third-party
-||tns-counter.ru^$third-party
 ||topadvert.ru^$third-party
-||trafficjunky.net^$third-party
-||twimg.com^$third-party
 ||videopotok.pro^$third-party
 ||vihub.ru^$third-party
-||weborama.fr^$third-party
-||zemanta.com^$third-party
-|http://*.bid^$third-party
-|http://*.doublepimp.com/*&curl=$popup,third-party,domain=pornhub.com|redtube.com
-|https://*click.com^$third-party
-|https://*.pw^$third-party
-@@||bootstrapcdn.com^$stylesheet,domain=autoburn.ru
 @@||phncdn.com^$media,script,stylesheet,domain=pornhub.com
 !--------------------Hidden third-party tracking domains------------------------!
+$removeparam=/^(gclid|yclid|fbclid)=/
+$removeparam=/^(utm_source|utm_medium|utm_term)=/
+$removeparam=/^(utm_content|utm_campaign|utm_referrer)=/
 ||adfront.org^$third-party
-||adhigh.net^$third-party
 ||adrelayer.com^$third-party
-||ads-twitter.com^$third-party
 ||cdn7.rocks^$third-party
-||contentabc.com^$third-party
 ||cshi.ru^$third-party
 ||cszz.ru^$third-party
-||digitaltarget.ru^$third-party
 ||electosake.com^$third-party
 ||etahub.com^$third-party
-||gstatic.com^$~font,third-party,domain=~google.com|~google.ru
 ||hsstatic.net^$third-party
-||hs-analytics.net^$third-party
 ||lc2ads.ru^$third-party
 ||letysheeps.ru^$third-party
 ||mradx.net^$third-party
-||revsci.net^$third-party
+||premiumgfs.com^$3p
 ||rutrk.org^$third-party
-||yadro.ru^$third-party
+||xmovies.com^$subdocument
 ||yandexadexchange.net^$third-party
+||*yandex.*^$removeparam=/^(clid|mlid|msid)=/
 ! Adwise.Agency
 ||langosh.biz^$third-party
 ||psma03.com^$third-party
@@ -192,14 +154,26 @@ sourceforge.net## div.top3-widget, div#newsletter-floating, div#taboola-below-ar
 ! Auto.ru
 auto.ru## div[style^="display: block !important"]
 auto.ru## table.listing > tbody[class*="-tgb"], table.listing > tbody[class*="-special-table"], div.listing > div:not([data-bem])
+! 2021-09 Github
+gist.github.com##.gist-banner
 ! Google
 google.com,google.ru## #extrares, .pdp-psy, #pdp-psy
 translate.google.com,translate.google.ru## div#gb > div[data-ved]
 youtube.com## div.video-ads, div#header > div#video-masthead
 youtube.com## div#movie_player > div.ytp-cards-teaser
+! 2021-09 Окно согласия собитать Cookie (для Европы), серый фон
+youtube.com##.ytd-consent-bump-v2-lightbox
+youtube.com##.opened
 ! Mail.ru News
 news.mail.ru## div.box_collapse
-! Yandex
+! 2021-09 Yandex Реклама в поиске
+yandex.*##h2 > a[data-event-required]:upward(li.serp-item)
+! 2021-09 Yandex Popup
+yandex.*##.zalogin-smart
+yandex.*##.desk-notif-card__teaser-container
+yandex.*##.dist-popup__content.popup__content
+yandex.*##.distr-popup__content.popup2__content
+
 ## div#ya-share, div.ya-share2, div > yatag
 yandex.ru## i.b-counter + div[class~="dist-popup"], i.b-counter + iframe + div[class~="dist-popup"]
 yandex.ru## div.content__left > div[class~="head-stripe"]
@@ -243,12 +217,23 @@ auto.ru## div.search-controller__content > div.stat
 auto.ru## div.sidebar__block:not(.specials-sales-wrap)
 ! Youtube Annotations
 youtube.com## div.video-legacy-annotations
-! Yandex
+! 2021-09 Yandex
+yandex.*##div.yaplus
+yandex.*##div.desk-notif-card:has-text(/Попробовать Плюс/)
+yandex.*##div.media-grid__row[data-blockname^="div_"]
+yandex.*##div.media-grid__row[data-blockname^="kinopoisk"]
+
 yandex.ru## div.content__left > div.misspell
+! 2021-09 https://yandex.ru/turbo/
+yandex.*##div.page__content > div.layout__row:not(.container)
+yandex.*##div.container_main > div.row > div:not(.place__main)
+yandex.*##div.place__main > div > div.page__result > div[id]
 ! Yandex Images
 yandex.ru## div.footer > div.distro
 ! Yandex Market
 market.yandex.ru## div.n-entrypoint-carousel
+! 2021-09
+xmovies.com##div.row > div.item:has-text(/Amber|Anime|Photos/i)
 !--------------------Restoring (unblock) iframes--------------------------------!
 ~2gis.ru## iframe#intercom-frame, iframe.chat__containerIframe
 ~codepen.io## iframe[src*="/s.codepen.io/boomerang/"]
