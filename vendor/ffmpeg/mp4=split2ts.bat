@@ -1,5 +1,5 @@
 :: License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
-@Echo off
+@echo off
 If "%PROCESSOR_ARCHITECTURE%"=="x86" chcp 65001
 
 :: Путь к приложению (в директории Downloads)
