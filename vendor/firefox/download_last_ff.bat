@@ -1,5 +1,5 @@
 @echo off
-chcp 65001
+If "%PROCESSOR_ARCHITECTURE%"=="x86" chcp 65001
 
 set lang=ru
 set os=win64
