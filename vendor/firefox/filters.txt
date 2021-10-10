@@ -1,7 +1,7 @@
 [Adblock Plus 2.8]
-! Version: 202115
-! Title: AeList (Adblock Edge)
-! Last modified: 15 Sep 2021 01:00 UTC
+! Version: 202116
+! Title: RUS: Filters RuBlockList
+! Last modified: 10 Oct 2021 21:00 UTC
 ! Expires: 3 days (update frequency)
 ! License CC-BY-SA-4.0: https://creativecommons.org/licenses/by-sa/4.0/deed.en_US
 ! Homepage: https://github.com/bopoh13/docs/tree/master/vendor/firefox/
@@ -101,6 +101,8 @@ $removeparam=/^(utm_content|utm_campaign|utm_referrer)=/
 ||uptocall.com/widget/$third-party
 ||uptolike.com/widgets/$third-party
 pravoved.ru## div.leadAside
+! 2021-10 zakonius.ru##div:nth-of-type(11)
+zakonius.ru##div:has(iframe[src="about:blank"])
 !--------------------Social networking links------------------------------------!
 aliexpress.com## div.ui-fixed-panel-shares
 artlebedev.ru## div#social_buttons, div[style^="position:relative;top:2px;"], div[style^="margin: 0px 22px"]
@@ -137,11 +139,16 @@ drive2.ru## div#side-dv-pinned, div.js-recommendations.c-block
 drive2.ru## div.c-block > div[class^="c-dv"], div.c-block > div[class^="c-dv"] + div, div.c-block > div.c-block__fake-gap
 fb.ru## div.text-ad-block
 greasyfork.org## div#script-show-info-ad
+! 2021-09-28 + https://habr.com
+! Убрать все блоки кроме вопросов
+habr.com##div.tm-article-feed-blocks:not(:has(div.tm-project-block_variant-questions))
 interfax.ru## div[id^="pl"][id*="ban"]
 life.ru## div#vn-player
 livejournal.com## div.lj-recommended, div.b-discoverytimes-wrapper
 overclockers.ru## table.decoblock > tbody, div.decoblock-content, div#uhi, div#topbanners > div > a
 forums.overclockers.ru## table.needblock
+! 2021-10 https://my.mosenergosbyt.ru
+my.mosenergosbyt.ru##div[testid="formContainer"]
 pornhub.com,redtube.com## div[style^="display:"][style*="block"], div.footerWrapper
 redtube.com## div.videosTable > h2 ~ h2, div.videosTable > ul.pornStarsThumbs
 redtube.com## div.video-page-right-col > .tja, div.videosTable > .tja
@@ -215,6 +222,14 @@ rus24.tv## div.slider
 ! Auto.ru
 auto.ru## div.search-controller__content > div.stat
 auto.ru## div.sidebar__block:not(.specials-sales-wrap)
+! 2021-10 instagram.com##^script:has-text(hidden)
+! заглушка на 3 странице с требованием авторизации div._Yhr4.RnEpo
+instagram.com##body > div[role="presentation"]
+! 2021-10 https://www.pochta.ru/tracking
+pochta.ru##div#traking-page
+! 2021-10 https://www.youtube.com
+! Для Европы: Окно согласия собитать Coockie, серый фон
+youtube.com##ytd-consent-bump-v2-lightbox,tp-yt-iron-overlay-backdrop
 ! Youtube Annotations
 youtube.com## div.video-legacy-annotations
 ! 2021-09 Yandex
@@ -252,6 +267,9 @@ xmovies.com##div.row > div.item:has-text(/Amber|Anime|Photos/i)
 ! Yandex Video
 ~yandex.ru## iframe[aria-label="Video"]
 !--------------------Whitelists to fix broken sites-----------------------------!
+! 2021-09
+@@||cdnjs.cloudflare.com/ajax/libs/*$script,stylesheet,font,domain=mermaid-js.github.io
+
 ~2gis.ru## div.mediaPhotoSlider__photos > div._advertiser, div.mediaCard__wrapper > div._type_advertiser
 ! Auto.ru (all parameters), Yandex Images
 ~auto.ru,~yandex.ru## div[class*="adv"]
