@@ -134,6 +134,7 @@ git remote -v
 # //github.com/Imangazaliev/git-tips
 # //help.github.com/articles/creating-releases/
 git remote add origin https://github.com/bopoh13/<docs>.git
+# -u связывает локальный и удалённый репозитории
 git push -u origin master
 ```
 
