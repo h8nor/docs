@@ -1,8 +1,8 @@
 [License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
-|Приложение|Редакция|Версия|Дата|Язык
-|:--- |:--- |:--- |:---:|:--- 
-|RouterOS <sup>[www]</sup>|Long-term|6.47.9|2021-02-05|en
+|Приложение|Редакция|User-Agent|Версия|Дата|Язык
+|:--- |:--- |:--- |:--- |:---:|:--- 
+|RouterOS <sup>[www]</sup>|Long-term|`Mikrotik/6.x Fetch`|6.47.9|2021-02-05|en
 
 [www]: //mikrotik.com/download "Site"
 
@@ -15,6 +15,7 @@
 ---
 # Содержание репозитория
 
+- ***README.md*** - описание и рекомендации по работе с браузером
 - ***check-logs-60m.rsc*** - скрипт для отправки оповещений из Log в Discord (fetch не всегда срабатывает)  
 	<details>
 	<summary>:yellow_square: Раскрыть изображение</summary><br />
@@ -24,7 +25,6 @@
 	</details>
 - ***refresh-external-IP.rsc*** - скрипт сохраняет внешний IP в глобальную переменную `publicIP` (`/ip cloud`)
 - ***send-mail-7d.rsc*** - скрипт отправляет на email уведомление о новых пакетах RouterOS (если они есть)
-- ***ReadMe.md*** - описание и рекомендации по работе с браузером
 
 
 # WinBox menu
@@ -32,19 +32,19 @@
 [` `] Quick Set [:wrench:](https://youtu.be/fWfEJREoq3g?t=53m49s)  
 [`w`] CAPsMAN  
 [` `] Interfaces [` `- system]  
-[`w`] Wireless [`w`- wireless]  
-[` `] Bridge [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=1h07m24s)  
+[`w`] Wireless [`w`- wireless] [:hammer:](https://youtu.be/lAf-jEpNQyc?t=2h53m26s)  
+[` `] Bridge [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=1h07m24s) [:hammer:](https://youtu.be/lAf-jEpNQyc?t=1h20m27s)  
 [`p`] PPP (PPTP, SSTP, L2TP, OVPN, PPPoE) [`p`- ppp] [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=1h04m49s)  
 [` `] Switch  
 [` `] Mesh  
 [` `] IP  
-~	[` `] ARP  
+~	[` `] ARP [:hammer:](https://youtu.be/lAf-jEpNQyc?t=1h47m24s)  
 ~	[` `] Accounting  
-~	[` `] Addresses  
+~	[` `] Addresses [:hammer:](https://youtu.be/lAf-jEpNQyc?t=1h18m46s)  
 ~	[` `] Cloud  
 ~	[`d`] DHCP Client [`d`- dhcp]  
 ~	[`d`] DHCP Relay  
-~	[`d`] DHCP Server [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=1h12m53s)  
+~	[`d`] DHCP Server [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=1h12m53s) [:hammer:](https://youtu.be/lAf-jEpNQyc?t=2h24m16s)  
 ~	[` `] DNS  
 ~	[` `] Firewall  
 ~	[`h`] Hotspot [`h`- hotspot]  
@@ -78,7 +78,7 @@
 ~	[`i`] Pool  
 ~	[`i`] Routes  
 ~	[`i`] Settings  
-[`r`] Routing [`r`- routing]  
+[`r`] Routing [`r`- routing] [:hammer:](https://youtu.be/lAf-jEpNQyc?t=2h04m42s)  
 ~	[`r`] BFD  
 ~	[`r`] BGP  
 ~	[`r`] Filters  
@@ -109,7 +109,7 @@
 ~	[` `] Routerboard [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=49m51s)  
 ~	[` `] SNTP Client  
 ~	[` `] Scheduler  
-~	[` `] Scripts  
+~	[` `] Scripts [:bulb:](//translate.google.com/translate?sl=en&tl=ru&u=https%3A%2F%2Fhelp.mikrotik.com%2Fdocs%2Fdisplay%2FROS%2FScripting)  
 ~	[` `] Shutdown  
 ~	[` `] Special Login  
 ~	[` `] Users  
@@ -127,7 +127,7 @@
 ~	[`a`] IP Scan  
 ~	[` `] MAC Server  
 ~	[`a`] Netwatch  
-~	[` `] Packet Sniffer  
+~	[` `] Packet Sniffer [:hammer:](https://youtu.be/lAf-jEpNQyc?t=2h03m05s)  
 ~	[` `] Ping  
 ~	[`a`] Ping Speed  
 ~	[` `] Profile  
@@ -144,7 +144,7 @@
 [` `] MetaROUTER  
 [` `] Partition  
 [` `] Make Supout.rif  
-[` `] Manual ([Online](//help.mikrotik.com/docs/))  
+[` `] Manual ([Online](//help-mikrotik-com.translate.goog/docs/?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_pto=ajax,elem))  
 [` `] New WinBox  
 [` `] Exit  
 

@@ -219,7 +219,7 @@ git merge --abort
 ``` nix
 # Очень опасная команда, подумайте прежде чем пользоваться ею
 # чтобы файлы не загружались из локального репозитория - ключ --soft
-git reset --hard HEAD~
+git reset --hard ^HEAD
 ```
 
 #### Как исправить "Your branch and 'origin/master' have diverged" удалить файлы --hard
@@ -238,6 +238,15 @@ git push --force
 # Перед этим должен быть снят "Branch protection"
 # //tonyganch.com/git/reset/
 # //marklodato.github.io/visual-git-guide/index-ru.html
+```
+
+#### Заменить в текстовых файлах символы переноса строк LF на CRLF
+``` shell
+find -not -path './.git*' -type f | xargs unix2dos
+# Просмотреть символы переноса строк в `i/N` удалённом и `w/N` локальном репозиториях 
+git ls-files --eol
+# Удалить все локальные изменения до последнего коммита
+git reset --hard
 ```
 
 #### Найти файлы с BOM
