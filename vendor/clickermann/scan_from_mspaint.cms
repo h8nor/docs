@@ -1,4 +1,4 @@
-// Author: bopoh13@ya
+// Author: h8nor
 // License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
 // Version: 1.2 (23.09.2016)
 // The script for WinXP. Tested with a Resolution of 1152x870
@@ -7,17 +7,17 @@
 #name "Scan through MS Paint"
 
 // Declare variables
-DEFINE ($w,					140)		// MIN Wait after click
-DEFINE ($pict_crop,	0) 					// 1 = True; Crop Image
+DEFINE ($w,			140)		// MIN Wait after click
+DEFINE ($pict_crop,	0) 			// 1 = True; Crop Image
 DEFINE ($name_dir,	"new2can")	// Folder Name (new) for scans
-DEFINE ($begin_num,	0000)				// Name the previous (last) file
-DEFINE ($pict_gray,	1)					// 1 = True; Grayscale
+DEFINE ($begin_num,	0000)		// Name the previous (last) file
+DEFINE ($pict_gray,	1)			// 1 = True; Grayscale
 
 // Data Waiting time is proportional to the DPI
 // Xerox 3100MFP (gray, 150 dpi) -> scan time 100 sheets per hour
 // Xerox 3100MFP (gray): 300 dpi = 64000, 150 dpi = 28000, 100 dpi = 20000
-DEFINE ($scan_wait, 28000) // Waiting during scanning
-DEFINE ($scan_dpi, "150") // DPI = Text variable type
+DEFINE ($scan_wait, 28000)		// Waiting during scanning
+DEFINE ($scan_dpi, "150")		// DPI = Text variable type
 
 SUB (MOVEWINDOW, $keydown_count, $xmouse)
 	KEYDOWN (#ALT) // Alt+Space
@@ -32,7 +32,7 @@ SUB (MOVEWINDOW, $keydown_count, $xmouse)
 		KEYPRESS (#DOWN)
 		WAITMS ($w * 1.5)
 		$var_a = $var_a + 1
-	END_CYC	
+	END_CYC
 	KEYPRESS (#ENTER)
 	WAITMS ($w * 1.5)
 	LDOWN ($_xmouse, $_ymouse) // Press LMB
@@ -107,7 +107,7 @@ END_SUB
 
 $hwnd = wndfind("- Paint") // Get HWND
 SETKBLAYOUT ($hwnd, 1033) // EN
-		
+
 // Conditions stop script = cursor to the clock (to the right)
 WHILE (($_xmouse < $_xmax * 0.9) & ($_ymouse < $_ymax))
 	SCAN () // SUB
@@ -179,7 +179,7 @@ WHILE (($_xmouse < $_xmax * 0.9) & ($_ymouse < $_ymax))
 		WAITMS ($w)
 	END_IF
 	INC ($begin_num, 1) // Counter files
-	
+
 	SWITCH (STRLEN($begin_num)) // Type the file name
 	CASE (1)
 		KEYSTRING (STRCONCAT("000", $begin_num))

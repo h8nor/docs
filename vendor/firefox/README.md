@@ -2,7 +2,7 @@
 
 |Приложение|Редакция|User-Agent|Версия|Дата|Язык
 |:--- |:--- |:--- |:--- |:---:|:--- 
-|Firefox <sup>[www]</sup>|ESR Release|`Mozilla/5.0 (platform; rv:geckoversion)`|91.0.0|2021-08-05|all
+|Firefox <sup>[www]</sup>|ESR Release|`Mozilla/5.0 (platform; rv:geckoversion)`|102.3.0|2022-09-12|all
 
 [www]: //mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
 
@@ -42,7 +42,7 @@
 - ***user.js*** - рекомендуемый файл безопасных настроек
 - ***update_set_ff.vbs*** - скрипт автоматического обновления файла *user.js*
 
-[habrusers_blocker_gm]: //github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
+[habrusers_blocker_gm]: //github.com/h8nor/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
 
 
 # Рекомендуемые настройки
@@ -53,17 +53,19 @@
 
 |Open Source|Название|Описание
 |:---:|:--- |:--- 
-| |*[Browsec VPN]*|Есть бесплатные сервера (NL, SG, UK и US до 30 Мбит/сек).<br />Опция "Smart Settings" позволяет выбрать proxy для отдельных доменов без включения защиты.
+| |*[Browsec VPN]*<sup>*</sup>|Есть бесплатные сервера (NL, SG, UK и US до 30 Мбит/сек).<br />Опция "Smart Settings" позволяет выбрать proxy для отдельных доменов без включения защиты.
 |:trophy: :gem:|*[µBlock Origin]*|Расширение позволяет вернуть себе контроль над содержанием страниц и видеть лишь то, что хочется.
 | :gem:|*[Violetmonkey]*|Расширение для подключения сторонних *user script*.<br />:warning: **ВАЖНО:** Запрещенное на Userstyles.org свойство **-moz-binding** для ~~*[Stylish]*~~ может выполнить JS-код на компьютере пользователя.
 |:trophy: :gem:|*[To Google Translate]*|Расширение переводит выделенный текст или всю страницу на родной язык.
-|:trophy:|*[Easy Youtube Video Downloader Express]*|Для PRO добавить в настройки `contact@videodroid.org`<br />Самый простой способ скачать и конвертировать 720p видео из сотен сайтов как YouTube.
+|:trophy:|*[Easy Youtube Video Downloader Express]*<sup>*</sup>|Для PRO добавить в настройки `contact@videodroid.org`<br />Самый простой способ скачать и конвертировать 720p видео из сотен сайтов как YouTube.
 | |*[SaveFrom.net]*|Расширение для скачивания видео с TT, YT, Vimeo, VK, OK и других сервисов.
 |:trophy: :gem:|*[Search by Image]*|Расширение производит поиск рисунка с web-страницы.
 | :gem:|*[Octotree]*|Отображает репозиторий GitHub в виде дерева.
-| |*[Live Stream Downloader]*|Хороший канал связи и наличие свободного места на диске позволит сохранить потоковое видео TS из M3U.
+| |*[Live Stream Downloader]*|Хороший канал связи и наличие свободного места на диске позволит сохранить потоковое видео TS из M3U. Качает одно (первый лист) из активной вкладки, но обновляет ссылки на поток в реальном времени.
 | |*[VT4Browsers]*|Отправить файл на VirusTotal перед сохранением.
 | |*[Full Web Page Screenshots]*|Создаёт полные скриншоты веб-страниц с вожможность сохранения в Сохраняйте снимки в PNG или PDF.
+
+<sup>*</sup> После обновления расширения открывается рекламная страницы
 
 [:(]: //github.com/greasemonkey/greasemonkey/issues/2733/
 [Browsec VPN]: //addons.mozilla.org/firefox/addon/603434/
@@ -81,7 +83,7 @@
 [Violetmonkey]: //addons.mozilla.org/firefox/addon/797378/ "Движок для запуска UserJS"
 [VT4Browsers]: //addons.mozilla.org/firefox/addon/351419/ "Experimental"
 [µBlock Origin]: //addons.mozilla.org/firefox/addon/607454/
-[Импортировать]: //subscribe.adblockplus.org/?location=https://github.com/bopoh13/docs/raw/rublock/vendor/firefox/filters.txt&title=RUS:%20Filters%20RuBlockList
+[Импортировать]: //subscribe.adblockplus.org/?location=https://github.com/h8nor/docs/raw/rublock/vendor/firefox/filters.txt&title=RUS:%20Filters%20RuBlockList
 
 ---
 <details>
@@ -90,7 +92,7 @@
 Подписку можно подключить в настройках расширения "*<kbd>ЛКМ</kbd> по значку -> Открыть панель управления -> 
 Списки фильтров -> **[Импортировать]...** список фильтра посредством URL*" указав путь к файлу:<br />
 
-`https://github.com/bopoh13/docs/raw/rublock/vendor/firefox/filters.txt`
+`https://github.com/h8nor/docs/raw/rublock/vendor/firefox/filters.txt`
 #
 
 </details>

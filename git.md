@@ -117,9 +117,9 @@ git log --pretty=oneline
 <123456KEY>
 git reset --soft <234567KEY>
 ```
-Лучше сразу использовать (см. ниже --amend)
+Для изменения последнего коммита лучше сразу использовать (см. ниже --amend)
 ``` nix
-# Изменяем последний коммит. Список файлов можно перечислять через пробел
+# Добавить/удалить файлы в индекс. Список файлов можно перечислять через пробел
 git add/rm <FILE>
 # Команда (также) может просто изменить комментарий коммита - меняется KEY (не применять после push)
 git commit --amend -S (-a только для изменённых файлов (без первой команды); -v при редактировании описания коммита показывает все сделанные изменения)
@@ -129,11 +129,11 @@ git commit --amend -S (-a только для изменённых файлов 
 ``` nix
 # Создать пустой репозиторий (origin) на GitHub, и проверить путь:
 cd .. && \
- git init <docs> && cd "$_" && git remote add origin https://github.com/bopoh13/"$_".git
+ git init <docs> && cd "$_" && git remote add origin https://github.com/h8nor/"$_".git
 git remote -v
 # //github.com/Imangazaliev/git-tips
 # //help.github.com/articles/creating-releases/
-git remote add origin https://github.com/bopoh13/<docs>.git
+git remote add origin https://github.com/h8nor/<docs>.git
 # -u связывает локальный и удалённый репозитории
 git push -u origin master
 ```
@@ -178,10 +178,18 @@ git merge --no-ff -m"comment" dev
 
 # ! или применить указанный коммит к ветке master
 # Список файлов можно перечислять через пробел
+# (ключ -n применяет изменения к дереву проекта без индексации и создания коммита)
 git cherry-pick <KEY>
 
 # Обновляем ветку master (обязательно)
 git push origin master
+```
+
+#### Получение последних изменений из ветки master (без связей, конфликты не разрешает)
+``` nix
+git checkout dev
+
+git merge --squash master
 ```
 
 #### Отправка изменений (push) в ветку репозитория dev:
@@ -220,6 +228,8 @@ git merge --abort
 # Очень опасная команда, подумайте прежде чем пользоваться ею
 # чтобы файлы не загружались из локального репозитория - ключ --soft
 git reset --hard ^HEAD
+# Вернуть курсор к актуальному коммиту
+git reset ORIG_HEAD
 ```
 
 #### Как исправить "Your branch and 'origin/master' have diverged" удалить файлы --hard

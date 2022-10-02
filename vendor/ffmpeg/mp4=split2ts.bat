@@ -1,6 +1,5 @@
 :: License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
-@echo off
-If "%PROCESSOR_ARCHITECTURE%"=="x86" chcp 65001
+@ECHO off & CHCP 65001>nul
 
 :: Путь к приложению (в директории Downloads)
 SET ffmpeg=%UserProfile%\Downloads\ffmpeg.exe -y -threads auto
@@ -24,4 +23,5 @@ For /R %%i In (*.mp4) Do (
 	SET /A start+=1
 )
 
+EndLocal
 PAUSE

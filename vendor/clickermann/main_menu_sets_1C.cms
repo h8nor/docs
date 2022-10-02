@@ -1,26 +1,26 @@
-// Author: bopoh13@ya
+// Author: h8nor
 // License GPL-3.0: https://choosealicense.com/licenses/gpl-3.0/
-// Version: 1.0
+// Version: 1.0 (12.09.2018)
 // Main menu settings DOAM for 1C-8.3.12.1529
 
 #name "Set Main menu DOAM"
 
 // Declare variables
-DEFINE ($_delay,	140)	// MIN Wait after click
-DEFINE ($_xpoint,	540)	// The first disclosure button, along the X
-DEFINE ($_ypoint,	353)	// The first disclosure button, along the Y
+DEFINE ($_delay,	140)		// MIN Wait after click
+DEFINE ($_xpoint,	540)		// The first disclosure button, along the X
+DEFINE ($_ypoint,	353)		// The first disclosure button, along the Y
 
 // Без скрипта настройки должны переноситься, если установлена галка:
 //	+ Запрашивать подтверждение при закрытии программы
-// Наименование								= Содержит
-// Отвественный								= Равно
-// Не в Черном списке					=> Заполнено
+// Наименование					= Содержит
+// Отвественный					= Равно
+// Не в Черном списке			=> Заполнено
 // Ссылка.Создание карточки		= Больше или равно
-// Дата последняя							= Больше или равно
-// Вид контрагента						= Равно
+// Дата последняя				= Больше или равно
+// Вид контрагента				= Равно
 // Ссылка.Создание карточки		= Меньше или равно
-// Дата последняя							= Меньше или равно
-// Ссылка.Место работы				= Содержит
+// Дата последняя				= Меньше или равно
+// Ссылка.Место работы			= Содержит
 // Отвественный.Подразделение	= Равно
 //
 // Clicking on the "plus" list
@@ -28,7 +28,7 @@ SUB (CLICK_LIST, $xstep, $ystep, $menuitem)
 PRINT ($menuitem)
 	$offsetx = $_xpoint + $xstep * 23
 	$offsety = $_ypoint + $ystep * 33
-	
+
 	IF ($menuitem > 0) // Selecting the context menu # item
 		RClick ($offsetx, $offsety)
 		WaitMS ($_delay * 2)
@@ -41,38 +41,38 @@ PRINT ($menuitem)
 		LClick ($offsetx, $offsety)
 		PRINT ("LClick on list: ", $offsetx, " ", $offsety)
 	END_IF
-	WaitMS ($_delay)  
+	WaitMS ($_delay)
 END_SUB
 
 SUB (SET_GROUP, $title, $vertical_group)
 	DBLClick (1153, 356)
 	WaitMS ($_delay)
 	// Title
-	KeyString ($title) 
+	KeyString ($title)
 	WaitMS ($_delay * 2)
 	LClick (1152, 405)
 	WaitMS ($_delay)
 	// Display
-	LClick (1392, 504) 
+	LClick (1392, 504)
 	WaitMS ($_delay * 2)
 	LClick (1391, 528)
 	WaitMS ($_delay)
 	// Grouping
 	LClick (1391, 528)
-	WaitMS ($_delay * 2) 
+	WaitMS ($_delay * 2)
 	IF ($vertical_group = 1)
 		LClick (1391, 556)  // Vertical
 	ELSE
-		LClick (1391, 625)  
+		LClick (1391, 625)
 	END_IF
 	WaitMS ($_delay)
-	PRINT ("Add group: ", $title)        
+	PRINT ("Add group: ", $title)
 END_SUB
 
 SUB (SET_ELEMENT, $title)
 	DBLClick (1188, 356)
 	WaitMS ($_delay)
-	
+
 	KeyDown (#CTRL) // Ctrl+A
 	WaitMS ($_delay * 1.5)
 	KeyDown (65)
@@ -80,28 +80,28 @@ SUB (SET_ELEMENT, $title)
 	KeyUp (65)
 	KeyUp (#CTRL)
 	WaitMS ($_delay * 1.5)
-	
+
 	KeyString ($title) // Title
 	WaitMS ($_delay * 2)
-	PRINT ("Add element: ", $title)        
+	PRINT ("Add element: ", $title)
 END_SUB
 
 // Open window "Change form"
 SUB (OPEN_FORM_SETS, $step)
 	// Position of the button "More"
 	$offsety = 343 //==> 390
-	
+
 	LClick (1240, $offsety) // Highlight an HTML block
 	WaitMS ($_delay * 4)
-	
+
 	LClick (1200, $offsety) // Btn "More"
 	WaitMS ($_delay * 2)
 	LClick (1200, $offsety + 570) // Btn "Change form"
 	WaitMS ($_delay * 2)
-	
+
 	IF ($step == 1)
 		SETKBLAYOUT ($hwnd, 1033) // EN
-		
+
 		KeyDown (#ALT) // Alt+Shift+R
 		WaitMS ($_delay * 1.5)
 		KeyDown (#SHIFT)
@@ -112,10 +112,10 @@ SUB (OPEN_FORM_SETS, $step)
 		KeyUp (#SHIFT)
 		KeyUp (#ALT)
 		WaitMS ($_delay * 1.5)
-		
+
 		SETKBLAYOUT ($hwnd, 1049) // RU
 		WaitMS ($_delay * 2)
-		
+
 		LClick (1390, 280) // Btn "More"
 		WaitMS ($_delay * 6)
 		LClick (1390, 580)
@@ -171,7 +171,7 @@ WHILE (6 > $var_i) // Press Arrow Down
 	LClick (926, 740)
 	WaitMS ($_delay)
 	$var_i = $var_i + 1
-END_CYC	
+END_CYC
 
 LDown (662, 488) // Move "Place of work"
 WaitMS ($_delay * 4)

@@ -1,22 +1,22 @@
 // ==UserScript==
-// @name	Habr Users Blocker
+// @name		Habr Users Blocker
 // @namespace	https://wiki.greasespot.net/Metadata_Block
 // @description	Hides sellers, highlights yellow press and hides comments
-// @author	bopoh13
-// @license	GPL-3.0+; http://gnu.org/licenses/gpl-3.0.txt
-// @downloadURL	https://github.com/bopoh13/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
-// @homepageURL	https://github.com/bopoh13/docs/tree/master/vendor/firefox
-// @supportURL	https://github.com/bopoh13/docs/issues
-// @version	2.1.0
-// @icon	https://habr.com/images/favicon-32x32.png
-// @include	https://habr.com/*
-// @exclude	https://habr.com/company/*
-// @exclude	https://habr.com/*/search/*
-// @exclude	https://habr.com/*/users/*
-// @exclude	https://habr.com/*/hub/ios_dev/*
-// @exclude	https://habr.com/*/hub/sci-fi/*
-// @grant	none
-// @run-at	document-start
+// @author		h8nor
+// @license		GPL-3.0+; http://gnu.org/licenses/gpl-3.0.txt
+// @downloadURL	https://github.com/h8nor/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
+// @homepageURL	https://github.com/h8nor/docs/tree/master/vendor/firefox
+// @supportURL	https://github.com/h8nor/docs/issues
+// @version		2.1.1
+// @icon		https://habr.com/images/favicon-32x32.png
+// @include		https://habr.com/*
+// @exclude		https://habr.com/company/*
+// @exclude		https://habr.com/*/search/*
+// @exclude		https://habr.com/*/users/*
+// @exclude		https://habr.com/*/hub/ios_dev/*
+// @exclude		https://habr.com/*/hub/sci-fi/*
+// @grant		none
+// @run-at		document-start
 // ==/UserScript==
 /**
  * По статье "Делаем пространство чище" //habr.com/post/391233/#comment_17336589
@@ -39,7 +39,7 @@ const fablers = [
 	'ragequit',
 	'SLY_G',
 	'vconst',
-	
+
 	'alconost',
 	'aleksandrit',
 	'Alexandra_Varonis',
@@ -176,7 +176,7 @@ function ready(fn) {
 
 ready(() => {
 	if (document.getElementById('habrafixmarker')) return;
-	
+
 	fablers.forEach(function(r) {
 		$('a.post__user-info').filter('[href$="/users/' + r + '/"]').parents('article.post').css("background", "#ffe");
 	});
@@ -209,7 +209,7 @@ ready(() => {
 	v.parents('div.default-block').parents('li').remove();
 	v.parents('div.sidebar_right').remove();
 	console.log('=== loaded ===');
-	
+
 	setTimeout(() => {
 		const marker = document.createElement('meta');
 		marker.id = 'habrafixmarker';
@@ -220,7 +220,7 @@ ready(() => {
 
 //wait for jQuery to be loaded
 function waitForJquery() {
-	if (typeof unsafeWindow.jQuery == 'undefined') {  
+	if (typeof unsafeWindow.jQuery == 'undefined') {
 		window.setTimeout(waitForJquery, 100);
 	} else {
 		//$ = unsafeWindow.jQuery.noConflict(true);

@@ -1,15 +1,14 @@
-@echo off
-If "%PROCESSOR_ARCHITECTURE%"=="x86" chcp 65001
+@ECHO off & CHCP 65001>nul
 
-set lang=ru
-set os=win64
-set ver=firefox-latest-ssl
+SET lang=ru
+SET os=win64
+SET ver=firefox-latest-ssl
 
-echo Загрузка ссылки для %ver%-%os% через redirect
+ECHO Загрузка ссылки для %ver%-%os% через redirect && ECHO.
 
 curl ^
 	--location ^
 	--output "%USERPROFILE%\Desktop\Setup Firefox %os%.exe" ^
 	--url "https://download.mozilla.org/?product=%ver%&os=%os%&lang=%lang%"
 
-::pause
+::PAUSE
