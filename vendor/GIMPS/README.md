@@ -2,7 +2,7 @@
 
 |Приложение|Редакция|Версия|Дата|Язык
 |:--- |:--- |:--- |:---:|:--- 
-|Prime95 <sup>[www]</sup>|Release|30.8|2022-08-10|en
+|Prime95 <sup>[www]</sup>|Release|30.8|2022-09-28|en
 
 [www]: //mersenne.org/download/ "Download"
 
@@ -33,7 +33,7 @@ PRP=1,2,{EXPONENT},-1,{BIT_LAST},0,{opt_N_BASE},{opt_N_RESIDUE}
 PRPDC=1,2,{EXPONENT},-1,"{FACTOR_N1},{FACTOR_N2}"
 ```
 
-На 2022-09-30 найдено 504 сомножителей. Любой метод добавляет очков в проекте GIMPS.
+На 2023-01-31 найдено 563 сомножителей. Любой метод добавляет очков в проекте GIMPS.
 
 [простых чисел Мерсенна]: //www.mersenne.ca/prime.php
 [методы]: //www.mersenne.org/various/math.php
