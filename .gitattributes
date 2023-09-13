@@ -6,7 +6,7 @@
 
 # The client hook must be placed on a local computer in the <REPO\.git\hooks> without extension <.sh>
 # https://gist.github.com/c55f1538454755fdff71fba0d686e371 will be automatically executed before a commit
-*.bat	-text	eol=crlf
+*.bat	eol=crlf
 *.cms	eol=crlf	linguist-language=j
 *.csv	-text	eol=crlf	working-tree-encoding=cp1251
 *.js
@@ -16,9 +16,10 @@
 *.vbs	-text	eol=crlf	working-tree-encoding=cp1251
 
 # Files that are truly binary and should not be modified
+apps/*	linguist-vendored
 .gitattributes	export-ignore
 *.ico	binary	linguist-generated
 *.inf	linguist-generated	linguist-language=ini
-vendor/*.hns	linguist-generated	linguist-language=ini
-vendor/*.lst	linguist-language=shell
+apps/*.hns	linguist-generated	linguist-language=ini
+apps/*.lst	linguist-language=shell
 *.png	binary

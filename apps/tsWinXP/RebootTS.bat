@@ -10,13 +10,13 @@ If %WaitSec% GTR 999 GoTo :EOF
 
 Color 1F
 Echo.
-Echo   °°°°° °°°  °°°   °°° °°°° °°°  °   °
-Echo     °  °   ° °  ° °    °    °  °  ° °
-Echo  ІІІІІ ІІІ °ІІІ°  ІІІ ІІІІ°ІІІ° І ° І
-Echo    І° І°  І°І° І°І   °І°   І° І° І°І°
-Echo    І° І °°І ІІІ ° ІІ°%Time:~,5%°ІІІ ° І І
-Echo    І  І   І І  І    І І    І  І  І І
-Echo    І   ІІІ  І  І ІІІ  ІІІІ І  І   І
+Echo.   °°°°° °°°  °°°   °°° °°°° °°°  °   °
+Echo.     °  °   ° °  ° °    °    °  °  ° °
+Echo.  ІІІІІ ІІІ °ІІІ°  ІІІ ІІІІ°ІІІ° І ° І
+Echo.    І° І°  І°І° І°І   °І°   І° І° І°І°
+Echo.    І° І °°І ІІІ ° ІІ°%Time:~,5%°ІІІ ° І І
+Echo.    І  І   І І  І    І І    І  І  І І
+Echo.    І   ІІІ  І  І ІІІ  ІІІІ І  І   І
 Echo.
 Echo ЏҐаҐ§ Јаг§Є  бҐаўҐа  зҐаҐ§ %WaitSec% бҐЄг­¤
 :: Подтверждение намерений
@@ -35,12 +35,12 @@ Echo либо самостоятельно производить выход ч�
 SET RemUser=
 :: Список подключённых пользователей
 For /f "tokens=1" %%i In ('qwinsta ^| find "rdp-tcp#" ^| find /v ">"') Do (
-  For /f "tokens=2" %%i In ('qwinsta ^| find "%%i"') Do SET RemUser=!RemUser!, %%i)
+	For /f "tokens=2" %%i In ('qwinsta ^| find "%%i"') Do SET RemUser=!RemUser!, %%i)
 If "%RemUser%"=="" (SET /a WaitSec=30 && del /q "%WorkDir%") Else (SET RemUser=‘®®ЎйҐ­ЁҐ ® ЇҐаҐ§ Јаг§ЄҐ ®вЇа ў«Ґ­®:%RemUser:~1%)
 start /B /WAIT runas /u:%Admin% "shutdown /r /f /t %WaitSec% /c \"%RemUser%\" /d P:4:1"
 :: Подключённые сеансы RDP-TCP#
 If %ErrorLevel%==0 (If exist "%WorkDir%" For /f "tokens=1" %%i In ('qwinsta ^| find "rdp-tcp#" ^| find /v ">"') Do (
-  start /B /I /WAIT msg %%i /TIME:%WaitSec% /v < %WorkDir%)) Else (GoTo :EOF)
+	start /B /I /WAIT msg %%i /TIME:%WaitSec% /v < %WorkDir%)) Else (GoTo :EOF)
 Echo.
 
 SET /a begin=%WaitSec%-40
@@ -52,10 +52,10 @@ If %iTime%==%pTime% GoTo WAIT
 SET pTime=%iTime%
 SET /a Delay=%Delay%+1
 If %Delay%==%begin% (
-  tskill DUC40 && Echo ЏаЁ«®¦Ґ­ЁҐ DUC40 ўлЈаг¦Ґ­®
-  :: ID отключённых сеансов (%UserName% используется для проверки, если сеанс отключён пару секунд назад)
-  For /f "tokens=1 skip=1" %%i In ('qwinsta ^| find /v "rdp-tcp" ^| find /v "console"') Do (
-    For /f "tokens=2" %%i In ('qwinsta ^| find "%%i" ^| find /v "%UserName%"') Do logoff %%i /v)
+	tskill DUC40 && Echo ЏаЁ«®¦Ґ­ЁҐ DUC40 ўлЈаг¦Ґ­®
+	:: ID отключённых сеансов (%UserName% используется для проверки, если сеанс отключён пару секунд назад)
+	For /f "tokens=1 skip=1" %%i In ('qwinsta ^| find /v "rdp-tcp" ^| find /v "console"') Do (
+		For /f "tokens=2" %%i In ('qwinsta ^| find "%%i" ^| find /v "%UserName%"') Do logoff %%i /v)
 )
 If %Delay% LSS %WaitSec% GoTo WAIT
 

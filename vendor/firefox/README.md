@@ -53,6 +53,7 @@
 
 |Open Source|Название|Описание
 |:---:|:--- |:--- 
+| |*[OneTab]*|Сохраняет все открытые вкладки сессии (может требовать ухода-закрытия страницы) по нажатию на 1 кнопку в дополнении.
 | |*[Browsec VPN]*<sup>*</sup>|Есть бесплатные сервера (NL, SG, UK и US до 30 Мбит/сек).<br />Опция "Smart Settings" позволяет выбрать proxy для отдельных доменов без включения защиты.
 |:trophy: :gem:|*[µBlock Origin]*|Расширение позволяет вернуть себе контроль над содержанием страниц и видеть лишь то, что хочется.
 | :gem:|*[Violetmonkey]*|Расширение для подключения сторонних *user script*.<br />:warning: **ВАЖНО:** Запрещенное на Userstyles.org свойство **-moz-binding** для ~~*[Stylish]*~~ может выполнить JS-код на компьютере пользователя.
@@ -67,22 +68,23 @@
 
 <sup>*</sup> После обновления расширения открывается рекламная страницы
 
-[:(]: //github.com/greasemonkey/greasemonkey/issues/2733/
-[Browsec VPN]: //addons.mozilla.org/firefox/addon/603434/
-[Canvas]: //habr.com/post/357238/#comment_11221142 "SHA-256"
-[CanvasBlocker]: //addons.mozilla.org/firefox/addon/534930/
-[Easy Youtube Video Downloader Express]: //addons.mozilla.org/firefox/addon/463677/
-[Full Web Page Screenshots]: //addons.mozilla.org/firefox/addon/5648/ "Замена скриншотам Firefox"
-[To Google Translate]: //addons.mozilla.org/firefox/addon/445852/
-[Greasemonkey]: //github.com/greasemonkey/greasemonkey/issues/2985/
-[Live Stream Downloader]: //addons.mozilla.org/firefox/addon/2641439/
-[Octotree]: //addons.mozilla.org/firefox/addon/512640/
-[SaveFrom.net]: //addons.mozilla.org/firefox/addon/271830/
-[Search by Image]: //addons.mozilla.org/firefox/addon/824288/
-[Stylish]: //github.com/The-OP/Fox/commit/370229fe "Меняет внешний вид сайтов согласно UserCSS"
-[Violetmonkey]: //addons.mozilla.org/firefox/addon/797378/ "Движок для запуска UserJS"
-[VT4Browsers]: //addons.mozilla.org/firefox/addon/351419/ "Experimental"
-[µBlock Origin]: //addons.mozilla.org/firefox/addon/607454/
+[:(]: https://github.com/greasemonkey/greasemonkey/issues/2733/
+[OneTab]: https://addons.mozilla.org/ru/firefox/addon/525044/
+[Browsec VPN]: https://addons.mozilla.org/firefox/addon/603434/
+[Canvas]: https://habr.com/post/357238/#comment_11221142 "SHA-256"
+[CanvasBlocker]: https://addons.mozilla.org/firefox/addon/534930/
+[Easy Youtube Video Downloader Express]: https://addons.mozilla.org/firefox/addon/463677/
+[Full Web Page Screenshots]: https://addons.mozilla.org/firefox/addon/5648/ "Замена скриншотам Firefox"
+[To Google Translate]: https://addons.mozilla.org/firefox/addon/445852/
+[Greasemonkey]: https://github.com/greasemonkey/greasemonkey/issues/2985/
+[Live Stream Downloader]: https://addons.mozilla.org/firefox/addon/2641439/
+[Octotree]: https://addons.mozilla.org/firefox/addon/512640/
+[SaveFrom.net]: https://addons.mozilla.org/firefox/addon/271830/
+[Search by Image]: https://addons.mozilla.org/firefox/addon/824288/
+[Stylish]: https://github.com/The-OP/Fox/commit/370229fe "Меняет внешний вид сайтов согласно UserCSS"
+[Violetmonkey]: https://addons.mozilla.org/firefox/addon/797378/ "Движок для запуска UserJS"
+[VT4Browsers]: https://addons.mozilla.org/firefox/addon/351419/ "Experimental"
+[µBlock Origin]: https://addons.mozilla.org/firefox/addon/607454/
 [Импортировать]: //subscribe.adblockplus.org/?location=https://github.com/h8nor/docs/raw/rublock/vendor/firefox/filters.txt&title=RUS:%20Filters%20RuBlockList
 
 ---
@@ -113,6 +115,8 @@
 <details>
 <summary>:purple_square: Дополнительные возможности</summary><br />
 
+- [Закладки: горячие клавиши для работы с вкладками](https://support.mozilla.org/ru/kb/kak-mne-ispolzovat-zakladki)
+- [Повысить приватность браузера](https://www.youtube.com/watch?v=Fr8UFJzpNls)
 - Проверка [FingerPrint]
 
 Справа в адресной строке появляется значок-книга "Включить Вид для чтения `[F9]`" (Firefox 78 рабоает с локальными 
@@ -122,9 +126,9 @@
 MS Word имеет функцию воспроизведения текста (в "*Настройках ленты*" в списке "*Команды не на ленте*" 
 команда "*Проговорить*").
 
-[FingerPrint]: //amiunique.org "2018-12-07: https://habr.com/post/432296/#comment_19469322"
-[голосом]: //support.mozilla.org/ru/kb/otvet-na-forume-ustanovka-golosov-dlya-windows-10
-[RHVoice]: //tiflohelp.ru/synthesizers/sapi-5/rhvoice-sapi5.html
+[FingerPrint]: https://amiunique.org "2018-12-07: https://habr.com/post/432296/#comment_19469322"
+[голосом]: https://support.mozilla.org/ru/kb/otvet-na-forume-ustanovka-golosov-dlya-windows-10
+[RHVoice]: https://tiflohelp.ru/synthesizers/sapi-5/rhvoice-sapi5.html
 
 </details>
 
