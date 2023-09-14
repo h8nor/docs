@@ -12,7 +12,7 @@ checkrange 20120117:-1 read 0x8278 || pause --wait=5 Please use grub4dos-0.4.5c-
 ## Menu AutoNumber
 write 0x8274 0x2001
 
-write (md)0x220+1 !BAT\necho -n -P:0000 $[0107] MultiBoot USB by bopoh13\t\t\t\t\t\t\t\0 && initscript (md)0x220+1
+write (md)0x220+1 !BAT\necho -n -P:0000 $[0107] MultiBoot USB by h8nor\t\t\t\t\t\t\t\0 && initscript (md)0x220+1
 color white/blue black/white white/blue white/black
 default 1
 ## 4. Download and Put images in the 'boot' directory

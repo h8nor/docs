@@ -16,10 +16,10 @@
 *.vbs	-text	eol=crlf	working-tree-encoding=cp1251
 
 # Files that are truly binary and should not be modified
-apps/*	linguist-vendored
+apps/*	linguist-detectable=false
 .gitattributes	export-ignore
-*.ico	binary	linguist-generated
-*.inf	linguist-generated	linguist-language=ini
-apps/*.hns	linguist-generated	linguist-language=ini
-apps/*.lst	linguist-language=shell
+*.ico	binary	linguist-generated=true
+*.inf	linguist-generated=true	linguist-language=ini
+apps/**/*.hns	linguist-generated=true	linguist-language=ini
+*.lst	linguist-language=shell
 *.png	binary
