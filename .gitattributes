@@ -2,4 +2,4 @@
 * text=auto
 
 # Files that are truly binary and should not be modified
-*.txt	eol=CRLF	linguist-generated	linguist-language=matlab
+*.txt	eol=crlf	linguist-detectable	linguist-language=AdBlock

@@ -1,16 +1,14 @@
 [Adblock Plus 2.8]
-! Version: 202116
-! Title: RUS: Filters RuBlockList
-! Last modified: 10 Oct 2021 21:00 UTC
-! Expires: 3 days (update frequency)
+! Version: 2023.17
+! Title: 🛡 RuBlockList for uBO
+! Last modified: 18 Oct 2023 21:00 UTC
+! Expires: 6 days (update frequency)
 ! License CC-BY-SA-4.0: https://creativecommons.org/licenses/by-sa/4.0/deed.en_US
-! Homepage: https://github.com/bopoh13/docs/tree/master/vendor/firefox/
+! Homepage: https://github.com/h8nor/docs/tree/master/vendor/firefox/
 ! Please report any unblocked tracking or problems.
-! //github.com/gorhill/uBlock/wiki/Static-filter-syntax#cosmetic-filters
-! //kb.adguard.com/ru/general/how-to-create-your-own-ad-filters#cosmetic-rules
+! https://github.com/gorhill/uBlock/wiki/Static-filter-syntax#cosmetic-filters
 !
 !--------------------General tracking systems-----------------------------------!
-! Hint: //github.com/disconnectme/disconnect-tracking-protection/blob/master/services.json
 /advertising.$~object-subrequest
 /adriver.$~object-subrequest
 /googleads.$~object-subrequest
@@ -137,6 +135,20 @@ youtube.com## div#share-services-container
 cyberforum.ru## div.page > div > div[id] > div
 drive2.ru## div#side-dv-pinned, div.js-recommendations.c-block
 drive2.ru## div.c-block > div[class^="c-dv"], div.c-block > div[class^="c-dv"] + div, div.c-block > div.c-block__fake-gap
+!! Главная dzen.ru
+dzen.ru## div.content div[id]:has( > div:contains(/Реклама|(Быстрый и безопасный|Установите удобный и быстрый) Яндекс Браузер/) )
+dzen.ru## div.content div[class^="promo-floors-entries"]
+!+dzen.ru##div[aria-label="Лента Дзена"]
+!+ 1 линия -- Рекламный блок вместо card
+dzen.ru## div[aria-label="Лента Дзена"] div[id^="zen-row"] article:not( :is( [data-testid^="floor-"][data-testid$="-card"], [id="card-wrapper-short-carousel"] ) )
+!! Статьи Дзен
+!+ 1 линия -- Видеореклама -- dzen.ru/articles
+!+dzen.ru,frontend.vh.yandex.ru,widgets.kinopoisk.ru,www.kinopoisk.ru,yastatic.net##+js(no-xhr-if, strm.yandex.ru/get/)
+!+ 2 линия -- Подгружаемая реклама -- dzen.ru/articles
+dzen.ru## main div[id^="zen-row"][data-testid="feed-row"]:has( article + div:not( :is( [data-testid="card-brief"], [data-testid="Карточка статьи"] ) ) )
+!+ 1 линия -- Подгружаемая реклама -- dzen.ru/a
+dzen.ru##+js(set-constant, Object.prototype.getUaasConfig, undefined)
+dzen.ru,frontend.vh.yandex.ru,www.kinopoisk.ru,widgets.kinopoisk.ru,yastatic.net##+js(set-constant, Object.prototype.partnerId, {})
 fb.ru## div.text-ad-block
 greasyfork.org## div#script-show-info-ad
 ! 2021-09-28 + https://habr.com
@@ -213,6 +225,8 @@ m.habrahabr.ru## div.similar_posts, div.popular_posts, div.geektimes_posts, div.
 !--------------------Cosmetic fixes page layout---------------------------------!
 2gis.ru## div.noResults__googletag
 drive2.ru## div.g-column-wide > div:not(.offer) > div.c-block:not([class*="c-block-"])
+!+ Блоки рекламы справа -- dzen.ru/a
+dzen.ru## main [id="article__right"] div[class$="__main"]:has( div[class$="__sticky"] )
 fb.ru,overclockers.ru## ins.adsbygoogle
 kinozal.me,kinozal.tv## div.menu > div.bx2_0:nth-last-child(2)
 livejournal.com## div[class*="journalpromo"] + div.hr
