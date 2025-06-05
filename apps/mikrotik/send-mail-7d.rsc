@@ -7,7 +7,7 @@
 # Interval: 7d 00:00:00
 # Policy Schedule: [X] read, [X] policy, [X] write, [X] test
 # On-Event: /system script run send-mail-7d
-# Tested by bopoh13@ya on: RouterOS v6.32.2, v6.44.5
+# Tested by @h8nor on: RouterOS v6.32.2, v6.44.5
 
 # ##################### Script Settings #####################
 

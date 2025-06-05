@@ -1,4 +1,4 @@
-[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 |Название|Редакция|Версия|Дата|Язык
 |:--- |:--- |:--- |:---:|:--- 
@@ -19,9 +19,9 @@ Play Market может удалиться файл настроек и тогд�
 
 - ***README.md*** - описание приложений и системных процессов Android
 - ***applications.md*** - описание структуры приложений
-- ***phone_scam.csv*** - чёрный список[*] номеров (Гугл уже терял [данные](//takeout.google.com/))
+- ***phone_scam.csv*** - чёрный список[*] номеров (Гугл уже терял [данные](https://takeout.google.com/))
 
-[*]: //rossvyaz.ru/deyatelnost/resurs-numeracii "RU, DEF-моб. Выписка из реестра российской системы и плана нумерации"
+[*]: https://rossvyaz.ru/deyatelnost/resurs-numeracii "RU, DEF-моб. Выписка из реестра российской системы и плана нумерации"
 
 
 # Встроенные приложения ОС Android 8.1
@@ -83,14 +83,14 @@ https://habr.com/ru/579010/
 2. Мобильный интернет в ромиунге отключен. Вы момете включить интернет-роуминг в настройках (Роуминг)  
   / You've lost data connectivity because you left your home network with data roaming turned off (Roaming)
 
-[Контакты]: //play.google.com/store/apps/details?id=com.google.android.contacts
-[Сообщения]: //play.google.com/store/apps/details?id=com.google.android.apps.messaging
-[Телефон]: //play.google.com/store/apps/details?id=com.google.android.dialer
-[Часы]: //play.google.com/store/apps/details?id=com.google.android.deskclock
-[Android System WebView]: //play.google.com/store/apps/details?id=com.google.android.webview
-[GMail]: //play.google.com/store/apps/details?id=com.google.android.gm
-[YouTube]: //play.google.com/store/apps/details?id=com.google.android.youtube
-[fanta]: //habr.com/post/466973/
+[Контакты]: https://play.google.com/store/apps/details?id=com.google.android.contacts
+[Сообщения]: https://play.google.com/store/apps/details?id=com.google.android.apps.messaging
+[Телефон]: https://play.google.com/store/apps/details?id=com.google.android.dialer
+[Часы]: https://play.google.com/store/apps/details?id=com.google.android.deskclock
+[Android System WebView]: https://play.google.com/store/apps/details?id=com.google.android.webview
+[GMail]: https://play.google.com/store/apps/details?id=com.google.android.gm
+[YouTube]: https://play.google.com/store/apps/details?id=com.google.android.youtube
+[fanta]: https://habr.com/post/466973/
 
 ---
 # Рекомендуемые приложения ОС Android 8.1
@@ -108,10 +108,10 @@ https://habr.com/ru/579010/
 |2018-08-05|-|WiFiAnalyzer|1.9|3.5|Wi-Fi
 |2019-10-01|$|Wps Wpa Tester Premium|3.9|7.0|Местоположение (требует), Wi-Fi
 
-[Компас Сталь 3D]: //play.google.com/store/apps/details?id=com.simplywerx.compass3d
-[Discord: Chat]: //play.google.com/store/apps/details?id=com.discord
-[ReadEra: pdf, doc]: //play.google.com/store/apps/details?id=org.readera
-[ProtonMail]: //play.google.com/store/apps/details?id=ch.protonmail.android
+[Компас Сталь 3D]: https://play.google.com/store/apps/details?id=com.simplywerx.compass3d
+[Discord: Chat]: https://play.google.com/store/apps/details?id=com.discord
+[ReadEra: pdf, doc]: https://play.google.com/store/apps/details?id=org.readera
+[ProtonMail]: https://play.google.com/store/apps/details?id=ch.protonmail.android
 
 ---
 # Нетестированные приложения ОС Android 8.1
@@ -132,6 +132,6 @@ https://habr.com/ru/579010/
 |2019-11-28|лента|OsmAnd: Map|3.5|114.0|Местоположение
 |2019-11-11|блок|SoloLearn|3.0|31.9|Память
 
-[Cube ACR]: /vendor/android/applications.md#cube-acr---запись-звонков-amr-и-mp3
+[Cube ACR]: /apps/android/applications.md
 
 # 

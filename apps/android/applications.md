@@ -1,4 +1,4 @@
-[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 # Особенности приложений
 

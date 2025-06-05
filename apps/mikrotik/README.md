@@ -1,16 +1,16 @@
-[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 |Приложение|Редакция|User-Agent|Версия|Дата|Язык
 |:--- |:--- |:--- |:--- |:---:|:--- 
 |RouterOS <sup>[www]</sup>|Long-term|`Mikrotik/6.x Fetch`|6.47.9|2021-02-05|en
 
-[www]: //mikrotik.com/download "Site"
+[www]: https://mikrotik.com/download "Site"
 
 ### Особенности написания скриптов
 
 В регулярных выражениях Mikrotik применяется модифицированная [POSIX ERE].
 
-[POSIX ERE]: //github.com/remram44/regex-cheatsheet/issues/21
+[POSIX ERE]: https://github.com/remram44/regex-cheatsheet/issues/21
 
 ---
 # Содержание репозитория
@@ -109,7 +109,7 @@
 ~	[` `] Routerboard [:hammer_and_wrench:](https://youtu.be/fWfEJREoq3g?t=49m51s)  
 ~	[` `] SNTP Client  
 ~	[` `] Scheduler  
-~	[` `] Scripts [:bulb:](//translate.google.com/translate?sl=en&tl=ru&u=https%3A%2F%2Fhelp.mikrotik.com%2Fdocs%2Fdisplay%2FROS%2FScripting)  
+~	[` `] Scripts [:bulb:](https://translate.google.com/translate?sl=en&tl=ru&u=https%3A%2F%2Fhelp.mikrotik.com%2Fdocs%2Fdisplay%2FROS%2FScripting)  
 ~	[` `] Shutdown  
 ~	[` `] Special Login  
 ~	[` `] Users  
@@ -144,7 +144,7 @@
 [` `] MetaROUTER  
 [` `] Partition  
 [` `] Make Supout.rif  
-[` `] Manual ([Online](//help-mikrotik-com.translate.goog/docs/?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_pto=ajax,elem))  
+[` `] Manual ([Online](https://help-mikrotik-com.translate.goog/docs/?_x_tr_sl=en&_x_tr_tl=ru&_x_tr_pto=ajax,elem))  
 [` `] New WinBox  
 [` `] Exit  
 

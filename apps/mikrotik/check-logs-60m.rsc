@@ -7,7 +7,7 @@
 # Interval: 00:60:00
 # Policy Schedule: [X] read, [X] write, [X] test
 # On-Event: /system script run check-logs-60m
-# Tested by bopoh13@ya on: RouterOS v6.46.7
+# Tested by @h8nor on: RouterOS v6.46.7
 
 # ##################### Script Settings #####################
 

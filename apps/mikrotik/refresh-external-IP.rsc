@@ -3,7 +3,7 @@
 # Name Script: refresh-external-IP
 # Comment: script check your public ip and return in a global variable
 # Policy Script: [X] ftp, [X] read, [X] write, [X] test
-# Tested by bopoh13@ya on: RouterOS v6.40.2
+# Tested by @h8nor on: RouterOS v6.40.2
 
 # ##################### Script Settings #####################
 

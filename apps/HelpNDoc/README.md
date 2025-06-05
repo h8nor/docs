@@ -1,10 +1,10 @@
-[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 |Приложение|Редакция|Версия|Дата|Язык
 |:--- |:--- |:--- |:---:|:--- 
 |HelpNDoc <sup>[www]</sup>|Personal Edition|4.9.2.132|2016-01-20|de, en, fr
 
-[www]: //helpndoc.com/download "Site"
+[www]: https://helpndoc.com/download "Site"
 
 ### Краткое описание
 

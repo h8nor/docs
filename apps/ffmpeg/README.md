@@ -4,7 +4,7 @@
 |:--- |:--- |:--- |:---:|:--- 
 |ffmpeg <sup>[win32]</sup>|FFmpeg developers|3.4.2|2018-02-25|en
 
-[win32]: //www.videohelp.com/software/ffmpeg/old-versions "Archive"
+[win32]: https://www.videohelp.com/software/ffmpeg/old-versions "Archive"
 
 ### Краткое описание
 

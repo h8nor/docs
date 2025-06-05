@@ -4,7 +4,7 @@
 ---|---|---|---|---
 Camtasia Studio <sup>[www]</sup>|TetcSmith|9.1.1.2546|2017-11-10|de, en, fr
 
-[www]: //www.techsmith.com/download/camtasia "Site"
+[www]: https://www.techsmith.com/download/camtasia "Site"
 
 ### Краткое описание
 

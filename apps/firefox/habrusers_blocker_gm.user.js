@@ -4,8 +4,8 @@
 // @description	Hides sellers, highlights yellow press and hides comments
 // @author		h8nor
 // @license		GPL-3.0+; http://gnu.org/licenses/gpl-3.0.txt
-// @downloadURL	https://github.com/h8nor/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
-// @homepageURL	https://github.com/h8nor/docs/tree/master/vendor/firefox
+// @downloadURL	https://github.com/h8nor/docs/raw/master/apps/firefox/habrusers_blocker_gm.user.js
+// @homepageURL	https://github.com/h8nor/docs/tree/master/apps/firefox
 // @supportURL	https://github.com/h8nor/docs/issues
 // @version		2.1.1
 // @icon		https://habr.com/images/favicon-32x32.png

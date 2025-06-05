@@ -1,10 +1,10 @@
-[License]: //creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
+[License]: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ru
 
 |Приложение|Редакция|User-Agent|Версия|Дата|Язык
 |:--- |:--- |:--- |:--- |:---:|:--- 
 |Firefox <sup>[www]</sup>|ESR Release|`Mozilla/5.0 (platform; rv:geckoversion)`|102.3.0|2022-09-12|all
 
-[www]: //mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
+[www]: https://mozilla.org/ru/firefox/all/#product-desktop-esr "Extended support"
 
 ### Краткое описание
 
@@ -16,13 +16,13 @@
 Существует альтернативная версия [Waterfox] или [PaleMoon] для 64-битных ОС. В июне 2018 г. прекратился выпуск 
 обновлений безопасности на канале ESR для версии Firefox под Windows XP<sup>[***]</sup>. 
 
-[*]: //habr.com/post/313820/ "Rust > Servo > Quantum"
-[**]: //habr.com/post/402173/ "wasm - низкоуровневый ЯП, выполняющийся в браузере"
-[***]: //habr.com/post/407239/
-[FF75 под Win10]: //habr.com/post/496618/
-[WebAssembly]: //habr.com/post/428347/ "RU, 2018-10-31"
-[Waterfox]: //www.waterfoxproject.org/ "браузер с поддержкой XUL-расширений"
-[PaleMoon]: //www.palemoon.org/ "браузер с поддержкой XUL-расширений"
+[*]: https://habr.com/post/313820/ "Rust > Servo > Quantum"
+[**]: https://habr.com/post/402173/ "wasm - низкоуровневый ЯП, выполняющийся в браузере"
+[***]: https://habr.com/post/407239/
+[FF75 под Win10]: https://habr.com/post/496618/
+[WebAssembly]: https://habr.com/post/428347/ "RU, 2018-10-31"
+[Waterfox]: https://www.waterfoxproject.org/ "браузер с поддержкой XUL-расширений"
+[PaleMoon]: https://www.palemoon.org/ "браузер с поддержкой XUL-расширений"
 
 ---
 # Содержание репозитория
@@ -42,7 +42,7 @@
 - ***user.js*** - рекомендуемый файл безопасных настроек
 - ***update_set_ff.vbs*** - скрипт автоматического обновления файла *user.js*
 
-[habrusers_blocker_gm]: //github.com/h8nor/docs/raw/master/vendor/firefox/habrusers_blocker_gm.user.js
+[habrusers_blocker_gm]: https://github.com/h8nor/docs/raw/master/apps/firefox/habrusers_blocker_gm.user.js
 
 
 # Рекомендуемые настройки
@@ -84,8 +84,9 @@
 [Stylish]: https://github.com/The-OP/Fox/commit/370229fe "Меняет внешний вид сайтов согласно UserCSS"
 [Violetmonkey]: https://addons.mozilla.org/firefox/addon/797378/ "Движок для запуска UserJS"
 [VT4Browsers]: https://addons.mozilla.org/firefox/addon/351419/ "Experimental"
+[UserAgent]: https://bowser-js.github.io/bowser-online/
 [µBlock Origin]: https://addons.mozilla.org/firefox/addon/607454/
-[Импортировать]: //subscribe.adblockplus.org/?location=https://github.com/h8nor/docs/raw/rublock/vendor/firefox/filters.txt&title=RUS:%20Filters%20RuBlockList
+[Импортировать]: https://subscribe.adblockplus.org/?location=https://github.com/h8nor/docs/raw/rublock/apps/firefox/filters.txt&title=RUS:%20Filters%20RuBlockList
 
 ---
 <details>
@@ -94,7 +95,7 @@
 Подписку можно подключить в настройках расширения "*<kbd>ЛКМ</kbd> по значку -> Открыть панель управления -> 
 Списки фильтров -> **[Импортировать]...** список фильтра посредством URL*" указав путь к файлу:<br />
 
-`https://github.com/h8nor/docs/raw/rublock/vendor/firefox/filters.txt`
+`https://github.com/h8nor/docs/raw/rublock/apps/firefox/filters.txt`
 #
 
 </details>
@@ -102,13 +103,13 @@
 <details>
 <summary>:purple_square: Новости Mozilla</summary><br />
 
-1. [Mozilla усилила защиту пользователей Firefox от вредоносного кода](//habr.com/news/t/471602/ "RU, 2019-10-15")
-2. [Firefox 75 будет автоматически удалять отслеживающие файлы cookie](//habr.com/news/t/491152/ "RU, 2020-03-05")
-3. [Firefox 75 ввели телеметрию и новую адресную строку](//habr.com/news/t/496618/ "RU, 2020-04-10")
-4. [Mozilla: рекламщикам достаточно истории 150 посещённых доменов для определения пользователя](//habr.com/news/t/517384/ "RU, 2020-09-01")
-5. [IETF официально прекратил поддержку протоколов TLS 1.0 и 1.1](//habr.com/post/548832/ "RU, 2021-03-24")
-6. **[DevTools браузера: возможности инструмента разработчика](//habr.com/post/548898/ "RU, 2021-04-05")**
-7. [Firefox 78 представил новую архитектуру безопасности браузера с изоляцией сайтов](//habr.com/post/558236/ "RU, 2021-05-19")
+1. [Mozilla усилила защиту пользователей Firefox от вредоносного кода](https://habr.com/news/t/471602/ "RU, 2019-10-15")
+2. [Firefox 75 будет автоматически удалять отслеживающие файлы cookie](https://habr.com/news/t/491152/ "RU, 2020-03-05")
+3. [Firefox 75 ввели телеметрию и новую адресную строку](https://habr.com/news/t/496618/ "RU, 2020-04-10")
+4. [Mozilla: рекламщикам достаточно истории 150 посещённых доменов для определения пользователя](https://habr.com/news/t/517384/ "RU, 2020-09-01")
+5. [IETF официально прекратил поддержку протоколов TLS 1.0 и 1.1](https://habr.com/post/548832/ "RU, 2021-03-24")
+6. **[DevTools браузера: возможности инструмента разработчика](https://habr.com/post/548898/ "RU, 2021-04-05")**
+7. [Firefox 78 представил новую архитектуру безопасности браузера с изоляцией сайтов](https://habr.com/post/558236/ "RU, 2021-05-19")
 
 </details>
 
