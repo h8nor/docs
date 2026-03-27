@@ -68,7 +68,7 @@ Play Market может удалиться файл настроек и тогд�
 
 Чтобы `Остановить` встроенное в Android приложение, сначала нужно `Стереть данные` и `Очистить кэш`. Полностью `Отключить` встроенные приложения не получится.
 
-https://habr.com/ru/579010/
+https://habr.com/ru/post/579010/
 
 2021-08-23 Меню SIM - Настройки - Выключить  
 Внимание! Если у вас подключена услуга "Живой баланс", в данном режиме она может работать некорректно.  
@@ -90,7 +90,7 @@ https://habr.com/ru/579010/
 [Android System WebView]: https://play.google.com/store/apps/details?id=com.google.android.webview
 [GMail]: https://play.google.com/store/apps/details?id=com.google.android.gm
 [YouTube]: https://play.google.com/store/apps/details?id=com.google.android.youtube
-[fanta]: https://habr.com/post/466973/
+[fanta]: https://habr.com/ru/post/466973/
 
 ---
 # Рекомендуемые приложения ОС Android 8.1

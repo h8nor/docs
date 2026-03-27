@@ -2,7 +2,7 @@
 
 ## :mortar_board: Лицензия
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=docs.h8nor.github.io&icon=coursera.svg&title=hits@docs&count_bg=%232EA44F&title_bg=%23555555&edge_flat=true)](vendor)
+[![Hits](https://kounter.kerolloz.dev/badge/docs.h8nor.github.io?label=hits@docs&style=flat-square&color=2ea44f)](apps)
 [![Commits](https://img.shields.io/github/commit-activity/y/h8nor/docs?style=flat-square&cacheSeconds=3600&logo=git)](../../compare/master@{1year}...master)
 [![Forks](https://img.shields.io/github/forks/h8nor/docs?style=flat-square&cacheSeconds=3600&label=Forks&logo=github&link=https://github.com/h8nor/docs/network/members)](../../network/members)
 

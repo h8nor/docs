@@ -47,6 +47,17 @@ Aspect:
 - stabilization https://youtu.be/MfHGH2Mnxls
 - credits in video https://youtu.be/Qh_rH5GeMQM
 
+### Установка программы в PowerShell
+
+1. Установка пакетa yt-dlp
+    ``` ps
+    winget install yt-dlp
+    ```
+2. Обновление пакетa yt-dlp
+    ``` ps
+    yt-dlp -U
+    ```
+
 ### Настройки программы
 
 1. Скопируйте нужный скрипт в директорию с медиа-файлами

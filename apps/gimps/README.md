@@ -76,7 +76,7 @@ PRPDC=1,2,{EXPONENT},-1,"{FACTOR_N1},{FACTOR_N2}"
 `=ЗНАЧЕН(ПСТР(A1;НАЙТИ(">";A1)+1;НАЙТИ("<";A1;НАЙТИ(">";A1)+1)-НАЙТИ(">";A1)-1))`
 
 ---
-<details>
+<details id="1">
 <summary>:purple_square: Ссылки на пояснения и приложения</summary><br />
 
 1. [Простые числа Мерсенна и Тест Люка-Лемера](https://habr.com/ru/post/327342/ "RU, 2017-04-25")
@@ -89,7 +89,7 @@ PRPDC=1,2,{EXPONENT},-1,"{FACTOR_N1},{FACTOR_N2}"
 
 </details>
 
-<details>
+<details id="2">
 <summary>:purple_square: Ссылки на статьи о числах и RSA</summary><br />
 
 1. [Решето Эратосфена и Аткина](https://habr.com/ru/post/133037/ "RU, 2011-11-21")

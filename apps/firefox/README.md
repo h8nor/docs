@@ -32,7 +32,7 @@
 - ***download_last_ff.bat*** - скрипт для скачивания Firefox на Рабочий стол для win10
 - ***download_last_ff.vbs*** - скрипт для скачивания Firefox под разрядность ОС на Рабочий стол
 <!-- - ***[habrusers_blocker_gm].user.js*** - блокировка пользователей на Хабре (*user script*)
-	<details>
+	<details id="0">
 	<summary>:yellow_square: Политика работы скриптов</summary><br />
 	
 	Для работы скриптов [Greasemonkey]<sup>[:(]</sup> должна быть включена настройка:  
@@ -89,18 +89,18 @@
 [Импортировать]: https://subscribe.adblockplus.org/?location=https://github.com/h8nor/docs/raw/rublock/apps/firefox/filters.txt&title=RUS:%20Filters%20RuBlockList
 
 ---
-<details>
-<summary>:red_square: Ссылка на подписку <strong>uBlock RuBlockList</strong></summary><br />
+<details id="1">
+<summary>:red_square: Ссылка на подписку <strong>uBlock RuBlockList</strong></summary><br /><blockquote>
 
 Подписку можно подключить в настройках расширения "*<kbd>ЛКМ</kbd> по значку -> Открыть панель управления -> 
 Списки фильтров -> **[Импортировать]...** список фильтра посредством URL*" указав путь к файлу:<br />
 
 `https://github.com/h8nor/docs/raw/rublock/apps/firefox/filters.txt`
-#
+# </blockquote>
 
 </details>
 
-<details>
+<details id="2">
 <summary>:purple_square: Новости Mozilla</summary><br />
 
 1. [Mozilla усилила защиту пользователей Firefox от вредоносного кода](https://habr.com/news/t/471602/ "RU, 2019-10-15")
@@ -113,7 +113,7 @@
 
 </details>
 
-<details>
+<details id="3">
 <summary>:purple_square: Дополнительные возможности</summary><br />
 
 - [Закладки: горячие клавиши для работы с вкладками](https://support.mozilla.org/ru/kb/kak-mne-ispolzovat-zakladki)
@@ -145,8 +145,8 @@ MS Word имеет функцию воспроизведения текста (�
 Необходимо после каждого обновления `Отключить / Удалить` задание `Firefox Default Browser Agent`
 до того, как оно выполнится. Задача не появляется только если установлен запрет групповыми политиками.
 
-<details>
-<summary>:yellow_square: На блокировку в hosts реагирует MS Defender</summary><br />
+<details id="4" open>
+<summary>:yellow_square: На блокировку в <code>hosts</code> реагирует MS Defender</summary><br />
 
 - www&shy;.microsoft.com
 - microsoft.com

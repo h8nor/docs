@@ -148,4 +148,24 @@
 [` `] New WinBox  
 [` `] Exit  
 
+
+# Настройка
+
+1. Обновить прошивку
+    `/system package update check-for-updates`
+
+# Безопасность
+
+CAPs Security Conf - Dicable PMKID (+)
+
+
+# Дополнительная информация
+
+### Ссылки на статьи
+
+1. [Мой MikroTik – моя цифровая крепость (ч.1)](https://habr.com/ru/post/575808/ "RU, 2021-09-08")
+2. [Сам себе РКН или родительский контроль с MikroTik r7.2 (ч.3)](https://habr.com/ru/post/655669/ "RU, 2022-03-29")
+3. [Нестабильный Wi-Fi? MikroTik покупай, частоту на нём автоматом меняй](https://habr.com/ru/post/724452/ "RU, 2023-04-11")
+
+
 #
